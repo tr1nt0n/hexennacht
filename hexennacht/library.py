@@ -24,7 +24,7 @@ score = trinton.make_score_template(
         abjad.Cello(),
         abjad.Contrabass(),
     ],
-    [4, 2, 3, 2, 1, 2, 5],
+    [4, 1, 3, 2, 1, 2, 5],
 )
 
 def warble(score, voice, accel_durations, rit_durations, rit_first):
@@ -99,3 +99,112 @@ def warble(score, voice, accel_durations, rit_durations, rit_first):
         forget=False
     )
     handler(abjad.select(score[voice]).leaves(pitched=True))
+
+def bunched_rhythms(score, voice, bunch_1_tuplet, bunch_1_durations, smooth_durations, bunch_2_tuplet, bunch_2_durations):
+    bunch_1 = rmakers.stack(
+        rmakers.tuplet(
+            [
+                [(1, 1, 1)],
+                [(2, 1, 1)],
+                [(1, 2, 1)],
+                [(1, 1, 1, 1, 1)],
+                [(2, 1, 1, 1)],
+                [(1, 2, 1, 1)],
+                [(1, 1, 2, 1)],
+                [(3, 1, 1)],
+                [(1, 3, 1)],
+                [(1, 1, 1, 1, 1, 1)],
+                [(2, 1, 1, 1, 1)],
+                [(1, 2, 1, 1, 1)],
+                [(1, 1, 2, 1, 1)],
+                [(1, 1, 1, 2, 1)],
+                [(1, 3, 1, 1)],
+                [(1, 1, 3, 1)],
+                [(1, 1, 1, 1, 1, 1, 1)],
+                [(2, 1, 1, 1, 1, 1)],
+                [(1, 2, 1, 1, 1, 1)],
+                [(1, 1, 2, 1, 1, 1)],
+                [(1, 1, 1, 2, 1, 1)],
+                [(1, 1, 1, 1, 2, 1)],
+                [(3, 1, 1, 1, 1)],
+                [(1, 3, 1, 1, 1)],
+                [(1, 1, 3, 1, 1)],
+                [(1, 1, 1, 3, 1)],
+                [(2, 3, 1, 1, 1)],
+                [(1, 2, 3, 1, 1)],
+                [(1, 1, 2, 3, 1)],
+                [(3, 1, 2, 1)],
+                [(2, 1, 3, 1)],
+            ][bunch_1_tuplet]
+        ),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+    bunch_2 = rmakers.stack(
+        rmakers.tuplet(
+            [
+                [(1, 1, 1)],
+                [(2, 1, 1)],
+                [(1, 2, 1)],
+                [(1, 1, 1, 1, 1)],
+                [(2, 1, 1, 1)],
+                [(1, 2, 1, 1)],
+                [(1, 1, 2, 1)],
+                [(3, 1, 1)],
+                [(1, 3, 1)],
+                [(1, 1, 1, 1, 1, 1)],
+                [(2, 1, 1, 1, 1)],
+                [(1, 2, 1, 1, 1)],
+                [(1, 1, 2, 1, 1)],
+                [(1, 1, 1, 2, 1)],
+                [(1, 3, 1, 1)],
+                [(1, 1, 3, 1)],
+                [(1, 1, 1, 1, 1, 1, 1)],
+                [(2, 1, 1, 1, 1, 1)],
+                [(1, 2, 1, 1, 1, 1)],
+                [(1, 1, 2, 1, 1, 1)],
+                [(1, 1, 1, 2, 1, 1)],
+                [(1, 1, 1, 1, 2, 1)],
+                [(3, 1, 1, 1, 1)],
+                [(1, 3, 1, 1, 1)],
+                [(1, 1, 3, 1, 1)],
+                [(1, 1, 1, 3, 1)],
+                [(2, 3, 1, 1, 1)],
+                [(1, 2, 3, 1, 1)],
+                [(1, 1, 2, 3, 1)],
+                [(3, 1, 2, 1)],
+                [(2, 1, 3, 1)],
+            ][bunch_2_tuplet]
+        ),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+    smooth = rmakers.stack(
+        rmakers.talea([4, 5, 7, 5, 4, 7, 5, 7], 16),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+
+    trinton.append_rhythm_selections(
+        stack=bunch_1,
+        durations=bunch_1_durations,
+        voice_name=voice,
+        score=score,)
+
+    trinton.append_rhythm_selections(
+        stack=smooth,
+        durations=smooth_durations,
+        voice_name=voice,
+        score=score,)
+
+    trinton.append_rhythm_selections(
+        stack=bunch_2,
+        durations=bunch_2_durations,
+        voice_name=voice,
+        score=score,)

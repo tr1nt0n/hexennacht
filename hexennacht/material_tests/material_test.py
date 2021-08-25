@@ -12,13 +12,7 @@ trinton.write_time_signatures([(2, 1)], score["Global Context"])
 
 # write new material function here
 
-hexennacht.warble(
-    score=score,
-    voice="violin 1 voice",
-    accel_durations=[(3, 4)],
-    rit_durations=[(2, 4)],
-    rit_first=True,
-)
+
 
 # show file
 
