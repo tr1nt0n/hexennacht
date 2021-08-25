@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language english
-#(set-default-paper-size "11x17landscape")
-#(set-global-staff-size 18)
+#(set-default-paper-size "11x17portrait")
+#(set-global-staff-size 17)
 
 \header {
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"H E X E N N A C H T" \fontsize #3.4 \with-color #white "."}
@@ -23,17 +23,17 @@
 		\consists Metronome_mark_engraver
 		\consists Text_engraver
 		\consists Text_spanner_engraver
-        \override BarNumber.font-size = 1
+        \override BarNumber.font-size = 3
 		% \override BarNumber.padding = 1
 		\override BarNumber.font-name = "Bodoni72"
 		% \override TextScript.font-size = 6
         % \override TextSpanner.font-size = 6
         %
 		\override TimeSignature.X-extent = #'(0 . 0)
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 9) (minimum-distance . 9) (padding . 6) (stretchability . 0))
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 12) (stretchability . 0))
         % \override TimeSignature.break-align-symbol = #'left-edge
         \override TimeSignature.break-visibility = #end-of-line-invisible
-        \override TimeSignature.font-size = 5
+        \override TimeSignature.font-size = 8
 		\override TimeSignature.font-name = "Bodoni72"
     }
     \context {
