@@ -29,29 +29,6 @@
                 {
                     \context Voice = "flute voice"
                     {
-                        \times 4/5
-                        {
-                            %! COMMENT_MEASURE_NUMBERS
-                            %! abjad.SegmentMaker.comment_measure_numbers()
-                            % [flute voice measure 1]
-                            c'8
-                            c'16
-                            c'16
-                            c'16
-                        }
-                        c'4
-                        c'4
-                        ~
-                        c'16
-                        c'4..
-                        c'4
-                        \times 4/7
-                        {
-                            c'16.
-                            c'32
-                            c'16
-                            c'32
-                        }
                     }
                 }
                 \context Staff = "oboe staff"
@@ -106,12 +83,63 @@
                 {
                     \context Voice = "piano 1 voice"
                     {
+                        \times 4/5
+                        {
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [piano 1 voice measure 1]
+                            e'16
+                            fs'16
+                            g'16
+                            bf'16
+                            af'16
+                        }
+                        af'4
+                        e'4
+                        ~
+                        e'16
+                        bf'4..
+                        c'4
+                        ~
+                        c'16
+                        bf'8.
+                        \times 2/3
+                        {
+                            bf'16
+                            b'8.
+                            e'16
+                            af'16
+                        }
                     }
                 }
                 \context Staff = "piano 2 staff"
                 {
                     \context Voice = "piano 2 voice"
                     {
+                        %! COMMENT_MEASURE_NUMBERS
+                        %! abjad.SegmentMaker.comment_measure_numbers()
+                        % [piano 2 voice measure 1]
+                        r4
+                        \times 4/7
+                        {
+                            g'8.
+                            a'16
+                            fs'8
+                            af'16
+                        }
+                        f'4
+                        f'4
+                        ~
+                        f'16
+                        g'4..
+                        \times 2/3
+                        {
+                            ef'8
+                            e'8
+                            fs'4
+                            g'8
+                            bf'8
+                        }
                     }
                 }
             >>

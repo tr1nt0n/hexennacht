@@ -208,3 +208,13 @@ def bunched_rhythms(score, voice, bunch_1_tuplet, bunch_1_durations, smooth_dura
         durations=bunch_2_durations,
         voice_name=voice,
         score=score,)
+
+tempo_1 = abjad.MetronomeMark((1, 4), 47)
+tempo_2 = abjad.MetronomeMark((1, 4), 60)
+tempo_3 = abjad.MetronomeMark((1, 4), 69)
+tempo_4 = abjad.MetronomeMark((1, 4), 105)
+tempo_5 = abjad.MetronomeMark((1, 4), 130)
+
+ritual_pitches = [0, 1, 3, 8, 3, 0, 7, 5, 3, 11, 6, 7, 2, 1, 3, 8, 3, 3, 2, 3, 3, 5, 0, 6]
+
+dance_pitches = [4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]
