@@ -100,7 +100,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first):
     )
     handler(abjad.select(score[voice]).leaves(pitched=True))
 
-def bunched_rhythms(score, voice, bunch_1_tuplet, bunch_1_durations, smooth_durations, bunch_2_tuplet, bunch_2_durations):
+def bunched_rhythms(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_durations, bunch_2_tuplet, bunch_2_durations):
     bunch_1 = rmakers.stack(
         rmakers.tuplet(
             [
@@ -184,7 +184,7 @@ def bunched_rhythms(score, voice, bunch_1_tuplet, bunch_1_durations, smooth_dura
         rmakers.rewrite_sustained(abjad.select().tuplets()),
     )
     smooth = rmakers.stack(
-        rmakers.talea([4, 5, 7, 5, 4, 7, 5, 7], 16),
+        rmakers.talea([4, 5, 7, 5, 4, 7, 5, 7], talea),
         rmakers.trivialize(abjad.select().tuplets()),
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
