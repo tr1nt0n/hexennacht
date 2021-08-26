@@ -41,6 +41,126 @@
             {
                 \context Voice = "horn voice"
                 {
+                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                        {
+                            \new Score
+                            \with
+                            {
+                                \override SpacingSpanner.spacing-increment = 0.5
+                                proportionalNotationDuration = ##f
+                            }
+                            <<
+                                \new RhythmicStaff
+                                \with
+                                {
+                                    \remove Time_signature_engraver
+                                    \remove Staff_symbol_engraver
+                                    \override Stem.direction = #up
+                                    \override Stem.length = 5
+                                    \override TupletBracket.bracket-visibility = ##t
+                                    \override TupletBracket.direction = #up
+                                    \override TupletBracket.minimum-length = 4
+                                    \override TupletBracket.padding = 1.25
+                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                    \override TupletNumber.font-size = 0
+                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                    tupletFullLength = ##t
+                                }
+                                {
+                                    c'1
+                                }
+                            >>
+                            \layout
+                            {
+                                indent = 0
+                                ragged-right = ##t
+                            }
+                        }
+                    \times 1/1
+                    {
+                        %! COMMENT_MEASURE_NUMBERS
+                        %! abjad.SegmentMaker.comment_measure_numbers()
+                        % [horn voice measure 1]
+                        \once \override Beam.grow-direction = #right
+                        \override Staff.Stem.stemlet-length = 0.75
+                        r32 * 123/32
+                        [
+                        af''32
+                        aqf''32
+                        gqs''32
+                        af''32
+                        a''32
+                        aqs''32
+                        aqf''32
+                        af''32
+                        aqf''32
+                        gqs''32
+                        af''32
+                        \revert Staff.Stem.stemlet-length
+                        r32 * 49/32
+                        ]
+                    }
+                    \revert TupletNumber.text
+                    \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
+                        {
+                            \new Score
+                            \with
+                            {
+                                \override SpacingSpanner.spacing-increment = 0.5
+                                proportionalNotationDuration = ##f
+                            }
+                            <<
+                                \new RhythmicStaff
+                                \with
+                                {
+                                    \remove Time_signature_engraver
+                                    \remove Staff_symbol_engraver
+                                    \override Stem.direction = #up
+                                    \override Stem.length = 5
+                                    \override TupletBracket.bracket-visibility = ##t
+                                    \override TupletBracket.direction = #up
+                                    \override TupletBracket.minimum-length = 4
+                                    \override TupletBracket.padding = 1.25
+                                    \override TupletBracket.shorten-pair = #'(-1 . -1.5)
+                                    \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+                                    \override TupletNumber.font-size = 0
+                                    \override TupletNumber.text = #tuplet-number::calc-fraction-text
+                                    tupletFullLength = ##t
+                                }
+                                {
+                                    c'1
+                                }
+                            >>
+                            \layout
+                            {
+                                indent = 0
+                                ragged-right = ##t
+                            }
+                        }
+                    \times 1/1
+                    {
+                        \once \override Beam.grow-direction = #left
+                        \override Staff.Stem.stemlet-length = 0.75
+                        r32 * 23/16
+                        [
+                        a''32
+                        aqs''32
+                        aqf''32
+                        af''32
+                        aqf''32
+                        gqs''32
+                        af''32
+                        a''32
+                        aqs''32
+                        aqf''32
+                        af''32
+                        aqf''32
+                        \revert Staff.Stem.stemlet-length
+                        r32 * 29/8
+                        ]
+                    }
+                    \revert TupletNumber.text
                 }
             }
             \context PianoStaff = "sub group 2"
@@ -70,63 +190,12 @@
                 {
                     \context Voice = "piano 1 voice"
                     {
-                        \times 4/5
-                        {
-                            %! COMMENT_MEASURE_NUMBERS
-                            %! abjad.SegmentMaker.comment_measure_numbers()
-                            % [piano 1 voice measure 1]
-                            e'16
-                            fs'16
-                            g'16
-                            bf'16
-                            af'16
-                        }
-                        af'4
-                        e'4
-                        ~
-                        e'16
-                        bf'4..
-                        c'4
-                        ~
-                        c'16
-                        bf'8.
-                        \times 2/3
-                        {
-                            bf'16
-                            b'8.
-                            e'16
-                            af'16
-                        }
                     }
                 }
                 \context Staff = "piano 2 staff"
                 {
                     \context Voice = "piano 2 voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 1]
-                        r4
-                        \times 4/7
-                        {
-                            g'8.
-                            a'16
-                            fs'8
-                            af'16
-                        }
-                        f'4
-                        f'4
-                        ~
-                        f'16
-                        g'4..
-                        \times 2/3
-                        {
-                            ef'8
-                            e'8
-                            fs'4
-                            g'8
-                            bf'8
-                        }
                     }
                 }
             >>

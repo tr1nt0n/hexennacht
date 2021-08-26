@@ -218,3 +218,52 @@ tempo_5 = abjad.MetronomeMark((1, 4), 130)
 ritual_pitches = [0, 1, 3, 8, 3, 0, 7, 5, 3, 11, 6, 7, 2, 1, 3, 8, 3, 3, 2, 3, 3, 5, 0, 6]
 
 dance_pitches = [4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]
+
+def octave_up(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, 12)
+
+def octave_down(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, -12)
+
+def double_octave_up(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, 24)
+
+def double_octave_down(sel):
+    for pitch in sel:
+        abjad.mutate.transpose(pitch, -24)
+
+def transpose_bass_clarinet(l):
+    trinton.transpose(l=l, m=14)
+
+def transpose_french_horn(l):
+    trinton.transpose(l=l, m=7)
+
+def transpose_trumpet(l):
+    trinton.transpose(l=l, m=2)
+
+def transpose_contrabass(l):
+    trinton.transpose(l=l, m=12)
+
+def treble_clef(voice, leaf):
+    trinton.attach(
+        voice=voice,
+        leaves=leaf,
+        attachment=abjad.Clef("treble")
+    )
+
+def alto_clef(voice, leaf):
+    trinton.attach(
+        voice=voice,
+        leaves=leaf,
+        attachment=abjad.Clef("alto")
+    )
+
+def bass_clef(voice, leaf):
+    trinton.attach(
+        voice=voice,
+        leaves=leaf,
+        attachment=abjad.Clef("bass")
+    )

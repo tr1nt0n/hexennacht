@@ -9,6 +9,17 @@ from .library import (
     tempo_5,
     ritual_pitches,
     dance_pitches,
+    octave_up,
+    octave_down,
+    double_octave_up,
+    double_octave_down,
+    transpose_trumpet,
+    transpose_contrabass,
+    transpose_french_horn,
+    transpose_bass_clarinet,
+    treble_clef,
+    alto_clef,
+    bass_clef,
 )
 
 __all__ = [
@@ -22,4 +33,15 @@ __all__ = [
     "tempo_5",
     "ritual_pitches",
     "dance_pitches",
+    "octave_up",
+    "octave_down",
+    "double_octave_up",
+    "double_octave_down",
+    "transpose_trumpet",
+    "transpose_contrabass",
+    "transpose_french_horn",
+    "transpose_bass_clarinet",
+    "treble_clef",
+    "alto_clef",
+    "bass_clef",
 ]
