@@ -82,14 +82,20 @@
                             %! COMMENT_MEASURE_NUMBERS
                             %! abjad.SegmentMaker.comment_measure_numbers()
                             % [bass clarinet voice measure 1]
-                            \once \override Beam.grow-direction = #right
+                            \once \override Beam.grow-direction = #left
+                            \clef "treble"
                             \override Staff.Stem.stemlet-length = 0.75
-                            r32 * 123/32
+                            r32 * 23/16
                             [
+                            \clef "alto"
                             bf'''32
+                            \clef "treble"
                             bqf'''32
+                            \clef "alto"
                             aqs'''32
+                            \clef "treble"
                             bf'''32
+                            \clef "bass"
                             b'''32
                             bqs'''32
                             bqf'''32
@@ -97,8 +103,9 @@
                             bqf'''32
                             aqs'''32
                             bf'''32
+                            b'''32
                             \revert Staff.Stem.stemlet-length
-                            r32 * 49/32
+                            r32 * 29/8
                             ]
                         }
                         \revert TupletNumber.text
@@ -140,11 +147,10 @@
                             }
                         \times 1/1
                         {
-                            \once \override Beam.grow-direction = #left
+                            \once \override Beam.grow-direction = #right
                             \override Staff.Stem.stemlet-length = 0.75
-                            r32 * 23/16
+                            r32 * 123/32
                             [
-                            b'''32
                             bqs'''32
                             bqf'''32
                             bf'''32
@@ -157,7 +163,7 @@
                             bf'''32
                             bqf'''32
                             \revert Staff.Stem.stemlet-length
-                            r32 * 29/8
+                            r32 * 49/32
                             ]
                         }
                         \revert TupletNumber.text

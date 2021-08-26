@@ -251,23 +251,23 @@ def transpose_contrabass(voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 12)
 
-def treble_clef(voice, leaf):
+def treble_clef(voice, leaves):
     trinton.attach(
         voice=voice,
-        leaves=leaf,
+        leaves=leaves,
         attachment=abjad.Clef("treble")
     )
 
-def alto_clef(voice, leaf):
+def alto_clef(voice, leaves):
     trinton.attach(
         voice=voice,
-        leaves=leaf,
+        leaves=leaves,
         attachment=abjad.Clef("alto")
     )
 
-def bass_clef(voice, leaf):
+def bass_clef(voice, leaves):
     trinton.attach(
         voice=voice,
-        leaves=leaf,
+        leaves=leaves,
         attachment=abjad.Clef("bass")
     )
