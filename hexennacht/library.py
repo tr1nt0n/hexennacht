@@ -235,17 +235,21 @@ def double_octave_down(sel):
     for pitch in sel:
         abjad.mutate.transpose(pitch, -24)
 
-def transpose_bass_clarinet(l):
-    trinton.transpose(l=l, m=14)
+def transpose_bass_clarinet(voice):
+    for leaf in abjad.select(score[voice]).leaves(pitched=True):
+        abjad.mutate.transpose(leaf, 14)
 
-def transpose_french_horn(l):
-    trinton.transpose(l=l, m=7)
+def transpose_french_horn(voice):
+    for leaf in abjad.select(score[voice]).leaves(pitched=True):
+        abjad.mutate.transpose(leaf, 7)
 
-def transpose_trumpet(l):
-    trinton.transpose(l=l, m=2)
+def transpose_trumpet(voice):
+    for leaf in abjad.select(score[voice]).leaves(pitched=True):
+        abjad.mutate.transpose(leaf, 2)
 
-def transpose_contrabass(l):
-    trinton.transpose(l=l, m=12)
+def transpose_contrabass(voice):
+    for leaf in abjad.select(score[voice]).leaves(pitched=True):
+        abjad.mutate.transpose(leaf, 12)
 
 def treble_clef(voice, leaf):
     trinton.attach(
