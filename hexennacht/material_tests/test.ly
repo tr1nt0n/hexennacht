@@ -28,132 +28,6 @@
                 {
                     \context Voice = "bass clarinet voice"
                     {
-                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                            {
-                                \new Score
-                                \with
-                                {
-                                    \override SpacingSpanner.spacing-increment = 0.5
-                                    proportionalNotationDuration = ##f
-                                }
-                                <<
-                                    \new RhythmicStaff
-                                    \with
-                                    {
-                                        \remove Time_signature_engraver
-                                        \remove Staff_symbol_engraver
-                                        \override Stem.direction = #up
-                                        \override Stem.length = 5
-                                        \override TupletBracket.bracket-visibility = ##t
-                                        \override TupletBracket.direction = #up
-                                        \override TupletBracket.minimum-length = 4
-                                        \override TupletBracket.padding = 1.25
-                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                        \override TupletNumber.font-size = 0
-                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                        tupletFullLength = ##t
-                                    }
-                                    {
-                                        c'1
-                                    }
-                                >>
-                                \layout
-                                {
-                                    indent = 0
-                                    ragged-right = ##t
-                                }
-                            }
-                        \times 1/1
-                        {
-                            %! COMMENT_MEASURE_NUMBERS
-                            %! abjad.SegmentMaker.comment_measure_numbers()
-                            % [bass clarinet voice measure 1]
-                            \once \override Beam.grow-direction = #left
-                            \clef "treble"
-                            \override Staff.Stem.stemlet-length = 0.75
-                            r32 * 23/16
-                            [
-                            \clef "alto"
-                            bf'''32
-                            \clef "treble"
-                            bqf'''32
-                            \clef "alto"
-                            aqs'''32
-                            \clef "treble"
-                            bf'''32
-                            \clef "bass"
-                            b'''32
-                            bqs'''32
-                            bqf'''32
-                            bf'''32
-                            bqf'''32
-                            aqs'''32
-                            bf'''32
-                            b'''32
-                            \revert Staff.Stem.stemlet-length
-                            r32 * 29/8
-                            ]
-                        }
-                        \revert TupletNumber.text
-                        \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
-                            {
-                                \new Score
-                                \with
-                                {
-                                    \override SpacingSpanner.spacing-increment = 0.5
-                                    proportionalNotationDuration = ##f
-                                }
-                                <<
-                                    \new RhythmicStaff
-                                    \with
-                                    {
-                                        \remove Time_signature_engraver
-                                        \remove Staff_symbol_engraver
-                                        \override Stem.direction = #up
-                                        \override Stem.length = 5
-                                        \override TupletBracket.bracket-visibility = ##t
-                                        \override TupletBracket.direction = #up
-                                        \override TupletBracket.minimum-length = 4
-                                        \override TupletBracket.padding = 1.25
-                                        \override TupletBracket.shorten-pair = #'(-1 . -1.5)
-                                        \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
-                                        \override TupletNumber.font-size = 0
-                                        \override TupletNumber.text = #tuplet-number::calc-fraction-text
-                                        tupletFullLength = ##t
-                                    }
-                                    {
-                                        c'1
-                                    }
-                                >>
-                                \layout
-                                {
-                                    indent = 0
-                                    ragged-right = ##t
-                                }
-                            }
-                        \times 1/1
-                        {
-                            \once \override Beam.grow-direction = #right
-                            \override Staff.Stem.stemlet-length = 0.75
-                            r32 * 123/32
-                            [
-                            bqs'''32
-                            bqf'''32
-                            bf'''32
-                            bqf'''32
-                            aqs'''32
-                            bf'''32
-                            b'''32
-                            bqs'''32
-                            bqf'''32
-                            bf'''32
-                            bqf'''32
-                            \revert Staff.Stem.stemlet-length
-                            r32 * 49/32
-                            ]
-                        }
-                        \revert TupletNumber.text
                     }
                 }
                 \context Staff = "bassoon staff"
@@ -213,19 +87,25 @@
             }
             \context PianoStaff = "sub group 4"
             <<
+                \context Staff = "marimba staff"
+                {
+                    \context Voice = "marimba voice"
+                    {
+                    }
+                }
                 \context Staff = "percussion 1 staff"
                 {
                     \context Voice = "percussion 1 voice"
                     {
                     }
                 }
-                \context Staff = "percussion 2 staff"
-                {
-                    \context Voice = "percussion 2 voice"
-                    {
-                    }
-                }
             >>
+            \context Staff = "percussion 2 staff"
+            {
+                \context Voice = "percussion 2 voice"
+                {
+                }
+            }
             \context PianoStaff = "sub group 5"
             <<
                 \context Staff = "violin 1 staff"

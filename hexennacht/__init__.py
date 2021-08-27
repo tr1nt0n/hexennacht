@@ -1,7 +1,7 @@
 from .library import (
     score,
     warble,
-    bunched_rhythms,
+    incantation,
     tempo_1,
     tempo_2,
     tempo_3,
@@ -20,12 +20,14 @@ from .library import (
     treble_clef,
     alto_clef,
     bass_clef,
+    handwrite,
+    dance,
 )
 
 __all__ = [
     "score",
     "warble",
-    "bunched_rhythms",
+    "incantation",
     "tempo_1",
     "tempo_2",
     "tempo_3",
@@ -44,4 +46,6 @@ __all__ = [
     "treble_clef",
     "alto_clef",
     "bass_clef",
+    "handwrite",
+    "dance",
 ]
