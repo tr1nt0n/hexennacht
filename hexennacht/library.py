@@ -2,6 +2,7 @@ import abjad
 import trinton
 import evans
 from abjadext import rmakers
+from abjadext import microtones
 
 ritual_pitches = [0, 1, 3, 8, 3, 0, 7, 5, 3, 11, 6, 7, 2, 1, 3, 8, 3, 3, 2, 3, 3, 5, 0, 6]
 
@@ -203,21 +204,21 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
             durations=bunch_1_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         trinton.append_rhythm_selections(
             stack=smooth,
             durations=smooth_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         trinton.append_rhythm_selections(
             stack=bunch_2,
             durations=bunch_2_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
     elif transpose is None:
         trinton.append_rhythm_selections(
@@ -225,21 +226,21 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
             durations=bunch_1_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         trinton.append_rhythm_selections(
             stack=smooth,
             durations=smooth_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         trinton.append_rhythm_selections(
             stack=bunch_2,
             durations=bunch_2_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         handler = evans.PitchHandler(
             pitch_list=pitches,
@@ -254,21 +255,21 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
             durations=bunch_1_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         trinton.append_rhythm_selections(
             stack=smooth,
             durations=smooth_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         trinton.append_rhythm_selections(
             stack=bunch_2,
             durations=bunch_2_durations,
             voice_name=voice,
             score=score,
-            )
+        )
 
         transposed_ritual = trinton.transpose(pitches, transpose)
 
@@ -295,6 +296,7 @@ def handwrite(score, voice, durations, pitch_list):
             pitch_list=pitch_list,
             forget=False
         )
+
         handler(abjad.select(score[voice]).leaves(pitched=True))
 
 def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
@@ -314,7 +316,7 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
     pitches = trinton.rotated_sequence(
         pitch_list=dance_pitches,
         start_index=pitch_index,
-        )
+    )
 
     stack = rmakers.stack(
         rmakers.tuplet(rhythms),
@@ -386,39 +388,39 @@ def double_octave_down(sel):
     for pitch in sel:
         abjad.mutate.transpose(pitch, -24)
 
-def transpose_bass_clarinet(voice):
+def transpose_bass_clarinet(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 14)
 
-def transpose_french_horn(voice):
+def transpose_french_horn(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 7)
 
-def transpose_trumpet(voice):
+def transpose_trumpet(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 2)
 
-def transpose_contrabass(voice):
+def transpose_contrabass(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 12)
 
-def treble_clef(voice, leaves):
+def treble_clef(score_and_voice, leaves):
     trinton.attach(
-        voice=voice,
+        voice=score_and_voice,
         leaves=leaves,
         attachment=abjad.Clef("treble")
     )
 
-def alto_clef(voice, leaves):
+def alto_clef(score_and_voice, leaves):
     trinton.attach(
-        voice=voice,
+        voice=score_and_voice,
         leaves=leaves,
         attachment=abjad.Clef("alto")
     )
 
-def bass_clef(voice, leaves):
+def bass_clef(score_and_voice, leaves):
     trinton.attach(
-        voice=voice,
+        voice=score_and_voice,
         leaves=leaves,
         attachment=abjad.Clef("bass")
     )

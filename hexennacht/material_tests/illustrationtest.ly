@@ -143,6 +143,51 @@
                 {
                     \context Voice = "cello voice"
                     {
+                        \times 2/3
+                        {
+                            %! COMMENT_MEASURE_NUMBERS
+                            %! abjad.SegmentMaker.comment_measure_numbers()
+                            % [cello voice measure 1]
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
+                            bf'16
+                            ^ \markup \center-align { -31 }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            g'4
+                            ^ \markup \center-align { +2 }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            g'16
+                            ^ \markup \center-align { +2 }
+                        }
+                        \times 4/7
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \abjad-natural  }
+                            g'4
+                            ^ \markup \center-align { +2 }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
+                            a'16
+                            ^ \markup \center-align { A♭+41 }
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
+                            a'8
+                            ^ \markup \center-align { A♭+41 }
+                        }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
+                        a'8
+                        ^ \markup \center-align { A♭+41 }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \one-tridecimal-third-tone-down  }
+                        a'16
+                        ^ \markup \center-align { A♭+41 }
+                        \tweak Accidental.stencil #ly:text-interface::print
+                        \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                        e''16
+                        ^ \markup \center-align { -14 }
                     }
                 }
                 \context Staff = "contrabass staff"
