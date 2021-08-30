@@ -31,8 +31,7 @@ from .library import (
     drone,
     pitch_flute_flourishes,
     pitch_flute_pf,
-    flute_flourishes,
-    flute_pf,
+    flute_solo,
     append_rests,
 )
 
@@ -69,7 +68,6 @@ __all__ = [
     "drone",
     "pitch_flute_flourishes",
     "pitch_flute_pf",
-    "flute_flourishes",
-    "flute_pf",
+    "flute_solo",
     "append_rests",
 ]

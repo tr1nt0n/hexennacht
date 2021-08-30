@@ -721,7 +721,7 @@ def drone(score, voice, talea, pitch_index, durations):
 
         hexennacht.transpose_contrabass(score=score, voice=voice)
 
-def flute_flourishes(score, voice, durations, tuplet_index):
+def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_index, talea_durations):
     tuplets = trinton.rotated_sequence(
         pitch_list=[
             (1, 1, 1, 1, 1, 1),
@@ -734,7 +734,12 @@ def flute_flourishes(score, voice, durations, tuplet_index):
         start_index=tuplet_index,
     )
 
-    stack = rmakers.stack(
+    taleas = trinton.rotated_sequence(
+        pitch_list=[3, 1, 5, 1, 3, 1, 7, 1, 5, 1],
+        start_index=talea_index,
+    )
+
+    stack1 = rmakers.stack(
         rmakers.tuplet(tuplets),
         rmakers.trivialize(abjad.select().tuplets()),
         rmakers.extract_trivial(abjad.select().tuplets()),
@@ -742,20 +747,7 @@ def flute_flourishes(score, voice, durations, tuplet_index):
         rmakers.rewrite_sustained(abjad.select().tuplets()),
     )
 
-    trinton.append_rhythm_selections(
-        score=score,
-        voice_name=voice,
-        durations=durations,
-        stack=stack,
-    )
-
-def flute_pf(score, voice, durations, talea, talea_index):
-    taleas = trinton.rotated_sequence(
-        pitch_list=[3, 1, 5, 1, 3, 1, 7, 1, 5, 1],
-        start_index=talea_index,
-    )
-
-    stack = rmakers.stack(
+    stack2 = rmakers.stack(
         rmakers.talea(taleas, talea),
         rmakers.trivialize(abjad.select().tuplets()),
         rmakers.extract_trivial(abjad.select().tuplets()),
@@ -763,12 +755,36 @@ def flute_pf(score, voice, durations, talea, talea_index):
         rmakers.rewrite_sustained(abjad.select().tuplets()),
     )
 
-    trinton.append_rhythm_selections(
-        score=score,
-        voice_name=voice,
-        durations=durations,
-        stack=stack
-    )
+    if tuplet_index == None:
+        trinton.append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=stack2,
+            durations=talea_durations,
+        )
+
+    elif talea_index == None:
+        trinton.append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=stack1,
+            durations=flourish_durations,
+        )
+
+    else:
+        trinton.append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=stack1,
+            durations=flourish_durations,
+        )
+
+        trinton.append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=stack2,
+            durations=talea_durations,
+        )
 
 
 tempo_1 = abjad.MetronomeMark((1, 4), 47)
