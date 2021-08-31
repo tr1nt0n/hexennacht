@@ -19,67 +19,69 @@
                         %! COMMENT_MEASURE_NUMBERS
                         %! abjad.SegmentMaker.comment_measure_numbers()
                         % [flute voice measure 1]
-                        r4
-                        r16
-                        \times 4/5
-                        {
-                            c'16.
-                            c'32.
-                            c'32.
-                            c'32.
-                        }
-                        c'8.
-                        c'16
-                        c'4
-                        ~
-                        c'16
-                        c'16
-                        c'8.
-                        c'16
-                        c'8
-                        \times 2/3
-                        {
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                        }
-                        \times 4/7
-                        {
-                            c'8
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                            c'16
-                        }
-                        c'4
-                        ~
-                        c'16
-                        c'16
-                        c'8.
-                        c'16
-                        c'4.
+                        <aqs' a'' b'' f'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four six)) (lh . (b)) (rh . (cis)))}
+                        <f'' dqf'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}
+                        <bqs' cs'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}
+                        <fs' f'' g'' cqs'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three five six)) (lh . (b)) (rh . (c cis)))}
+                        <bf' aqs'' f'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}
                     }
                 }
                 \context Staff = "oboe staff"
                 {
                     \context Voice = "oboe voice"
                     {
+                        %! COMMENT_MEASURE_NUMBERS
+                        %! abjad.SegmentMaker.comment_measure_numbers()
+                        % [oboe voice measure 1]
+                        gqs''4
+                        b''4
+                        f''4
+                        cqs''4
+                        c''4
                     }
                 }
                 \context Staff = "bass clarinet staff"
                 {
                     \context Voice = "bass clarinet voice"
                     {
+                        %! COMMENT_MEASURE_NUMBERS
+                        %! abjad.SegmentMaker.comment_measure_numbers()
+                        % [bass clarinet voice measure 1]
+                        <e' cs'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three four five)) (lh . (thumb)) (rh . ()))}
+                        <gqs' f'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}
+                        <fs' bqf''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three four five six)) (lh . ()) (rh . (ees)))}
+                        <fqs' aqf'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five six)) (lh . (thumb)) (rh . (three four e)))}
+                        <af' eqf'''>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}
                     }
                 }
                 \context Staff = "bassoon staff"
                 {
                     \context Voice = "bassoon voice"
                     {
+                        %! COMMENT_MEASURE_NUMBERS
+                        %! abjad.SegmentMaker.comment_measure_numbers()
+                        % [bassoon voice measure 1]
+                        \clef "bass"
+                        <c d e>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (cis thumb-e fis)))}
+                        <cqs cqs'>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}
+                        <d eqf fqs>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}
+                        <cqs fs af>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}
+                        <cqs, fs, c gqs>4
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}
                     }
                 }
             >>

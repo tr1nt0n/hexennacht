@@ -33,6 +33,11 @@ from .library import (
     pitch_flute_pf,
     flute_solo,
     append_rests,
+    with_sharps,
+    clarinet_multiphonics,
+    bassoon_multiphonics,
+    flute_multiphonics,
+    oboe_harmonies,
 )
 
 __all__ = [
@@ -70,4 +75,9 @@ __all__ = [
     "pitch_flute_pf",
     "flute_solo",
     "append_rests",
+    "with_sharps",
+    "clarinet_multiphonics",
+    "bassoon_multiphonics",
+    "flute_multiphonics",
+    "oboe_harmonies"
 ]

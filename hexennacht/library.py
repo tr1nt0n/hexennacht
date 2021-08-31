@@ -4,6 +4,8 @@ import evans
 from abjadext import rmakers
 from abjadext import microtones
 
+# pitch collections and functions
+
 ritual_pitches = [0, 1, 3, 8, 3, 0, 7, 5, 3, 11, 6, 7, 2, 1, 3, 8, 3, 3, 2, 3, 3, 5, 0, 6]
 
 dance_pitches = [4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]
@@ -44,6 +46,439 @@ def pitch_flute_pf(score, voice, leaves):
         sel = abjad.select(score[voice]).leaf(leaf)
         handler(sel)
 
+def flute_multiphonics(score, voice, leaves, multiphonic, markup):
+    if multiphonic == 1:
+        handler = evans.PitchHandler(
+            pitch_list=[[9.5, 21, 23, 29]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four six)) (lh . (b)) (rh . (cis)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 2:
+        handler = evans.PitchHandler(
+            pitch_list=[[17, 25.5]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 3:
+        handler = evans.PitchHandler(
+            pitch_list=[[11.5, 25]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 4:
+        handler = evans.PitchHandler(
+            pitch_list=[[6, 17, 19, 24.5]],
+            forget=False
+        )
+
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three five six)) (lh . (b)) (rh . (c cis)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    else:
+        handler = evans.PitchHandler(
+            pitch_list=[[10, 21.5, 29]],
+            forget=False
+        )
+
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+def oboe_harmonies(score, voice, leaves, flute_multiphonic):
+    if flute_multiphonic == 1:
+        handler = evans.PitchHandler(
+            pitch_list=[19.5],
+            forget=False
+        )
+        for leaf in leaves:
+            sel = abjad.select(score[voice].leaf(leaf))
+            handler(leaf)
+
+    elif flute_multiphonic == 2:
+        handler = evans.PitchHandler(
+            pitch_list=[23],
+            forget=False
+        )
+        for leaf in leaves:
+            sel = abjad.select(score[voice].leaf(leaf))
+            handler(leaf)
+
+    elif flute_multiphonic == 3:
+        handler = evans.PitchHandler(
+            pitch_list=[17],
+            forget=False
+        )
+        for leaf in leaves:
+            sel = abjad.select(score[voice].leaf(leaf))
+            handler(leaf)
+
+    elif flute_multiphonic == 4:
+        handler = evans.PitchHandler(
+            pitch_list=[12.5],
+            forget=False
+        )
+        for leaf in leaves:
+            sel = abjad.select(score[voice].leaf(leaf))
+            handler(leaf)
+
+    else:
+        handler = evans.PitchHandler(
+            pitch_list=[12],
+            forget=False
+        )
+        for leaf in leaves:
+            sel = abjad.select(score[voice].leaf(leaf))
+            handler(leaf)
+
+def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
+    if multiphonic == 1:
+        handler = evans.PitchHandler(
+            pitch_list=[[4, 25]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three four five)) (lh . (thumb)) (rh . ()))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 2:
+        handler = evans.PitchHandler(
+            pitch_list=[[7.5, 29]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 3:
+        handler = evans.PitchHandler(
+            pitch_list=[[6, 22.5]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three four five six)) (lh . ()) (rh . (ees)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 4:
+        handler = evans.PitchHandler(
+            pitch_list=[[5.5, 32.5]],
+            forget=False
+        )
+
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five six)) (lh . (thumb)) (rh . (three four e)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    else:
+        handler = evans.PitchHandler(
+            pitch_list=[[8, 27.5]],
+            forget=False
+        )
+
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
+    if multiphonic == 1:
+        handler = evans.PitchHandler(
+            pitch_list=[[-12, -10, -8]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (cis thumb-e fis)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 2:
+        handler = evans.PitchHandler(
+            pitch_list=[[-11.5, 0.5]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 3:
+        handler = evans.PitchHandler(
+            pitch_list=[[-10, -8.5, -6.5]],
+            forget=False
+        )
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    elif multiphonic == 4:
+        handler = evans.PitchHandler(
+            pitch_list=[[-11.5, -6, -4]],
+            forget=False
+        )
+
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+    else:
+        handler = evans.PitchHandler(
+            pitch_list=[[-23.5, -18, -12, -4.5]],
+            forget=False
+        )
+
+        if markup == True:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+                markup = abjad.Markup(
+                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}",
+                    literal=True,
+                    direction=abjad.Up
+                )
+                trinton.attach(
+                    voice=score[voice],
+                    leaves=[leaf],
+                    attachment=markup
+                )
+        else:
+            for leaf in leaves:
+                sel = abjad.select(score[voice]).leaf(leaf)
+                handler(sel)
+
+
+# score
+
 score = trinton.make_score_template(
     [
         abjad.Flute(),
@@ -68,6 +503,8 @@ score = trinton.make_score_template(
     ],
     [4, 1, 3, 2, 1, 2, 1, 5],
 )
+
+# material functions
 
 def warble(score, voice, accel_durations, rit_durations, rit_first):
     accelerando = rmakers.stack(
@@ -786,12 +1223,15 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
             durations=talea_durations,
         )
 
+# tempi
 
 tempo_1 = abjad.MetronomeMark((1, 4), 47)
 tempo_2 = abjad.MetronomeMark((1, 4), 60)
 tempo_3 = abjad.MetronomeMark((1, 4), 69)
 tempo_4 = abjad.MetronomeMark((1, 4), 105)
 tempo_5 = abjad.MetronomeMark((1, 4), 130)
+
+# transposition functions
 
 def octave_up(sel):
     for pitch in sel:
@@ -842,6 +1282,11 @@ def transpose_harp(score, voice):
         else:
             abjad.mutate.transpose(leaf, 0)
 
+def with_sharps(selections):
+    abjad.iterpitches.respell_with_sharps(selections)
+
+# clef attachers
+
 def treble_clef(score_and_voice, leaves):
     trinton.attach(
         voice=score_and_voice,
@@ -862,6 +1307,8 @@ def bass_clef(score_and_voice, leaves):
         leaves=leaves,
         attachment=abjad.Clef("bass")
     )
+
+# rests
 
 def append_rests(score, voice, rests):
     for rest in rests:
