@@ -181,8 +181,8 @@ def oboe_harmonies(score, voice, leaves, flute_multiphonic):
             forget=False
         )
         for leaf in leaves:
-            sel = abjad.select(score[voice].leaf(leaf))
-            handler(leaf)
+            sel = abjad.select(score[voice]).leaf(leaf)
+            handler(sel)
 
     elif flute_multiphonic == 2:
         handler = evans.PitchHandler(
@@ -190,8 +190,8 @@ def oboe_harmonies(score, voice, leaves, flute_multiphonic):
             forget=False
         )
         for leaf in leaves:
-            sel = abjad.select(score[voice].leaf(leaf))
-            handler(leaf)
+            sel = abjad.select(score[voice]).leaf(leaf)
+            handler(sel)
 
     elif flute_multiphonic == 3:
         handler = evans.PitchHandler(
@@ -199,8 +199,8 @@ def oboe_harmonies(score, voice, leaves, flute_multiphonic):
             forget=False
         )
         for leaf in leaves:
-            sel = abjad.select(score[voice].leaf(leaf))
-            handler(leaf)
+            sel = abjad.select(score[voice]).leaf(leaf)
+            handler(sel)
 
     elif flute_multiphonic == 4:
         handler = evans.PitchHandler(
@@ -208,8 +208,8 @@ def oboe_harmonies(score, voice, leaves, flute_multiphonic):
             forget=False
         )
         for leaf in leaves:
-            sel = abjad.select(score[voice].leaf(leaf))
-            handler(leaf)
+            sel = abjad.select(score[voice]).leaf(leaf)
+            handler(sel)
 
     else:
         handler = evans.PitchHandler(
@@ -217,8 +217,8 @@ def oboe_harmonies(score, voice, leaves, flute_multiphonic):
             forget=False
         )
         for leaf in leaves:
-            sel = abjad.select(score[voice].leaf(leaf))
-            handler(leaf)
+            sel = abjad.select(score[voice]).leaf(leaf)
+            handler(sel)
 
 def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
     if multiphonic == 1:
@@ -505,6 +505,33 @@ score = trinton.make_score_template(
 )
 
 # material functions
+
+def woodwind_swells(score, voice, durations, tuplet_index):
+    rhythms = trinton.rotated_sequence(
+        pitch_list=[
+            (1, 1, 1),
+            (3, 1, 1),
+            (1, 4, 1),
+            (4, 1, 2),
+            (2, 1, 1),
+        ],
+        start_index=tuplet_index,
+    )
+
+    stack = rmakers.stack(
+        rmakers.tuplet(rhythms),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+
+    trinton.append_rhythm_selections(
+        score=score,
+        voice_name=voice,
+        durations=durations,
+        stack=stack
+    )
 
 def warble(score, voice, accel_durations, rit_durations, rit_first):
     accelerando = rmakers.stack(
