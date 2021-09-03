@@ -40,6 +40,11 @@ from .library import (
     woodwind_swells,
     drumming,
     violin_solo,
+    pont_tasto,
+    ord_norm,
+    clt,
+    brass_shrieks,
+    marimba_shakes,
 )
 
 __all__ = [
@@ -84,4 +89,9 @@ __all__ = [
     "with_flats",
     "drumming",
     "violin_solo"
+    "pont_tasto",
+    "ord_norm",
+    "clt",
+    "brass_shrieks",
+    "marimba_shakes",
 ]

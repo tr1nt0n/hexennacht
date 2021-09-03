@@ -1303,8 +1303,7 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
 def drumming(score, voice, durations, pitched):
     if voice == "percussion 2 voice":
         stack = rmakers.stack(
-            rmakers.even_division([8], extra_counts=[0, 0, 1]),
-            rmakers.force_diminution(),
+            rmakers.even_division([8], extra_counts=[0, 4, 3, 1]),
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
@@ -1468,6 +1467,225 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
             durations=durations,
         )
 
+def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_index):
+    rhythms = trinton.rotated_sequence(
+        [5, -2, 3, -4, 7, -4, 9, -2, 4, -2],
+        talea_index
+    )
+
+    stack = rmakers.stack(
+        rmakers.talea(rhythms, talea),
+        rmakers.force_rest(
+            lambda _: abjad.select(_).logical_ties().get([-1])
+        ),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+
+    if voice == "trumpet voice":
+        if pitched == True:
+            pitches = trinton.rotated_sequence(
+                [15.5, 21, 13.5, 18.5, 14,],
+                pitch_index,
+            )
+            sel = trinton.make_rhythm_selections(
+                stack=stack,
+                durations=durations,
+            )
+
+            container = abjad.Container(sel)
+
+            handler = evans.PitchHandler(
+                pitch_list=pitches,
+                forget=False
+            )
+            handler(abjad.select(container[:]).leaves(pitched=True))
+
+            trinton.append_rhythm_selections(
+                score=score,
+                voice=voice,
+                selections=container[:],
+            )
+
+        else:
+            trinton.make_and_append_rhythm_selections(
+                score=score,
+                voice_name=voice,
+                stack=stack,
+                durations=durations,
+            )
+
+    elif voice == "horn voice":
+        if pitched == True:
+            pitches = trinton.rotated_sequence(
+                [19, 20, 16, 17, 22],
+                pitch_index,
+            )
+            sel = trinton.make_rhythm_selections(
+                stack=stack,
+                durations=durations,
+            )
+
+            container = abjad.Container(sel)
+
+            handler = evans.PitchHandler(
+                pitch_list=pitches,
+                forget=False
+            )
+            handler(abjad.select(container[:]).leaves(pitched=True))
+
+            trinton.append_rhythm_selections(
+                score=score,
+                voice=voice,
+                selections=container[:],
+            )
+
+        else:
+            trinton.make_and_append_rhythm_selections(
+                score=score,
+                voice_name=voice,
+                stack=stack,
+                durations=durations,
+            )
+
+    elif voice == "tenor trombone voice":
+        if pitched == True:
+            pitches = trinton.rotated_sequence(
+                [29],
+                pitch_index,
+            )
+            sel = trinton.make_rhythm_selections(
+                stack=stack,
+                durations=durations,
+            )
+
+            container = abjad.Container(sel)
+
+            handler = evans.PitchHandler(
+                pitch_list=pitches,
+                forget=False
+            )
+            handler(abjad.select(container[:]).leaves(pitched=True))
+
+            trinton.append_rhythm_selections(
+                score=score,
+                voice=voice,
+                selections=container[:],
+            )
+
+        else:
+            trinton.make_and_append_rhythm_selections(
+                score=score,
+                voice_name=voice,
+                stack=stack,
+                durations=durations,
+            )
+
+    elif voice == "tuba voice":
+        if pitched == True:
+            pitches = trinton.rotated_sequence(
+                [-32],
+                pitch_index,
+            )
+            sel = trinton.make_rhythm_selections(
+                stack=stack,
+                durations=durations,
+            )
+
+            container = abjad.Container(sel)
+
+            handler = evans.PitchHandler(
+                pitch_list=pitches,
+                forget=False
+            )
+            handler(abjad.select(container[:]).leaves(pitched=True))
+
+            trinton.append_rhythm_selections(
+                score=score,
+                voice=voice,
+                selections=container[:],
+            )
+
+        else:
+            trinton.make_and_append_rhythm_selections(
+                score=score,
+                voice_name=voice,
+                stack=stack,
+                durations=durations,
+            )
+
+def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, high):
+    pitches = trinton.rotated_sequence(
+        pitch_list=trinton.countList(
+            hexennacht.ritual_pitches,
+            hexennacht.dance_pitches
+        ),
+        start_index=pitch_index,
+    )
+
+    stack = rmakers.stack(
+        rmakers.even_division([note_value]),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+
+    if pitched == True:
+        if high == True:
+            hi = trinton.transpose(pitches, 24)
+
+            sel = trinton.make_rhythm_selections(
+                stack=stack,
+                durations=durations,
+            )
+
+            container = abjad.Container(sel)
+
+            handler = evans.PitchHandler(
+                pitch_list=hi,
+                forget=False
+            )
+
+            handler(abjad.select(container[:]).leaves(pitched=True))
+
+            trinton.append_rhythm_selections(
+                score=score,
+                voice=voice,
+                selections=container[:]
+            )
+
+        else:
+            low = trinton.transpose(pitches, -19)
+
+            sel = trinton.make_rhythm_selections(
+                stack=stack,
+                durations=durations,
+            )
+
+            container = abjad.Container(sel)
+
+            handler = evans.PitchHandler(
+                pitch_list=low,
+                forget=False
+            )
+
+            handler(abjad.select(container[:]).leaves(pitched=True))
+
+            trinton.append_rhythm_selections(
+                score=score,
+                voice=voice,
+                selections=container[:]
+            )
+
+    else:
+        trinton.make_and_append_rhythm_selections(
+            stack=stack,
+            score=score,
+            voice_name=voice,
+            durations=durations,
+        )
+
 # tempi
 
 tempo_1 = abjad.MetronomeMark((1, 4), 47)
@@ -1555,3 +1773,63 @@ def bass_clef(score_and_voice, leaves):
         leaves=leaves,
         attachment=abjad.Clef("bass")
     )
+
+# text markups
+
+def pont_tasto(score, voice, sul, leaves):
+    if sul == s:
+        trinton.write_markup(
+            voice=score[voice],
+            leaf=leaves,
+            string=r"SP",
+            down=False,
+        )
+
+    elif sul == ms:
+        trinton.write_markup(
+            voice=score[voice],
+            leaf=leaves,
+            string=r"MSP",
+            down=False,
+        )
+
+    elif sul == st:
+        trinton.write_markup(
+            voice=score[voice],
+            leaf=leaves,
+            string=r"ST",
+            down=False,
+        )
+
+    elif sul == mst:
+        trinton.write_markup(
+            voice=score[voice],
+            leaf=leaves,
+            string=r"MST",
+            down=False,
+        )
+
+def clt(score, voice, leaves):
+    trinton.write_markup(
+        voice=score[voice],
+        leaf=leaves,
+        string=r"CLT",
+        down=False,
+    )
+
+def ord_norm(score, voice, leaves, cancel):
+    if cancel == ord:
+        trinton.write_markup(
+            voice=score[voice],
+            leaf=leaves,
+            string=r"Ord.",
+            down=False,
+        )
+
+    else:
+        trinton.write_markup(
+            voice=score[voice],
+            leaf=leaves,
+            string=r"Norm.",
+            down=False,
+        )
