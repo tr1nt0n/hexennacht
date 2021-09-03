@@ -1354,7 +1354,7 @@ def drumming(score, voice, durations, pitched):
 
     elif voice == "viola voice":
         stack = rmakers.stack(
-            rmakers.tuplet([(2, 2, 2, 1), (1, 2, 2, 2)]),
+            rmakers.tuplet([(2, 1), (1, 2)]),
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
@@ -1376,7 +1376,7 @@ def drumming(score, voice, durations, pitched):
             trinton.append_rhythm_selections(
                 score=score,
                 voice=voice,
-                selections=sel,
+                selections=container[:],
             )
 
         else:
@@ -1389,7 +1389,7 @@ def drumming(score, voice, durations, pitched):
 
     elif voice == "violin 2 voice":
         stack = rmakers.stack(
-            rmakers.tuplet([(2, 1), (1, 2)]),
+            rmakers.tuplet([(2, 2, 2, 1), (1, 2, 2, 2)]),
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
@@ -1411,7 +1411,7 @@ def drumming(score, voice, durations, pitched):
             trinton.append_rhythm_selections(
                 score=score,
                 voice=voice,
-                selections=sel,
+                selections=container[:],
             )
 
         else:
@@ -1422,44 +1422,51 @@ def drumming(score, voice, durations, pitched):
                 durations=durations,
             )
 
-    elif voice == "violin 1 voice":
-        stack = rmakers.stack(
-            rmakers.tuplet([(2, 2, 1), (1, 2, 2)]),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
+def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
+    rhythms = trinton.rotated_sequence(
+        [(2, 1), (3, 1), (1, 1, 1), (4, 1), (5, 1), (5, 1), (1, 1, 1, 1, 1), (3, 4)],
+        tuplet_index,
+    )
+    pitches = trinton.rotated_sequence(
+        hexennacht.violin2_ghost_pitches,
+        pitch_index,
+    )
+
+    stack = rmakers.stack(
+        rmakers.tuplet(rhythms),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
+    )
+
+    if pitched == True:
+        sel = trinton.make_rhythm_selections(
+            stack=stack,
+            durations=durations,
         )
 
-        if pitched == True:
-            sel = trinton.make_rhythm_selections(
-                stack=stack,
-                durations=durations,
-            )
-            container = abjad.Container(sel)
+        container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=[-5],
-                forget=False,
-            )
-            handler(container[:])
+        handler = evans.PitchHandler(
+            pitch_list=pitches,
+            forget=False,
+        )
 
-            trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=sel,
-            )
+        handler(abjad.select(container[:]).leaves())
 
-        else:
-            trinton.make_and_append_rhythm_selections(
-                score=score,
-                stack=stack,
-                voice_name=voice,
-                durations=durations,
-            )
+        trinton.append_rhythm_selections(
+            score=score,
+            voice=voice,
+            selections=container[:],
+        )
 
-
-
-
+    else:
+        trinton.make_and_append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=stack,
+            durations=durations,
+        )
 
 # tempi
 

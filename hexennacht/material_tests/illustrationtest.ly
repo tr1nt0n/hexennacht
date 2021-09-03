@@ -121,37 +121,29 @@
                     %! abjad.SegmentMaker.comment_measure_numbers()
                     % [percussion 2 voice measure 1]
                     c'8
-                    - \accent
                     c'8
                     c'8
-                    - \accent
                     c'8
                     \times 2/3
                     {
                         c'8
-                        - \accent
                         c'8
                         c'8
                     }
                     c'8
-                    - \accent
                     c'8
                     c'8
                     c'8
-                    - \accent
                     \times 2/3
                     {
                         c'8
                         c'8
-                        - \accent
                         c'8
                     }
                     c'8
                     c'8
-                    - \accent
                     c'8
                     c'8
-                    - \accent
                 }
             }
             \context PianoStaff = "sub group 5"
@@ -160,69 +152,39 @@
                 {
                     \context Voice = "violin 1 voice"
                     {
-                        \times 4/5
+                        \times 2/3
                         {
                             %! COMMENT_MEASURE_NUMBERS
                             %! abjad.SegmentMaker.comment_measure_numbers()
                             % [violin 1 voice measure 1]
-                            g8
-                            - \accent
-                            g8
-                            g16
-                            - \accent
+                            cqs''2
+                            ef''4
+                        }
+                        fqs''8.
+                        fs''16
+                        \times 2/3
+                        {
+                            cqs''8
+                            ef''8
+                            dqs''8
+                        }
+                        \times 4/5
+                        {
+                            f''4
+                            gqf''16
+                        }
+                        \times 4/6
+                        {
+                            fs''8
                             ~
+                            fs''32
+                            gqs''32
                         }
-                        \times 4/5
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 5/9
                         {
-                            g16
-                            g8
-                            g8
-                            - \accent
-                        }
-                        \times 4/5
-                        {
-                            g8
-                            g8
-                            g16
-                            - \accent
-                            ~
-                        }
-                        \times 4/5
-                        {
-                            g16
-                            g8
-                            g8
-                        }
-                        \times 4/5
-                        {
-                            g8
-                            - \accent
-                            g8
-                            g16
-                            - \accent
-                            ~
-                        }
-                        \times 4/5
-                        {
-                            g16
-                            g8
-                            g8
-                        }
-                        \times 4/5
-                        {
-                            g8
-                            - \accent
-                            g8
-                            g16
-                            - \accent
-                            ~
-                        }
-                        \times 4/5
-                        {
-                            g16
-                            g8
-                            g8
-                            - \accent
+                            bf''2...
+                            bqf''8.
                         }
                     }
                 }
@@ -230,57 +192,64 @@
                 {
                     \context Voice = "violin 2 voice"
                     {
-                        \times 2/3
+                        \times 4/7
                         {
                             %! COMMENT_MEASURE_NUMBERS
                             %! abjad.SegmentMaker.comment_measure_numbers()
                             % [violin 2 voice measure 1]
-                            g4
-                            - \accent
                             g8
-                            ~
+                            g8
+                            g8
+                            g16
                         }
-                        \times 2/3
+                        \times 4/7
+                        {
+                            g16
+                            g8
+                            g8
+                            g8
+                        }
+                        \times 4/7
                         {
                             g8
-                            g4
-                            - \accent
-                        }
-                        \times 2/3
-                        {
-                            g4
                             g8
-                            - \accent
-                            ~
-                        }
-                        \times 2/3
-                        {
                             g8
-                            g4
+                            g16
                         }
-                        \times 2/3
+                        \times 4/7
                         {
-                            g4
+                            g16
                             g8
-                            - \accent
-                            ~
+                            g8
+                            g8
                         }
-                        \times 2/3
+                        \times 4/7
                         {
                             g8
-                            g4
-                        }
-                        \times 2/3
-                        {
-                            g4
                             g8
-                            - \accent
-                            ~
+                            g8
+                            g16
                         }
-                        \times 2/3
+                        \times 4/7
+                        {
+                            g16
+                            g8
+                            g8
+                            g8
+                        }
+                        \times 4/7
                         {
                             g8
-                            g4
+                            g8
+                            g8
+                            g16
+                        }
+                        \times 4/7
+                        {
+                            g16
+                            g8
+                            g8
+                            g8
                         }
                     }
                 }
@@ -288,81 +257,49 @@
                 {
                     \context Voice = "viola voice"
                     {
-                        \times 4/7
+                        \times 2/3
                         {
                             %! COMMENT_MEASURE_NUMBERS
                             %! abjad.SegmentMaker.comment_measure_numbers()
                             % [viola voice measure 1]
                             \clef "alto"
-                            c8
-                            - \accent
-                            c8
-                            c8
-                            - \accent
-                            c16
-                            ~
-                        }
-                        \times 4/7
-                        {
-                            c16
-                            c8
-                            - \accent
-                            c8
+                            c4
                             c8
                         }
-                        \times 4/7
+                        \times 2/3
                         {
                             c8
-                            - \accent
-                            c8
-                            c8
-                            c16
-                            - \accent
-                            ~
+                            c4
                         }
-                        \times 4/7
+                        \times 2/3
                         {
-                            c16
-                            c8
-                            c8
-                            - \accent
+                            c4
                             c8
                         }
-                        \times 4/7
+                        \times 2/3
                         {
                             c8
-                            c8
-                            - \accent
-                            c8
-                            c16
-                            - \accent
-                            ~
+                            c4
                         }
-                        \times 4/7
+                        \times 2/3
                         {
-                            c16
-                            c8
-                            c8
-                            - \accent
+                            c4
                             c8
                         }
-                        \times 4/7
+                        \times 2/3
                         {
                             c8
-                            c8
-                            - \accent
-                            c8
-                            c16
-                            ~
+                            c4
                         }
-                        \times 4/7
+                        \times 2/3
                         {
-                            c16
+                            c4
                             c8
-                            - \accent
+                        }
+                        \times 2/3
+                        {
                             c8
-                            c8
-                            - \accent
+                            c4
                         }
                     }
                 }
@@ -375,28 +312,21 @@
                         % [cello voice measure 1]
                         \clef "bass"
                         c,8
-                        - \accent
-                        c,8
-                        c,8
-                        - \accent
-                        c,8
-                        c,8
-                        - \accent
                         c,8
                         c,8
                         c,8
-                        - \accent
                         c,8
                         c,8
                         c,8
-                        - \accent
-                        c,8
-                        c,8
-                        - \accent
                         c,8
                         c,8
                         c,8
-                        - \accent
+                        c,8
+                        c,8
+                        c,8
+                        c,8
+                        c,8
+                        c,8
                     }
                 }
                 \context Staff = "contrabass staff"

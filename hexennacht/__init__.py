@@ -39,6 +39,7 @@ from .library import (
     oboe_harmonies,
     woodwind_swells,
     drumming,
+    violin_solo,
 )
 
 __all__ = [
@@ -82,4 +83,5 @@ __all__ = [
     "woodwind_swells",
     "with_flats",
     "drumming",
+    "violin_solo"
 ]
