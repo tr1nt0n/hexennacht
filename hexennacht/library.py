@@ -507,7 +507,20 @@ score = trinton.make_score_template(
 
 # material functions
 
-def woodwind_swells(score, voice, durations, tuplet_index):
+def woodwind_swells(score, voice, durations):
+    stack = rmakers.stack(
+        rmakers.NoteRhythmMaker(),
+    )
+
+    trinton.make_and_append_rhythm_selections(
+        score=score,
+        voice_name=voice,
+        stack=stack,
+        durations=durations,
+    )
+
+
+def cymbal_swells(score, voice, durations, tuplet_index):
     rhythms = trinton.rotated_sequence(
         pitch_list=[
             (1, 1, 1),
@@ -531,7 +544,7 @@ def woodwind_swells(score, voice, durations, tuplet_index):
         score=score,
         voice_name=voice,
         durations=durations,
-        stack=stack
+        stack=stack,
     )
 
 def warble(score, voice, accel_durations, rit_durations, rit_first):
@@ -1469,7 +1482,7 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
 
 def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_index):
     rhythms = trinton.rotated_sequence(
-        [5, -2, 3, -4, 7, -4, 9, -2, 4, -2],
+        [5, 3, -2, 7, 9, -4, 4, -2],
         talea_index
     )
 
@@ -1732,15 +1745,19 @@ def transpose_harp(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         if leaf.written_pitch.number == 4:
             abjad.mutate.transpose(leaf, -1)
+            hexennacht.with_flats(leaf)
 
         elif leaf.written_pitch.number == 0:
             abjad.mutate.transpose(leaf, 1)
+            hexennacht.with_sharps(leaf)
 
         elif leaf.written_pitch.number == 5:
             abjad.mutate.transpose(leaf, 1)
+            hexennacht.with_sharps(leaf)
 
         elif leaf.written_pitch.number == 9:
             abjad.mutate.transpose(leaf, -1)
+            hexennacht.with_flats(leaf)
 
         else:
             abjad.mutate.transpose(leaf, 0)

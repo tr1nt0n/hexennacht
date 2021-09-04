@@ -1,7 +1,7 @@
 \version "2.20.0"
 \language english
 #(set-default-paper-size "11x17portrait")
-#(set-global-staff-size 17)
+#(set-global-staff-size 11)
 
 \include "/Users/trintonprater/abjad/docs/source/_stylesheets/ekmelos-ji-accidental-markups.ily"
 

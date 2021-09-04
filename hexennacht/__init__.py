@@ -45,6 +45,7 @@ from .library import (
     clt,
     brass_shrieks,
     marimba_shakes,
+    cymbal_swells,
 )
 
 __all__ = [
@@ -94,4 +95,5 @@ __all__ = [
     "clt",
     "brass_shrieks",
     "marimba_shakes",
+    "cymbal_swells",
 ]
