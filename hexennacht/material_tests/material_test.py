@@ -195,7 +195,7 @@ for voice in [
         rests=[abjad.Rest("r1"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), ]
     )
 
-trinton.rewrite_meter_without_splitting(score)
+# trinton.rewrite_meter_without_splitting(score)
 
 trinton.beam_score_without_splitting(score)
 
@@ -246,7 +246,7 @@ trinton.transparent_accidentals(
     leaves=all,
 )
 
-for voice in ["violin 1 voice", "violin 2 voice", "viola voice" "cello voice",]:
+for voice in ["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",]:
     trinton.attach(
         voice=score[voice],
         leaves=[0],

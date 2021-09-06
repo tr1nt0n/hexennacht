@@ -2,34 +2,16 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
-            %! COMMENT_MEASURE_NUMBERS
-            %! abjad.SegmentMaker.comment_measure_numbers()
-            % [Global Context measure 1]
             \time 4/4
             s1 * 1
-            %! COMMENT_MEASURE_NUMBERS
-            %! abjad.SegmentMaker.comment_measure_numbers()
-            % [Global Context measure 2]
             \time 6/4
             s1 * 3/2
-            %! COMMENT_MEASURE_NUMBERS
-            %! abjad.SegmentMaker.comment_measure_numbers()
-            % [Global Context measure 3]
             \time 6/4
             s1 * 3/2
-            %! COMMENT_MEASURE_NUMBERS
-            %! abjad.SegmentMaker.comment_measure_numbers()
-            % [Global Context measure 4]
             \time 6/4
             s1 * 3/2
-            %! COMMENT_MEASURE_NUMBERS
-            %! abjad.SegmentMaker.comment_measure_numbers()
-            % [Global Context measure 5]
             \time 6/4
             s1 * 3/2
-            %! COMMENT_MEASURE_NUMBERS
-            %! abjad.SegmentMaker.comment_measure_numbers()
-            % [Global Context measure 6]
             \time 6/4
             s1 * 3/2
         }
@@ -41,200 +23,168 @@
                 {
                     \context Voice = "flute voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [flute voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Flute }
                         \set Staff.shortInstrumentName =
                         \markup { fl. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [flute voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [flute voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [flute voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [flute voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [flute voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "oboe staff"
                 {
                     \context Voice = "oboe voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [oboe voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Oboe }
                         \set Staff.shortInstrumentName =
                         \markup { ob. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [oboe voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [oboe voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [oboe voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [oboe voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [oboe voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "bass clarinet staff"
                 {
                     \context Voice = "bass clarinet voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bass clarinet voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Bass Clarinet }
                         \set Staff.shortInstrumentName =
                         \markup { bcl. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bass clarinet voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bass clarinet voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bass clarinet voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bass clarinet voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bass clarinet voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "bassoon staff"
                 {
                     \context Voice = "bassoon voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bassoon voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Bassoon }
                         \set Staff.shortInstrumentName =
                         \markup { bsn. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bassoon voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bassoon voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bassoon voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bassoon voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [bassoon voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
             >>
@@ -242,50 +192,42 @@
             {
                 \context Voice = "horn voice"
                 {
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [horn voice measure 1]
                     \set Staff.instrumentName =
                     \markup { French Horn }
                     \set Staff.shortInstrumentName =
                     \markup { hrn. }
                     r1
                     ^ \markup { 0 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [horn voice measure 2]
-                    r2.
+                    r2
                     ^ \markup { 1 }
-                    r2.
+                    r2
                     ^ \markup { 2 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [horn voice measure 3]
-                    r2.
+                    r2
                     ^ \markup { 3 }
-                    r2.
+                    r2
                     ^ \markup { 4 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [horn voice measure 4]
-                    r2.
+                    r2
                     ^ \markup { 5 }
-                    r2.
+                    r2
                     ^ \markup { 6 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [horn voice measure 5]
-                    r2.
+                    r2
                     ^ \markup { 7 }
-                    r2.
+                    r2
                     ^ \markup { 8 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [horn voice measure 6]
-                    r2.
+                    r2
                     ^ \markup { 9 }
-                    r2.
+                    r2
                     ^ \markup { 10 }
+                    r2
+                    ^ \markup { 11 }
+                    r2
+                    ^ \markup { 12 }
+                    r2
+                    ^ \markup { 13 }
+                    r2
+                    ^ \markup { 14 }
+                    r2
+                    ^ \markup { 15 }
                 }
             }
             \context PianoStaff = "sub group 2"
@@ -294,150 +236,126 @@
                 {
                     \context Voice = "trumpet voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [trumpet voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Trumpet in C }
                         \set Staff.shortInstrumentName =
                         \markup { tpt. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [trumpet voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [trumpet voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [trumpet voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [trumpet voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [trumpet voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "tenor trombone staff"
                 {
                     \context Voice = "tenor trombone voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tenor trombone voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Tenor Trombone }
                         \set Staff.shortInstrumentName =
                         \markup { tbn. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tenor trombone voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tenor trombone voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tenor trombone voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tenor trombone voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tenor trombone voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "tuba staff"
                 {
                     \context Voice = "tuba voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tuba voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Tuba }
                         \set Staff.shortInstrumentName =
                         \markup { tb. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tuba voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tuba voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tuba voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tuba voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [tuba voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
             >>
@@ -447,96 +365,80 @@
                 {
                     \context Voice = "piano 1 voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 1 voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Piano }
                         \set Staff.shortInstrumentName =
                         \markup { pno. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 1 voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 1 voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 1 voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 1 voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 1 voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "piano 2 staff"
                 {
                     \context Voice = "piano 2 voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 1]
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [piano 2 voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
             >>
@@ -544,50 +446,42 @@
             {
                 \context Voice = "harp voice"
                 {
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [harp voice measure 1]
                     \set Staff.instrumentName =
                     \markup { Harp }
                     \set Staff.shortInstrumentName =
                     \markup { harp }
                     r1
                     ^ \markup { 0 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [harp voice measure 2]
-                    r2.
+                    r2
                     ^ \markup { 1 }
-                    r2.
+                    r2
                     ^ \markup { 2 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [harp voice measure 3]
-                    r2.
+                    r2
                     ^ \markup { 3 }
-                    r2.
+                    r2
                     ^ \markup { 4 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [harp voice measure 4]
-                    r2.
+                    r2
                     ^ \markup { 5 }
-                    r2.
+                    r2
                     ^ \markup { 6 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [harp voice measure 5]
-                    r2.
+                    r2
                     ^ \markup { 7 }
-                    r2.
+                    r2
                     ^ \markup { 8 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [harp voice measure 6]
-                    r2.
+                    r2
                     ^ \markup { 9 }
-                    r2.
+                    r2
                     ^ \markup { 10 }
+                    r2
+                    ^ \markup { 11 }
+                    r2
+                    ^ \markup { 12 }
+                    r2
+                    ^ \markup { 13 }
+                    r2
+                    ^ \markup { 14 }
+                    r2
+                    ^ \markup { 15 }
                 }
             }
             \context PianoStaff = "sub group 4"
@@ -596,100 +490,84 @@
                 {
                     \context Voice = "marimba voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [marimba voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Marimba }
                         \set Staff.shortInstrumentName =
                         \markup { mar. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [marimba voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [marimba voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [marimba voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [marimba voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [marimba voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
                 \context Staff = "percussion 1 staff"
                 {
                     \context Voice = "percussion 1 voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 1 voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Ratchets }
                         \set Staff.shortInstrumentName =
                         \markup { ratch. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 1 voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 1 voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 1 voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 1 voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 1 voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
             >>
@@ -700,28 +578,21 @@
                     \times 4/7
                     {
                         \staff-line-count 1
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 2 voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Percussion 2 }
                         \set Staff.shortInstrumentName =
                         \markup { perc. 2 }
                         \clef "percussion"
-                        \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.transparent ##t
                         c'8
                         ^ \markup { 0 }
-                        [
                         \boxed-markup "Bass Drum" 1
                         \tweak Accidental.transparent ##t
                         c'32
                         ^ \markup { 1 }
-                        \revert Staff.Stem.stemlet-length
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 2 }
-                        ]
                     }
                     \tweak Accidental.transparent ##t
                     c'8.
@@ -741,26 +612,19 @@
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 6/7
                     {
-                        \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.transparent ##t
                         c'8.
                         ^ \markup { 7 }
-                        [
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 8 }
                         \tweak Accidental.transparent ##t
                         c'8
                         ^ \markup { 9 }
-                        \revert Staff.Stem.stemlet-length
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 10 }
-                        ]
                     }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [percussion 2 voice measure 2]
                     \tweak Accidental.transparent ##t
                     c'4
                     ^ \markup { 11 }
@@ -835,9 +699,6 @@
                         }
                     \times 1/1
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 2 voice measure 3]
                         \once \override Beam.grow-direction = #right
                         r32 * 117/32
                         ^ \markup { 20 }
@@ -920,22 +781,18 @@
                     \revert TupletNumber.text
                     \times 4/5
                     {
-                        \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 32 }
-                        [
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 33 }
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 34 }
-                        \revert Staff.Stem.stemlet-length
                         \tweak Accidental.transparent ##t
                         c'8
                         ^ \markup { 35 }
-                        ]
                     }
                     \tweak Accidental.transparent ##t
                     c'8
@@ -960,9 +817,6 @@
                     c'16
                     ^ \markup { 41 }
                     ]
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [percussion 2 voice measure 4]
                     r4
                     ^ \markup { 42 }
                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
@@ -1101,14 +955,9 @@
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 20/21
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [percussion 2 voice measure 5]
-                        \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.transparent ##t
                         c'8.
                         ^ \markup { 60 }
-                        [
                         \tweak Accidental.transparent ##t
                         c'16.
                         ^ \markup { 61 }
@@ -1121,11 +970,9 @@
                         \tweak Accidental.transparent ##t
                         c'16.
                         ^ \markup { 64 }
-                        \revert Staff.Stem.stemlet-length
                         \tweak Accidental.transparent ##t
                         c'16.
                         ^ \markup { 65 }
-                        ]
                     }
                     \tweak Accidental.transparent ##t
                     c'4
@@ -1154,19 +1001,14 @@
                     \tweak Accidental.transparent ##t
                     c'4
                     ^ \markup { 71 }
-                    %! COMMENT_MEASURE_NUMBERS
-                    %! abjad.SegmentMaker.comment_measure_numbers()
-                    % [percussion 2 voice measure 6]
                     r8
                     ^ \markup { 72 }
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 6/8
                     {
-                        \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 73 }
-                        [
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 74 }
@@ -1176,11 +1018,9 @@
                         \tweak Accidental.transparent ##t
                         c'8.
                         ^ \markup { 76 }
-                        \revert Staff.Stem.stemlet-length
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 77 }
-                        ]
                     }
                     \tweak Accidental.transparent ##t
                     c'4
@@ -1201,11 +1041,9 @@
                     ]
                     \times 2/3
                     {
-                        \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 82 }
-                        [
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 83 }
@@ -1215,11 +1053,9 @@
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 85 }
-                        \revert Staff.Stem.stemlet-length
                         \tweak Accidental.transparent ##t
                         c'16
                         ^ \markup { 86 }
-                        ]
                     }
                 }
             }
@@ -1229,18 +1065,13 @@
                 {
                     \context Voice = "violin 1 voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 1 voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Violin 1 }
                         \set Staff.shortInstrumentName =
                         \markup { vln. 1 }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 1 voice measure 2]
+                        \boxed-markup "CLT, Molto Flaut." 1
                         c''4
                         ^ \markup { 1 }
                         cqs''8
@@ -1276,9 +1107,6 @@
                         ^ \markup { 12 }
                         aqs''8
                         ^ \markup { 13 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 1 voice measure 4]
                         \override Staff.Stem.stemlet-length = 0.75
                         g''8
                         ^ \markup { 14 }
@@ -1294,35 +1122,31 @@
                         ~
                         gqf''4.
                         ^ \markup { 18 }
-                        r2
+                        r4
                         ^ \markup { 19 }
-                        r2.
+                        r2
                         ^ \markup { 20 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 1 voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 21 }
-                        r2.
+                        r2
                         ^ \markup { 22 }
+                        r2
+                        ^ \markup { 23 }
+                        r2
+                        ^ \markup { 24 }
                     }
                 }
                 \context Staff = "violin 2 staff"
                 {
                     \context Voice = "violin 2 voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 2 voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Violin 2 }
                         \set Staff.shortInstrumentName =
                         \markup { vln. 2 }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 2 voice measure 2]
+                        \boxed-markup "CLT, Molto Flaut." 1
                         cqs'4
                         ^ \markup { 1 }
                         ef'4
@@ -1341,9 +1165,6 @@
                         ^ \markup { 6 }
                         dqs'4
                         ^ \markup { 7 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 2 voice measure 3]
                         \override Staff.Stem.stemlet-length = 0.75
                         f'8
                         ^ \markup { 8 }
@@ -1374,33 +1195,28 @@
                         ]
                         f'4
                         ^ \markup { 16 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 2 voice measure 4]
                         eqf'4
                         ^ \markup { 17 }
                         cqs'1.
                         ^ \markup { 18 }
-                        r2
+                        r4
                         ^ \markup { 19 }
-                        r2.
+                        r2
                         ^ \markup { 20 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [violin 2 voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 21 }
-                        r2.
+                        r2
                         ^ \markup { 22 }
+                        r2
+                        ^ \markup { 23 }
+                        r2
+                        ^ \markup { 24 }
                     }
                 }
                 \context Staff = "viola staff"
                 {
                     \context Voice = "viola voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [viola voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Viola }
                         \set Staff.shortInstrumentName =
@@ -1408,9 +1224,7 @@
                         \clef "alto"
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [viola voice measure 2]
+                        \boxed-markup "CLT, Molto Flaut." 1
                         ef4
                         ^ \markup { 1 }
                         \override Staff.Stem.stemlet-length = 0.75
@@ -1447,9 +1261,6 @@
                         eqs8
                         ^ \markup { 10 }
                         ]
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [viola voice measure 3]
                         \override Staff.Stem.stemlet-length = 0.75
                         b8
                         ^ \markup { 11 }
@@ -1486,9 +1297,6 @@
                         ef8
                         ^ \markup { 20 }
                         ]
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [viola voice measure 4]
                         \override Staff.Stem.stemlet-length = 0.75
                         eqf8
                         ^ \markup { 21 }
@@ -1508,31 +1316,26 @@
                         eqf1
                         ^ \markup { 25 }
                         ~
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [viola voice measure 5]
                         eqf4
                         ^ \markup { 26 }
-                        r2
+                        r4
                         ^ \markup { 27 }
-                        r2.
+                        r2
                         ^ \markup { 28 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [viola voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 29 }
-                        r2.
+                        r2
                         ^ \markup { 30 }
+                        r2
+                        ^ \markup { 31 }
+                        r2
+                        ^ \markup { 32 }
                     }
                 }
                 \context Staff = "cello staff"
                 {
                     \context Voice = "cello voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [cello voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Violoncello }
                         \set Staff.shortInstrumentName =
@@ -1540,9 +1343,7 @@
                         \clef "bass"
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [cello voice measure 2]
+                        \boxed-markup "CLT, Molto Flaut." 1
                         cs,1
                         ^ \markup { 1 }
                         ~
@@ -1550,9 +1351,6 @@
                         ^ \markup { 2 }
                         dqf,8
                         ^ \markup { 3 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [cello voice measure 3]
                         \override Staff.Stem.stemlet-length = 0.75
                         af,8
                         ^ \markup { 4 }
@@ -1590,72 +1388,62 @@
                         ^ \markup { 16 }
                         fs,8
                         ^ \markup { 17 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [cello voice measure 5]
                         gqs,4
                         ^ \markup { 18 }
-                        r2
+                        r4
                         ^ \markup { 19 }
-                        r2.
+                        r2
                         ^ \markup { 20 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [cello voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 21 }
-                        r2.
+                        r2
                         ^ \markup { 22 }
+                        r2
+                        ^ \markup { 23 }
+                        r2
+                        ^ \markup { 24 }
                     }
                 }
                 \context Staff = "contrabass staff"
                 {
                     \context Voice = "contrabass voice"
                     {
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [contrabass voice measure 1]
                         \set Staff.instrumentName =
                         \markup { Contrabass }
                         \set Staff.shortInstrumentName =
                         \markup { cb. }
                         r1
                         ^ \markup { 0 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [contrabass voice measure 2]
-                        r2.
+                        r2
                         ^ \markup { 1 }
-                        r2.
+                        r2
                         ^ \markup { 2 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [contrabass voice measure 3]
-                        r2.
+                        r2
                         ^ \markup { 3 }
-                        r2.
+                        r2
                         ^ \markup { 4 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [contrabass voice measure 4]
-                        r2.
+                        r2
                         ^ \markup { 5 }
-                        r2.
+                        r2
                         ^ \markup { 6 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [contrabass voice measure 5]
-                        r2.
+                        r2
                         ^ \markup { 7 }
-                        r2.
+                        r2
                         ^ \markup { 8 }
-                        %! COMMENT_MEASURE_NUMBERS
-                        %! abjad.SegmentMaker.comment_measure_numbers()
-                        % [contrabass voice measure 6]
-                        r2.
+                        r2
                         ^ \markup { 9 }
-                        r2.
+                        r2
                         ^ \markup { 10 }
+                        r2
+                        ^ \markup { 11 }
+                        r2
+                        ^ \markup { 12 }
+                        r2
+                        ^ \markup { 13 }
+                        r2
+                        ^ \markup { 14 }
+                        r2
+                        ^ \markup { 15 }
                     }
                 }
             >>
