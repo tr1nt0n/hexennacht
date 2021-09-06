@@ -536,8 +536,7 @@ all_staves = [
     "trumpet staff",
     "tenor trombone staff",
     "tuba staff",
-    "piano 1 staff",
-    "piano 2 staff",
+    "sub group 3",
     "harp staff",
     "marimba staff",
     "percussion 1 staff",
@@ -559,7 +558,6 @@ all_startmarkups = [
     abjad.Markup(r"Tenor Trombone"),
     abjad.Markup(r"Tuba"),
     abjad.Markup(r"Piano"),
-    abjad.Markup(r"Piano"),
     abjad.Markup(r"Harp"),
     abjad.Markup(r"Marimba"),
     abjad.Markup(r"Ratchets"),
@@ -568,7 +566,7 @@ all_startmarkups = [
     abjad.Markup(r"Violin 2"),
     abjad.Markup(r"Viola"),
     abjad.Markup(r"Violoncello"),
-    abjad.Markup(r"Contrabass")
+    abjad.Markup(r"Contrabass"),
 ]
 
 all_marginmarkups = [
@@ -577,10 +575,9 @@ all_marginmarkups = [
     abjad.Markup(r"bcl."),
     abjad.Markup(r"bsn."),
     abjad.Markup(r"hrn."),
-    abjad.Markup(r"trpt."),
-    abjad.Markup(r"trbn."),
+    abjad.Markup(r"tpt."),
+    abjad.Markup(r"tbn."),
     abjad.Markup(r"tb."),
-    abjad.Markup(r"pno."),
     abjad.Markup(r"pno."),
     abjad.Markup(r"harp"),
     abjad.Markup(r"mar."),
@@ -636,7 +633,7 @@ def cymbal_swells(score, voice, durations, tuplet_index):
     )
 
 
-def warble(score, voice, accel_durations, rit_durations, rit_first):
+def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
     accelerando = rmakers.stack(
         rmakers.accelerando([(1, 8), (1, 20), (1, 32)]),
         rmakers.force_rest(lambda _: abjad.select(_).leaves().get([0, -1])),
@@ -657,57 +654,106 @@ def warble(score, voice, accel_durations, rit_durations, rit_first):
         rmakers.duration_bracket(),
     )
 
-    if accel_durations == None:
-        trinton.make_and_append_rhythm_selections(
-            stack=ritardando,
-            durations=rit_durations,
-            voice_name=voice,
-            score=score,
-        )
+    if pitched == True:
+        if accel_durations == None:
+            trinton.make_and_append_rhythm_selections(
+                stack=ritardando,
+                durations=rit_durations,
+                voice_name=voice,
+                score=score,
+            )
 
-    elif rit_durations == None:
-        trinton.make_and_append_rhythm_selections(
-            stack=accelerando,
-            durations=accel_durations,
-            voice_name=voice,
-            score=score,
-        )
+        elif rit_durations == None:
+            trinton.make_and_append_rhythm_selections(
+                stack=accelerando,
+                durations=accel_durations,
+                voice_name=voice,
+                score=score,
+            )
 
-    elif rit_first == True:
-        trinton.make_and_append_rhythm_selections(
-            stack=ritardando,
-            durations=rit_durations,
-            voice_name=voice,
-            score=score,
-        )
+        elif rit_first == True:
+            trinton.make_and_append_rhythm_selections(
+                stack=ritardando,
+                durations=rit_durations,
+                voice_name=voice,
+                score=score,
+            )
 
-        trinton.make_and_append_rhythm_selections(
-            stack=accelerando,
-            durations=accel_durations,
-            voice_name=voice,
-            score=score,
+            trinton.make_and_append_rhythm_selections(
+                stack=accelerando,
+                durations=accel_durations,
+                voice_name=voice,
+                score=score,
+            )
+
+        else:
+            trinton.make_and_append_rhythm_selections(
+                stack=accelerando,
+                durations=accel_durations,
+                voice_name=voice,
+                score=score,
+            )
+
+            trinton.make_and_append_rhythm_selections(
+                stack=ritardando,
+                durations=rit_durations,
+                voice_name=voice,
+                score=score,
+            )
+
+        handler = evans.PitchHandler(
+            pitch_list=[20, 20.5, 19.5, 20, 21, 21.5, 20.5],
+            forget=False
         )
+        handler(abjad.select(score[voice]).leaves(pitched=True))
 
     else:
-        trinton.make_and_append_rhythm_selections(
-            stack=accelerando,
-            durations=accel_durations,
-            voice_name=voice,
-            score=score,
-        )
+        if accel_durations == None:
+            trinton.make_and_append_rhythm_selections(
+                stack=ritardando,
+                durations=rit_durations,
+                voice_name=voice,
+                score=score,
+            )
 
-        trinton.make_and_append_rhythm_selections(
-            stack=ritardando,
-            durations=rit_durations,
-            voice_name=voice,
-            score=score,
-        )
+        elif rit_durations == None:
+            trinton.make_and_append_rhythm_selections(
+                stack=accelerando,
+                durations=accel_durations,
+                voice_name=voice,
+                score=score,
+            )
 
-    handler = evans.PitchHandler(
-        pitch_list=[20, 20.5, 19.5, 20, 21, 21.5, 20.5],
-        forget=False
-    )
-    handler(abjad.select(score[voice]).leaves(pitched=True))
+        elif rit_first == True:
+            trinton.make_and_append_rhythm_selections(
+                stack=ritardando,
+                durations=rit_durations,
+                voice_name=voice,
+                score=score,
+            )
+
+            trinton.make_and_append_rhythm_selections(
+                stack=accelerando,
+                durations=accel_durations,
+                voice_name=voice,
+                score=score,
+            )
+
+        else:
+            trinton.make_and_append_rhythm_selections(
+                stack=accelerando,
+                durations=accel_durations,
+                voice_name=voice,
+                score=score,
+            )
+
+            trinton.make_and_append_rhythm_selections(
+                stack=ritardando,
+                durations=rit_durations,
+                voice_name=voice,
+                score=score,
+            )
+
 
 def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_durations, bunch_2_tuplet, bunch_2_durations, pitch_index, transpose):
     pitches = trinton.rotated_sequence(ritual_pitches, pitch_index)
