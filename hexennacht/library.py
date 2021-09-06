@@ -505,6 +505,94 @@ score = trinton.make_score_template(
     [4, 1, 3, 2, 1, 2, 1, 5],
 )
 
+all_voices = [
+    "flute voice",
+    "oboe voice",
+    "bass clarinet voice",
+    "bassoon voice",
+    "horn voice",
+    "trumpet voice",
+    "tenor trombone voice",
+    "tuba voice",
+    "piano 1 voice",
+    "piano 2 voice",
+    "harp voice",
+    "marimba voice",
+    "percussion 1 voice",
+    "percussion 2 voice",
+    "violin 1 voice",
+    "violin 2 voice",
+    "viola voice",
+    "cello voice",
+    "contrabass voice"
+]
+
+all_staves = [
+    "flute staff",
+    "oboe staff",
+    "bass clarinet staff",
+    "bassoon staff",
+    "horn staff",
+    "trumpet staff",
+    "tenor trombone staff",
+    "tuba staff",
+    "piano 1 staff",
+    "piano 2 staff",
+    "harp staff",
+    "marimba staff",
+    "percussion 1 staff",
+    "percussion 2 staff",
+    "violin 1 staff",
+    "violin 2 staff",
+    "viola staff",
+    "cello staff",
+    "contrabass staff",
+]
+
+all_startmarkups = [
+    abjad.Markup(r"Flute"),
+    abjad.Markup(r"Oboe"),
+    abjad.Markup(r"Bass Clarinet"),
+    abjad.Markup(r"Bassoon"),
+    abjad.Markup(r"French Horn"),
+    abjad.Markup(r"Trumpet in C"),
+    abjad.Markup(r"Tenor Trombone"),
+    abjad.Markup(r"Tuba"),
+    abjad.Markup(r"Piano"),
+    abjad.Markup(r"Piano"),
+    abjad.Markup(r"Harp"),
+    abjad.Markup(r"Marimba"),
+    abjad.Markup(r"Ratchets"),
+    abjad.Markup(r"Percussion 2"),
+    abjad.Markup(r"Violin 1"),
+    abjad.Markup(r"Violin 2"),
+    abjad.Markup(r"Viola"),
+    abjad.Markup(r"Violoncello"),
+    abjad.Markup(r"Contrabass")
+]
+
+all_marginmarkups = [
+    abjad.Markup(r"fl."),
+    abjad.Markup(r"ob."),
+    abjad.Markup(r"bcl."),
+    abjad.Markup(r"bsn."),
+    abjad.Markup(r"hrn."),
+    abjad.Markup(r"trpt."),
+    abjad.Markup(r"trbn."),
+    abjad.Markup(r"tb."),
+    abjad.Markup(r"pno."),
+    abjad.Markup(r"pno."),
+    abjad.Markup(r"harp"),
+    abjad.Markup(r"mar."),
+    abjad.Markup(r"ratch."),
+    abjad.Markup(r"perc. 2"),
+    abjad.Markup(r"vln. 1"),
+    abjad.Markup(r"vln. 2"),
+    abjad.Markup(r"vla."),
+    abjad.Markup(r"vc."),
+    abjad.Markup(r"cb.")
+]
+
 # material functions
 
 def woodwind_swells(score, voice, durations):
@@ -543,9 +631,10 @@ def cymbal_swells(score, voice, durations, tuplet_index):
     trinton.make_and_append_rhythm_selections(
         score=score,
         voice_name=voice,
-        durations=durations,
         stack=stack,
+        durations=durations,
     )
+
 
 def warble(score, voice, accel_durations, rit_durations, rit_first):
     accelerando = rmakers.stack(
@@ -553,7 +642,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first):
         rmakers.force_rest(lambda _: abjad.select(_).leaves().get([0, -1])),
         rmakers.feather_beam(
             beam_rests=True,
-            stemlet_length=0.75,
+            selector=abjad.select().tuplets(),
         ),
         rmakers.duration_bracket(),
     )
@@ -563,7 +652,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first):
         rmakers.force_rest(lambda _: abjad.select(_).leaves().get([0, -1])),
         rmakers.feather_beam(
             beam_rests=True,
-            stemlet_length=0.75,
+            selector=abjad.select().tuplets(),
         ),
         rmakers.duration_bracket(),
     )
@@ -1791,62 +1880,92 @@ def bass_clef(score_and_voice, leaves):
         attachment=abjad.Clef("bass")
     )
 
-# text markups
-
-def pont_tasto(score, voice, sul, leaves):
-    if sul == s:
-        trinton.write_markup(
-            voice=score[voice],
-            leaf=leaves,
-            string=r"SP",
-            down=False,
-        )
-
-    elif sul == ms:
-        trinton.write_markup(
-            voice=score[voice],
-            leaf=leaves,
-            string=r"MSP",
-            down=False,
-        )
-
-    elif sul == st:
-        trinton.write_markup(
-            voice=score[voice],
-            leaf=leaves,
-            string=r"ST",
-            down=False,
-        )
-
-    elif sul == mst:
-        trinton.write_markup(
-            voice=score[voice],
-            leaf=leaves,
-            string=r"MST",
-            down=False,
-        )
-
-def clt(score, voice, leaves):
-    trinton.write_markup(
-        voice=score[voice],
-        leaf=leaves,
-        string=r"CLT",
-        down=False,
+def percussion_clef(score_and_voice, leaves):
+    trinton.attach(
+        voice=score_and_voice,
+        leaves=leaves,
+        attachment=abjad.Clef("percussion")
     )
 
-def ord_norm(score, voice, leaves, cancel):
-    if cancel == ord:
-        trinton.write_markup(
-            voice=score[voice],
-            leaf=leaves,
-            string=r"Ord.",
-            down=False,
-        )
+# percussion tools
 
-    else:
-        trinton.write_markup(
-            voice=score[voice],
-            leaf=leaves,
-            string=r"Norm.",
-            down=False,
+def three_lines(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r"\staff-line-count 3", format_slot="absolute_before",
         )
+    )
+
+def one_line(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r"\staff-line-count 1", format_slot="absolute_before",
+        )
+    )
+
+def ride_cymbal(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "Ride Cymbal" 1', format_slot="after"
+        ),
+    )
+
+def gongs(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "Gongs" 1', format_slot="after"
+        ),
+    )
+
+def bass_drum(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "Bass Drum" 1', format_slot="after"
+        ),
+    )
+
+def with_drumsticks(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "with drumsticks" 1', format_slot="after"
+        ),
+    )
+
+def with_mallets(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "with mallets" 1', format_slot="after"
+        ),
+    )
+
+def with_bow(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "with bow" 1', format_slot="after"
+        ),
+    )
+
+def with_hand(score, voice, leaves):
+    trinton.attach(
+        voice=score[voice],
+        leaves=leaves,
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "with hand" 1', format_slot="after"
+        ),
+    )

@@ -4,6 +4,7 @@
 #(set-global-staff-size 11)
 
 \include "/Users/trintonprater/abjad/docs/source/_stylesheets/ekmelos-ji-accidental-markups.ily"
+\include "/Users/trintonprater/scores/hexennacht/hexennacht/library.ily"
 
 \header {
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"H E X E N N A C H T" \fontsize #3.4 \with-color #white "."}
@@ -59,6 +60,7 @@
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
+        \override Stem.stemlet-length = 0.75
     }
     \context {
         \name DynamicContext
@@ -83,6 +85,7 @@
         fontSize = #-1
         \remove Time_signature_engraver
         \accepts DynamicContext
+        \RemoveAllEmptyStaves
     }
 }
 %
