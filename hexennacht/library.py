@@ -1424,7 +1424,6 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
-        rmakers.beam(abjad.select().tuplets()),
     )
 
     if tuplet_index == None:
@@ -1683,9 +1682,10 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
     elif voice == "horn voice":
         if pitched == True:
             pitches = trinton.rotated_sequence(
-                [19, 20, 16, 17, 22],
+                [21, 11, 22, 13, 24],
                 pitch_index,
             )
+
             sel = trinton.make_rhythm_selections(
                 stack=stack,
                 durations=durations,
@@ -1716,7 +1716,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
     elif voice == "tenor trombone voice":
         if pitched == True:
             pitches = trinton.rotated_sequence(
-                [29],
+                [22, -9, 22, -8, 22, -10, -4, 22, -25],
                 pitch_index,
             )
             sel = trinton.make_rhythm_selections(

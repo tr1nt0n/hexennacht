@@ -11,8 +11,6 @@ score = hexennacht.score
 
 trinton.write_time_signatures([(4, 4), (6, 4), (6, 4), (6, 4), (6, 4), (6, 4)], score["Global Context"])
 
-# write new material function here
-
 # bass drum
 
 hexennacht.cymbal_swells(
