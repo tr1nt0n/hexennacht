@@ -623,6 +623,7 @@ def cymbal_swells(score, voice, durations, tuplet_index):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     trinton.make_and_append_rhythm_selections(
@@ -797,6 +798,7 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
     bunch_2 = rmakers.stack(
         rmakers.tuplet(
@@ -838,6 +840,7 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
     smooth = rmakers.stack(
         rmakers.talea([4, 5, 7, 5, 4, 7, 5, 7], talea),
@@ -845,6 +848,7 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if pitch_index is None:
@@ -990,6 +994,7 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if pitch_index is None:
@@ -1062,6 +1067,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if voice == "violin 1 voice":
@@ -1323,6 +1329,7 @@ def drone(score, voice, talea, pitch_index, durations):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         selections = trinton.make_rhythm_selections(
@@ -1359,6 +1366,7 @@ def drone(score, voice, talea, pitch_index, durations):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         selections = trinton.make_rhythm_selections(
@@ -1407,6 +1415,7 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     stack2 = rmakers.stack(
@@ -1415,6 +1424,7 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if tuplet_index == None:
@@ -1455,6 +1465,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         trinton.make_and_append_rhythm_selections(
@@ -1470,6 +1481,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         if pitched == True:
@@ -1505,6 +1517,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         if pitched == True:
@@ -1540,6 +1553,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
         )
 
         if pitched == True:
@@ -1584,6 +1598,7 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if pitched == True:
@@ -1629,6 +1644,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if voice == "trumpet voice":
@@ -1777,6 +1793,7 @@ def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, hi
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.beam(abjad.select().tuplets()),
     )
 
     if pitched == True:
@@ -1985,7 +2002,7 @@ def with_drumsticks(score, voice, leaves):
         voice=score[voice],
         leaves=leaves,
         attachment=abjad.LilyPondLiteral(
-            r'\boxed-markup "with drumsticks" 1', format_slot="after"
+            r'\boxed-markup "w/ drumsticks" 1', format_slot="after"
         ),
     )
 
@@ -1994,7 +2011,7 @@ def with_mallets(score, voice, leaves):
         voice=score[voice],
         leaves=leaves,
         attachment=abjad.LilyPondLiteral(
-            r'\boxed-markup "with mallets" 1', format_slot="after"
+            r'\boxed-markup "w/ mallets" 1', format_slot="after"
         ),
     )
 
@@ -2003,7 +2020,7 @@ def with_bow(score, voice, leaves):
         voice=score[voice],
         leaves=leaves,
         attachment=abjad.LilyPondLiteral(
-            r'\boxed-markup "with bow" 1', format_slot="after"
+            r'\boxed-markup "w/ bow" 1', format_slot="after"
         ),
     )
 
@@ -2012,6 +2029,6 @@ def with_hand(score, voice, leaves):
         voice=score[voice],
         leaves=leaves,
         attachment=abjad.LilyPondLiteral(
-            r'\boxed-markup "with hand" 1', format_slot="after"
+            r'\boxed-markup "w/ hand" 1', format_slot="after"
         ),
     )
