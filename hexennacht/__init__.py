@@ -57,6 +57,8 @@ from .library import (
     with_mallets,
     with_bow,
     with_hand,
+    ratchet_pitches,
+    standard_cleffing,
 )
 
 __all__ = [
@@ -118,4 +120,6 @@ __all__ = [
     "with_mallets",
     "with_bow",
     "with_hand",
+    "ratchet_pitches",
+    "standard_cleffing",
 ]

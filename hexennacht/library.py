@@ -19,6 +19,8 @@ viola_ghost_pitches = [-9, -3.5, -9, -1.5, -9, -3.5, -9, -8.5, -4, -7.5, -1, -8.
 
 cello_ghost_pitches = [-23, -22.5, -16, -16.5, -21, -19.5, -21, -23.5, -16, -12.5, -11, -13.5, -16, -13.5, -18, -16.5]
 
+ratchet_pitches = [4, -3, 4, 0, 4, -3, -3, 0, 0,]
+
 def pitch_flute_flourishes(score, voice, start_index, leaves):
     pitches = trinton.rotated_sequence(
         pitch_list=trinton.transpose(
@@ -504,6 +506,24 @@ score = trinton.make_score_template(
     ],
     [4, 1, 3, 2, 1, 2, 1, 5],
 )
+
+def standard_cleffing(score):
+    for voice in ["bassoon voice", "tenor trombone voice", "tuba voice", "piano 2 voice", "cello voice", "contrabass voice"]:
+        hexennacht.bass_clef(
+            score_and_voice=score[voice],
+            leaves=[0],
+        )
+
+    for voice in ["percussion 1 voice", "percussion 2 voice",]:
+        hexennacht.percussion_clef(
+            score_and_voice=score[voice],
+            leaves=[0],
+        )
+
+    hexennacht.alto_clef(
+        score_and_voice=score["viola voice"],
+        leaves=[0],
+    )
 
 all_voices = [
     "flute voice",
