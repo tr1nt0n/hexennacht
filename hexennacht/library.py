@@ -643,6 +643,7 @@ def cymbal_swells(score, voice, durations, tuplet_index):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
 
@@ -818,6 +819,7 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
     bunch_2 = rmakers.stack(
@@ -860,6 +862,7 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
     smooth = rmakers.stack(
@@ -1014,6 +1017,7 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
 
@@ -1087,6 +1091,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
 
@@ -1435,6 +1440,7 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
 
@@ -1478,23 +1484,7 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
         )
 
 def drumming(score, voice, durations, pitched):
-    if voice == "percussion 2 voice":
-        stack = rmakers.stack(
-            rmakers.even_division([8], extra_counts=[0, 4, 3, 1]),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.beam(abjad.select().tuplets()),
-        )
-
-        trinton.make_and_append_rhythm_selections(
-            score=score,
-            voice_name=voice,
-            durations=durations,
-            stack=stack,
-        )
-
-    elif voice == "cello voice":
+    if voice == "cello voice":
         stack = rmakers.stack(
             rmakers.even_division([8]),
             rmakers.extract_trivial(abjad.select().tuplets()),
@@ -1536,6 +1526,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.rewrite_dots(),
             rmakers.beam(abjad.select().tuplets()),
         )
 
@@ -1572,6 +1563,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.extract_trivial(abjad.select().tuplets()),
             rmakers.rewrite_rest_filled(abjad.select().tuplets()),
             rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.rewrite_dots(),
             rmakers.beam(abjad.select().tuplets()),
         )
 
@@ -1602,6 +1594,22 @@ def drumming(score, voice, durations, pitched):
                 durations=durations,
             )
 
+    else:
+        stack = rmakers.stack(
+            rmakers.even_division([8], extra_counts=[0, 4, 3, 1]),
+            rmakers.extract_trivial(abjad.select().tuplets()),
+            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+            rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.beam(abjad.select().tuplets()),
+        )
+
+        trinton.make_and_append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            durations=durations,
+            stack=stack,
+        )
+
 def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
     rhythms = trinton.rotated_sequence(
         [(2, 1), (3, 1), (1, 1, 1), (4, 1), (5, 1), (5, 1), (1, 1, 1, 1, 1), (3, 4)],
@@ -1617,6 +1625,7 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
 
@@ -1663,6 +1672,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.rewrite_dots(),
         rmakers.beam(abjad.select().tuplets()),
     )
 

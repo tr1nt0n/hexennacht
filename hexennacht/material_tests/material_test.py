@@ -9,44 +9,41 @@ from abjadext import microtones
 
 score = hexennacht.score
 
-trinton.write_time_signatures([(4, 4), (4, 4), (4, 4), (4, 4),], score["Global Context"])
+trinton.write_time_signatures([(3, 4), (7, 8), (4, 4), (5, 4),], score["Global Context"])
 
 # write new material function here
 
-# bass drum
+# bassoon
 
-hexennacht.drumming(
+hexennacht.dance(
     score=score,
-    voice="percussion 2 voice",
-    durations=[(1, 4), (1, 4), (3, 8), (1, 8), (5, 16), (3, 16), (1, 2), (1, 8), (3, 8), (1, 4), (1, 4), (1, 2), (5, 16), (3, 16),],
-    pitched=False,
+    voice="bassoon voice",
+    tuplet_index=0,
+    durations=[(1, 4), (1, 2), (6, 8), (1, 8), (3, 8), (3, 8), (1, 4), (3, 4), (1, 2),],
+    pitch_index=0,
+    transpose=-12
 )
 
-# cello
+# bass clarinet
 
-hexennacht.drumming(
+trinton.append_rests(
     score=score,
-    voice="cello voice",
-    durations=[(1, 1), (1, 1), (1, 1), (1, 1),],
-    pitched=True,
+    voice="bass clarinet voice",
+    rests=[abjad.Rest("r2."), abjad.Rest("r2.")]
 )
 
-# viola
-
-hexennacht.drumming(
+hexennacht.dance(
     score=score,
-    voice="viola voice",
-    durations=[(1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4),],
-    pitched=True,
+    voice="bass clarinet voice",
+    tuplet_index=0,
+    durations=[(1, 8), (3, 8), (3, 8), (1, 4), (3, 4), (1, 2),],
+    pitch_index=11,
+    transpose=-12
 )
 
-# violin 2
-
-hexennacht.drumming(
+hexennacht.transpose_bass_clarinet(
     score=score,
-    voice="violin 2 voice",
-    durations=[(1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4), (1, 4),],
-    pitched=True,
+    voice="bass clarinet voice",
 )
 
 # violin 1
@@ -54,107 +51,186 @@ hexennacht.drumming(
 trinton.append_rests(
     score=score,
     voice="violin 1 voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r4.")]
+    rests=[abjad.Rest("r2."), abjad.Rest("r2"), abjad.Rest("r4."), abjad.Rest("r4."),]
 )
 
 hexennacht.violin_solo(
     score=score,
     voice="violin 1 voice",
-    tuplet_index=0,
-    durations=[(5, 8), (1, 2), (1, 4), (1, 4), (3, 4), (1, 8), (1, 8),],
+    tuplet_index=3,
+    durations=[(6, 16), (1, 4), (6, 8), (1, 2),],
     pitched=True,
-    pitch_index=0
+    pitch_index=0,
 )
 
-# piano
+# percussion 1
 
-trinton.append_rests(
+hexennacht.drumming(
     score=score,
-    voice="piano 1 voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r1"),]
-)
-
-trinton.append_rests(
-    score=score,
-    voice="piano 2 voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r16"),]
-)
-
-trinton.handwrite(
-    score=score,
-    voice="piano 2 voice",
-    durations=[(8, 16), (7, 16),],
-    pitch_list=[[-39, -38, -37], [-39, -38, -37, -35]],
+    voice="percussion 1 voice",
+    durations=[(1, 2), (1, 4),],
+    pitched=False
 )
 
 trinton.append_rests(
     score=score,
-    voice="piano 2 voice",
+    voice="percussion 1 voice",
+    rests=[abjad.Rest("r8")]
+)
+
+hexennacht.incantation(
+    score=score,
+    voice="percussion 1 voice",
+    bunch_1_tuplet=26,
+    bunch_1_durations=[(6, 8),],
+    talea=8,
+    smooth_durations=[(5, 8)],
+    bunch_2_tuplet=0,
+    bunch_2_durations=[(3, 8)],
+    pitch_index=None,
+    transpose=None,
+)
+
+trinton.append_rests(
+    score=score,
+    voice="percussion 1 voice",
     rests=[abjad.Rest("r8")],
 )
 
-trinton.handwrite(
+hexennacht.cymbal_swells(
     score=score,
-    voice="piano 2 voice",
-    durations=[(1, 8), (3, 8), (3, 8),],
-    pitch_list=[[-39, -38, -37], [-39, -38, -37, -35]],
+    voice="percussion 1 voice",
+    durations=[(3, 8), (3, 4)],
+    tuplet_index=3,
 )
 
-hexennacht.bass_clef(
-    score_and_voice=score["piano 2 voice"],
-    leaves=[0]
+handler = evans.PitchHandler(
+    pitch_list=hexennacht.ratchet_pitches,
+    forget=False,
 )
 
-# harp
+handler(abjad.select(score["percussion 1 voice"]).leaves(pitched=True))
+
+# percussion 2
+
+hexennacht.cymbal_swells(
+    score=score,
+    voice="percussion 2 voice",
+    durations=[(1, 2), (1, 4),],
+    tuplet_index=3,
+)
 
 trinton.append_rests(
     score=score,
-    voice="harp voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r8.")]
+    voice="percussion 2 voice",
+    rests=[abjad.Rest("r8")],
 )
 
-trinton.handwrite(
+hexennacht.incantation(
     score=score,
-    voice="harp voice",
-    durations=[(13, 16), (1, 1), (1, 1),],
-    pitch_list=[[-18, -17, -16, -13, -11]],
+    voice="percussion 2 voice",
+    bunch_1_tuplet=0,
+    bunch_1_durations=[(6, 8),],
+    talea=16,
+    smooth_durations=[(5, 8)],
+    bunch_2_tuplet=26,
+    bunch_2_durations=[(3, 8)],
+    pitch_index=None,
+    transpose=None,
 )
 
-hexennacht.bass_clef(
-    score_and_voice=score["harp voice"],
-    leaves=[0]
+trinton.append_rests(
+    score=score,
+    voice="percussion 2 voice",
+    rests=[abjad.Rest("r8")]
 )
 
-# bassoon + bass clarinet
+hexennacht.drumming(
+    score=score,
+    voice="percussion 2 voice",
+    durations=[(3, 8), (3, 4)],
+    pitched=False
+)
 
-for voice in ["bassoon voice", "bass clarinet voice",]:
+handler = evans.PitchHandler(
+    pitch_list=hexennacht.ratchet_pitches,
+    forget=False,
+)
+
+handler(abjad.select(score["percussion 2 voice"]).leaves(pitched=True))
+
+# tuba and contrabass
+
+for voice in ["tuba voice", "contrabass voice"]:
     trinton.append_rests(
-    score=score,
-    voice=voice,
-    rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r4.")]
-    )
-
-    hexennacht.woodwind_swells(
         score=score,
         voice=voice,
-        durations=[(3, 8), (1, 2),]
+        rests=[abjad.Rest("r2."), abjad.Rest("r4")]
     )
-
-    trinton.append_rests(
-    score=score,
-    voice=voice,
-    rests=[abjad.Rest("r8."),]
-    )
-
-    hexennacht.woodwind_swells(
+    hexennacht.drone(
         score=score,
         voice=voice,
-        durations=[(5, 16), (1, 4),]
+        talea=8,
+        pitch_index=3,
+        durations=[(5, 8), (4, 4), (5, 4),]
     )
 
-hexennacht.bass_clef(
-    score_and_voice=score["bassoon voice"],
-    leaves=[0],
+# cello
+
+trinton.append_rests(
+    score=score,
+    voice="cello voice",
+    rests=[abjad.Rest("r4."),]
+)
+
+hexennacht.string_swells(
+    score=score,
+    voice="cello voice",
+    tuplet_index=0,
+    durations=[(3, 8),],
+    pitch_index=0,
+)
+
+trinton.append_rests(
+    score=score,
+    voice="cello voice",
+    rests=[abjad.Rest("r4")]
+)
+
+hexennacht.string_swells(
+    score=score,
+    voice="cello voice",
+    tuplet_index=1,
+    durations=[(3, 8),],
+    pitch_index=3,
+)
+
+trinton.append_rests(
+    score=score,
+    voice="cello voice",
+    rests=[abjad.Rest("r4"), abjad.Rest("r4"), abjad.Rest("r4.")]
+)
+
+hexennacht.string_swells(
+    score=score,
+    voice="cello voice",
+    tuplet_index=2,
+    durations=[(3, 8),],
+    pitch_index=6,
+)
+
+trinton.append_rests(
+    score=score,
+    voice="cello voice",
+    rests=[abjad.Rest("r2."), abjad.Rest("r8"),]
+)
+
+hexennacht.string_swells(
+    score=score,
+    voice="cello voice",
+    tuplet_index=3,
+    durations=[(3, 8),],
+    pitch_index=9,
 )
 
 # oboe
@@ -162,160 +238,47 @@ hexennacht.bass_clef(
 trinton.append_rests(
     score=score,
     voice="oboe voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r4"), abjad.Rest("r16"),]
+    rests=[abjad.Rest("r2."),]
+)
+
+trinton.append_rests(
+    score=score,
+    voice="oboe voice",
+    rests=[abjad.Rest("r8")]
 )
 
 hexennacht.warble(
     score=score,
     voice="oboe voice",
-    accel_durations=[(6, 16)],
-    rit_durations=[(5, 16)],
+    accel_durations=[(3, 8)],
+    rit_durations=[(3, 8)],
     rit_first=True,
     pitched=True,
 )
 
-# flute
-
 trinton.append_rests(
     score=score,
-    voice="flute voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r8.")]
+    voice="oboe voice",
+    rests=[abjad.Rest("r1"), abjad.Rest("r2")]
 )
 
-hexennacht.flute_solo(
+hexennacht.warble(
     score=score,
-    voice="flute voice",
-    tuplet_index=2,
-    flourish_durations=[(5, 16)],
-    talea=16,
-    talea_index=2,
-    talea_durations=[(3, 4)],
-)
-
-hexennacht.flute_solo(
-    score=score,
-    voice="flute voice",
-    tuplet_index=1,
-    flourish_durations=[(1, 4)],
-    talea=16,
-    talea_index=4,
-    talea_durations=[(1, 2)],
-)
-
-# percussion 2
-
-trinton.append_rests(
-    score=score,
-    voice="marimba voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r8")]
-)
-
-hexennacht.marimba_shakes(
-    score=score,
-    voice="marimba voice",
-    note_value=16,
-    durations=[(5, 8)],
+    voice="oboe voice",
+    accel_durations=[(3, 8)],
+    rit_durations=[(3, 8)],
+    rit_first=False,
     pitched=True,
-    pitch_index=4,
-    high=True
 )
 
-trinton.append_rests(
-    score=score,
-    voice="marimba voice",
-    rests=[abjad.Rest("r4"), abjad.Rest("r16")]
-)
+# all voices
 
-hexennacht.marimba_shakes(
-    score=score,
-    voice="marimba voice",
-    note_value=16,
-    durations=[(9, 16)],
-    pitched=True,
-    pitch_index=5,
-    high=True
-)
-
-trinton.append_rests(
-    score=score,
-    voice="marimba voice",
-    rests=[abjad.Rest("r4."), abjad.Rest("r4"), abjad.Rest("r4.")]
-)
-
-hexennacht.marimba_shakes(
-    score=score,
-    voice="marimba voice",
-    note_value=16,
-    durations=[(3, 8)],
-    pitched=True,
-    pitch_index=6,
-    high=True
-)
-
-trinton.append_rests(
-    score=score,
-    voice="percussion 1 voice",
-    rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r2."),]
-)
-
-trinton.handwrite(
-    score=score,
-    voice="percussion 1 voice",
-    durations=[(3, 8), (1, 4), (2, 16), (1, 16)],
-    pitch_list=hexennacht.ratchet_pitches
-)
-
-trinton.append_rests(
-    score=score,
-    voice="percussion 1 voice",
-    rests=[abjad.Rest("r8."), abjad.Rest("r4")]
-)
-
-# brass
-
-for voice, index in zip(["tenor trombone voice", "trumpet voice", "horn voice", "tenor trombone voice", "trumpet voice", "horn voice"], [1, 3, 4,]):
+for voice in ["flute voice", "trumpet voice", "horn voice", "tenor trombone voice", "piano 1 voice", "piano 2 voice", "harp voice", "violin 2 voice", "viola voice", "marimba voice",]:
     trinton.append_rests(
         score=score,
         voice=voice,
-        rests=[abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r1"), abjad.Rest("r8")],
+        rests=[abjad.Rest("r2."), abjad.Rest("r2.."), abjad.Rest("r1"), abjad.Rest("r2."), abjad.Rest("r2"),]
     )
-
-    hexennacht.brass_shrieks(
-        score=score,
-        voice=voice,
-        talea_index=index,
-        talea=16,
-        durations=[(7, 8)],
-        pitched=True,
-        pitch_index=1,
-
-    )
-
-# bass and tuba
-
-for voice in ["contrabass voice", "tuba voice"]:
-    trinton.append_rests(
-        score=score,
-        voice=voice,
-        rests=[abjad.Rest("r1"), abjad.Rest("r4")]
-    )
-
-for voice, index in zip(["contrabass voice", "tuba voice",], [0, 3]):
-    hexennacht.drone(
-        score=score,
-        voice=voice,
-        talea=16,
-        pitch_index=index,
-        durations=[(3, 4), (2, 1),]
-    )
-
-# meter rewriting and beaming
-
-trinton.rewrite_meter(score)
-
-trinton.beam_score(score)
-
-# trinton.annotate_leaves(score)
 
 trinton.write_startmarkups(
     score=score,
@@ -329,395 +292,44 @@ trinton.write_marginmarkups(
     markups=hexennacht.all_marginmarkups,
 )
 
-# pitch flute and attachments
+hexennacht.standard_cleffing(score=score,)
 
-hexennacht.pitch_flute_flourishes(
-    score=score,
-    voice="flute voice",
-    start_index=3,
-    leaves=[3, 5, 6, 7, 15, 16, 17, 18, 19, 20,]
-)
+trinton.rewrite_meter(score),
 
-hexennacht.pitch_flute_pf(
-    score=score,
-    voice="flute voice",
-    leaves=[8, 10, 11, 13, 14, 21, 22, 23,]
-)
+trinton.beam_score(score),
 
-trinton.write_slur(
-    voice=score["flute voice"],
-    start_slur=[3, 8, 11, 15, 21,],
-    stop_slur=[7, 10, 13, 20, 22,],
-)
+# trinton.annotate_leaves(score)
 
-trinton.attach(
-    voice=score["flute voice"],
-    leaves=[8, 11, 14, 21, 23],
-    attachment=abjad.Dynamic("mp")
-)
+# percussion 1 attachments
 
-trinton.attach(
-    voice=score["flute voice"],
-    leaves=[8, 11, 21,],
-    attachment=abjad.StartHairpin("<|")
-)
-
-trinton.attach(
-    voice=score["flute voice"],
-    leaves=[3, 15,],
-    attachment=abjad.Dynamic("ff")
-)
-
-trinton.attach(
-    voice=score["flute voice"],
-    leaves=[10, 13, 22,],
-    attachment=abjad.Dynamic("ffff")
-)
-
-trinton.write_text_span(
-    voice=score["flute voice"],
-    begin_text=r"90",
-    end_text=r"0",
-    start_leaf=[8, 11, 21,],
-    stop_leaf=[10, 13, 22,],
-    padding=1
-)
-
-trinton.write_markup(
-    voice=score["flute voice"],
-    leaf=[14, 23],
-    string=r"0",
-    down=False,
-)
-
-# oboe attachments
-
-trinton.write_slur(
-    voice=score["oboe voice"],
-    start_slur=[6, 11,],
-    stop_slur=[8, 13,],
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[6, 7, 11, 12,],
-    attachment=abjad.Glissando(),
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[7, 12,],
-    attachment=abjad.Articulation("open")
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[6, 8, 11, 13,],
-    attachment=abjad.Articulation("stopped")
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[6, 13,],
-    attachment=abjad.Dynamic("mp"),
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[8,],
-    attachment=abjad.Dynamic("ff"),
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[6],
-    attachment=abjad.StartHairpin("<"),
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[11],
-    attachment=abjad.StartHairpin(">"),
-)
-
-trinton.attach(
-    voice=score["oboe voice"],
-    leaves=[13],
-    attachment=abjad.StopHairpin(),
-)
-
-# clarinet and bassoon pitch and attachments
-
-for leaf, multiphonic in zip([4, 6, 9, 11], [1, 2, 3, 4,]):
-    hexennacht.clarinet_multiphonics(
+for voice in ["percussion 1 voice", "percussion 2 voice"]:
+    hexennacht.three_lines(
         score=score,
-        voice="bass clarinet voice",
-        leaves=[leaf],
-        multiphonic=multiphonic,
-        markup=True,
+        voice=voice,
+        leaves=[0],
     )
 
-for leaf, multiphonic in zip([4, 6, 9, 11,], [2, 3, 4, 5,]):
-    hexennacht.bassoon_multiphonics(
+    trinton.transparent_accidentals(
         score=score,
-        voice="bassoon voice",
-        leaves=[leaf],
-        multiphonic=multiphonic,
-        markup=True,
-    )
-
-for voice in ["bass clarinet voice", "bassoon voice"]:
-    trinton.attach(
-        voice=score[voice],
-        leaves=[4],
-        attachment=abjad.Dynamic("fff")
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[4, 6, 9, 11,],
-        attachment=abjad.Articulation(">")
-    )
-
-# horn attachments
-
-for voice in ["horn voice", "trumpet voice",]:
-    trinton.attach(
-        voice=score[voice],
-        leaves=[4,],
-        attachment=abjad.Dynamic("mf")
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[6,],
-        attachment=abjad.Dynamic("p")
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[4,],
-        attachment=abjad.StartHairpin(">")
-    )
-
-for voice in ["horn voice", "tenor trombone voice",]:
-    trinton.unmeasured_stem_tremolo(
-        selections=abjad.select(score[voice]).leaves(pitched=True)
+        voice=voice,
+        leaves=all
     )
 
 trinton.attach(
-    voice=score["horn voice"],
-    leaves=[4],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Rapid hand changes, fluttering valves, fluttertongue" 1', format_slot="after"
-    ),
-)
-
-# trumpet attachments
-
-trinton.write_trill_span(
-    score=score,
-    voice="trumpet voice",
-    pitch=22,
-    start_leaf=[4],
-    stop_leaf=[6],
-)
-
-# trombone attachments
-
-hexennacht.bass_clef(
-    score_and_voice=score["tenor trombone voice"],
+    voice=score["percussion 1 voice"],
     leaves=[0],
-)
-
-hexennacht.treble_clef(
-    score_and_voice=score["tenor trombone voice"],
-    leaves=[8],
-)
-
-trinton.attach(
-    voice=score["tenor trombone voice"],
-    leaves=[4,],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Rapidly switch between 1st and 7th, fluttertongue" 1', format_slot="after"
-    ),
-)
-
-trinton.attach(
-    voice=score["tenor trombone voice"],
-    leaves=[4,],
     attachment=abjad.Dynamic("mf")
 )
 
 trinton.attach(
-    voice=score["tenor trombone voice"],
-    leaves=[8,],
-    attachment=abjad.Dynamic("f")
-)
-
-# bass and tuba attachments
-
-for voice in ["contrabass voice", "tuba voice"]:
-    hexennacht.bass_clef(
-        score_and_voice=score[voice],
-        leaves=[0],
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[2, 9, 13,],
-        attachment=abjad.Dynamic("mp")
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[5, 11, 16],
-        attachment=abjad.Dynamic("f")
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[2, 9, 13,],
-        attachment=abjad.StartHairpin("<")
-    )
-
-    trinton.attach(
-        voice=score[voice],
-        leaves=[5, 11,],
-        attachment=abjad.StartHairpin(">")
-    )
-
-    if voice == "tuba voice":
-        trinton.unmeasured_stem_tremolo(
-            abjad.select(score[voice]).leaves(pitched=True)
-        )
-
-        trinton.attach(
-            voice=score[voice],
-            leaves=[2,],
-            attachment=abjad.LilyPondLiteral(
-                r'\boxed-markup "Fluttertongue" 1', format_slot="after"
-            ),
-        )
-
-    else:
-        trinton.attach(
-            voice=score[voice],
-            leaves=[2,],
-            attachment=abjad.LilyPondLiteral(
-                r'\boxed-markup "Slight OP" 1', format_slot="after"
-            ),
-        )
-
-# piano attachments
-
-trinton.attach(
-    voice=score["piano 2 voice"],
-    leaves=[3, 9,],
-    attachment=abjad.Dynamic("ff", direction=abjad.Up,),
-)
-
-trinton.attach(
-    voice=score["piano 2 voice"],
-    leaves=[6, 12,],
-    attachment=abjad.Dynamic("mf", direction=abjad.Up,),
-)
-
-trinton.attach(
-    voice=score["piano 2 voice"],
-    leaves=[3, 9, 10,],
-    attachment=abjad.Articulation(">"),
-)
-
-# harp attachments
-
-trinton.attach(
-    voice=score["harp voice"],
-    leaves=[2],
-    attachment=abjad.Dynamic("ff"),
-)
-
-trinton.attach(
-    voice=score["harp voice"],
-    leaves=[2,],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Circular scrape w/ plastic card" 1', format_slot="after"
-    ),
-)
-
-trinton.unmeasured_stem_tremolo(
-    selections=abjad.select(score["harp voice"]).leaves(pitched=True)
-)
-
-# percussion 1 attachments
-
-trinton.write_slur(
-    voice=score["marimba voice"],
-    start_slur=[2, 14, 27,],
-    stop_slur=[11, 22, 32,],
-)
-
-trinton.attach(
-    voice=score["marimba voice"],
-    leaves=[2],
-    attachment=abjad.Dynamic("f")
-)
-
-trinton.attach(
-    voice=score["marimba voice"],
-    leaves=[2],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Pitches approx., w/ drumsticks" 1', format_slot="after"
-    ),
-)
-
-hexennacht.three_lines(
-    score=score,
-    voice="percussion 1 voice",
-    leaves=[0],
-)
-
-trinton.transparent_accidentals(
-    score=score,
-    voice="percussion 1 voice",
-    leaves=all,
-)
-
-hexennacht.percussion_clef(
-    score_and_voice=score["percussion 1 voice"],
-    leaves=[0],
-)
-
-trinton.unmeasured_stem_tremolo(
-    abjad.select(score["percussion 1 voice"]).leaves(pitched=True)
-)
-
-trinton.attach(
     voice=score["percussion 1 voice"],
-    leaves=[3],
-    attachment=abjad.Dynamic("f"),
+    leaves=[1, 3, 5, 7, 9, 11, 13, 15, 18, 20, 23,],
+    attachment=abjad.Articulation(">")
 )
 
-# bass drum attachments
+# percussion 2 attachments
 
-hexennacht.percussion_clef(
-    score_and_voice=score["percussion 2 voice"],
-    leaves=[0],
-)
-
-hexennacht.one_line(
-    score=score,
-    voice="percussion 2 voice",
-    leaves=[0],
-)
-
-trinton.transparent_accidentals(
-    score=score,
-    voice="percussion 2 voice",
-    leaves=all,
-)
-
-hexennacht.bass_drum(
+hexennacht.gongs(
     score=score,
     voice="percussion 2 voice",
     leaves=[0]
@@ -726,185 +338,302 @@ hexennacht.bass_drum(
 trinton.attach(
     voice=score["percussion 2 voice"],
     leaves=[0],
-    attachment=abjad.Dynamic("ff"),
+    attachment=abjad.Dynamic("ff")
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="percussion 2 voice",
+    leaves=[1],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "w/ bow, CLB" 1', format_slot="after"
+        ),
+        abjad.Dynamic("mp"),
+        abjad.StartHairpin("<")
+    ]
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
-    leaves=[0, 2, 4, 7, 10, 12, 14, 16, 18, 21, 24, 26, 29, 31, 33,],
-    attachment=abjad.Articulation(">"),
+    leaves=[5],
+    attachment=abjad.Dynamic("f"),
 )
 
-# violin 1 attachments
-
-hexennacht.octave_up(
-    abjad.select(score["violin 1 voice"]).leaves(pitched=True),
+trinton.attach_multiple(
+    score=score,
+    voice="percussion 2 voice",
+    leaves=[7],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Crine" 1', format_slot="after"
+        ),
+        abjad.Dynamic("ff"),
+        abjad.StartHairpin(">"),
+    ]
 )
 
 trinton.attach(
-    voice=score["violin 1 voice"],
-    leaves=[3],
+    voice=score["percussion 2 voice"],
+    leaves=[10],
+    attachment=abjad.Dynamic("mp"),
+)
+
+trinton.attach(
+    voice=score["percussion 2 voice"],
+    leaves=[13],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Slight OP" 1', format_slot="after"
+        r'\boxed-markup "CLB" 1', format_slot="after"
     ),
 )
 
+trinton.attach(
+    voice=score["percussion 2 voice"],
+    leaves=[11],
+    attachment=abjad.Dynamic("ff"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="percussion 2 voice",
+    leaves=[20],
+    attachments=[
+        abjad.Dynamic("mp"),
+        abjad.StartHairpin("<"),
+    ]
+)
+
+trinton.attach(
+    voice=score["percussion 2 voice"],
+    leaves=[32],
+    attachment=abjad.Dynamic("ff"),
+)
+
+# oboe attachments
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[3, 4, 5, 9, 10, 11, 16, 17, 21, 22, 23,],
+    attachment=abjad.Glissando(),
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[3, 5, 9, 11, 16, 18, 22, 24,],
+    attachment=abjad.Articulation("stopped"),
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[4, 6, 10, 17, 21, 23,],
+    attachment=abjad.Articulation("open"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="oboe voice",
+    leaves=[3, 16],
+    attachments=[
+        abjad.Dynamic("f"),
+        abjad.StartHairpin(">"),
+    ]
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="oboe voice",
+    leaves=[9, 21,],
+    attachments=[
+        abjad.Dynamic("p"),
+        abjad.StartHairpin("<"),
+    ]
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[11, 24,],
+    attachment=abjad.Dynamic("f")
+)
+
+trinton.write_slur(
+    voice=score["oboe voice"],
+    start_slur=[3, 9, 16, 21,],
+    stop_slur=[6, 11, 18, 24,],
+)
+
+# bass clarinet attachments
+
+trinton.attach_multiple(
+    score=score,
+    voice="bass clarinet voice",
+    leaves=[4,],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Overblow" 1', format_slot="after"
+        ),
+        abjad.Dynamic("ffff"),
+        abjad.Articulation("marcato")
+    ]
+)
+
+trinton.attach(
+    voice=score["bass clarinet voice"],
+    leaves=[8, 11, 16, 21, 24,],
+    attachment=abjad.Articulation("marcato"),
+)
+
+# bassoon attachments
+
+trinton.attach_multiple(
+    score=score,
+    voice="bassoon voice",
+    leaves=[0,],
+    attachments=[
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Overblow" 1', format_slot="after"
+        ),
+        abjad.Dynamic("ffff"),
+        abjad.Articulation("marcato")
+    ]
+)
+
+trinton.attach(
+    voice=score["bassoon voice"],
+    leaves=[4, 7, 12, 17, 20, 23, 29, 32,],
+    attachment=abjad.Articulation("marcato"),
+)
+
+# tuba and contrabass attachments
+
+for voice in ["tuba voice", "contrabass voice",]:
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[2, 6,],
+        attachments=[
+            abjad.Dynamic("pp"),
+            abjad.StartHairpin("<")
+        ]
+    )
+
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[4, 8,],
+        attachments=[
+            abjad.Dynamic("mp"),
+            abjad.StartHairpin(">"),
+        ],
+    )
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[10],
+        attachment=abjad.Dynamic("pp")
+    )
+
+# violin 1 attachments
+
 trinton.write_markup(
     voice=score["violin 1 voice"],
-    leaf=[3,],
+    leaf=[4,],
     string=r"\italic espressivo",
     down=True,
 )
 
 trinton.write_slur(
     voice=score["violin 1 voice"],
-    start_slur=[7, 11, 15, 18,],
-    stop_slur=[10, 12, 17, 23,],
+    start_slur=[4, 8, 11, 14,],
+    stop_slur=[5, 10, 13, 16,],
 )
 
 trinton.attach(
     voice=score["violin 1 voice"],
-    leaves=[3, 4, 5, 7, 11, 15, 18,],
-    attachment=abjad.Articulation("tenuto")
+    leaves=[4, 8, 11, 14,],
+    attachment=abjad.Articulation("tenuto"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="violin 1 voice",
+    leaves=[4,],
+    attachments=[
+        abjad.Dynamic("p"),
+        abjad.StartHairpin("<")
+    ]
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="violin 1 voice",
+    leaves=[6,],
+    attachments=[
+        abjad.Dynamic("mf"),
+        abjad.StartHairpin(">")
+    ]
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="violin 1 voice",
+    leaves=[9,],
+    attachments=[
+        abjad.Dynamic("mp"),
+        abjad.StartHairpin("<")
+    ]
 )
 
 trinton.attach(
     voice=score["violin 1 voice"],
-    leaves=[5, 15,],
-    attachment=abjad.Dynamic("ff")
+    leaves=[14],
+    attachment=abjad.Dynamic("ff"),
 )
 
-trinton.attach(
-    voice=score["violin 1 voice"],
-    leaves=[3, 11, 23,],
-    attachment=abjad.Dynamic("mf")
-)
-
-trinton.attach(
-    voice=score["violin 1 voice"],
-    leaves=[3, 13,],
-    attachment=abjad.StartHairpin("<"),
-)
-
-trinton.attach(
-    voice=score["violin 1 voice"],
-    leaves=[7, 18,],
-    attachment=abjad.StartHairpin(">"),
-)
-
-# violin 2 attachments
-
-for voice in ["violin 2 voice", "viola voice", "cello voice",]:
-    trinton.change_notehead(
-        voice=score[voice],
-        leaves=all,
-        notehead=r"#'cross"
-    )
-
-trinton.attach(
-    voice=score["violin 2 voice"],
-    leaves=[3, 11, 19, 27, 35, 43, 51, 59,],
-    attachment=abjad.Tie()
-)
-
-for attachment in [abjad.Articulation("downbow"), abjad.Articulation(">"), abjad.Dynamic("ff")]:
-    trinton.attach(
-        voice=score["violin 2 voice"],
-        leaves=[0, 2, 5, 8, 11, 14, 17, 19, 22, 25, 29, 31, 34, 37, 39, 42, 46, 48, 51, 54, 56, 59, 63,],
-        attachment=attachment
-    )
-
-trinton.attach(
-    voice=score["violin 2 voice"],
-    leaves=[1, 3, 6, 9, 13, 15, 18, 21, 23, 26, 30, 32, 35, 38, 40, 43, 47, 49, 53, 55, 57, 61,],
-    attachment=abjad.Dynamic("mp"),
-)
-
-trinton.attach(
-    voice=score["violin 2 voice"],
-    leaves=[1, 3, 6, 7, 9, 10, 13, 15, 16, 24, 27, 33, 41, 45, 50, 58, 62, 18, 21, 23, 26, 30, 32, 35, 38, 40, 43, 47, 49, 53, 55, 57, 61,],
-    attachment=abjad.Articulation("upbow"),
-)
-
-trinton.attach(
-    voice=score["violin 2 voice"],
-    leaves=[0],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "OP" 1', format_slot="after"
-    ),
-)
-
-# viola attachments
-
-hexennacht.alto_clef(
-    score_and_voice=score["viola voice"],
-    leaves=[0],
-)
-
-trinton.attach(
-    voice=score["viola voice"],
-    leaves=[1, 5, 9, 13, 17, 21, 25, 29,],
-    attachment=abjad.Tie()
-)
-
-for attachment in [abjad.Articulation("downbow"), abjad.Articulation(">"), abjad.Dynamic("ff")]:
-    trinton.attach(
-        voice=score["viola voice"],
-        leaves=[0, 3, 5, 9, 13, 16, 20, 23, 25, 29,],
-        attachment=attachment
-    )
-
-trinton.attach(
-    voice=score["viola voice"],
-    leaves=[1, 4, 7, 11, 15, 17, 21, 27, 31,],
-    attachment=abjad.Dynamic("mp")
-)
-
-trinton.attach(
-    voice=score["viola voice"],
-    leaves=[8, 12, 19, 24, 28, 1, 4, 7, 11, 15, 17, 21, 27, 31,],
-    attachment=abjad.Articulation("upbow")
-)
-
-trinton.attach(
-    voice=score["viola voice"],
-    leaves=[0],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "OP" 1', format_slot="after"
-    ),
+hexennacht.octave_up(
+    abjad.select(score["violin 1 voice"]).leaves(pitched=True)
 )
 
 # cello attachments
 
-hexennacht.bass_clef(
-    score_and_voice=score["cello voice"],
-    leaves=[0],
-)
-
-for attachment in [abjad.Articulation("downbow"), abjad.Articulation(">"), abjad.Dynamic("ff")]:
-    trinton.attach(
-        voice=score["cello voice"],
-        leaves=[0, 2, 4, 7, 10, 12, 15, 17, 19, 22, 25, 28, 31,],
-        attachment=attachment
-    )
-
-trinton.attach(
+trinton.change_notehead(
     voice=score["cello voice"],
-    leaves=[1, 3, 5, 8, 11, 13, 16, 18, 20, 23, 26, 29,],
-    attachment=abjad.Dynamic("mp")
+    leaves=all,
+    notehead=r"#'harmonic",
 )
 
 trinton.attach(
     voice=score["cello voice"],
-    leaves=[1, 3, 5, 6, 8, 9, 11, 13, 14, 16, 18, 20, 21, 23, 24, 26, 27, 29, 30,],
-    attachment=abjad.Articulation("upbow")
+    leaves=[2, 3, 6, 7, 12, 14, 18, 19,],
+    attachment=abjad.Tie(),
 )
 
 trinton.attach(
     voice=score["cello voice"],
-    leaves=[0],
+    leaves=[2, 6, 12, 18,],
+    attachment=abjad.StartHairpin("o<"),
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="cello voice",
+    leaves=[3, 7, 13, 19,],
+    attachments=[
+        abjad.Dynamic("mf"),
+        abjad.StartHairpin(">o"),
+    ]
+)
+
+trinton.attach(
+    voice=score["cello voice"],
+    leaves=[4, 8, 15, 20,],
+    attachment=abjad.StopHairpin(),
+)
+
+trinton.attach(
+    voice=score["cello voice"],
+    leaves=[2,],
     attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "OP" 1', format_slot="after"
+        r'\boxed-markup "MSP, Molto Flaut." 1', format_slot="after"
     ),
 )
 
