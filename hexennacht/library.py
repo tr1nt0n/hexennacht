@@ -664,6 +664,10 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
             selector=abjad.select().tuplets(),
         ),
         rmakers.duration_bracket(),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
     )
 
     ritardando = rmakers.stack(
@@ -674,6 +678,10 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
             selector=abjad.select().tuplets(),
         ),
         rmakers.duration_bracket(),
+        rmakers.trivialize(abjad.select().tuplets()),
+        rmakers.extract_trivial(abjad.select().tuplets()),
+        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
+        rmakers.rewrite_sustained(abjad.select().tuplets()),
     )
 
     if pitched == True:

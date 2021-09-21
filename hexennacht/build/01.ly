@@ -483,12 +483,16 @@
                             [
                             af''32 * 99/32
                             ^ \markup { 1 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             aqf''32 * 69/32
                             ^ \markup { 2 }
                             \glissando
                             gqs''32 * 13/8
                             ^ \markup { 3 }
+                            \)
                             r32 * 47/32
                             ^ \markup { 4 }
                             ]
@@ -537,8 +541,12 @@
                             ^ \markup { 5 }
                             [
                             af''32 * 43/32
+                            \mp
                             ^ \markup { 6 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             a''32 * 51/32
                             ^ \markup { 7 }
                             \glissando
@@ -547,7 +555,9 @@
                             \glissando
                             aqf''32 * 85/32
                             ^ \markup { 9 }
+                            \)
                             r32 * 25/8
+                            \!
                             ^ \markup { 10 }
                             ]
                         }
@@ -597,6 +607,7 @@
                             ^ \markup { 12 }
                             [
                             af''32 * 21/8
+                            \ff
                             ^ \markup { 13 }
                             r32 * 13/8
                             ^ \markup { 14 }
@@ -646,11 +657,17 @@
                             ^ \markup { 15 }
                             [
                             aqf''32 * 49/32
+                            \mp
                             ^ \markup { 16 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             gqs''32 * 17/8
                             ^ \markup { 17 }
+                            \)
                             r32 * 3
+                            \!
                             ^ \markup { 18 }
                             ]
                         }
@@ -703,7 +720,10 @@
                             [
                             af''32 * 115/32
                             ^ \markup { 21 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             a''32 * 49/16
                             ^ \markup { 22 }
                             \glissando
@@ -718,6 +738,7 @@
                             \glissando
                             aqf''32 * 13/8
                             ^ \markup { 26 }
+                            \)
                             r32 * 25/16
                             ^ \markup { 27 }
                             ]
@@ -768,8 +789,12 @@
                             ^ \markup { 28 }
                             [
                             gqs''32 * 23/16
+                            \mf
                             ^ \markup { 29 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             af''32 * 25/16
                             ^ \markup { 30 }
                             \glissando
@@ -787,7 +812,9 @@
                             \glissando
                             aqf''32 * 103/32
                             ^ \markup { 35 }
+                            \)
                             r32 * 113/32
+                            \!
                             ^ \markup { 36 }
                             ]
                         }
@@ -840,9 +867,13 @@
                             [
                             gqs''32 * 49/32
                             ^ \markup { 40 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             af''32 * 17/8
                             ^ \markup { 41 }
+                            \)
                             r32 * 3
                             ^ \markup { 42 }
                             ]
@@ -856,8 +887,12 @@
                             ^ \markup { 43 }
                             [
                             a''32 * 11/32
+                            \mp
                             ^ \markup { 44 }
+                            - \tweak circled-tip ##t
+                            \>
                             ~
+                            \(
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 1/1
@@ -873,8 +908,10 @@
                             \revert Staff.Stem.stemlet-length
                             aqf''32 * 13/8
                             ^ \markup { 47 }
+                            \)
                             ]
                             r32 * 47/32
+                            \!
                             ^ \markup { 48 }
                             ]
                         }
@@ -923,12 +960,18 @@
                             ^ \markup { 50 }
                             [
                             af''32 * 49/32
+                            \mf
                             ^ \markup { 51 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             aqf''32 * 17/8
                             ^ \markup { 52 }
+                            \)
                             \glissando
                             r32 * 3
+                            \!
                             ^ \markup { 53 }
                             ]
                         }
@@ -976,6 +1019,7 @@
                             ^ \markup { 54 }
                             [
                             gqs''32 * 21/8
+                            \mp
                             ^ \markup { 55 }
                             r32 * 13/8
                             ^ \markup { 56 }
@@ -1028,7 +1072,10 @@
                             [
                             af''32 * 51/32
                             ^ \markup { 59 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             a''32 * 27/16
                             ^ \markup { 60 }
                             \glissando
@@ -1049,6 +1096,7 @@
                             \glissando
                             af''32 * 111/32
                             ^ \markup { 66 }
+                            \)
                             r32 * 31/8
                             ^ \markup { 67 }
                             ]
@@ -1097,8 +1145,12 @@
                             ^ \markup { 68 }
                             [
                             a''32 * 115/32
+                            \mf
                             ^ \markup { 69 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             aqs''32 * 103/32
                             ^ \markup { 70 }
                             \glissando
@@ -1119,7 +1171,9 @@
                             \glissando
                             a''32 * 49/32
                             ^ \markup { 76 }
+                            \)
                             r32 * 47/32
+                            \!
                             ^ \markup { 77 }
                             ]
                         }
@@ -1172,12 +1226,16 @@
                             [
                             aqs''32 * 99/32
                             ^ \markup { 81 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             aqf''32 * 69/32
                             ^ \markup { 82 }
                             \glissando
                             af''32 * 13/8
                             ^ \markup { 83 }
+                            \)
                             r32 * 47/32
                             ^ \markup { 84 }
                             ]
@@ -1226,12 +1284,18 @@
                             ^ \markup { 85 }
                             [
                             aqf''32 * 49/32
+                            \ff
                             ^ \markup { 86 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             gqs''32 * 17/8
                             ^ \markup { 87 }
+                            \)
                             \glissando
                             r32 * 3
+                            \!
                             ^ \markup { 88 }
                             ]
                         }
@@ -1282,7 +1346,10 @@
                             [
                             af''32 * 51/32
                             ^ \markup { 91 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             a''32 * 27/16
                             ^ \markup { 92 }
                             \glissando
@@ -1303,6 +1370,7 @@
                             \glissando
                             af''32 * 111/32
                             ^ \markup { 98 }
+                            \)
                             r32 * 31/8
                             ^ \markup { 99 }
                             ]
@@ -1351,8 +1419,12 @@
                             ^ \markup { 100 }
                             [
                             a''32 * 115/32
+                            \ff
                             ^ \markup { 101 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             aqs''32 * 91/32
                             ^ \markup { 102 }
                             \glissando
@@ -1361,8 +1433,10 @@
                             \glissando
                             af''32 * 29/16
                             ^ \markup { 104 }
+                            \)
                             \glissando
                             r32 * 13/8
+                            \!
                             ^ \markup { 105 }
                             ]
                         }
@@ -1411,7 +1485,10 @@
                             [
                             aqf''32 * 115/32
                             ^ \markup { 107 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             gqs''32 * 103/32
                             ^ \markup { 108 }
                             \glissando
@@ -1432,6 +1509,7 @@
                             \glissando
                             aqf''32 * 49/32
                             ^ \markup { 114 }
+                            \)
                             r32 * 47/32
                             ^ \markup { 115 }
                             ]
@@ -1480,8 +1558,12 @@
                             ^ \markup { 116 }
                             [
                             gqs''32 * 51/32
+                            \ff
                             ^ \markup { 117 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             af''32 * 27/16
                             ^ \markup { 118 }
                             \glissando
@@ -1502,7 +1584,9 @@
                             \glissando
                             gqs''32 * 111/32
                             ^ \markup { 124 }
+                            \)
                             r32 * 31/8
+                            \!
                             ^ \markup { 125 }
                             ]
                         }
@@ -1551,12 +1635,16 @@
                             [
                             af''32 * 99/32
                             ^ \markup { 127 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             a''32 * 69/32
                             ^ \markup { 128 }
                             \glissando
                             aqs''32 * 13/8
                             ^ \markup { 129 }
+                            \)
                             r32 * 47/32
                             ^ \markup { 130 }
                             ]
@@ -1605,8 +1693,12 @@
                             ^ \markup { 131 }
                             [
                             aqf''32 * 43/32
+                            \mp
                             ^ \markup { 132 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             af''32 * 51/32
                             ^ \markup { 133 }
                             \glissando
@@ -1615,7 +1707,9 @@
                             \glissando
                             gqs''32 * 85/32
                             ^ \markup { 135 }
+                            \)
                             r32 * 25/8
+                            \!
                             ^ \markup { 136 }
                             ]
                         }
@@ -1664,7 +1758,10 @@
                             [
                             af''32 * 43/32
                             ^ \markup { 138 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             a''32 * 51/32
                             ^ \markup { 139 }
                             \glissando
@@ -1673,6 +1770,7 @@
                             \glissando
                             aqf''32 * 85/32
                             ^ \markup { 141 }
+                            \)
                             r32 * 25/8
                             ^ \markup { 142 }
                             ]
@@ -1721,14 +1819,20 @@
                             ^ \markup { 143 }
                             [
                             af''32 * 99/32
+                            \ff
                             ^ \markup { 144 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             aqf''32 * 69/32
                             ^ \markup { 145 }
                             \glissando
                             gqs''32 * 13/8
                             ^ \markup { 146 }
+                            \)
                             r32 * 47/32
+                            \!
                             ^ \markup { 147 }
                             ]
                         }
@@ -1777,9 +1881,13 @@
                             [
                             af''32 * 49/32
                             ^ \markup { 149 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             a''32 * 17/8
                             ^ \markup { 150 }
+                            \)
                             r32 * 3
                             ^ \markup { 151 }
                             ]
@@ -1828,8 +1936,12 @@
                             ^ \markup { 152 }
                             [
                             aqs''32 * 115/32
+                            \ff
                             ^ \markup { 153 }
+                            - \tweak circled-tip ##t
+                            \>
                             \glissando
+                            \(
                             aqf''32 * 91/32
                             ^ \markup { 154 }
                             \glissando
@@ -1838,7 +1950,9 @@
                             \glissando
                             aqf''32 * 29/16
                             ^ \markup { 156 }
+                            \)
                             r32 * 13/8
+                            \!
                             ^ \markup { 157 }
                             ]
                         }
@@ -1887,7 +2001,10 @@
                             [
                             gqs''32 * 115/32
                             ^ \markup { 159 }
+                            - \tweak circled-tip ##t
+                            \<
                             \glissando
+                            \(
                             af''32 * 91/32
                             ^ \markup { 160 }
                             \glissando
@@ -1896,6 +2013,7 @@
                             \glissando
                             aqs''32 * 29/16
                             ^ \markup { 162 }
+                            \)
                             r32 * 13/8
                             ^ \markup { 163 }
                             ]
@@ -1944,10 +2062,13 @@
                             ^ \markup { 164 }
                             [
                             aqf''32 * 49/32
+                            \ff
                             ^ \markup { 165 }
                             \glissando
+                            \(
                             af''32 * 17/8
                             ^ \markup { 166 }
+                            \)
                             r32 * 3
                             ^ \markup { 167 }
                             ]

@@ -50,7 +50,7 @@
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
         \override MetronomeMark.padding = 6
-        \override MetronomeMark.font-size = 2
+        \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(0.3 . 0)
 %         \override TupletBracket.breakable = ##t
         % \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods

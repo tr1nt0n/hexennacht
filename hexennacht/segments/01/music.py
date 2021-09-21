@@ -700,6 +700,48 @@ trinton.attach(
     attachment=abjad.Glissando()
 )
 
+trinton.write_slur(
+    voice=score["oboe voice"],
+    start_slur=[1, 6, 16, 21, 29, 40, 44, 51, 59, 69, 81, 86, 91, 101, 107, 117, 127, 132, 138, 144, 149, 153, 159, 165,],
+    stop_slur=[3, 9, 17, 26, 35, 41, 47, 52, 66, 76, 83, 87, 98, 104, 114, 124, 129, 135, 141, 146, 150, 156, 162, 166,],
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[1, 21, 40, 59, 81, 91, 107, 127, 138, 149, 159, ],
+    attachment=abjad.StartHairpin("o<"),
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[6, 16, 44, 55, 132,],
+    attachment=abjad.Dynamic("mp"),
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[29, 51, 69,],
+    attachment=abjad.Dynamic("mf"),
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[13, 86, 101, 117, 144, 153, 165,],
+    attachment=abjad.Dynamic("ff"),
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[6, 16, 29, 44, 51, 69, 86, 101, 117, 132, 144, 153, ],
+    attachment=abjad.StartHairpin(">o")
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[10, 18, 36, 48, 53, 77, 88, 105, 125, 136, 147, 157, ],
+    attachment=abjad.StopHairpin()
+)
+
 # show file
 
 trinton.render_file(
