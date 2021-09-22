@@ -60,8 +60,14 @@
                         \times 2/3
                         {
                             cs'''32
+                            \ff
                             ^ \markup { 8 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             ef'''32
                             ^ \markup { 9 }
                             fs'''32
@@ -72,43 +78,80 @@
                             ^ \markup { 12 }
                             f''32
                             ^ \markup { 13 }
+                            \)
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16.
                         ^ \markup { 14 }
+                        - \tweak circled-tip ##t
+                        \<
                         [
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \revert Staff.Stem.stemlet-length
                         c'32
+                        \ffff
+                        - \marcato
                         ^ \markup { 15 }
+                        \stopTextSpan
+                        \)
                         ]
                         r4
                         ^ \markup { 16 }
                         \times 4/5
                         {
                             bf''8
+                            \ff
                             ^ \markup { 17 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             ef'''16
                             ^ \markup { 18 }
                             e'''16
                             ^ \markup { 19 }
                             fs''16
                             ^ \markup { 20 }
+                            \)
                             ]
                         }
                         d'4
                         ^ \markup { 21 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
                         ^ \markup { 22 }
                         [
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 23 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         c'8
+                        \pp
                         ^ \markup { 24 }
+                        ^ \markup {
+                            \italic
+                                90
+                            }
                         ]
                         r2
                         ^ \markup { 25 }
@@ -117,8 +160,14 @@
                         \times 4/7
                         {
                             g''16
+                            \ff
                             ^ \markup { 27 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             bf''32
                             ^ \markup { 28 }
                             f'''32
@@ -129,20 +178,38 @@
                             ^ \markup { 31 }
                             af''32
                             ^ \markup { 32 }
+                            \)
                             ]
                         }
                         c'8
                         ^ \markup { 33 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16
                         ^ \markup { 34 }
                         [
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 35 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         d'8
+                        \pp
                         ^ \markup { 36 }
+                        ^ \markup {
+                            \italic
+                                90
+                            }
                         ]
                         \tempo 4=130
                         r1.
@@ -152,46 +219,85 @@
                         {
                             \tempo 4=105
                             c'''16
+                            \ff
                             ^ \markup { 38 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             d'''16
                             ^ \markup { 39 }
                             e'''16
                             ^ \markup { 40 }
                             b''8
                             ^ \markup { 41 }
+                            \)
                             ]
                         }
                         c'8
                         ^ \markup { 42 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16
                         ^ \markup { 43 }
                         [
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 44 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         d'8
+                        \pp
                         ^ \markup { 45 }
+                        ^ \markup {
+                            \italic
+                                90
+                            }
                         ]
                         r4
                         ^ \markup { 46 }
                         \override Staff.Stem.stemlet-length = 0.75
                         f''32
+                        \ff
                         ^ \markup { 47 }
+                        ^ \markup {
+                            \italic
+                                45
+                            }
                         [
+                        \(
                         e''32
                         ^ \markup { 48 }
                         d'''32
                         ^ \markup { 49 }
                         f'''32
                         ^ \markup { 50 }
+                        \)
                         \revert Staff.Stem.stemlet-length
                         d'8
                         ^ \markup { 51 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         d'4
                         ^ \markup { 52 }
                         ~
@@ -200,16 +306,31 @@
                         ^ \markup { 53 }
                         [
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 54 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         c'8
+                        \pp
                         ^ \markup { 55 }
+                        ^ \markup {
+                            \italic
+                                90
+                            }
                         ]
                         \times 2/3
                         {
                             cs'''16
+                            \ff
                             ^ \markup { 56 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             g''16
                             ^ \markup { 57 }
                             a''16
@@ -218,33 +339,64 @@
                             ^ \markup { 59 }
                             ef'''8
                             ^ \markup { 60 }
+                            \)
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 61 }
+                        ^ \markup {
+                            \italic
+                                0
+                            }
                         [
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         ^ \markup { 62 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         d'8
                         ^ \markup { 63 }
                         [
                         \boxed-markup "Accel. poco a poco" 3
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 64 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 65 }
+                        ^ \markup {
+                            \italic
+                                0
+                            }
                         ]
                         \times 2/3
                         {
                             fs'''16
+                            \ff
                             ^ \markup { 66 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             g'''16
                             ^ \markup { 67 }
                             e'''16
@@ -255,62 +407,129 @@
                             ^ \markup { 70 }
                             ef'''16
                             ^ \markup { 71 }
+                            \)
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 72 }
+                        ^ \markup {
+                            \italic
+                                0
+                            }
                         [
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         ^ \markup { 73 }
+                        - \tweak circled-tip ##t
+                        \<
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 74 }
+                        \stopTextSpan
+                        \)
                         [
                         \revert Staff.Stem.stemlet-length
                         c'8.
                         ^ \markup { 75 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         c'4
                         ^ \markup { 76 }
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 77 }
+                        \stopTextSpan
+                        \)
                         [
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         ^ \markup { 78 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         d'8
                         ^ \markup { 79 }
                         [
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 80 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         c'16
                         ^ \markup { 81 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         c'8
                         ^ \markup { 82 }
                         [
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 83 }
+                        \stopTextSpan
+                        \)
                         \revert Staff.Stem.stemlet-length
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 84 }
+                        ^ \markup {
+                            \italic
+                                0
+                            }
                         ]
                         \times 2/3
                         {
                             e'''32
+                            \ff
                             ^ \markup { 85 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             fs''32
                             ^ \markup { 86 }
                             g''32
@@ -321,25 +540,49 @@
                             ^ \markup { 89 }
                             fs'''32
                             ^ \markup { 90 }
+                            \)
                             ]
                         }
                         c'8
                         ^ \markup { 91 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
                         c'8.
                         ^ \markup { 92 }
                         [
                         \revert Staff.Stem.stemlet-length
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 93 }
+                        \stopTextSpan
+                        \)
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         d'8
+                        \pp
                         ^ \markup { 94 }
+                        ^ \markup {
+                            \italic
+                                90
+                            }
                         [
                         c''16
+                        \ff
                         ^ \markup { 95 }
+                        ^ \markup {
+                            \italic
+                                45
+                            }
+                        \(
                         \revert Staff.Stem.stemlet-length
                         af''16
                         ^ \markup { 96 }
@@ -355,20 +598,39 @@
                         \revert Staff.Stem.stemlet-length
                         b''16
                         ^ \markup { 100 }
+                        \)
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         d'8.
                         ^ \markup { 101 }
+                        - \tweak circled-tip ##t
+                        \<
                         [
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \revert Staff.Stem.stemlet-length
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 102 }
+                        \stopTextSpan
+                        \)
                         ]
                         \times 2/3
                         {
                             f''16
+                            \ff
                             ^ \markup { 103 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             e''16
                             ^ \markup { 104 }
                             d'''16
@@ -379,25 +641,40 @@
                             ^ \markup { 107 }
                             g''16
                             ^ \markup { 108 }
+                            \)
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
                         c'8.
                         ^ \markup { 109 }
+                        - \tweak circled-tip ##t
+                        \<
                         [
                         - \abjad-dashed-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
                         - \tweak bound-details.right.text \markup { 0 }
                         - \tweak staff-padding 3
                         \startTextSpan
+                        \(
                         \revert Staff.Stem.stemlet-length
                         d'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 110 }
                         \stopTextSpan
+                        \)
                         ]
                         d'4
                         ^ \markup { 111 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak staff-padding 3
+                        \startTextSpan
+                        \(
                         \tempo 4=130
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
@@ -405,29 +682,50 @@
                         [
                         \revert Staff.Stem.stemlet-length
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 113 }
+                        \stopTextSpan
+                        \)
                         ]
                         \times 4/5
                         {
                             a''32
+                            \ff
                             ^ \markup { 114 }
+                            ^ \markup {
+                                \italic
+                                    45
+                                }
                             [
+                            \(
                             cs'''32
                             ^ \markup { 115 }
                             ef'''32
                             ^ \markup { 116 }
                             fs'''16
                             ^ \markup { 117 }
+                            \)
                             ]
                         }
                         \tempo 4=47
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16
+                        \ffff
+                        - \marcato
                         ^ \markup { 118 }
+                        ^ \markup {
+                            \italic
+                                0
+                            }
                         [
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         ^ \markup { 119 }
+                        ^ \markup {
+                            \italic
+                                90
+                            }
                         ]
                     }
                 }
@@ -2166,20 +2464,28 @@
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             fs,8
+                            \ff
                             ^ \markup { 16 }
                             [
+                            \(
+                            \boxed-markup "Overblow" 1
                             \revert Staff.Stem.stemlet-length
                             g,8
                             ^ \markup { 17 }
                             ]
                             bf,4.
                             ^ \markup { 18 }
+                            \)
                             \override Staff.Stem.stemlet-length = 0.75
                             af,8
+                            - \marcato
+                            - \staccato
                             ^ \markup { 19 }
                             [
                             \revert Staff.Stem.stemlet-length
                             af,8
+                            - \marcato
+                            - \staccato
                             ^ \markup { 20 }
                             ]
                         }
@@ -2319,10 +2625,17 @@
                         ^ \markup { 15 }
                         r8
                         ^ \markup { 16 }
+                        \clef "treble"
                         bf''8
+                        :64
+                        \f
                         ^ \markup { 17 }
+                        \<
                         ~
+                        \boxed-markup "Fluttertongue, rapidly switch between 1st and 7th" 1
                         bf''8.
+                        :64
+                        \fff
                         ^ \markup { 18 }
                         r16
                         ^ \markup { 19 }
@@ -2370,7 +2683,9 @@
                         r2.
                         ^ \markup { 15 }
                         e,2
+                        \p
                         ^ \markup { 16 }
+                        \<
                         fs,4
                         ^ \markup { 17 }
                         ~
@@ -2387,6 +2702,7 @@
                         ~
                         ]
                         g,4
+                        \fff
                         ^ \markup { 21 }
                     }
                 }
@@ -2533,6 +2849,7 @@
                         \markup { Marimba }
                         \set Staff.shortInstrumentName =
                         \markup { mar. }
+                        \clef "bass"
                         r1
                         ^ \markup { 0 }
                         r2
@@ -2566,10 +2883,18 @@
                         r1.
                         ^ \markup { 15 }
                         <d e>4
+                        \mp
                         ^ \markup { 16 }
+                        \<
+                        ~
+                        \boxed-markup "w/ bow" 1
                         <d e>4
+                        \ff
                         ^ \markup { 17 }
+                        \>
+                        ~
                         <d e>4
+                        \pp
                         ^ \markup { 18 }
                     }
                 }
