@@ -1961,6 +1961,7 @@
                             r32 * 5/4
                             [
                             af''32 * 43/32
+                            - \open
                             - \tweak circled-tip ##t
                             \<
                             \glissando
@@ -1969,6 +1970,7 @@
                             - \stopped
                             \glissando
                             aqs''32 * 65/32
+                            - \open
                             \glissando
                             aqf''32 * 85/32
                             - \stopped
@@ -2026,6 +2028,7 @@
                             \glissando
                             \(
                             aqf''32 * 69/32
+                            - \open
                             \glissando
                             gqs''32 * 13/8
                             - \stopped
@@ -2077,6 +2080,7 @@
                             r32 * 43/32
                             [
                             af''32 * 49/32
+                            - \open
                             - \tweak circled-tip ##t
                             \<
                             \glissando
@@ -2137,11 +2141,13 @@
                             \glissando
                             \(
                             aqf''32 * 91/32
+                            - \open
                             \glissando
                             af''32 * 35/16
                             - \stopped
                             \glissando
                             aqf''32 * 29/16
+                            - \open
                             \)
                             r32 * 13/8
                             \!
@@ -2190,6 +2196,7 @@
                             r32 * 63/16
                             [
                             gqs''32 * 115/32
+                            - \open
                             - \tweak circled-tip ##t
                             \<
                             \glissando
@@ -2198,6 +2205,7 @@
                             - \stopped
                             \glissando
                             a''32 * 35/16
+                            - \open
                             \glissando
                             aqs''32 * 29/16
                             - \stopped
@@ -2254,6 +2262,7 @@
                             \(
                             af''32 * 17/8
                             \fermata
+                            - \open
                             \)
                             r32 * 3
                             ]
