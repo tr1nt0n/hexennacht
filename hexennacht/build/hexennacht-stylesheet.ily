@@ -27,6 +27,7 @@
 		\consists Text_engraver
 		\consists Text_spanner_engraver
         \override BarNumber.font-size = 3
+        \override MetronomeMark.stencil = ##f
 		% \override BarNumber.padding = 1
 		\override BarNumber.font-name = "Bodoni72"
 		% \override TextScript.font-size = 6

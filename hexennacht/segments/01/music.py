@@ -637,43 +637,48 @@ hexennacht.pitch_flute_pf(
     ]
 )
 
-# flute attachments
+# tempi
 
 trinton.attach(
-    voice=score["flute voice"],
+    voice=score["Global Context"],
     leaves=[0],
     attachment=hexennacht.tempo_3
 )
 
 trinton.attach(
-    voice=score["flute voice"],
-    leaves=[5],
+    voice=score["Global Context"],
+    leaves=[4],
     attachment=hexennacht.tempo_4
 )
 
 trinton.attach(
-    voice=score["flute voice"],
-    leaves=[37],
+    voice=score["Global Context"],
+    leaves=[8],
     attachment=hexennacht.tempo_5
 )
 
 trinton.attach(
-    voice=score["flute voice"],
-    leaves=[38],
+    voice=score["Global Context"],
+    leaves=[9],
     attachment=hexennacht.tempo_4
 )
 
 trinton.attach(
-    voice=score["flute voice"],
-    leaves=[112],
+    voice=score["Global Context"],
+    leaves=[11],
     attachment=hexennacht.tempo_5
 )
 
-trinton.attach(
-    voice=score["flute voice"],
-    leaves=[118],
-    attachment=hexennacht.tempo_1
+trinton.write_text_span(
+    voice=score["Global Context"],
+    begin_text=r"Accel.",
+    end_text=r".",
+    start_leaf=[10],
+    stop_leaf=[11],
+    padding=100
 )
+
+# flute attachments
 
 trinton.write_text_span(
     voice=score["flute voice"],
@@ -703,14 +708,6 @@ trinton.write_markup(
     leaf=[118, 84, 72, 65, 61,],
     string=r"\italic 0",
     down=False,
-)
-
-trinton.attach(
-    voice=score["flute voice"],
-    leaves=[63],
-    attachment=abjad.LilyPondLiteral(
-        r'\boxed-markup "Accel. poco a poco" 3', format_slot="after"
-    ),
 )
 
 trinton.attach_multiple(

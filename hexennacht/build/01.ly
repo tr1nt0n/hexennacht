@@ -2,6 +2,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \tempo 4=69
             \time 4/4
             s1 * 1
             \time 2/4
@@ -10,6 +11,7 @@
             s1 * 3/16
             \time 5/4
             s1 * 5/4
+            \tempo 4=105
             \time 5/4
             s1 * 5/4
             \time 3/8
@@ -18,14 +20,23 @@
             s1 * 3/2
             \time 6/4
             s1 * 3/2
+            \tempo 4=130
             \time 6/4
             s1 * 3/2
+            \tempo 4=105
             \time 9/4
             s1 * 9/4
             \time 9/4
             s1 * 9/4
+            - \abjad-dashed-line-with-arrow
+            - \tweak bound-details.left.text \markup \concat { Accel. \hspace #0.5 }
+            - \tweak bound-details.right.text \markup { . }
+            - \tweak staff-padding 100
+            \startTextSpan
+            \tempo 4=130
             \time 9/4
             s1 * 9/4
+            \stopTextSpan
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -39,7 +50,6 @@
                         \markup { Flute }
                         \set Staff.shortInstrumentName =
                         \markup { fl. }
-                        \tempo 4=69
                         r1
                         ^ \markup { 0 }
                         r2
@@ -50,7 +60,6 @@
                         ^ \markup { 3 }
                         r2
                         ^ \markup { 4 }
-                        \tempo 4=105
                         r2.
                         ^ \markup { 5 }
                         r2
@@ -211,13 +220,11 @@
                                 90
                             }
                         ]
-                        \tempo 4=130
                         r1.
                         ^ \markup { 37 }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
-                            \tempo 4=105
                             c'''16
                             \ff
                             ^ \markup { 38 }
@@ -369,7 +376,6 @@
                         d'8
                         ^ \markup { 63 }
                         [
-                        \boxed-markup "Accel. poco a poco" 3
                         c'16
                         \ffff
                         - \marcato
@@ -675,7 +681,6 @@
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
-                        \tempo 4=130
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
                         ^ \markup { 112 }
@@ -708,7 +713,6 @@
                             \)
                             ]
                         }
-                        \tempo 4=47
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16
                         \ffff
