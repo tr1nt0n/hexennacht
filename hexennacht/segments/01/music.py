@@ -728,7 +728,7 @@ trinton.attach_multiple(
 trinton.attach(
     voice=score["flute voice"],
     leaves=[14, 21, 33, 42, 51, 62, 73, 75, 78, 81, 91, 101, 109, 111,],
-    attachment=abjad.StartHairpin("o<")
+    attachment=abjad.StartHairpin("o<|")
 )
 
 trinton.attach(

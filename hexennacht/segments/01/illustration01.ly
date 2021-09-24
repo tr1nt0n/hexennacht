@@ -92,6 +92,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         c'16.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         [
                         - \abjad-dashed-line-with-arrow
@@ -126,6 +127,7 @@
                         }
                         d'4
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
@@ -172,6 +174,7 @@
                         }
                         c'8
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
@@ -216,6 +219,7 @@
                         }
                         c'8
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
@@ -257,6 +261,7 @@
                         \revert Staff.Stem.stemlet-length
                         d'8
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         ]
@@ -313,6 +318,7 @@
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         ]
@@ -369,6 +375,7 @@
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ]
                         - \abjad-dashed-line-with-arrow
@@ -387,6 +394,7 @@
                         \revert Staff.Stem.stemlet-length
                         c'8.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         ]
@@ -407,6 +415,7 @@
                         \revert Staff.Stem.stemlet-length
                         d'8.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         ]
@@ -427,6 +436,7 @@
                         \revert Staff.Stem.stemlet-length
                         c'16
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         ]
@@ -473,6 +483,7 @@
                         }
                         c'8
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
@@ -521,6 +532,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         d'8.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         [
                         - \abjad-dashed-line-with-arrow
@@ -557,6 +569,7 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         c'8.
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         [
                         - \abjad-dashed-line-with-arrow
@@ -574,6 +587,7 @@
                         ]
                         d'4
                         - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
