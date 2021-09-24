@@ -963,7 +963,7 @@ trinton.attach(
 
 hexennacht.three_lines(
     score=score,
-    voice="percussion 2 voice",
+    voice="percussion 1 voice",
     leaves=[0],
 )
 
@@ -974,6 +974,12 @@ trinton.attach(
 )
 
 # percussion 2 attachments
+
+hexennacht.three_lines(
+    score=score,
+    voice="percussion 2 voice",
+    leaves=[0],
+)
 
 trinton.attach(
     voice=score["percussion 2 voice"],

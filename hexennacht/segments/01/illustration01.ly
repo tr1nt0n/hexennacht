@@ -2622,6 +2622,7 @@
                 {
                     \context Voice = "percussion 1 voice"
                     {
+                        \staff-line-count 3
                         \set Staff.instrumentName =
                         \markup { Ratchets }
                         \set Staff.shortInstrumentName =
