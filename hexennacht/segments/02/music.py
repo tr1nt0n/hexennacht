@@ -785,7 +785,7 @@ trinton.attach_multiple(
 
 trinton.attach(
     voice=score["contrabass voice"],
-    leaves="all ties",
+    leaves=[2, 4, 6,],
     attachment=abjad.Articulation(">")
 )
 

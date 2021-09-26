@@ -804,7 +804,6 @@
                         [
                         \boxed-markup "Slight OP" 1
                         a,32
-                        - \accent
                         \revert Staff.Stem.stemlet-length
                         f,16.
                         - \accent
@@ -812,7 +811,6 @@
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         f,8
-                        - \accent
                         [
                         \revert Staff.Stem.stemlet-length
                         b,8
