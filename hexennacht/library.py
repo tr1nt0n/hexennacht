@@ -1949,6 +1949,10 @@ def transpose_harp(score, voice):
             abjad.mutate.transpose(leaf, -1)
             hexennacht.with_flats(leaf)
 
+        elif leaf.written_pitch.number == 10:
+            abjad.mutate.transpose(leaf, 1)
+            hexennacht.with_flats(leaf)
+
         else:
             abjad.mutate.transpose(leaf, 0)
 
