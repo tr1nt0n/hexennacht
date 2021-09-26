@@ -138,6 +138,7 @@
                         \<
                         ~
                         [
+                        \boxed-markup "Norm." 1
                         <c d e>32
                         ~
                         <c d e>16

@@ -385,6 +385,14 @@ for voice in ["bass clarinet voice", "bassoon voice"]:
         attachment=abjad.Articulation("marcato"),
     )
 
+trinton.attach(
+    voice=score["bassoon voice"],
+    leaves=[2,],
+    attachment=abjad.LilyPondLiteral(
+        r'\boxed-markup "Norm." 1', format_slot="after"
+    ),
+)
+
 # brass attachments
 
 for voice in ["horn voice", "tenor trombone voice"]:
