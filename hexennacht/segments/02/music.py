@@ -710,6 +710,12 @@ for voice in ["violin 1 voice", "cello voice",]:
         ]
     )
 
+    trinton.change_notehead(
+        voice=score[voice],
+        leaves=[5, 6, 7, 8,],
+        notehead=r"#'cross"
+    )
+
 # violin 2 attachments
 
 trinton.attach(
@@ -745,6 +751,12 @@ trinton.attach(
     attachment=abjad.Articulation("upbow")
 )
 
+trinton.change_notehead(
+    voice=score["violin 2 voice"],
+    leaves=[5, 6, 7, 8, 9, 10, 11, 12,],
+    notehead=r"#'cross"
+)
+
 # viola attachments
 
 trinton.attach_multiple(
@@ -767,6 +779,12 @@ trinton.attach_multiple(
         abjad.Dynamic("ff"),
         abjad.Articulation(">"),
     ]
+)
+
+trinton.change_notehead(
+    voice=score["viola voice"],
+    leaves=[5, 6, 7, 8,],
+    notehead=r"#'cross"
 )
 
 # contrabass attachments

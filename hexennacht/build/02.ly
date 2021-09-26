@@ -565,6 +565,7 @@
                         ^ \markup \center-align +33
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         g8
                         \ff
                         - \downbow
@@ -572,17 +573,20 @@
                         [
                         \boxed-markup "OP" 1
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         g8
                         \mp
                         - \upbow
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         g8
                         \ff
                         - \accent
                         - \downbow
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         g8
                         \mp
                         - \upbow
@@ -625,20 +629,24 @@
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g8
                             \ff
                             - \downbow
                             - \accent
                             [
                             \boxed-markup "OP" 1
+                            \tweak style #'cross
                             g8
                             \mp
                             - \upbow
+                            \tweak style #'cross
                             g8
                             \ff
                             - \downbow
                             - \accent
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g16
                             \mp
                             - \upbow
@@ -648,16 +656,20 @@
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g16
                             [
+                            \tweak style #'cross
                             g8
                             \ff
                             - \downbow
                             - \accent
+                            \tweak style #'cross
                             g8
                             \mp
                             - \upbow
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g8
                             - \upbow
                             ]
@@ -694,11 +706,13 @@
                         ]
                         \times 2/3
                         {
+                            \tweak style #'cross
                             c4
                             \ff
                             - \downbow
                             - \accent
                             \boxed-markup "OP" 1
+                            \tweak style #'cross
                             c8
                             \mp
                             - \upbow
@@ -706,7 +720,9 @@
                         }
                         \times 2/3
                         {
+                            \tweak style #'cross
                             c8
+                            \tweak style #'cross
                             c4
                             \ff
                             - \downbow
@@ -749,6 +765,7 @@
                         ^ \markup \center-align { +14 }
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
                         \ff
                         - \downbow
@@ -756,17 +773,20 @@
                         [
                         \boxed-markup "OP" 1
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
                         \mp
                         - \upbow
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
                         \ff
                         - \accent
                         - \downbow
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
                         \mp
                         - \upbow
