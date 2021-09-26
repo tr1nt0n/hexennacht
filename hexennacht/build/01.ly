@@ -2309,6 +2309,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "bassoon staff"
@@ -2390,6 +2391,7 @@
                     r2.
                     r1.
                     r2.
+                    \fermata
                 }
             }
             \context PianoStaff = "sub group 2"
@@ -2419,6 +2421,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "tenor trombone staff"
@@ -2533,6 +2536,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "piano 2 staff"
@@ -2585,6 +2589,7 @@
                     r2.
                     r1.
                     r2.
+                    \fermata
                 }
             }
             \context PianoStaff = "sub group 4"
@@ -2727,6 +2732,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "violin 2 staff"
@@ -2754,6 +2760,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "viola staff"
@@ -2782,6 +2789,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "cello staff"
@@ -2810,6 +2818,7 @@
                         r2.
                         r1.
                         r2.
+                        \fermata
                     }
                 }
                 \context Staff = "contrabass staff"

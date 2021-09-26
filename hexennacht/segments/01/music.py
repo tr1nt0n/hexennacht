@@ -1033,6 +1033,16 @@ trinton.attach_multiple(
     attachments=[abjad.Fermata(), abjad.Dynamic("ff")]
 )
 
+# fermatas
+
+for voice in ["bass clarinet voice", "trumpet voice", "horn voice", "violin 1 voice", "violin 2 voice", "viola voice", "cello voice", "piano 1 voice", "harp voice",]:
+    trinton.attach(
+        voice=score[voice],
+        leaves=[16,],
+        attachment=abjad.Fermata()
+    )
+
+
 # show file
 
 trinton.render_file(
