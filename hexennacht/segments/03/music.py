@@ -265,7 +265,7 @@ trinton.rewrite_meter(score)
 
 trinton.beam_score(score)
 
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # tempi
 
@@ -359,6 +359,334 @@ for leaf, attachment in zip([10, 11,], [abjad.Dynamic("p"), abjad.Dynamic("f")])
         voice=score["harp voice"],
         leaves=[leaf],
         attachment=attachment
+    )
+
+# pitch flute and oboe
+
+for leaf, multiphonic in zip([1, 4, 7,], [2, 3, 5,]) :
+    hexennacht.flute_multiphonics(
+        score=score,
+        voice="flute voice",
+        leaves=[leaf],
+        multiphonic=multiphonic,
+        markup=True,
+    )
+
+for leaf, multiphonic in zip([1, 4, 7,], [2, 3, 5,]) :
+    hexennacht.oboe_harmonies(
+        score=score,
+        voice="oboe voice",
+        leaves=[leaf],
+        flute_multiphonic=multiphonic
+    )
+
+# flute attachments
+
+trinton.write_markup(
+    voice=score["flute voice"],
+    leaf=[1,],
+    string=r"\italic 45",
+    down=False
+)
+
+for voice in ["flute voice", "oboe voice",]:
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[1],
+        attachments=[abjad.Dynamic("p"), abjad.Articulation("tenuto")]
+    )
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[4],
+        attachment=abjad.Articulation("tenuto")
+    )
+
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[7,],
+        attachments=[
+            abjad.Dynamic("ff"),
+            abjad.Articulation("marcato"),
+        ]
+    )
+
+abjad.attach(abjad.StemTremolo(32), abjad.select(score["flute voice"]).leaf(7))
+
+# oboe attachments
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[1],
+    attachment=abjad.LilyPondLiteral(
+        r'\boxed-markup "Norm." 1', format_slot="after"
+    ),
+)
+
+abjad.attach(abjad.StemTremolo(32), abjad.select(score["oboe voice"]).leaf(7))
+
+# clarinet attachments
+
+hexennacht.clarinet_multiphonics(
+    score=score,
+    voice="bass clarinet voice",
+    leaves=[2,],
+    multiphonic=5,
+    markup=True,
+)
+
+trinton.attach(
+    voice=score["bass clarinet voice"],
+    leaves=[2,],
+    attachment=abjad.Dynamic("p"),
+)
+
+trinton.write_slur(
+    voice=score["bass clarinet voice"],
+    start_slur=[5, 8,],
+    stop_slur=[7, 9,],
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="bass clarinet voice",
+    leaves=[5,],
+    attachments=[
+        abjad.Dynamic("ff"),
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Overblow" 1', format_slot="after"
+        ),
+    ]
+)
+
+
+
+for leaf in [5, 6, 7, 8, 9, 10]:
+    sel = abjad.select(score["bass clarinet voice"]).leaf(leaf)
+    abjad.mutate.transpose(sel, 2)
+
+# bassoon attachments
+
+hexennacht.bassoon_multiphonics(
+    score=score,
+    voice="bassoon voice",
+    leaves=[3,],
+    multiphonic=5,
+    markup=True
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="bassoon voice",
+    leaves=[3,],
+    attachments=[
+        abjad.Dynamic("ff"),
+        abjad.Articulation("marcato")
+    ]
+)
+
+# horn attachments
+
+trinton.unmeasured_stem_tremolo(
+    abjad.select(score["horn voice"]).leaves(pitched=True)
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="horn voice",
+    leaves=[3,],
+    attachments=[
+        abjad.Dynamic("mf"),
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Fluttering valves, fluttertongue" 1', format_slot="after"
+        ),
+    ]
+)
+
+# bass andtrombone attachments
+
+for voice in ["tenor trombone voice", "contrabass voice"]:
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[3,],
+        attachments=[
+            abjad.Dynamic("p"),
+            abjad.StartHairpin("<")
+        ]
+    )
+
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[6,],
+        attachments=[
+            abjad.Dynamic("f"),
+            abjad.StartHairpin(">")
+        ]
+    )
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[8,],
+        attachment=abjad.Dynamic("p")
+    )
+
+    if voice == "tenor trombone voice":
+        trinton.attach(
+            voice=score[voice],
+            leaves=[3],
+            attachment=abjad.LilyPondLiteral(
+                r'\boxed-markup "Ord." 1', format_slot="after"
+            ),
+        )
+
+    else:
+        trinton.attach(
+            voice=score[voice],
+            leaves=[3],
+            attachment=abjad.LilyPondLiteral(
+                r'\boxed-markup "Norm., ST" 1', format_slot="after"
+            ),
+        )
+
+# tuba attachments
+
+trinton.attach_multiple(
+    score=score,
+    voice="tuba voice",
+    leaves=[3,],
+    attachments=[
+        abjad.Dynamic("p"),
+        abjad.StartHairpin("<")
+    ]
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="tuba voice",
+    leaves=[5,],
+    attachments=[
+        abjad.Dynamic("f"),
+        abjad.StartHairpin(">")
+    ]
+)
+
+trinton.attach(
+    voice=score["tuba voice"],
+    leaves=[7,],
+    attachment=abjad.Dynamic("p")
+)
+
+# percussion 1 attachments
+
+for voice in ["percussion 1 voice", "percussion 2 voice"]:
+    trinton.transparent_accidentals(
+        score=score,
+        voice=voice,
+        leaves=all,
+    )
+
+trinton.unmeasured_stem_tremolo(
+    abjad.select(score["percussion 1 voice"]).leaves(pitched=True)
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="percussion 1 voice",
+    leaves=[3,],
+    attachments=[
+        abjad.Dynamic("ff"),
+        abjad.Articulation(">"),
+        abjad.StartHairpin(">")
+    ]
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="percussion 1 voice",
+    leaves=[5,],
+    attachments=[
+        abjad.Dynamic("p"),
+        abjad.Articulation(">"),
+    ]
+)
+
+# percussion 2 attachments
+
+trinton.attach_multiple(
+    score=score,
+    voice="percussion 2 voice",
+    leaves=[3, 5, 7, 10,],
+    attachments=[
+        abjad.Dynamic("ff"),
+        abjad.Articulation(">")
+    ]
+)
+
+trinton.attach(
+    voice=score["percussion 2 voice"],
+    leaves=[4, 6, 8,],
+    attachment=abjad.Dynamic("mp")
+)
+
+# strings attachments
+
+for voice in ["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",]:
+    trinton.attach(
+        voice=score[voice],
+        leaves=[3, 4, 6, 7,],
+        attachment=abjad.Tie(),
+    )
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[3, 6,],
+        attachment=abjad.StartHairpin("o<"),
+    )
+
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[4,],
+        attachments=[
+            abjad.Dynamic("mf"),
+            abjad.StartHairpin(">o")
+        ]
+    )
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[5, 8,],
+        attachment=abjad.StopHairpin()
+    )
+
+    trinton.attach_multiple(
+        score=score,
+        voice=voice,
+        leaves=[7,],
+        attachments=[
+            abjad.Dynamic("fff"),
+            abjad.StartHairpin(">o")
+        ]
+    )
+
+    sel = [
+        abjad.select(score[voice]).leaf(6),
+        abjad.select(score[voice]).leaf(7),
+        abjad.select(score[voice]).leaf(8),
+    ]
+
+    trinton.unmeasured_stem_tremolo(sel)
+
+    trinton.attach(
+        voice=score[voice],
+        leaves=[6,],
+        attachment=abjad.LilyPondLiteral(
+            r'\boxed-markup "Slight O.P." 1', format_slot="after"
+        ),
     )
 
 # show file

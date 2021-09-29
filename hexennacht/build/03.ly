@@ -25,23 +25,27 @@
                         \set Staff.shortInstrumentName =
                         \markup { fl. }
                         r4
-                        ^ \markup { 0 }
-                        c'8
-                        ^ \markup { 1 }
+                        <f'' dqf'''>8
+                        \p
+                        - \tenuto
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}
+                        ^ \markup {
+                            \italic
+                                45
+                            }
                         r8
-                        ^ \markup { 2 }
                         r4.
-                        ^ \markup { 3 }
-                        c'8
-                        ^ \markup { 4 }
+                        <bqs' cs'''>8
+                        - \tenuto
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}
                         r8
-                        ^ \markup { 5 }
                         r2
-                        ^ \markup { 6 }
-                        c'2..
-                        ^ \markup { 7 }
+                        <bf' aqs'' f'''>2..
+                        :32
+                        \ff
+                        - \marcato
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}
                         r2..
-                        ^ \markup { 8 }
                     }
                 }
                 \context Staff = "oboe staff"
@@ -51,23 +55,21 @@
                         \set Staff.shortInstrumentName =
                         \markup { ob. }
                         r4
-                        ^ \markup { 0 }
-                        c'8
-                        ^ \markup { 1 }
+                        b''8
+                        \p
+                        - \tenuto
+                        \boxed-markup "Norm." 1
                         r8
-                        ^ \markup { 2 }
                         r4.
-                        ^ \markup { 3 }
-                        c'8
-                        ^ \markup { 4 }
+                        f''8
+                        - \tenuto
                         r8
-                        ^ \markup { 5 }
                         r2
-                        ^ \markup { 6 }
-                        c'2..
-                        ^ \markup { 7 }
+                        c''2..
+                        :32
+                        \ff
+                        - \marcato
                         r2..
-                        ^ \markup { 8 }
                     }
                 }
                 \context Staff = "bass clarinet staff"
@@ -77,37 +79,33 @@
                         \set Staff.shortInstrumentName =
                         \markup { bcl. }
                         r2
-                        ^ \markup { 0 }
                         r8
-                        ^ \markup { 1 }
-                        c'8
-                        ^ \markup { 2 }
+                        <af' eqf'''>8
+                        \p
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}
                         r8
-                        ^ \markup { 3 }
                         r2.
-                        ^ \markup { 4 }
                         \override Staff.Stem.stemlet-length = 0.75
-                        af'8
-                        ^ \markup { 5 }
-                        [
-                        e'8
-                        ^ \markup { 6 }
-                        \revert Staff.Stem.stemlet-length
                         bf'8
-                        ^ \markup { 7 }
+                        \ff
+                        [
+                        \(
+                        \boxed-markup "Overblow" 1
+                        fs'8
+                        \revert Staff.Stem.stemlet-length
+                        c''8
+                        \)
                         ]
-                        c'4
-                        ^ \markup { 8 }
+                        d'4
+                        \(
                         \override Staff.Stem.stemlet-length = 0.75
-                        bf'8
-                        ^ \markup { 9 }
+                        c''8
+                        \)
                         [
                         \revert Staff.Stem.stemlet-length
-                        bf'8
-                        ^ \markup { 10 }
+                        c''8
                         ]
                         r2..
-                        ^ \markup { 11 }
                     }
                 }
                 \context Staff = "bassoon staff"
@@ -118,15 +116,13 @@
                         \markup { bsn. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
-                        c'2..
-                        ^ \markup { 3 }
+                        <cqs, fs, c gqs>2..
+                        \ff
+                        - \marcato
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}
                         r2..
-                        ^ \markup { 4 }
                     }
                 }
             >>
@@ -137,45 +133,41 @@
                     \set Staff.shortInstrumentName =
                     \markup { hrn. }
                     r2
-                    ^ \markup { 0 }
                     r4.
-                    ^ \markup { 1 }
                     r2.
-                    ^ \markup { 2 }
                     \override Staff.Stem.stemlet-length = 0.75
                     a''8
-                    ^ \markup { 3 }
+                    :64
+                    \mf
                     ~
                     [
+                    \boxed-markup "Fluttering valves, fluttertongue" 1
                     a''32
-                    ^ \markup { 4 }
+                    :256
                     \revert Staff.Stem.stemlet-length
                     b'16.
-                    ^ \markup { 5 }
+                    :256
                     ]
                     r16
-                    ^ \markup { 6 }
                     bf''16
-                    ^ \markup { 7 }
+                    :128
                     ~
                     \override Staff.Stem.stemlet-length = 0.75
                     bf''8
-                    ^ \markup { 8 }
+                    :64
                     ~
                     [
                     bf''32
-                    ^ \markup { 9 }
+                    :256
                     \revert Staff.Stem.stemlet-length
                     cs''16.
-                    ^ \markup { 10 }
+                    :256
                     ~
                     ]
                     cs''8.
-                    ^ \markup { 11 }
+                    :64
                     r16
-                    ^ \markup { 12 }
                     r2..
-                    ^ \markup { 13 }
                 }
             }
             \context PianoStaff = "sub group 2"
@@ -187,15 +179,10 @@
                         \set Staff.shortInstrumentName =
                         \markup { tpt. }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         r2..
-                        ^ \markup { 3 }
                         r2..
-                        ^ \markup { 4 }
                     }
                 }
                 \context Staff = "tenor trombone staff"
@@ -206,36 +193,32 @@
                         \markup { tbn. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         f,4
-                        ^ \markup { 3 }
+                        \p
+                        \<
                         ~
+                        \boxed-markup "Ord." 1
                         \override Staff.Stem.stemlet-length = 0.75
                         f,16
-                        ^ \markup { 4 }
                         [
                         \revert Staff.Stem.stemlet-length
                         g,16
-                        ^ \markup { 5 }
                         ~
                         ]
                         g,4
-                        ^ \markup { 6 }
+                        \f
+                        \>
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         g,8
-                        ^ \markup { 7 }
                         [
                         \revert Staff.Stem.stemlet-length
                         af,8
-                        ^ \markup { 8 }
+                        \p
                         ]
                         r2..
-                        ^ \markup { 9 }
                     }
                 }
                 \context Staff = "tuba staff"
@@ -246,29 +229,25 @@
                         \markup { tb. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         bf,4
-                        ^ \markup { 3 }
+                        \p
+                        \<
                         af,8
-                        ^ \markup { 4 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         af,8.
-                        ^ \markup { 5 }
+                        \f
+                        \>
                         [
                         \revert Staff.Stem.stemlet-length
                         af,16
-                        ^ \markup { 6 }
                         ~
                         ]
                         af,4
-                        ^ \markup { 7 }
+                        \p
                         r2..
-                        ^ \markup { 8 }
                     }
                 }
             >>
@@ -286,46 +265,36 @@
                             f'8.
                             \mf
                             - \tenuto
-                            ^ \markup { 0 }
                             [
                             \(
                             cs''16
-                            ^ \markup { 1 }
                             \revert Staff.Stem.stemlet-length
                             af'16
-                            ^ \markup { 2 }
                             \)
                             ]
                         }
                         a'4
                         \p
                         - \tenuto
-                        ^ \markup { 3 }
                         \<
                         \(
                         e'4
-                        ^ \markup { 4 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         e'16
-                        ^ \markup { 5 }
                         [
                         \revert Staff.Stem.stemlet-length
                         ef'16
                         \mf
-                        ^ \markup { 6 }
                         ~
                         ]
                         ef'4
-                        ^ \markup { 7 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'8
-                        ^ \markup { 8 }
                         [
                         \revert Staff.Stem.stemlet-length
                         f'8
-                        ^ \markup { 9 }
                         \)
                         ]
                         \times 4/5
@@ -334,21 +303,16 @@
                             bf'16
                             \f
                             - \tenuto
-                            ^ \markup { 10 }
                             [
                             \(
                             f'8.
-                            ^ \markup { 11 }
                             \revert Staff.Stem.stemlet-length
                             f'16
-                            ^ \markup { 12 }
                             \)
                             ]
                         }
                         r2..
-                        ^ \markup { 13 }
                         r2..
-                        ^ \markup { 14 }
                     }
                 }
                 \context Staff = "piano 2 staff"
@@ -357,71 +321,52 @@
                     {
                         \clef "bass"
                         r4
-                        ^ \markup { 0 }
                         r8
-                        ^ \markup { 1 }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             bf32
                             - \tenuto
-                            ^ \markup { 2 }
                             [
                             \(
                             a32
-                            ^ \markup { 3 }
                             bf32
-                            ^ \markup { 4 }
                             bf32
-                            ^ \markup { 5 }
                             c'32
-                            ^ \markup { 6 }
                             \revert Staff.Stem.stemlet-length
                             g32
-                            ^ \markup { 7 }
                             \)
                             ]
                         }
                         cs'4
                         - \tenuto
-                        ^ \markup { 8 }
                         \(
                         g8
-                        ^ \markup { 9 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         g8.
-                        ^ \markup { 10 }
                         [
                         \revert Staff.Stem.stemlet-length
                         af16
-                        ^ \markup { 11 }
                         \)
                         ]
                         \times 2/3
                         {
                             bf4
                             - \tenuto
-                            ^ \markup { 12 }
                             \(
                             \override Staff.Stem.stemlet-length = 0.75
                             ef'8
-                            ^ \markup { 13 }
                             [
                             bf8
-                            ^ \markup { 14 }
                             g8
-                            ^ \markup { 15 }
                             \revert Staff.Stem.stemlet-length
                             d'8
-                            ^ \markup { 16 }
                             \)
                             ]
                         }
                         r2..
-                        ^ \markup { 17 }
                         r2..
-                        ^ \markup { 18 }
                     }
                 }
             >>
@@ -432,50 +377,39 @@
                     \set Staff.shortInstrumentName =
                     \markup { harp }
                     r8
-                    ^ \markup { 0 }
                     \override Staff.Stem.stemlet-length = 0.75
                     ef'16
                     \mf
                     - \tenuto
-                    ^ \markup { 1 }
                     \<
                     [
                     \(
                     \revert Staff.Stem.stemlet-length
                     d'16
-                    ^ \markup { 2 }
                     ~
                     ]
                     \override Staff.Stem.stemlet-length = 0.75
                     d'16
-                    ^ \markup { 3 }
                     [
                     ef'16
-                    ^ \markup { 4 }
                     ef'16
-                    ^ \markup { 5 }
                     \revert Staff.Stem.stemlet-length
                     fs'16
-                    ^ \markup { 6 }
                     \)
                     ]
                     cs'4
                     \f
                     - \tenuto
-                    ^ \markup { 7 }
                     \>
                     \(
                     fs'8
-                    ^ \markup { 8 }
                     ~
                     \override Staff.Stem.stemlet-length = 0.75
                     fs'8.
-                    ^ \markup { 9 }
                     [
                     \revert Staff.Stem.stemlet-length
                     cs'16
                     \p
-                    ^ \markup { 10 }
                     \)
                     ]
                     \times 2/3
@@ -484,29 +418,22 @@
                         cs'8
                         \f
                         - \tenuto
-                        ^ \markup { 11 }
                         [
                         \(
                         \revert Staff.Stem.stemlet-length
                         ef'8
-                        ^ \markup { 12 }
                         ]
                         af'4
-                        ^ \markup { 13 }
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'8
-                        ^ \markup { 14 }
                         [
                         \revert Staff.Stem.stemlet-length
                         cs'8
-                        ^ \markup { 15 }
                         \)
                         ]
                     }
                     r2..
-                    ^ \markup { 16 }
                     r2..
-                    ^ \markup { 17 }
                 }
             }
             \context PianoStaff = "sub group 4"
@@ -518,15 +445,10 @@
                         \set Staff.shortInstrumentName =
                         \markup { mar. }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         r2..
-                        ^ \markup { 3 }
                         r2..
-                        ^ \markup { 4 }
                     }
                 }
                 \context Staff = "percussion 1 staff"
@@ -537,20 +459,24 @@
                         \markup { ratch. }
                         \clef "percussion"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
+                        \tweak Accidental.transparent ##t
                         a4.
-                        ^ \markup { 3 }
+                        :32
+                        \ff
+                        - \accent
+                        \>
                         ~
+                        \tweak Accidental.transparent ##t
                         a4
-                        ^ \markup { 4 }
+                        :32
+                        \tweak Accidental.transparent ##t
                         e'4
-                        ^ \markup { 5 }
+                        :32
+                        \p
+                        - \accent
                         r2..
-                        ^ \markup { 6 }
                     }
                 }
             >>
@@ -562,39 +488,46 @@
                     \markup { perc. 2 }
                     \clef "percussion"
                     r2
-                    ^ \markup { 0 }
                     r4.
-                    ^ \markup { 1 }
                     r2.
-                    ^ \markup { 2 }
                     \override Staff.Stem.stemlet-length = 0.75
+                    \tweak Accidental.transparent ##t
                     c'8
-                    ^ \markup { 3 }
+                    \ff
+                    - \accent
                     [
+                    \tweak Accidental.transparent ##t
                     c'8
-                    ^ \markup { 4 }
+                    \mp
                     \revert Staff.Stem.stemlet-length
+                    \tweak Accidental.transparent ##t
                     c'8
-                    ^ \markup { 5 }
+                    \ff
+                    - \accent
                     ]
+                    \tweak Accidental.transparent ##t
                     c'8
-                    ^ \markup { 6 }
+                    \mp
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 3/4
                     {
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 7 }
+                        \ff
+                        - \accent
                         [
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 8 }
+                        \mp
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 9 }
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 10 }
+                        \ff
+                        - \accent
                         ]
                     }
                     r2..
-                    ^ \markup { 11 }
                 }
             }
             \context PianoStaff = "sub group 5"
@@ -606,44 +539,54 @@
                         \set Staff.shortInstrumentName =
                         \markup { vln. 1 }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         \times 4/7
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-septimal-comma-down  }
                             f''2
                             ^ \markup \center-align { -31 }
-                            ^ \markup { 3 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-septimal-comma-down  }
                             f''8
+                            \mf
                             ^ \markup \center-align { -31 }
-                            ^ \markup { 4 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-septimal-comma-down  }
                             f''4
+                            \!
                             ^ \markup \center-align { -31 }
-                            ^ \markup { 5 }
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
                         {
                             f''4
+                            :32
                             ^ \markup \center-align +33
-                            ^ \markup { 6 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
+                            \boxed-markup "Slight O.P." 1
                             f''4
+                            :32
+                            \fff
                             ^ \markup \center-align +33
-                            ^ \markup { 7 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             f''4
+                            :32
+                            \!
                             ^ \markup \center-align +33
-                            ^ \markup { 8 }
                         }
                         r2..
-                        ^ \markup { 9 }
                     }
                 }
                 \context Staff = "violin 2 staff"
@@ -653,28 +596,30 @@
                         \set Staff.shortInstrumentName =
                         \markup { vln. 2 }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         \times 4/7
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             ef''2
                             ^ \markup \center-align { +14 }
-                            ^ \markup { 3 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             ef''8
+                            \mf
                             ^ \markup \center-align { +14 }
-                            ^ \markup { 4 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             ef''4
+                            \!
                             ^ \markup \center-align { +14 }
-                            ^ \markup { 5 }
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
@@ -682,21 +627,29 @@
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                             fs''4
+                            :32
                             ^ \markup \center-align { -16 }
-                            ^ \markup { 6 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
+                            \boxed-markup "Slight O.P." 1
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                             fs''4
+                            :32
+                            \fff
                             ^ \markup \center-align { -16 }
-                            ^ \markup { 7 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                             fs''4
+                            :32
+                            \!
                             ^ \markup \center-align { -16 }
-                            ^ \markup { 8 }
                         }
                         r2..
-                        ^ \markup { 9 }
                     }
                 }
                 \context Staff = "viola staff"
@@ -707,44 +660,54 @@
                         \markup { vla. }
                         \clef "alto"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         \times 4/7
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-septimal-comma-down  }
                             d''2
                             ^ \markup \center-align { -31 }
-                            ^ \markup { 3 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-septimal-comma-down  }
                             d''8
+                            \mf
                             ^ \markup \center-align { -31 }
-                            ^ \markup { 4 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \one-septimal-comma-down  }
                             d''4
+                            \!
                             ^ \markup \center-align { -31 }
-                            ^ \markup { 5 }
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
                         {
                             a'4
+                            :32
                             ^ \markup \center-align +33
-                            ^ \markup { 6 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
+                            \boxed-markup "Slight O.P." 1
                             a'4
+                            :32
+                            \fff
                             ^ \markup \center-align +33
-                            ^ \markup { 7 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             a'4
+                            :32
+                            \!
                             ^ \markup \center-align +33
-                            ^ \markup { 8 }
                         }
                         r2..
-                        ^ \markup { 9 }
                     }
                 }
                 \context Staff = "cello staff"
@@ -755,28 +718,30 @@
                         \markup { vc. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         \times 4/7
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             g2
                             ^ \markup \center-align { +16 }
-                            ^ \markup { 3 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             g8
+                            \mf
                             ^ \markup \center-align { +16 }
-                            ^ \markup { 4 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             g4
+                            \!
                             ^ \markup \center-align { +16 }
-                            ^ \markup { 5 }
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
@@ -784,21 +749,29 @@
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             a'4
+                            :32
                             ^ \markup \center-align { +14 }
-                            ^ \markup { 6 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
+                            \boxed-markup "Slight O.P." 1
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             a'4
+                            :32
+                            \fff
                             ^ \markup \center-align { +14 }
-                            ^ \markup { 7 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             a'4
+                            :32
+                            \!
                             ^ \markup \center-align { +14 }
-                            ^ \markup { 8 }
                         }
                         r2..
-                        ^ \markup { 9 }
                     }
                 }
                 \context Staff = "contrabass staff"
@@ -809,36 +782,32 @@
                         \markup { cb. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         cs,4
-                        ^ \markup { 3 }
+                        \p
+                        \<
                         ~
+                        \boxed-markup "Norm., ST" 1
                         \override Staff.Stem.stemlet-length = 0.75
                         cs,16
-                        ^ \markup { 4 }
                         [
                         \revert Staff.Stem.stemlet-length
                         b,16
-                        ^ \markup { 5 }
                         ~
                         ]
                         b,4
-                        ^ \markup { 6 }
+                        \f
+                        \>
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         b,8
-                        ^ \markup { 7 }
                         [
                         \revert Staff.Stem.stemlet-length
                         b,8
-                        ^ \markup { 8 }
+                        \p
                         ]
                         r2..
-                        ^ \markup { 9 }
                     }
                 }
             >>
