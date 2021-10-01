@@ -77,7 +77,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -96,8 +96,8 @@
                         \<
                         [
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -115,7 +115,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -131,8 +131,8 @@
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -149,7 +149,7 @@
                         \pp
                         ^ \markup {
                             \italic
-                                90
+                                90˚
                             }
                         ]
                         r2
@@ -160,7 +160,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -178,8 +178,8 @@
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -196,7 +196,7 @@
                         \pp
                         ^ \markup {
                             \italic
-                                90
+                                90˚
                             }
                         ]
                         r1.
@@ -207,7 +207,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -223,8 +223,8 @@
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -241,7 +241,7 @@
                         \pp
                         ^ \markup {
                             \italic
-                                90
+                                90˚
                             }
                         ]
                         r4
@@ -250,7 +250,7 @@
                         \ff
                         ^ \markup {
                             \italic
-                                45
+                                45˚
                             }
                         [
                         \(
@@ -266,8 +266,8 @@
                         ~
                         ]
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -286,7 +286,7 @@
                         \pp
                         ^ \markup {
                             \italic
-                                90
+                                90˚
                             }
                         ]
                         \times 2/3
@@ -295,7 +295,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -312,7 +312,7 @@
                         - \marcato
                         ^ \markup {
                             \italic
-                                0
+                                0˚
                             }
                         [
                         \revert Staff.Stem.stemlet-length
@@ -323,8 +323,8 @@
                         ~
                         ]
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -342,7 +342,7 @@
                         - \marcato
                         ^ \markup {
                             \italic
-                                0
+                                0˚
                             }
                         ]
                         \times 2/3
@@ -351,7 +351,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -369,7 +369,7 @@
                         - \marcato
                         ^ \markup {
                             \italic
-                                0
+                                0˚
                             }
                         [
                         \revert Staff.Stem.stemlet-length
@@ -379,8 +379,8 @@
                         \<
                         ]
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -399,8 +399,8 @@
                         ~
                         ]
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -420,8 +420,8 @@
                         ~
                         ]
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -441,8 +441,8 @@
                         ~
                         ]
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -460,7 +460,7 @@
                         - \marcato
                         ^ \markup {
                             \italic
-                                0
+                                0˚
                             }
                         ]
                         \times 2/3
@@ -469,7 +469,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -487,8 +487,8 @@
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -507,14 +507,14 @@
                         \pp
                         ^ \markup {
                             \italic
-                                90
+                                90˚
                             }
                         [
                         c''16
                         \ff
                         ^ \markup {
                             \italic
-                                45
+                                45˚
                             }
                         \(
                         \revert Staff.Stem.stemlet-length
@@ -536,8 +536,8 @@
                         \<
                         [
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -554,7 +554,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -573,8 +573,8 @@
                         \<
                         [
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -591,8 +591,8 @@
                         \<
                         ~
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \(
@@ -612,7 +612,7 @@
                             \ff
                             ^ \markup {
                                 \italic
-                                    45
+                                    45˚
                                 }
                             [
                             \(
@@ -628,7 +628,7 @@
                         - \marcato
                         ^ \markup {
                             \italic
-                                0
+                                0˚
                             }
                         [
                         \revert Staff.Stem.stemlet-length
@@ -636,7 +636,7 @@
                         \fermata
                         ^ \markup {
                             \italic
-                                90
+                                90˚
                             }
                         ]
                     }

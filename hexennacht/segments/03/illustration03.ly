@@ -44,7 +44,7 @@
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}
                         ^ \markup {
                             \italic
-                                45
+                                45˚
                             }
                         r8
                         r4.
@@ -586,7 +586,7 @@
                             - \tweak circled-tip ##t
                             \<
                             ~
-                            \boxed-markup "Slight O.P." 1
+                            \boxed-markup "Slight OP" 1
                             f''4
                             :32
                             \fff
@@ -645,7 +645,7 @@
                             - \tweak circled-tip ##t
                             \<
                             ~
-                            \boxed-markup "Slight O.P." 1
+                            \boxed-markup "Slight OP" 1
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \sharp-one-syntonic-comma-down  }
                             fs''4
@@ -707,7 +707,7 @@
                             - \tweak circled-tip ##t
                             \<
                             ~
-                            \boxed-markup "Slight O.P." 1
+                            \boxed-markup "Slight OP" 1
                             a'4
                             :32
                             \fff
@@ -767,7 +767,7 @@
                             - \tweak circled-tip ##t
                             \<
                             ~
-                            \boxed-markup "Slight O.P." 1
+                            \boxed-markup "Slight OP" 1
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             a'4

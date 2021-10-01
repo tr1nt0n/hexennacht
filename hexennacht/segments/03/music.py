@@ -385,7 +385,7 @@ for leaf, multiphonic in zip([1, 4, 7,], [2, 3, 5,]) :
 trinton.write_markup(
     voice=score["flute voice"],
     leaf=[1,],
-    string=r"\italic 45",
+    string=r"\italic 45˚",
     down=False
 )
 
@@ -685,7 +685,7 @@ for voice in ["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",]
         voice=score[voice],
         leaves=[6,],
         attachment=abjad.LilyPondLiteral(
-            r'\boxed-markup "Slight O.P." 1', format_slot="after"
+            r'\boxed-markup "Slight OP" 1', format_slot="after"
         ),
     )
 

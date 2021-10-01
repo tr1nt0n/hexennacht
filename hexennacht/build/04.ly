@@ -14,6 +14,7 @@
             s1 * 7/8
             \time 3/4
             s1 * 3/4
+            \tempo 4=105
             \time 7/8
             s1 * 7/8
             \time 3/4
@@ -30,119 +31,85 @@
                         \set Staff.shortInstrumentName =
                         \markup { fl. }
                         r4
-                        ^ \markup { 0 }
                         r8
-                        ^ \markup { 1 }
-                        c'8
-                        ^ \markup { 2 }
+                        <bf' aqs'' f'''>8
+                        \pp
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}
                         ~
-                        c'4
-                        ^ \markup { 3 }
+                        <bf' aqs'' f'''>4
                         r8
-                        ^ \markup { 4 }
                         r2
-                        ^ \markup { 5 }
                         r8
-                        ^ \markup { 6 }
-                        c'8
-                        ^ \markup { 7 }
+                        <bqs' cs'''>8
+                        \p
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}
                         ~
-                        c'8
-                        ^ \markup { 8 }
+                        <bqs' cs'''>8
                         r8
-                        ^ \markup { 9 }
                         r2.
-                        ^ \markup { 10 }
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'''32
-                        ^ \markup { 11 }
+                        \ff
+                        - \accent
                         [
+                        \(
                         g'''32
-                        ^ \markup { 12 }
                         af'''32
-                        ^ \markup { 13 }
                         bf'''32
-                        ^ \markup { 14 }
                         ef'''32
-                        ^ \markup { 15 }
                         af'''32
-                        ^ \markup { 16 }
                         c'''32
-                        ^ \markup { 17 }
                         af'''32
-                        ^ \markup { 18 }
                         g'''32
-                        ^ \markup { 19 }
                         e'''32
-                        ^ \markup { 20 }
                         f'''32
-                        ^ \markup { 21 }
                         \revert Staff.Stem.stemlet-length
                         bf'''32
-                        ^ \markup { 22 }
+                        \)
                         ]
                         r4
-                        ^ \markup { 23 }
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'''32
-                        ^ \markup { 24 }
+                        - \accent
                         [
+                        \(
                         c'''32
-                        ^ \markup { 25 }
                         b'''32
-                        ^ \markup { 26 }
                         bf'''32
-                        ^ \markup { 27 }
                         fs'''32
-                        ^ \markup { 28 }
                         bf'''32
-                        ^ \markup { 29 }
                         g'''32
-                        ^ \markup { 30 }
                         \revert Staff.Stem.stemlet-length
                         b'''32
-                        ^ \markup { 31 }
+                        \)
                         ]
                         r8
-                        ^ \markup { 32 }
                         \override Staff.Stem.stemlet-length = 0.75
                         d'''32
-                        ^ \markup { 33 }
+                        - \accent
                         [
+                        \(
                         e'''32
-                        ^ \markup { 34 }
                         cs'''32
-                        ^ \markup { 35 }
                         \revert Staff.Stem.stemlet-length
                         af'''32
-                        ^ \markup { 36 }
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'''32
-                        ^ \markup { 37 }
                         [
                         g'''32
-                        ^ \markup { 38 }
                         af'''32
-                        ^ \markup { 39 }
                         a'''32
-                        ^ \markup { 40 }
                         ef'''32
-                        ^ \markup { 41 }
                         fs'''32
-                        ^ \markup { 42 }
                         ef'''32
-                        ^ \markup { 43 }
                         \revert Staff.Stem.stemlet-length
                         af'''32
-                        ^ \markup { 44 }
+                        \)
                         ]
                         r4
-                        ^ \markup { 45 }
                         r2..
-                        ^ \markup { 46 }
                         r2.
-                        ^ \markup { 47 }
                     }
                 }
                 \context Staff = "oboe staff"
@@ -152,27 +119,19 @@
                         \set Staff.shortInstrumentName =
                         \markup { ob. }
                         r4
-                        ^ \markup { 0 }
                         r8
-                        ^ \markup { 1 }
-                        af''8
-                        ^ \markup { 2 }
+                        c''8
+                        \pp
                         ~
-                        af''4
-                        ^ \markup { 3 }
+                        c''4
                         r8
-                        ^ \markup { 4 }
                         r2
-                        ^ \markup { 5 }
                         r8
-                        ^ \markup { 6 }
-                        aqf''8
-                        ^ \markup { 7 }
+                        f''8
+                        \p
                         ~
-                        aqf''8
-                        ^ \markup { 8 }
+                        f''8
                         r8
-                        ^ \markup { 9 }
                         \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                             {
                                 \new Score
@@ -213,16 +172,19 @@
                         {
                             \once \override Beam.grow-direction = #right
                             r32 * 117/32
-                            ^ \markup { 10 }
                             [
                             gqs''32 * 99/32
-                            ^ \markup { 11 }
+                            \pp
+                            - \stopped
+                            \(
+                            \glissando
                             af''32 * 69/32
-                            ^ \markup { 12 }
+                            - \stopped
+                            \glissando
                             a''32 * 13/8
-                            ^ \markup { 13 }
+                            - \stopped
+                            \)
                             r32 * 47/32
-                            ^ \markup { 14 }
                             ]
                         }
                         \revert TupletNumber.text
@@ -266,18 +228,21 @@
                         {
                             \once \override Beam.grow-direction = #left
                             r32 * 5/4
-                            ^ \markup { 15 }
                             [
                             aqs''32 * 43/32
-                            ^ \markup { 16 }
+                            - \stopped
+                            \(
+                            \glissando
                             aqf''32 * 51/32
-                            ^ \markup { 17 }
+                            - \stopped
+                            \glissando
                             af''32 * 65/32
-                            ^ \markup { 18 }
+                            - \stopped
+                            \glissando
                             aqf''32 * 85/32
-                            ^ \markup { 19 }
+                            - \stopped
+                            \)
                             r32 * 25/8
-                            ^ \markup { 20 }
                             ]
                         }
                         \revert TupletNumber.text
@@ -321,30 +286,33 @@
                         {
                             \once \override Beam.grow-direction = #left
                             r32 * 3/2
-                            ^ \markup { 21 }
                             [
                             gqs''32 * 3/2
-                            ^ \markup { 22 }
+                            \ff
+                            - \accent
+                            - \open
+                            \(
+                            \glissando
+                            \boxed-markup "Overblow" 1
                             af''32 * 25/16
-                            ^ \markup { 23 }
+                            \glissando
                             a''32 * 53/32
-                            ^ \markup { 24 }
+                            \glissando
                             aqs''32 * 29/16
-                            ^ \markup { 25 }
+                            \glissando
                             aqf''32 * 63/32
-                            ^ \markup { 26 }
+                            \glissando
                             af''32 * 71/32
-                            ^ \markup { 27 }
+                            \glissando
                             aqf''32 * 5/2
-                            ^ \markup { 28 }
+                            \glissando
                             gqs''32 * 91/32
-                            ^ \markup { 29 }
+                            \glissando
                             af''32 * 51/16
-                            ^ \markup { 30 }
+                            \glissando
                             a''32 * 7/2
-                            ^ \markup { 31 }
+                            \)
                             r32 * 15/4
-                            ^ \markup { 32 }
                             ]
                         }
                         \revert TupletNumber.text
@@ -388,33 +356,31 @@
                         {
                             \once \override Beam.grow-direction = #right
                             r32 * 15/4
-                            ^ \markup { 33 }
                             [
                             aqs''32 * 115/32
-                            ^ \markup { 34 }
+                            - \accent
+                            \(
+                            \glissando
                             aqf''32 * 103/32
-                            ^ \markup { 35 }
+                            \glissando
                             af''32 * 11/4
-                            ^ \markup { 36 }
+                            \glissando
                             aqf''32 * 37/16
-                            ^ \markup { 37 }
+                            \glissando
                             gqs''32 * 2
-                            ^ \markup { 38 }
+                            \glissando
                             af''32 * 7/4
-                            ^ \markup { 39 }
+                            \glissando
                             a''32 * 13/8
-                            ^ \markup { 40 }
+                            \glissando
                             aqs''32 * 49/32
-                            ^ \markup { 41 }
+                            \)
                             r32 * 47/32
-                            ^ \markup { 42 }
                             ]
                         }
                         \revert TupletNumber.text
                         r2..
-                        ^ \markup { 43 }
                         r2.
-                        ^ \markup { 44 }
                     }
                 }
                 \context Staff = "bass clarinet staff"
@@ -424,73 +390,64 @@
                         \set Staff.shortInstrumentName =
                         \markup { bcl. }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
-                        c'4
-                        ^ \markup { 2 }
+                        <e' cs'''>4
+                        \pp
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three four five)) (lh . (thumb)) (rh . ()))}
                         ~
-                        c'16
-                        ^ \markup { 3 }
+                        \boxed-markup "Norm." 1
+                        <e' cs'''>16
                         r8.
-                        ^ \markup { 4 }
                         r4
-                        ^ \markup { 5 }
                         r1
-                        ^ \markup { 6 }
-                        c'4
-                        ^ \markup { 7 }
-                        c'8
-                        ^ \markup { 8 }
+                        <fqs' aqf'''>4
+                        \ff
+                        - \marcato
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five six)) (lh . (thumb)) (rh . (three four e)))}
+                        <fqs' aqf'''>8
+                        - \marcato
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 9 }
+                        <fqs' aqf'''>8
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 10 }
-                        ~
-                        ]
-                        \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 11 }
-                        [
-                        \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 12 }
+                        <fqs' aqf'''>8
+                        - \marcato
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 13 }
+                        <fqs' aqf'''>8
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 14 }
+                        <fqs' aqf'''>8
+                        - \marcato
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 15 }
+                        <fqs' aqf'''>8
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 16 }
+                        <fqs' aqf'''>8
+                        - \marcato
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 17 }
+                        <fqs' aqf'''>8
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 18 }
+                        <fqs' aqf'''>8
+                        - \marcato
+                        ~
+                        ]
+                        \override Staff.Stem.stemlet-length = 0.75
+                        <fqs' aqf'''>8
+                        [
+                        \revert Staff.Stem.stemlet-length
+                        <fqs' aqf'''>8
+                        - \marcato
                         ]
                         r2..
-                        ^ \markup { 19 }
                         r2.
-                        ^ \markup { 20 }
                     }
                 }
                 \context Staff = "bassoon staff"
@@ -501,91 +458,88 @@
                         \markup { bsn. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
-                        c'4
-                        ^ \markup { 2 }
+                        <cqs fs af>4
+                        \pp
+                        ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}
                         ~
-                        c'16
-                        ^ \markup { 3 }
+                        <cqs fs af>16
                         r8.
-                        ^ \markup { 4 }
                         \times 2/3
                         {
                             e,4
-                            ^ \markup { 5 }
+                            \ppp
+                            \(
                             \override Staff.Stem.stemlet-length = 0.75
                             fs,16
-                            ^ \markup { 6 }
                             [
                             \revert Staff.Stem.stemlet-length
                             g,16
-                            ^ \markup { 7 }
+                            \)
                             ]
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             bf,8
-                            ^ \markup { 8 }
                             [
+                            \(
                             \revert Staff.Stem.stemlet-length
                             af,8
-                            ^ \markup { 9 }
+                            \)
                             ]
                             af,4.
-                            ^ \markup { 10 }
+                            \(
                             \override Staff.Stem.stemlet-length = 0.75
                             e,8
-                            ^ \markup { 11 }
                             [
                             \revert Staff.Stem.stemlet-length
                             bf,8
-                            ^ \markup { 12 }
+                            \)
                             ]
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             c,8
-                            ^ \markup { 13 }
                             [
+                            \(
                             bf,8
-                            ^ \markup { 14 }
+                            \)
                             bf,16
-                            ^ \markup { 15 }
+                            \(
                             b,16
-                            ^ \markup { 16 }
                             \revert Staff.Stem.stemlet-length
                             e,16
-                            ^ \markup { 17 }
+                            \)
                             ]
                         }
                         \times 2/3
                         {
                             af,4
-                            ^ \markup { 18 }
+                            \<
+                            \(
                             \override Staff.Stem.stemlet-length = 0.75
                             g,16
-                            ^ \markup { 19 }
                             [
                             \revert Staff.Stem.stemlet-length
                             a,16
-                            ^ \markup { 20 }
+                            \)
                             ]
                         }
                         \times 4/5
                         {
                             fs,4.
-                            ^ \markup { 21 }
+                            \ff
+                            - \accent
+                            \(
+                            \boxed-markup "Overblow" 1
                             \override Staff.Stem.stemlet-length = 0.75
                             af,8
-                            ^ \markup { 22 }
                             [
                             \revert Staff.Stem.stemlet-length
                             f,8
-                            ^ \markup { 23 }
+                            \)
                             ]
                         }
                         \tweak text #tuplet-number::calc-fraction-text
@@ -593,54 +547,48 @@
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             f,16
-                            ^ \markup { 24 }
+                            - \accent
                             [
+                            \(
                             g,16
-                            ^ \markup { 25 }
                             ef,16
-                            ^ \markup { 26 }
                             e,8
-                            ^ \markup { 27 }
                             fs,16
-                            ^ \markup { 28 }
                             \revert Staff.Stem.stemlet-length
                             g,16
-                            ^ \markup { 29 }
+                            \)
                             ]
                         }
                         \times 4/7
                         {
                             bf,4
-                            ^ \markup { 30 }
+                            - \accent
                             ~
                             \override Staff.Stem.stemlet-length = 0.75
                             bf,16
-                            ^ \markup { 31 }
                             [
                             af,16
-                            ^ \markup { 32 }
+                            - \accent
                             \revert Staff.Stem.stemlet-length
                             af,16
-                            ^ \markup { 33 }
+                            - \accent
                             ]
                         }
                         \times 2/3
                         {
                             e,2
-                            ^ \markup { 34 }
+                            - \accent
+                            \(
                             \override Staff.Stem.stemlet-length = 0.75
                             bf,8
-                            ^ \markup { 35 }
                             [
                             \revert Staff.Stem.stemlet-length
                             c,8
-                            ^ \markup { 36 }
+                            \)
                             ]
                         }
                         r2..
-                        ^ \markup { 37 }
                         r2.
-                        ^ \markup { 38 }
                     }
                 }
             >>
@@ -651,51 +599,42 @@
                     \set Staff.shortInstrumentName =
                     \markup { hrn. }
                     r2
-                    ^ \markup { 0 }
                     r4.
-                    ^ \markup { 1 }
                     r2.
-                    ^ \markup { 2 }
                     r2.
-                    ^ \markup { 3 }
                     r8
-                    ^ \markup { 4 }
                     b'8
-                    ^ \markup { 5 }
+                    :64
+                    \mf
                     ~
+                    \boxed-markup "Fluttering valves, fluttertongue" 1
                     b'8
-                    ^ \markup { 6 }
+                    :64
                     r8
-                    ^ \markup { 7 }
                     bf''8
-                    ^ \markup { 8 }
+                    :64
                     ~
                     \override Staff.Stem.stemlet-length = 0.75
                     bf''8.
-                    ^ \markup { 9 }
+                    :64
                     [
                     \revert Staff.Stem.stemlet-length
                     cs''16
-                    ^ \markup { 10 }
+                    :128
                     ~
                     ]
                     cs''8
-                    ^ \markup { 11 }
+                    :64
                     r8
-                    ^ \markup { 12 }
                     c'''4
-                    ^ \markup { 13 }
+                    :32
                     ~
                     c'''8.
-                    ^ \markup { 14 }
+                    :64
                     r16
-                    ^ \markup { 15 }
                     r4
-                    ^ \markup { 16 }
                     r2..
-                    ^ \markup { 17 }
                     r2.
-                    ^ \markup { 18 }
                 }
             }
             \context PianoStaff = "sub group 2"
@@ -707,52 +646,47 @@
                         \set Staff.shortInstrumentName =
                         \markup { tpt. }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         r2
-                        ^ \markup { 3 }
                         r8
-                        ^ \markup { 4 }
+                        \pitchedTrill
                         a''8
-                        ^ \markup { 5 }
+                        \mp
                         ~
+                        \startTrillSpan bf''
                         a''4
-                        ^ \markup { 6 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         a''16
-                        ^ \markup { 7 }
                         [
+                        \glissando
                         \revert Staff.Stem.stemlet-length
+                        \pitchedTrill
                         dqf''16
-                        ^ \markup { 8 }
+                        \stopTrillSpan
                         ~
                         ]
+                        \startTrillSpan dqs''
                         dqf''4
-                        ^ \markup { 9 }
                         ~
                         dqf''4
-                        ^ \markup { 10 }
                         r4
-                        ^ \markup { 11 }
+                        \stopTrillSpan
+                        \pitchedTrill
                         gqf''4
-                        ^ \markup { 12 }
+                        \startTrillSpan gqs''
                         r8
-                        ^ \markup { 13 }
+                        \stopTrillSpan
+                        \pitchedTrill
                         d''8
-                        ^ \markup { 14 }
                         ~
+                        \startTrillSpan ef''
                         d''8.
-                        ^ \markup { 15 }
                         r16
-                        ^ \markup { 16 }
+                        \stopTrillSpan
                         r2..
-                        ^ \markup { 17 }
                         r2.
-                        ^ \markup { 18 }
                     }
                 }
                 \context Staff = "tenor trombone staff"
@@ -763,61 +697,46 @@
                         \markup { tbn. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2.
-                        ^ \markup { 2 }
                         r1
-                        ^ \markup { 3 }
                         g,4
-                        ^ \markup { 4 }
+                        \mf
+                        - \accent
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         g,16
-                        ^ \markup { 5 }
                         [
                         \revert Staff.Stem.stemlet-length
                         af,16
-                        ^ \markup { 6 }
                         ~
                         ]
                         af,4
-                        ^ \markup { 7 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         af,8
-                        ^ \markup { 8 }
                         [
                         \revert Staff.Stem.stemlet-length
                         b,8
-                        ^ \markup { 9 }
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         b,8.
-                        ^ \markup { 10 }
                         [
                         \revert Staff.Stem.stemlet-length
                         a,16
-                        ^ \markup { 11 }
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         a,8.
-                        ^ \markup { 12 }
                         [
                         \revert Staff.Stem.stemlet-length
                         a,16
-                        ^ \markup { 13 }
                         ~
                         ]
                         a,4
-                        ^ \markup { 14 }
                         r2..
-                        ^ \markup { 15 }
                         r2.
-                        ^ \markup { 16 }
                     }
                 }
                 \context Staff = "tuba staff"
@@ -828,70 +747,53 @@
                         \markup { tb. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         af,4
-                        ^ \markup { 3 }
+                        \ppp
+                        \<
                         e,4
-                        ^ \markup { 4 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         e,16
-                        ^ \markup { 5 }
                         [
                         \revert Staff.Stem.stemlet-length
                         bf,8.
-                        ^ \markup { 6 }
                         ~
                         ]
                         bf,4
-                        ^ \markup { 7 }
                         c,4
-                        ^ \markup { 8 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         c,16
-                        ^ \markup { 9 }
                         [
                         \revert Staff.Stem.stemlet-length
                         bf,8.
-                        ^ \markup { 10 }
                         ]
                         e,,4.
-                        ^ \markup { 11 }
+                        \mp
+                        - \accent
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         e,,16
-                        ^ \markup { 12 }
                         [
                         \revert Staff.Stem.stemlet-length
                         e,,8.
-                        ^ \markup { 13 }
+                        - \accent
                         ~
                         ]
                         e,,4
-                        ^ \markup { 14 }
                         ~
                         e,,8
-                        ^ \markup { 15 }
                         r8
-                        ^ \markup { 16 }
                         r8
-                        ^ \markup { 17 }
                         e,,8
-                        ^ \markup { 18 }
+                        - \accent
                         ~
                         e,,8
-                        ^ \markup { 19 }
                         r8
-                        ^ \markup { 20 }
                         r2..
-                        ^ \markup { 21 }
                         r2.
-                        ^ \markup { 22 }
                     }
                 }
             >>
@@ -905,116 +807,85 @@
                         \markup { pno. }
                         r4
                         \f
-                        ^ \markup { 0 }
                         \override Staff.Stem.stemlet-length = 0.75
                         bf'8
                         - \tenuto
-                        ^ \markup { 1 }
                         [
                         \(
                         b'16
-                        ^ \markup { 2 }
                         \revert Staff.Stem.stemlet-length
                         b'16
-                        ^ \markup { 3 }
                         \)
                         ]
                         cs''4
                         - \accent
-                        ^ \markup { 4 }
                         af'8
                         - \accent
-                        ^ \markup { 5 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         af'8.
-                        ^ \markup { 6 }
                         [
                         \revert Staff.Stem.stemlet-length
                         d''16
                         - \accent
-                        ^ \markup { 7 }
                         ~
                         ]
                         d''4
                         \mp
-                        ^ \markup { 8 }
                         \<
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             af'8
                             - \tenuto
-                            ^ \markup { 9 }
                             [
                             \(
                             a'16
-                            ^ \markup { 10 }
                             b'16
-                            ^ \markup { 11 }
                             e''16
-                            ^ \markup { 12 }
                             b'16
-                            ^ \markup { 13 }
                             \revert Staff.Stem.stemlet-length
                             af'16
-                            ^ \markup { 14 }
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
                         bf'16
-                        ^ \markup { 15 }
                         [
                         f''16
-                        ^ \markup { 16 }
                         ~
                         f''16
-                        ^ \markup { 17 }
                         \revert Staff.Stem.stemlet-length
                         ef''16
-                        ^ \markup { 18 }
                         \)
                         ]
                         cs''4
                         \fff
                         - \accent
-                        ^ \markup { 19 }
                         a''4
                         - \accent
-                        ^ \markup { 20 }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             e''16
                             - \tenuto
-                            ^ \markup { 21 }
                             - \tweak circled-tip ##t
                             \>
                             [
                             \(
                             f''8
-                            ^ \markup { 22 }
                             c''16
-                            ^ \markup { 23 }
                             b'16
-                            ^ \markup { 24 }
                             cs''16
-                            ^ \markup { 25 }
                             \revert Staff.Stem.stemlet-length
                             fs''16
                             \!
-                            ^ \markup { 26 }
                             \)
                             ]
                         }
                         r2..
-                        ^ \markup { 27 }
                         r2.
-                        ^ \markup { 28 }
                         r2..
-                        ^ \markup { 29 }
                         r2.
-                        ^ \markup { 30 }
                     }
                 }
                 \context Staff = "piano 2 staff"
@@ -1026,32 +897,27 @@
                             \clef "bass"
                             d4
                             - \accent
-                            ^ \markup { 0 }
                             ^ \markup {
                                 \italic
                                     Con
-                                fuoco
+                                \italic
+                                    fuoco
                                 }
                             a4
                             - \accent
-                            ^ \markup { 1 }
                             g4
                             - \accent
-                            ^ \markup { 2 }
                         }
                         f4.
                         - \accent
                         - \tenuto
-                        ^ \markup { 3 }
                         ~
                         \(
                         \override Staff.Stem.stemlet-length = 0.75
                         f8
-                        ^ \markup { 4 }
                         [
                         \revert Staff.Stem.stemlet-length
                         cs'8
-                        ^ \markup { 5 }
                         \)
                         ]
                         \times 4/7
@@ -1059,67 +925,46 @@
                             \override Staff.Stem.stemlet-length = 0.75
                             af8.
                             - \tenuto
-                            ^ \markup { 6 }
                             [
                             \(
                             a16
-                            ^ \markup { 7 }
                             e8
-                            ^ \markup { 8 }
                             \revert Staff.Stem.stemlet-length
                             ef16
-                            ^ \markup { 9 }
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
                         e32
-                        ^ \markup { 10 }
                         [
                         a16
-                        ^ \markup { 11 }
                         e32
-                        ^ \markup { 12 }
                         ~
                         e16
-                        ^ \markup { 13 }
                         e32
-                        ^ \markup { 14 }
                         \revert Staff.Stem.stemlet-length
                         ef32
-                        ^ \markup { 15 }
                         \)
                         ]
                         e2
                         - \accent
-                        ^ \markup { 16 }
                         e4
                         - \accent
-                        ^ \markup { 17 }
                         \override Staff.Stem.stemlet-length = 0.75
                         fs32
                         - \tenuto
-                        ^ \markup { 18 }
                         [
                         \(
                         cs32
-                        ^ \markup { 19 }
                         g16
-                        ^ \markup { 20 }
                         cs16.
-                        ^ \markup { 21 }
                         \revert Staff.Stem.stemlet-length
                         d32
-                        ^ \markup { 22 }
                         \)
                         ]
                         r2..
-                        ^ \markup { 23 }
                         r2.
-                        ^ \markup { 24 }
                         r2..
-                        ^ \markup { 25 }
                         r2.
-                        ^ \markup { 26 }
                     }
                 }
             >>
@@ -1134,66 +979,52 @@
                         \override Staff.Stem.stemlet-length = 0.75
                         af'8
                         \f
-                        ^ \markup { 0 }
                         _ \markup {
                             \italic
                                 Con
-                            fuoco
+                            \italic
+                                fuoco
                             }
                         [
                         \(
                         ef'16
-                        ^ \markup { 1 }
                         d'16
-                        ^ \markup { 2 }
                         ef'16
-                        ^ \markup { 3 }
                         af'16
-                        ^ \markup { 4 }
                         \revert Staff.Stem.stemlet-length
                         ef'16
-                        ^ \markup { 5 }
                         \)
                         ]
                     }
                     ef''4
                     - \accent
-                    ^ \markup { 6 }
                     ef'4
                     - \accent
-                    ^ \markup { 7 }
                     ~
                     \override Staff.Stem.stemlet-length = 0.75
                     ef'16
-                    ^ \markup { 8 }
                     [
                     \revert Staff.Stem.stemlet-length
                     ef''16
                     - \accent
-                    ^ \markup { 9 }
                     ~
                     ]
                     ef''4
-                    ^ \markup { 10 }
                     ~
                     \override Staff.Stem.stemlet-length = 0.75
                     ef''8
-                    ^ \markup { 11 }
                     [
                     \revert Staff.Stem.stemlet-length
                     ef'8
                     - \accent
-                    ^ \markup { 12 }
                     ~
                     ]
                     \override Staff.Stem.stemlet-length = 0.75
                     ef'8.
-                    ^ \markup { 13 }
                     [
                     \revert Staff.Stem.stemlet-length
                     fs'16
                     \mp
-                    ^ \markup { 14 }
                     \<
                     ]
                     \(
@@ -1201,72 +1032,53 @@
                     {
                         \override Staff.Stem.stemlet-length = 0.75
                         cs'16
-                        ^ \markup { 15 }
                         [
                         g'16
-                        ^ \markup { 16 }
                         cs'16
-                        ^ \markup { 17 }
                         d'8.
-                        ^ \markup { 18 }
                         \revert Staff.Stem.stemlet-length
                         ef'16
-                        ^ \markup { 19 }
                         ]
                     }
                     \override Staff.Stem.stemlet-length = 0.75
                     cs'16
-                    ^ \markup { 20 }
                     [
                     fs'32
-                    ^ \markup { 21 }
                     cs'32
-                    ^ \markup { 22 }
                     \)
                     \revert Staff.Stem.stemlet-length
                     af8
-                    \ff
+                    \fff
                     - \accent
-                    ^ \markup { 23 }
                     ~
                     ]
                     \override Staff.Stem.stemlet-length = 0.75
                     af8
-                    ^ \markup { 24 }
                     [
                     \revert Staff.Stem.stemlet-length
                     ef''8
                     - \accent
-                    ^ \markup { 25 }
                     ]
                     \times 2/3
                     {
                         \override Staff.Stem.stemlet-length = 0.75
                         d'16
-                        ^ \markup { 26 }
                         - \tweak circled-tip ##t
                         \>
                         [
                         \(
                         cs'8.
-                        ^ \markup { 27 }
                         af'16
-                        ^ \markup { 28 }
                         \revert Staff.Stem.stemlet-length
                         ef'16
                         \!
-                        ^ \markup { 29 }
                         \)
                         ]
                     }
                     r2..
-                    ^ \markup { 30 }
                     r2.
-                    ^ \markup { 31 }
                     r2..
-                    ^ \markup { 32 }
                     r2.
-                    ^ \markup { 33 }
                 }
             }
             \context PianoStaff = "sub group 4"
@@ -1278,147 +1090,111 @@
                         \set Staff.shortInstrumentName =
                         \markup { mar. }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r2
-                        ^ \markup { 2 }
                         r8
-                        ^ \markup { 3 }
+                        \clef "treble"
                         \override Staff.Stem.stemlet-length = 0.75
                         c'''32
-                        ^ \markup { 4 }
+                        \ppp
                         [
+                        \(
+                        \boxed-markup "w/ drumsticks, pitches approx." 1
                         e'''32
-                        ^ \markup { 5 }
                         cs'''32
-                        ^ \markup { 6 }
                         \revert Staff.Stem.stemlet-length
                         fs'''32
-                        ^ \markup { 7 }
+                        \)
                         ]
                         r8
-                        ^ \markup { 8 }
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'''32
-                        ^ \markup { 9 }
                         [
+                        \(
                         g'''32
-                        ^ \markup { 10 }
                         af'''32
-                        ^ \markup { 11 }
                         \revert Staff.Stem.stemlet-length
                         bf'''32
-                        ^ \markup { 12 }
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'''32
-                        ^ \markup { 13 }
                         [
                         \revert Staff.Stem.stemlet-length
                         af'''32
-                        ^ \markup { 14 }
+                        \)
                         ]
                         r8.
-                        ^ \markup { 15 }
                         r4
-                        ^ \markup { 16 }
                         \override Staff.Stem.stemlet-length = 0.75
                         c'''32
-                        ^ \markup { 17 }
+                        \<
                         [
+                        \(
                         af'''32
-                        ^ \markup { 18 }
                         g'''32
-                        ^ \markup { 19 }
                         e'''32
-                        ^ \markup { 20 }
                         f'''32
-                        ^ \markup { 21 }
                         bf'''32
-                        ^ \markup { 22 }
                         ef'''32
-                        ^ \markup { 23 }
                         \revert Staff.Stem.stemlet-length
                         c'''32
-                        ^ \markup { 24 }
+                        \)
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         b'''32
-                        ^ \markup { 25 }
+                        \ff
                         [
+                        \(
                         bf'''32
-                        ^ \markup { 26 }
                         fs'''32
-                        ^ \markup { 27 }
                         \revert Staff.Stem.stemlet-length
                         bf'''32
-                        ^ \markup { 28 }
+                        \)
                         ]
                         r4
-                        ^ \markup { 29 }
                         \override Staff.Stem.stemlet-length = 0.75
                         g'''32
-                        ^ \markup { 30 }
                         [
+                        \(
                         b'''32
-                        ^ \markup { 31 }
                         d'''32
-                        ^ \markup { 32 }
                         e'''32
-                        ^ \markup { 33 }
                         cs'''32
-                        ^ \markup { 34 }
                         af'''32
-                        ^ \markup { 35 }
                         ef'''32
-                        ^ \markup { 36 }
                         \revert Staff.Stem.stemlet-length
                         g'''32
-                        ^ \markup { 37 }
+                        \)
                         ]
                         r4
-                        ^ \markup { 38 }
                         \override Staff.Stem.stemlet-length = 0.75
                         af'''32
-                        ^ \markup { 39 }
                         [
+                        \(
                         a'''32
-                        ^ \markup { 40 }
                         ef'''32
-                        ^ \markup { 41 }
                         \revert Staff.Stem.stemlet-length
                         fs'''32
-                        ^ \markup { 42 }
+                        \)
                         ]
                         r8
-                        ^ \markup { 43 }
                         r4
-                        ^ \markup { 44 }
                         \override Staff.Stem.stemlet-length = 0.75
                         ef'''32
-                        ^ \markup { 45 }
                         [
+                        \(
                         af'''32
-                        ^ \markup { 46 }
                         d'''32
-                        ^ \markup { 47 }
                         f'''32
-                        ^ \markup { 48 }
                         ef'''32
-                        ^ \markup { 49 }
                         f'''32
-                        ^ \markup { 50 }
                         ef'''32
-                        ^ \markup { 51 }
                         \revert Staff.Stem.stemlet-length
                         g'''32
-                        ^ \markup { 52 }
+                        \)
                         ]
                         r2..
-                        ^ \markup { 53 }
                         r2.
-                        ^ \markup { 54 }
                     }
                 }
                 \context Staff = "percussion 1 staff"
@@ -1429,40 +1205,26 @@
                         \markup { ratch. }
                         \clef "percussion"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         r8
-                        ^ \markup { 3 }
                         \tweak Accidental.transparent ##t
                         e'8
-                        ^ \markup { 4 }
+                        \pp
+                        \boxed-markup "Cup gear w/ hand" 1
                         r4
-                        ^ \markup { 5 }
                         r4
-                        ^ \markup { 6 }
                         r8
-                        ^ \markup { 7 }
                         \tweak Accidental.transparent ##t
                         a8
-                        ^ \markup { 8 }
                         r8
-                        ^ \markup { 9 }
                         \tweak Accidental.transparent ##t
                         e'8
-                        ^ \markup { 10 }
                         r4
-                        ^ \markup { 11 }
                         r2..
-                        ^ \markup { 12 }
                         r2.
-                        ^ \markup { 13 }
                         r2..
-                        ^ \markup { 14 }
                         r2.
-                        ^ \markup { 15 }
                     }
                 }
             >>
@@ -1474,62 +1236,87 @@
                     \markup { perc. 2 }
                     \clef "percussion"
                     r2
-                    ^ \markup { 0 }
                     r4.
-                    ^ \markup { 1 }
                     r16
-                    ^ \markup { 2 }
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 9/8
                     {
+                        \tweak Accidental.transparent ##t
                         c'4
-                        ^ \markup { 3 }
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
+                        \boxed-markup "Ride cymbal, w/ bow" 1
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 4 }
+                        \pp
+                        - \tweak circled-tip ##t
+                        \>
                         [
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 5 }
+                        \!
                         ]
                     }
                     r8
-                    ^ \markup { 6 }
                     r4
-                    ^ \markup { 7 }
                     \times 4/7
                     {
+                        \tweak Accidental.transparent ##t
                         c'2
-                        ^ \markup { 8 }
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 9 }
+                        \pp
+                        - \tweak circled-tip ##t
+                        \>
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'4
-                        ^ \markup { 10 }
+                        \!
                     }
                     r4
-                    ^ \markup { 11 }
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 7/6
                     {
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 12 }
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'2
-                        ^ \markup { 13 }
+                        \ff
+                        - \tweak circled-tip ##t
+                        \>
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 14 }
+                        \!
                     }
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 6/7
                     {
+                        \tweak Accidental.transparent ##t
                         c'2
-                        ^ \markup { 15 }
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'8
-                        ^ \markup { 16 }
+                        \ff
+                        - \tweak circled-tip ##t
+                        \>
+                        ~
+                        \tweak Accidental.transparent ##t
                         c'4
-                        ^ \markup { 17 }
+                        \!
                     }
                     r2..
-                    ^ \markup { 18 }
                     r2.
-                    ^ \markup { 19 }
                 }
             }
             \context PianoStaff = "sub group 5"
@@ -1541,117 +1328,152 @@
                         \set Staff.shortInstrumentName =
                         \markup { vln. 1 }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r16
-                        ^ \markup { 2 }
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \double-flat-one-syntonic-comma-up  }
                         eff''8.
                         ^ \markup \center-align { -17 }
-                        ^ \markup { 3 }
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
+                        \boxed-markup "Norm." 1
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \double-flat-one-syntonic-comma-up  }
                         eff''8.
+                        \pp
                         ^ \markup \center-align { -17 }
-                        ^ \markup { 4 }
+                        - \tweak circled-tip ##t
+                        \>
                         [
+                        ~
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \double-flat-one-syntonic-comma-up  }
                         eff''16
                         ^ \markup \center-align { -17 }
-                        ^ \markup { 5 }
                         ~
                         ]
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \double-flat-one-syntonic-comma-up  }
                         eff''8
-                        ^ \markup { 6 }
+                        \!
                         r8
-                        ^ \markup { 7 }
                         r4
-                        ^ \markup { 8 }
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-seventeen-limit-schisma-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-sharp  }
                         ds''4
                         ^ \markup \center-align { +34 }
-                        ^ \markup { 9 }
+                        - \tweak circled-tip ##t
+                        \<
+                        ~
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-seventeen-limit-schisma-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-sharp  }
                         ds''8
+                        \pp
                         ^ \markup \center-align { +34 }
-                        ^ \markup { 10 }
+                        - \tweak circled-tip ##t
+                        \>
                         [
+                        ~
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-seventeen-limit-schisma-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-sharp  }
                         ds''8
+                        \!
                         ^ \markup \center-align { +34 }
-                        ^ \markup { 11 }
                         ]
                         r4
-                        ^ \markup { 12 }
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 13 }
+                        \tweak style #'cross
+                        g8
+                        \fff
+                        - \downbow
+                        - \accent
                         [
-                        c'8
-                        ^ \markup { 14 }
+                        \boxed-markup "OP" 1
+                        \tweak style #'cross
+                        g8
+                        \mp
+                        - \upbow
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 15 }
+                        \tweak style #'cross
+                        g8
+                        \fff
+                        - \downbow
+                        - \accent
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 16 }
+                        \tweak style #'cross
+                        g8
+                        \mp
+                        - \upbow
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 17 }
+                        \tweak style #'cross
+                        g8
+                        \fff
+                        - \downbow
+                        - \accent
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 18 }
+                        \tweak style #'cross
+                        g8
+                        \mp
+                        - \upbow
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 19 }
+                        \tweak style #'cross
+                        g8
+                        - \upbow
                         ]
                         \times 2/3
                         {
-                            c'8
-                            ^ \markup { 20 }
+                            \tweak style #'cross
+                            g8
+                            \fff
+                            - \downbow
+                            - \accent
                             [
-                            c'8
-                            ^ \markup { 21 }
-                            c'8
-                            ^ \markup { 22 }
+                            \tweak style #'cross
+                            g8
+                            \mp
+                            - \upbow
+                            \tweak style #'cross
+                            g8
+                            - \upbow
                             ]
                         }
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 23 }
+                        \tweak style #'cross
+                        g8
+                        \fff
+                        - \downbow
+                        - \accent
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 24 }
+                        \tweak style #'cross
+                        g8
+                        \mp
+                        - \upbow
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
-                        c'8
-                        ^ \markup { 25 }
+                        \tweak style #'cross
+                        g8
+                        \fff
+                        - \downbow
+                        - \accent
                         [
                         \revert Staff.Stem.stemlet-length
-                        c'8
-                        ^ \markup { 26 }
+                        \tweak style #'cross
+                        g8
+                        \mp
+                        - \upbow
                         ]
                         r2..
-                        ^ \markup { 27 }
                         r2.
-                        ^ \markup { 28 }
                     }
                 }
                 \context Staff = "violin 2 staff"
@@ -1661,11 +1483,8 @@
                         \set Staff.shortInstrumentName =
                         \markup { vln. 2 }
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r16
-                        ^ \markup { 2 }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 9/5
                         {
@@ -1673,198 +1492,289 @@
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             cf'8.
                             ^ \markup \center-align { +16 }
-                            ^ \markup { 3 }
+                            - \tweak circled-tip ##t
+                            \<
                             [
+                            ~
+                            \boxed-markup "Norm." 1
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             cf'16
+                            \pp
                             ^ \markup \center-align { +16 }
-                            ^ \markup { 4 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             cf'16
+                            \!
                             ^ \markup \center-align { +16 }
-                            ^ \markup { 5 }
                             ]
                         }
                         r8
-                        ^ \markup { 6 }
                         r4
-                        ^ \markup { 7 }
                         \times 2/3
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
                             bf''4
                             ^ \markup \center-align { -33 }
-                            ^ \markup { 8 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
                             bf''4
+                            \pp
                             ^ \markup \center-align { -33 }
-                            ^ \markup { 9 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \abjad-flat  }
                             bf''4
+                            \!
                             ^ \markup \center-align { -33 }
-                            ^ \markup { 10 }
                         }
                         r4
-                        ^ \markup { 11 }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 12 }
+                            \fff
+                            - \downbow
+                            - \accent
                             [
+                            \boxed-markup "OP" 1
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 13 }
+                            \mp
+                            - \upbow
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 14 }
+                            \fff
+                            - \downbow
+                            - \accent
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 15 }
+                            \mp
+                            - \upbow
                             ]
+                            ~
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 16 }
                             [
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 17 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 18 }
+                            \mp
+                            - \upbow
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 19 }
+                            - \upbow
                             ]
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 20 }
+                            \fff
+                            - \downbow
+                            - \accent
                             [
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 21 }
+                            \mp
+                            - \upbow
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 22 }
+                            - \upbow
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 23 }
+                            \fff
+                            - \downbow
+                            - \accent
                             ]
+                            ~
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 24 }
+                            \mp
+                            - \upbow
                             [
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 25 }
+                            - \upbow
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 26 }
+                            \fff
+                            - \downbow
+                            - \accent
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 27 }
+                            \mp
+                            - \upbow
                             ]
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 28 }
+                            - \upbow
                             [
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 29 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 30 }
+                            \mp
+                            - \upbow
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 31 }
+                            \fff
+                            - \downbow
+                            - \accent
                             ]
+                            ~
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 32 }
                             [
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 33 }
+                            - \upbow
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 34 }
+                            \fff
+                            - \downbow
+                            - \accent
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 35 }
+                            \mp
+                            - \upbow
                             ]
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 36 }
+                            - \upbow
                             [
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 37 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 38 }
+                            \mp
+                            - \upbow
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g32
-                            ^ \markup { 39 }
+                            - \upbow
+                            ]
+                            ~
+                        }
+                        \times 4/7
+                        {
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
+                            g16
+                            [
+                            \tweak style #'cross
+                            g8
+                            \fff
+                            - \downbow
+                            - \accent
+                            \tweak style #'cross
+                            g8
+                            \mp
+                            - \upbow
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
+                            g8
+                            \fff
+                            - \downbow
+                            - \accent
                             ]
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            g16
-                            ^ \markup { 40 }
+                            \tweak style #'cross
+                            g8
+                            \mp
+                            - \upbow
                             [
+                            \tweak style #'cross
                             g8
-                            ^ \markup { 41 }
+                            - \upbow
+                            \tweak style #'cross
                             g8
-                            ^ \markup { 42 }
+                            \fff
+                            - \downbow
+                            - \accent
                             \revert Staff.Stem.stemlet-length
-                            g8
-                            ^ \markup { 43 }
+                            \tweak style #'cross
+                            g16
+                            \mp
+                            - \upbow
                             ]
+                            ~
                         }
                         \times 4/7
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            g8
-                            ^ \markup { 44 }
-                            [
-                            g8
-                            ^ \markup { 45 }
-                            g8
-                            ^ \markup { 46 }
-                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g16
-                            ^ \markup { 47 }
-                            ]
-                        }
-                        \times 4/7
-                        {
-                            \override Staff.Stem.stemlet-length = 0.75
-                            g16
-                            ^ \markup { 48 }
                             [
+                            \tweak style #'cross
                             g8
-                            ^ \markup { 49 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            \tweak style #'cross
                             g8
-                            ^ \markup { 50 }
+                            \mp
+                            - \upbow
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             g8
-                            ^ \markup { 51 }
+                            \fff
+                            - \downbow
+                            - \accent
                             ]
                         }
                         r2..
-                        ^ \markup { 52 }
                         r2.
-                        ^ \markup { 53 }
                     }
                 }
                 \context Staff = "viola staff"
@@ -1875,177 +1785,216 @@
                         \markup { vla. }
                         \clef "alto"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r16
-                        ^ \markup { 2 }
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-up  }
                         gf16
                         ^ \markup \center-align { -17 }
-                        ^ \markup { 3 }
+                        - \tweak circled-tip ##t
+                        \<
                         ~
                         [
+                        \boxed-markup "Norm." 1
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-up  }
                         gf32
-                        ^ \markup { 4 }
+                        ~
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-up  }
                         gf16.
+                        \pp
                         ^ \markup \center-align { -17 }
-                        ^ \markup { 5 }
+                        - \tweak circled-tip ##t
+                        \>
                         ~
                         ]
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-up  }
                         gf4
-                        ^ \markup { 6 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-up  }
                         gf32
-                        ^ \markup { 7 }
                         [
+                        ~
                         \revert Staff.Stem.stemlet-length
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup \concat { \one-septimal-comma-down \hspace #0.125 \flat-one-syntonic-comma-up  }
                         gf16.
+                        \!
                         ^ \markup \center-align { -17 }
-                        ^ \markup { 8 }
                         ]
                         r8
-                        ^ \markup { 9 }
                         r4
-                        ^ \markup { 10 }
                         \times 4/5
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-seventeen-limit-schisma-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-sharp  }
                             cs'4.
                             ^ \markup \center-align { +34 }
-                            ^ \markup { 11 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-seventeen-limit-schisma-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-sharp  }
                             cs'8
+                            \pp
                             ^ \markup \center-align { +34 }
-                            ^ \markup { 12 }
+                            - \tweak circled-tip ##t
+                            \>
                             [
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup \concat { \one-seventeen-limit-schisma-down \hspace #0.125 \one-septimal-comma-up \hspace #0.125 \abjad-sharp  }
                             cs'8
+                            \!
                             ^ \markup \center-align { +34 }
-                            ^ \markup { 13 }
                             ]
                         }
                         r4
-                        ^ \markup { 14 }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             c8
-                            ^ \markup { 15 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            [
+                            \boxed-markup "OP" 1
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
+                            c16
+                            \mp
+                            - \upbow
+                            ]
+                            ~
+                        }
+                        \times 2/3
+                        {
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
+                            c16
                             [
                             \revert Staff.Stem.stemlet-length
-                            c16
-                            ^ \markup { 16 }
+                            \tweak style #'cross
+                            c8
+                            \fff
+                            - \downbow
+                            - \accent
                             ]
                         }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            c16
-                            ^ \markup { 17 }
+                            \tweak style #'cross
+                            c8
+                            \mp
+                            - \upbow
                             [
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
+                            c16
+                            \fff
+                            - \downbow
+                            - \accent
+                            ]
+                            ~
+                        }
+                        \times 2/3
+                        {
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
+                            c16
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             c8
-                            ^ \markup { 18 }
+                            \mp
+                            - \upbow
                             ]
                         }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             c8
-                            ^ \markup { 19 }
+                            - \upbow
                             [
                             \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
                             c16
-                            ^ \markup { 20 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            ]
+                            ~
+                        }
+                        \times 2/3
+                        {
+                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
+                            c16
+                            [
+                            \revert Staff.Stem.stemlet-length
+                            \tweak style #'cross
+                            c8
+                            \mp
+                            - \upbow
                             ]
                         }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            c16
-                            ^ \markup { 21 }
+                            \tweak style #'cross
+                            c8
+                            - \upbow
                             [
                             \revert Staff.Stem.stemlet-length
-                            c8
-                            ^ \markup { 22 }
+                            \tweak style #'cross
+                            c16
+                            \fff
+                            - \downbow
+                            - \accent
                             ]
+                            ~
                         }
                         \times 2/3
                         {
-                            \override Staff.Stem.stemlet-length = 0.75
+                            \tweak style #'cross
                             c8
-                            ^ \markup { 23 }
-                            [
-                            \revert Staff.Stem.stemlet-length
-                            c16
-                            ^ \markup { 24 }
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            \override Staff.Stem.stemlet-length = 0.75
-                            c16
-                            ^ \markup { 25 }
-                            [
-                            \revert Staff.Stem.stemlet-length
-                            c8
-                            ^ \markup { 26 }
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            \override Staff.Stem.stemlet-length = 0.75
-                            c8
-                            ^ \markup { 27 }
-                            [
-                            \revert Staff.Stem.stemlet-length
-                            c16
-                            ^ \markup { 28 }
-                            ]
-                        }
-                        \times 2/3
-                        {
-                            c8
-                            ^ \markup { 29 }
+                            \tweak style #'cross
                             c4
-                            ^ \markup { 30 }
+                            \mp
+                            - \upbow
                         }
                         \times 2/3
                         {
+                            \tweak style #'cross
                             c4
-                            ^ \markup { 31 }
+                            \fff
+                            - \downbow
+                            - \accent
+                            \tweak style #'cross
                             c8
-                            ^ \markup { 32 }
+                            \mp
+                            - \upbow
+                            ~
                         }
                         \times 2/3
                         {
+                            \tweak style #'cross
                             c8
-                            ^ \markup { 33 }
+                            \tweak style #'cross
                             c4
-                            ^ \markup { 34 }
+                            - \upbow
                         }
                         r2..
-                        ^ \markup { 35 }
                         r2.
-                        ^ \markup { 36 }
                     }
                 }
                 \context Staff = "cello staff"
@@ -2056,104 +2005,138 @@
                         \markup { vc. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r16
-                        ^ \markup { 2 }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 9/7
                         {
                             af4
                             ^ \markup \center-align +33
-                            ^ \markup { 3 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
+                            \boxed-markup "Norm." 1
                             af16
+                            \pp
                             ^ \markup \center-align +33
-                            ^ \markup { 4 }
+                            - \tweak circled-tip ##t
+                            \>
                             [
+                            ~
                             af8
+                            \!
                             ^ \markup \center-align +33
-                            ^ \markup { 5 }
                             ]
                         }
                         r8
-                        ^ \markup { 6 }
                         r4
-                        ^ \markup { 7 }
                         \times 2/3
                         {
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
                             d'8
                             ^ \markup \center-align { -16 }
-                            ^ \markup { 8 }
+                            - \tweak circled-tip ##t
+                            \<
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
                             d'2
+                            \pp
                             ^ \markup \center-align { -16 }
-                            ^ \markup { 9 }
+                            - \tweak circled-tip ##t
+                            \>
+                            ~
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
                             d'8
+                            \!
                             ^ \markup \center-align { -16 }
-                            ^ \markup { 10 }
                         }
                         r4
-                        ^ \markup { 11 }
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 12 }
+                        \fff
+                        - \downbow
+                        - \accent
                         [
+                        \boxed-markup "OP" 1
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 13 }
+                        \mp
+                        - \upbow
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 14 }
+                        \fff
+                        - \downbow
+                        - \accent
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 15 }
+                        \mp
+                        - \upbow
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 16 }
+                        \fff
+                        - \downbow
+                        - \accent
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 17 }
+                        \mp
+                        - \upbow
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 18 }
+                        - \upbow
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 19 }
+                        \fff
+                        - \downbow
+                        - \accent
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 20 }
+                        \mp
+                        - \upbow
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 21 }
+                        - \upbow
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 22 }
+                        \fff
+                        - \downbow
+                        - \accent
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 23 }
+                        \mp
+                        - \upbow
                         [
                         \revert Staff.Stem.stemlet-length
+                        \tweak style #'cross
                         c,8
-                        ^ \markup { 24 }
+                        \fff
+                        - \downbow
+                        - \accent
                         ]
                         r2..
-                        ^ \markup { 25 }
                         r2.
-                        ^ \markup { 26 }
                     }
                 }
                 \context Staff = "contrabass staff"
@@ -2164,93 +2147,79 @@
                         \markup { cb. }
                         \clef "bass"
                         r2
-                        ^ \markup { 0 }
                         r4.
-                        ^ \markup { 1 }
                         r4
-                        ^ \markup { 2 }
                         a,4
-                        ^ \markup { 3 }
+                        \ppp
+                        \<
                         ~
+                        \boxed-markup "Ord." 1
                         \override Staff.Stem.stemlet-length = 0.75
                         a,16
-                        ^ \markup { 4 }
                         [
                         \revert Staff.Stem.stemlet-length
                         f,8.
-                        ^ \markup { 5 }
                         ~
                         ]
                         f,4
-                        ^ \markup { 6 }
                         b,4
-                        ^ \markup { 7 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         b,16
-                        ^ \markup { 8 }
                         [
                         \revert Staff.Stem.stemlet-length
                         cs,8.
-                        ^ \markup { 9 }
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         cs,16
-                        ^ \markup { 10 }
                         [
                         \revert Staff.Stem.stemlet-length
                         b,8.
-                        ^ \markup { 11 }
                         ~
                         ]
+                        - \abjad-dashed-line-with-arrow
+                        - \tweak bound-details.left.text \markup \concat { Norm \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { Slight OP }
+                        - \tweak staff-padding 3
+                        \startTextSpan
                         b,4
-                        ^ \markup { 12 }
                         b,8
-                        ^ \markup { 13 }
+                        \f
+                        - \accent
+                        \stopTextSpan
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         b,8.
-                        ^ \markup { 14 }
                         [
                         \revert Staff.Stem.stemlet-length
                         c16
-                        ^ \markup { 15 }
                         ~
                         ]
                         c4
-                        ^ \markup { 16 }
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
                         c8
-                        ^ \markup { 17 }
                         [
                         \revert Staff.Stem.stemlet-length
                         f,8
-                        ^ \markup { 18 }
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         f,8
-                        ^ \markup { 19 }
                         [
                         \revert Staff.Stem.stemlet-length
                         a,8
-                        ^ \markup { 20 }
                         ~
                         ]
                         \override Staff.Stem.stemlet-length = 0.75
                         a,8.
-                        ^ \markup { 21 }
                         [
                         \revert Staff.Stem.stemlet-length
                         af,16
-                        ^ \markup { 22 }
                         ]
                         r2..
-                        ^ \markup { 23 }
                         r2.
-                        ^ \markup { 24 }
                     }
                 }
             >>

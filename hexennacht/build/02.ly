@@ -33,8 +33,8 @@
                         [
                         \(
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         \revert Staff.Stem.stemlet-length
@@ -54,8 +54,8 @@
                         [
                         \(
                         - \abjad-dashed-line-with-arrow
-                        - \tweak bound-details.left.text \markup \concat { 90 \hspace #0.5 }
-                        - \tweak bound-details.right.text \markup { 0 }
+                        - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
+                        - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
                         d'16
@@ -210,7 +210,6 @@
                         [
                         \startTrillSpan eqs''
                         eqf''32
-                        \stopTrillSpan
                         \glissando
                         \revert Staff.Stem.stemlet-length
                         \pitchedTrill
@@ -218,6 +217,7 @@
                         \mp
                         - \tweak circled-tip ##t
                         \>
+                        \stopTrillSpan
                         ]
                         \startTrillSpan bf''
                         r4

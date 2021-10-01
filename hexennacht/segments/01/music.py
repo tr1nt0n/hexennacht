@@ -690,8 +690,8 @@ trinton.attach(
 
 trinton.write_text_span(
     voice=score["flute voice"],
-    begin_text=r"90",
-    end_text=r"0",
+    begin_text=r"90˚",
+    end_text=r"0˚",
     start_leaf=[14, 21, 33, 42, 51, 62, 73, 75, 78, 81, 91, 101, 109, 111,],
     stop_leaf=[15, 23, 35, 44, 54, 64, 74, 77, 80, 83, 93, 102, 110, 113,],
     padding=3
@@ -700,21 +700,21 @@ trinton.write_text_span(
 trinton.write_markup(
     voice=score["flute voice"],
     leaf=[8, 17, 27, 38, 47, 56, 66, 85, 95, 103, 114,],
-    string=r"\italic 45",
+    string=r"\italic 45˚",
     down=False,
 )
 
 trinton.write_markup(
     voice=score["flute voice"],
     leaf=[24, 36, 45, 55, 94, 119,],
-    string=r"\italic 90",
+    string=r"\italic 90˚",
     down=False,
 )
 
 trinton.write_markup(
     voice=score["flute voice"],
     leaf=[118, 84, 72, 65, 61,],
-    string=r"\italic 0",
+    string=r"\italic 0˚",
     down=False,
 )
 

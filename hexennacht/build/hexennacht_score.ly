@@ -11,5 +11,5 @@
         \include "03.ly"
         \include "04.ly"
     }
-% \midi{}
+\midi{}
 }

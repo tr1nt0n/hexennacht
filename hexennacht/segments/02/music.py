@@ -321,8 +321,8 @@ trinton.attach_multiple(
 
 trinton.write_text_span(
     voice=score["flute voice"],
-    begin_text=r"90",
-    end_text=r"0",
+    begin_text=r"90˚",
+    end_text=r"0˚",
     start_leaf=[2, 5],
     stop_leaf=[3, 7],
     padding=3
@@ -450,7 +450,7 @@ trinton.write_trill_span(
     voice="trumpet voice",
     pitch=16.5,
     start_leaf=[2,],
-    stop_leaf=[3,]
+    stop_leaf=[4,]
 )
 
 trinton.write_trill_span(
