@@ -15,6 +15,8 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \time 2/4
+            s1 * 1/2
             \time 7/8
             s1 * 7/8
             \time 3/4
@@ -42,6 +44,7 @@
                     {
                         \set Staff.shortInstrumentName =
                         \markup { fl. }
+                        r2
                         r4.
                         r2
                         r2.
@@ -61,6 +64,7 @@
                     {
                         \set Staff.shortInstrumentName =
                         \markup { ob. }
+                        r2
                         r4.
                         r2
                         r2.
@@ -80,6 +84,7 @@
                     {
                         \set Staff.shortInstrumentName =
                         \markup { bcl. }
+                        r2
                         r4.
                         r2
                         r4.
@@ -98,6 +103,9 @@
                         \set Staff.shortInstrumentName =
                         \markup { bsn. }
                         \clef "bass"
+                        c'4
+                        c'8
+                        c'8
                         r4.
                         r2
                         r2.
@@ -115,6 +123,7 @@
                 {
                     \set Staff.shortInstrumentName =
                     \markup { hrn. }
+                    r2
                     r2..
                     r2.
                     cs''2
@@ -141,6 +150,7 @@
                     {
                         \set Staff.shortInstrumentName =
                         \markup { tpt. }
+                        r2
                         r2..
                         r2.
                         r1
@@ -160,6 +170,7 @@
                         \set Staff.shortInstrumentName =
                         \markup { tbn. }
                         \clef "bass"
+                        r2
                         r2..
                         r2.
                         r1
@@ -181,6 +192,7 @@
                         \set Staff.shortInstrumentName =
                         \markup { tb. }
                         \clef "bass"
+                        r2
                         bf,4
                         bf,4
                         ~
@@ -222,6 +234,7 @@
                     {
                         \set Staff.shortInstrumentName =
                         \markup { pno. }
+                        r2
                         g''16
                         g''16
                         fs''16
@@ -300,10 +313,11 @@
                 {
                     \context Voice = "piano 2 voice"
                     {
+                        \clef "bass"
+                        r2
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 6/5
                         {
-                            \clef "bass"
                             bf,16
                             [
                             c16
@@ -371,6 +385,7 @@
                 {
                     \set Staff.shortInstrumentName =
                     \markup { harp }
+                    r2
                     g'16.
                     d'8.
                     cs'16.
@@ -453,10 +468,11 @@
                 {
                     \context Voice = "marimba voice"
                     {
+                        \set Staff.shortInstrumentName =
+                        \markup { mar. }
+                        r2
                         \times 2/3
                         {
-                            \set Staff.shortInstrumentName =
-                            \markup { mar. }
                             c'4
                             c'4
                             c'4
@@ -489,6 +505,7 @@
                         \set Staff.shortInstrumentName =
                         \markup { ratch. }
                         \clef "percussion"
+                        r2
                         r2
                         r4
                         \tweak Accidental.transparent ##t
@@ -527,11 +544,17 @@
             {
                 \context Voice = "percussion 2 voice"
                 {
+                    \set Staff.shortInstrumentName =
+                    \markup { perc. 2 }
+                    \clef "percussion"
+                    \tweak Accidental.transparent ##t
+                    e'8
+                    \tweak Accidental.transparent ##t
+                    a8
+                    \tweak Accidental.transparent ##t
+                    e'4
                     \times 2/3
                     {
-                        \set Staff.shortInstrumentName =
-                        \markup { perc. 2 }
-                        \clef "percussion"
                         \tweak Accidental.transparent ##t
                         c'4
                         \tweak Accidental.transparent ##t
@@ -559,10 +582,11 @@
                 {
                     \context Voice = "violin 1 voice"
                     {
+                        \set Staff.shortInstrumentName =
+                        \markup { vln. 1 }
+                        r2
                         \times 4/5
                         {
-                            \set Staff.shortInstrumentName =
-                            \markup { vln. 1 }
                             e''4.
                             ^ \markup \center-align +33
                             e''8
@@ -603,6 +627,7 @@
                     {
                         \set Staff.shortInstrumentName =
                         \markup { vln. 2 }
+                        r2
                         \tweak Accidental.stencil #ly:text-interface::print
                         \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
                         f''4
@@ -644,11 +669,12 @@
                 {
                     \context Voice = "viola voice"
                     {
+                        \set Staff.shortInstrumentName =
+                        \markup { vla. }
+                        \clef "alto"
+                        r2
                         \times 4/7
                         {
-                            \set Staff.shortInstrumentName =
-                            \markup { vla. }
-                            \clef "alto"
                             b2
                             ^ \markup \center-align +33
                             b8
@@ -685,11 +711,19 @@
                 {
                     \context Voice = "cello voice"
                     {
+                        \set Staff.shortInstrumentName =
+                        \markup { vc. }
+                        \clef "bass"
+                        c'16
+                        c'16
+                        c'16
+                        c'16
+                        c'16
+                        c'16
+                        c'16
+                        c'16
                         \times 2/3
                         {
-                            \set Staff.shortInstrumentName =
-                            \markup { vc. }
-                            \clef "bass"
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \flat-one-syntonic-comma-up  }
                             cf'8
@@ -735,6 +769,7 @@
                         \set Staff.shortInstrumentName =
                         \markup { cb. }
                         \clef "bass"
+                        r2
                         b,2
                         ~
                         b,8

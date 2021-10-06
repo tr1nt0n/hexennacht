@@ -21,6 +21,8 @@
             s1 * 3/8
             \time 3/4
             s1 * 3/4
+            \time 3/8
+            s1 * 3/8
             \time 7/8
             s1 * 7/8
             \tempo 4=69
@@ -53,6 +55,7 @@
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}
                         r8
                         r2
+                        r4.
                         <bf' aqs'' f'''>2..
                         :32
                         \ff
@@ -78,6 +81,7 @@
                         - \tenuto
                         r8
                         r2
+                        r4.
                         c''2..
                         :32
                         \ff
@@ -98,6 +102,7 @@
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}
                         r8
                         r2.
+                        r4.
                         \override Staff.Stem.stemlet-length = 0.75
                         bf'8
                         \ff
@@ -131,6 +136,48 @@
                         r2
                         r4.
                         r2.
+                        \override Staff.Stem.stemlet-length = 0.75
+                        a,32
+                        :256
+                        \fp
+                        - \accent
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
+                        [
+                        \(
+                        bf,32
+                        :256
+                        ef,32
+                        :256
+                        g,32
+                        :256
+                        fs,32
+                        :256
+                        af,32
+                        :256
+                        f,32
+                        :256
+                        \mf
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        g,32
+                        :256
+                        e,32
+                        :256
+                        \)
+                        e,32
+                        :256
+                        - \accent
+                        \(
+                        fs,32
+                        :256
+                        \revert Staff.Stem.stemlet-length
+                        d,32
+                        :256
+                        \!
+                        \)
+                        ]
                         <cqs, fs, c gqs>2..
                         \ff
                         - \marcato
@@ -148,6 +195,7 @@
                     r2
                     r4.
                     r2.
+                    r4.
                     \override Staff.Stem.stemlet-length = 0.75
                     a''8
                     :64
@@ -194,6 +242,7 @@
                         r2
                         r4.
                         r2.
+                        r4.
                         r2..
                         r2..
                     }
@@ -208,6 +257,7 @@
                         r2
                         r4.
                         r2.
+                        r4.
                         f,4
                         \p
                         \<
@@ -244,6 +294,7 @@
                         r2
                         r4.
                         r2.
+                        r4.
                         bf,4
                         \p
                         \<
@@ -324,6 +375,7 @@
                             \)
                             ]
                         }
+                        r4.
                         r2..
                         r2..
                     }
@@ -378,6 +430,7 @@
                             \)
                             ]
                         }
+                        r4.
                         r2..
                         r2..
                     }
@@ -445,6 +498,7 @@
                         \)
                         ]
                     }
+                    r4.
                     r2..
                     r2..
                 }
@@ -460,6 +514,7 @@
                         r2
                         r4.
                         r2.
+                        r4.
                         r2..
                         r2..
                     }
@@ -474,6 +529,7 @@
                         r2
                         r4.
                         r2.
+                        r4.
                         \tweak Accidental.transparent ##t
                         a4.
                         :32
@@ -505,10 +561,22 @@
                     r2.
                     \override Staff.Stem.stemlet-length = 0.75
                     \tweak Accidental.transparent ##t
+                    c'8.
+                    \fp
+                    [
+                    \revert Staff.Stem.stemlet-length
+                    \tweak Accidental.transparent ##t
+                    e'8.
+                    \fp
+                    ]
+                    \staff-line-count 1
+                    \override Staff.Stem.stemlet-length = 0.75
+                    \tweak Accidental.transparent ##t
                     c'8
                     \ff
                     - \accent
                     [
+                    \boxed-markup "Bass Drum" 1
                     \tweak Accidental.transparent ##t
                     c'8
                     \mp
@@ -577,6 +645,7 @@
                             \!
                             ^ \markup \center-align { -31 }
                         }
+                        r4.
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
                         {
@@ -634,6 +703,7 @@
                             \!
                             ^ \markup \center-align { +14 }
                         }
+                        r4.
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
                         {
@@ -698,6 +768,7 @@
                             \!
                             ^ \markup \center-align { -31 }
                         }
+                        r4.
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
                         {
@@ -742,6 +813,7 @@
                             - \tweak circled-tip ##t
                             \<
                             ~
+                            \boxed-markup "Norm." 1
                             \tweak Accidental.stencil #ly:text-interface::print
                             \tweak Accidental.text \markup { \natural-one-syntonic-comma-up  }
                             g8
@@ -755,6 +827,41 @@
                             g4
                             \!
                             ^ \markup \center-align { +16 }
+                        }
+                        \tweak text #tuplet-number::calc-fraction-text
+                        \times 3/5
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            \tweak style #'harmonic
+                            d'4.
+                            :32
+                            ^ \markup \center-align { -16 }
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            ~
+                            \boxed-markup "Flaut." 1
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            \tweak style #'harmonic
+                            d'8
+                            :64
+                            \mf
+                            ^ \markup \center-align { -16 }
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            [
+                            ~
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            \tweak style #'harmonic
+                            d'8
+                            :64
+                            \!
+                            ^ \markup \center-align { -16 }
+                            ]
                         }
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/6
@@ -797,6 +904,7 @@
                         r2
                         r4.
                         r2.
+                        r4.
                         cs,4
                         \p
                         \<

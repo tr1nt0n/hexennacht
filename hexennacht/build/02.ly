@@ -7,8 +7,8 @@
             s1 * 1/2
             \time 3/8
             s1 * 3/8
-            \time 2/4
-            s1 * 1/2
+            \time 5/8
+            s1 * 5/8
             \tempo 4=60
             \time 2/4
             s1 * 1/2
@@ -45,20 +45,20 @@
                         \stopTextSpan
                         ]
                         r16
-                        \override Staff.Stem.stemlet-length = 0.75
                         d'16
                         - \tweak circled-tip ##t
                         - \tweak stencil #abjad-flared-hairpin
                         \<
                         ~
-                        [
                         \(
                         - \abjad-dashed-line-with-arrow
                         - \tweak bound-details.left.text \markup \concat { 90˚ \hspace #0.5 }
                         - \tweak bound-details.right.text \markup { 0˚ }
                         - \tweak staff-padding 3
                         \startTextSpan
+                        \override Staff.Stem.stemlet-length = 0.75
                         d'16
+                        [
                         \revert Staff.Stem.stemlet-length
                         d'16
                         \ffff
@@ -66,6 +66,7 @@
                         \)
                         \stopTextSpan
                         ]
+                        r8
                         r2
                     }
                 }
@@ -81,8 +82,11 @@
                         \fff
                         - \marcato
                         \boxed-markup "Overblow" 1
-                        f''4
+                        f''8
                         - \marcato
+                        ~
+                        f''8
+                        r8
                         r2
                     }
                 }
@@ -116,9 +120,12 @@
                         \fff
                         - \marcato
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}
-                        <fs' bqf''>4
+                        <fs' bqf''>8
                         - \marcato
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three four five six)) (lh . ()) (rh . (ees)))}
+                        ~
+                        <fs' bqf''>8
+                        r8
                         r2
                     }
                 }
@@ -154,9 +161,33 @@
                         \fff
                         - \marcato
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}
-                        <d eqf fqs>4
+                        <d eqf fqs>8
                         - \marcato
                         ^ \markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}
+                        ~
+                        \override Staff.Stem.stemlet-length = 0.75
+                        <d eqf fqs>8
+                        [
+                        ef32
+                        :256
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \<
+                        \(
+                        a32
+                        :256
+                        b,32
+                        :256
+                        \mp
+                        - \tweak circled-tip ##t
+                        - \tweak stencil #abjad-flared-hairpin
+                        \>
+                        \revert Staff.Stem.stemlet-length
+                        a32
+                        :256
+                        \!
+                        \)
+                        ]
                         r2
                     }
                 }
@@ -186,8 +217,9 @@
                     - \tweak circled-tip ##t
                     \>
                     ]
-                    r4
+                    r8
                     \!
+                    r4
                     r2
                 }
             }
@@ -220,9 +252,10 @@
                         \stopTrillSpan
                         ]
                         \startTrillSpan bf''
-                        r4
+                        r8
                         \!
                         \stopTrillSpan
+                        r4
                         r2
                     }
                 }
@@ -252,8 +285,9 @@
                         ef16.
                         :256
                         ]
-                        r4
+                        r8
                         \!
+                        r4
                         r2
                     }
                 }
@@ -279,8 +313,9 @@
                         - \tweak circled-tip ##t
                         \>
                         ]
-                        r4
+                        r8
                         \!
+                        r4
                         r2
                     }
                 }
@@ -338,7 +373,8 @@
                         f'16
                         \)
                         ]
-                        r2
+                        r4.
+                        r4
                         r2
                     }
                 }
@@ -376,7 +412,8 @@
                             \)
                             ]
                         }
-                        r2
+                        r4.
+                        r4
                         r2
                     }
                 }
@@ -425,7 +462,8 @@
                         \)
                         ]
                     }
-                    r2
+                    r4.
+                    r4
                     r2
                 }
             }
@@ -459,20 +497,20 @@
                         c64
                         a,64
                         bf,64
-                        \revert Staff.Stem.stemlet-length
                         ef64
-                        ]
-                        \override Staff.Stem.stemlet-length = 0.75
                         af,64
-                        [
                         f,64
                         e64
                         ef64
                         b,64
                         ef64
                         c64
+                        \revert Staff.Stem.stemlet-length
                         e64
+                        ]
+                        \override Staff.Stem.stemlet-length = 0.75
                         g,64
+                        [
                         a,64
                         fs,64
                         cs64
@@ -483,6 +521,7 @@
                         d64
                         \)
                         ]
+                        r8
                         r2
                     }
                 }
@@ -495,7 +534,8 @@
                         \clef "percussion"
                         r2
                         r4.
-                        r2
+                        r4.
+                        r4
                         r2
                     }
                 }
@@ -517,21 +557,28 @@
                     - \accent
                     [
                     \boxed-markup "Bass Drum" 1
-                    \revert Staff.Stem.stemlet-length
                     \tweak Accidental.transparent ##t
                     c'8
                     \mp
-                    ]
-                    \override Staff.Stem.stemlet-length = 0.75
+                    \revert Staff.Stem.stemlet-length
                     \tweak Accidental.transparent ##t
                     c'8
                     \ff
                     - \accent
-                    [
-                    \revert Staff.Stem.stemlet-length
+                    ]
+                    \override Staff.Stem.stemlet-length = 0.75
                     \tweak Accidental.transparent ##t
                     c'8
                     \mp
+                    [
+                    \staff-line-count 3
+                    \tweak Accidental.transparent ##t
+                    e'16.
+                    \p
+                    \boxed-markup "Gongs, scrape w/ triangle beater" 1
+                    \revert Staff.Stem.stemlet-length
+                    \tweak Accidental.transparent ##t
+                    a32
                     ]
                     r2
                 }
@@ -572,25 +619,22 @@
                         - \accent
                         [
                         \boxed-markup "OP" 1
-                        \revert Staff.Stem.stemlet-length
                         \tweak style #'cross
                         g8
                         \mp
                         - \upbow
-                        ]
-                        \override Staff.Stem.stemlet-length = 0.75
+                        \revert Staff.Stem.stemlet-length
                         \tweak style #'cross
                         g8
                         \ff
                         - \accent
                         - \downbow
-                        [
-                        \revert Staff.Stem.stemlet-length
+                        ]
                         \tweak style #'cross
                         g8
                         \mp
                         - \upbow
-                        ]
+                        r8
                         r2
                     }
                 }
@@ -674,6 +718,7 @@
                             - \upbow
                             ]
                         }
+                        r8
                         r2
                     }
                 }
@@ -728,6 +773,7 @@
                             - \downbow
                             - \accent
                         }
+                        r8
                         r2
                     }
                 }
@@ -772,25 +818,52 @@
                         - \accent
                         [
                         \boxed-markup "OP" 1
-                        \revert Staff.Stem.stemlet-length
                         \tweak style #'cross
                         c,8
                         \mp
                         - \upbow
-                        ]
-                        \override Staff.Stem.stemlet-length = 0.75
+                        \revert Staff.Stem.stemlet-length
                         \tweak style #'cross
                         c,8
                         \ff
                         - \accent
                         - \downbow
-                        [
-                        \revert Staff.Stem.stemlet-length
+                        ]
                         \tweak style #'cross
                         c,8
                         \mp
                         - \upbow
-                        ]
+                        \times 2/3
+                        {
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            \tweak style #'harmonic
+                            e'16
+                            ^ \markup \center-align { -16 }
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \<
+                            [
+                            ~
+                            \boxed-markup "Flaut." 1
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            \tweak style #'harmonic
+                            e'16
+                            \mf
+                            ^ \markup \center-align { -16 }
+                            - \tweak circled-tip ##t
+                            - \tweak stencil #abjad-flared-hairpin
+                            \>
+                            ~
+                            \tweak Accidental.stencil #ly:text-interface::print
+                            \tweak Accidental.text \markup { \natural-one-syntonic-comma-down  }
+                            \tweak style #'harmonic
+                            e'16
+                            \!
+                            ^ \markup \center-align { -16 }
+                            ]
+                        }
                         r2
                     }
                 }
@@ -812,17 +885,12 @@
                         \boxed-markup "Slight OP" 1
                         a,32
                         \revert Staff.Stem.stemlet-length
-                        f,16.
+                        f,8..
                         - \accent
-                        ~
                         ]
-                        \override Staff.Stem.stemlet-length = 0.75
-                        f,8
-                        [
-                        \revert Staff.Stem.stemlet-length
                         b,8
                         - \accent
-                        ]
+                        r8
                         r2
                     }
                 }

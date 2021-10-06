@@ -10,6 +10,7 @@ score = hexennacht.score
 
 trinton.write_time_signatures(
     [
+        (2, 4),
         (7, 8),
         (3, 4),
         (4, 4),
@@ -21,6 +22,15 @@ trinton.write_time_signatures(
     ],
     score["Global Context"],
 )
+
+# new rests
+
+for voice in ["piano 1 voice", "piano 2 voice", "harp voice", "flute voice", "oboe voice", "bass clarinet voice", "horn voice", "trumpet voice", "tenor trombone voice", "tuba voice", "marimba voice", "percussion 1 voice", "violin 1 voice", "violin 2 voice", "viola voice", "contrabass voice"]:
+    trinton.append_rests(
+        score=score,
+        voice=voice,
+        rests=[abjad.Rest("r2")]
+    )
 
 # piano
 
@@ -184,6 +194,15 @@ hexennacht.transpose_harp(
 
 # last measure octave up
 
+# bassoon
+
+trinton.handwrite(
+    score=score,
+    voice="bassoon voice",
+    durations=[(1, 4), (1, 8), (1, 8),],
+    pitch_list=None
+)
+
 # woodwinds
 
 for voice in ["flute voice", "oboe voice"]:
@@ -259,7 +278,14 @@ hexennacht.woodwind_swells(
     durations=[(1, 2)]
 )
 
-# percussion 1
+# percussion
+
+trinton.handwrite(
+    score=score,
+    voice="percussion 2 voice",
+    durations=[(1, 8), (1, 8), (1, 4)],
+    pitch_list=hexennacht.ratchet_pitches
+)
 
 for voice in ["percussion 2 voice", "marimba voice"]:
     hexennacht.cymbal_swells(
@@ -360,6 +386,16 @@ trinton.append_rests(
 )
 
 # strings
+
+hexennacht.marimba_shakes(
+    score=score,
+    voice="cello voice",
+    note_value=16,
+    durations=[(1, 2)],
+    pitched=False,
+    pitch_index=None,
+    high=False
+)
 
 for voice, index in zip(["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",], [1, 4, 3, 2,]):
     hexennacht.string_swells(
