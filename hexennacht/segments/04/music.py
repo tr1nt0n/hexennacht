@@ -707,7 +707,7 @@ trinton.rewrite_meter(score)
 
 trinton.beam_score(score)
 
-trinton.annotate_leaves(score)
+# trinton.annotate_leaves(score)
 
 # tempi
 
