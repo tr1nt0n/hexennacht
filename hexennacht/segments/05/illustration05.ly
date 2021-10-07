@@ -104,6 +104,7 @@
                         gqs''2
                         \p
                         - \tenuto
+                        \boxed-markup "Norm." 1
                         r2.
                         r2
                         r4
@@ -1052,17 +1053,17 @@
                         \times 2/3
                         {
                             \clef "bass"
-                            <ef, f,>4
+                            <ef f>4
                             - \tweak circled-tip ##t
                             \<
                             ~
                             \boxed-markup "w/ bow" 1
-                            <ef, f,>4
+                            <ef f>4
                             \p
                             - \tweak circled-tip ##t
                             \>
                             ~
-                            <ef, f,>4
+                            <ef f>4
                             \!
                         }
                         r8
@@ -1072,93 +1073,93 @@
                         \tweak text #tuplet-number::calc-fraction-text
                         \times 7/5
                         {
-                            <d, ef,>4.
+                            <d ef>4.
                             - \tweak circled-tip ##t
                             \<
                             ~
-                            <d, ef,>8
+                            <d ef>8
                             \p
                             - \tweak circled-tip ##t
                             \>
                             [
                             ~
-                            <d, ef,>8
+                            <d ef>8
                             \!
                             ]
                         }
                         r2.
                         r8
-                        <bf,, c,>8
+                        <bf, c>8
                         - \tweak circled-tip ##t
                         \<
                         ~
-                        <bf,, c,>4
+                        <bf, c>4
                         \p
                         - \tweak circled-tip ##t
                         \>
                         ~
-                        <bf,, c,>4
+                        <bf, c>4
                         ~
-                        <bf,, c,>8
+                        <bf, c>8
                         \!
                         r8
                         r4
                         r2.
-                        <fs, g,>4.
+                        <g a>4.
                         - \tweak circled-tip ##t
                         \<
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
-                        <fs, g,>8
+                        <g a>8
                         \f
                         - \tweak circled-tip ##t
                         \>
                         [
                         ~
                         \revert Staff.Stem.stemlet-length
-                        <fs, g,>8
+                        <g a>8
                         ]
                         ~
-                        <fs, g,>4
+                        <g a>4
                         \!
                         \override Staff.Stem.stemlet-length = 0.75
-                        <g,, a,,>8
+                        <g, a,>8
                         - \tweak circled-tip ##t
                         \<
                         [
                         ~
                         \revert Staff.Stem.stemlet-length
-                        <g,, a,,>8
+                        <g, a,>8
                         \f
                         - \tweak circled-tip ##t
                         \>
                         ~
                         ]
-                        <g,, a,,>4
+                        <g, a,>4
                         ~
                         \override Staff.Stem.stemlet-length = 0.75
-                        <g,, a,,>8
+                        <g, a,>8
                         [
                         ~
                         \revert Staff.Stem.stemlet-length
-                        <g,, a,,>8
+                        <g, a,>8
                         \!
                         ]
                         r2.
                         \times 4/5
                         {
-                            <ef, f,>8.
+                            <ef f>8.
                             \!
                             - \tweak circled-tip ##t
                             \<
                             [
                             ~
-                            <ef, f,>16
+                            <ef f>16
                             \f
                             - \tweak circled-tip ##t
                             \>
                             ~
-                            <ef, f,>16
+                            <ef f>16
                             \!
                             ]
                         }

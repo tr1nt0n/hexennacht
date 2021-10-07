@@ -911,6 +911,14 @@ for voice in ["flute voice", "oboe voice"]:
         attachment=abjad.StartHairpin("<")
     )
 
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[4,],
+    attachment=abjad.LilyPondLiteral(
+        r'\boxed-markup "Norm." 1', format_slot="after"
+    ),
+)
+
 
 # clarinet attachments
 
@@ -1145,7 +1153,7 @@ trinton.attach(
 )
 
 handler = evans.PitchHandler(
-    pitch_list=[[-19, -21], [-21, -22,], [-24, -26], [-17, -18], [-27, -29]],
+    pitch_list=[[-7, -9], [-9, -10,], [-12, -14], [-5, -3], [-15, -17]],
     forget=False
 )
 
