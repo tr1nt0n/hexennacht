@@ -805,7 +805,7 @@ for number in [38, 42, 45, 46, 50, 53,]:
     sel = abjad.select(score["piano 1 voice"]).leaf(number)
     hexennacht.octave_down([sel])
 
-for number in [41, 44, 49, 52]:
+for number in [1, 2, 3, 4, 5, 6, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 27, 28, 29, 30, 31, 32, 33, 41, 44, 49, 52]:
     sel = abjad.select(score["piano 1 voice"]).leaf(number)
     hexennacht.double_octave_down([sel])
 
@@ -815,12 +815,12 @@ for number in [41, 44, 49, 52]:
 
 hexennacht.bass_clef(
     score["piano 1 voice"],
-    [41, 44, 49, 52]
+    [1, 11, 41, 44, 49, 52]
 )
 
 hexennacht.treble_clef(
     score["piano 1 voice"],
-    [42, 45, 50, 53]
+    [7, 22, 42, 45, 50, 53]
 )
 
 # harp attachments
@@ -856,6 +856,10 @@ for number in [36, 39, 42, 46, 49]:
 for number in [37, 40, 43, 47]:
     sel = abjad.select(score["harp voice"]).leaf(number)
     hexennacht.double_octave_down([sel])
+
+for number in [1, 2, 3, 4, 5, 10, 11, 12, 13, 14, 15, 16, 17, 23, 24, 25, 26, 27, 28, 29, 30, 31,]:
+    sel = abjad.select(score["harp voice"]).leaf(number)
+    hexennacht.octave_up([sel])
 
 hexennacht.bass_clef(
     score["harp voice"],

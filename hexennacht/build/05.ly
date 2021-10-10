@@ -511,25 +511,27 @@
                         \set Staff.shortInstrumentName =
                         \markup { pno. }
                         r2
+                        \clef "bass"
                         \override Staff.Stem.stemlet-length = 0.75
-                        g''16
+                        g16
                         \fff
                         - \accent
                         [
                         \(
-                        g''16
+                        g16
                         - \accent
-                        fs''16
+                        fs16
                         - \accent
-                        g''16
+                        g16
                         - \accent
-                        g''16
+                        g16
                         - \accent
                         \revert Staff.Stem.stemlet-length
-                        a''16
+                        a16
                         - \accent
                         \)
                         ]
+                        \clef "treble"
                         e''4
                         \mp
                         \(
@@ -544,43 +546,45 @@
                         ]
                         \times 4/5
                         {
+                            \clef "bass"
                             \override Staff.Stem.stemlet-length = 0.75
-                            f''16
+                            f16
                             \fff
                             - \accent
                             [
                             \(
-                            g''16
+                            g16
                             - \accent
-                            c'''16
+                            c'16
                             - \accent
-                            g''16
+                            g16
                             - \accent
                             \revert Staff.Stem.stemlet-length
-                            e''16
+                            e16
                             - \accent
                             ]
                         }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            fs''16
+                            fs16
                             - \accent
                             [
-                            cs'''16
+                            cs'16
                             - \accent
-                            b''16
+                            b16
                             - \accent
-                            a''16
+                            a16
                             - \accent
-                            f'''16
+                            f'16
                             - \accent
                             \revert Staff.Stem.stemlet-length
-                            c'''16
+                            c'16
                             - \accent
                             \)
                             ]
                         }
+                        \clef "treble"
                         cs'''4
                         \mp
                         \(
@@ -598,30 +602,30 @@
                         \times 4/5
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            a''16
+                            a16
                             \fff
                             - \accent
                             [
                             \(
-                            d'''8.
+                            d'8.
                             - \accent
                             \revert Staff.Stem.stemlet-length
-                            a''16
+                            a16
                             - \accent
                             ]
                         }
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
-                            bf''16
+                            bf16
                             - \accent
                             [
-                            a''16
+                            a16
                             - \accent
-                            bf''8.
+                            bf8.
                             - \accent
                             \revert Staff.Stem.stemlet-length
-                            bf''16
+                            bf16
                             - \accent
                             \)
                             ]
@@ -854,19 +858,19 @@
                     \markup { harp }
                     r2
                     \override Staff.Stem.stemlet-length = 0.75
-                    g'16.
+                    g''16.
                     \fff
                     - \accent
                     [
                     \(
-                    d'32
+                    d''32
                     - \accent
                     ~
-                    d'8
+                    d''8
                     ~
-                    d'32
+                    d''32
                     \revert Staff.Stem.stemlet-length
-                    cs'16.
+                    cs''16.
                     - \accent
                     \)
                     ]
@@ -885,32 +889,32 @@
                     \times 4/7
                     {
                         \override Staff.Stem.stemlet-length = 0.75
-                        ef'8
+                        ef''8
                         \fff
                         - \accent
                         [
                         \(
-                        d'16
+                        d''16
                         - \accent
-                        ef'8.
+                        ef''8.
                         - \accent
                         \revert Staff.Stem.stemlet-length
-                        ef'16
+                        ef''16
                         - \accent
                         ]
                     }
                     \times 4/7
                     {
                         \override Staff.Stem.stemlet-length = 0.75
-                        fs'8.
+                        fs''8.
                         - \accent
                         [
-                        cs'16
+                        cs''16
                         - \accent
-                        fs'8
+                        fs''8
                         - \accent
                         \revert Staff.Stem.stemlet-length
-                        cs'16
+                        cs''16
                         - \accent
                         \)
                         ]
@@ -932,33 +936,33 @@
                     \tweak text #tuplet-number::calc-fraction-text
                     \times 3/5
                     {
-                        ef'8
+                        ef''8
                         \fff
                         - \accent
                         \(
-                        cs'4.
+                        cs''4.
                         - \accent
-                        g'8
+                        g''8
                         - \accent
                     }
                     \override Staff.Stem.stemlet-length = 0.75
-                    g'16
+                    g''16
                     - \accent
                     [
                     \revert Staff.Stem.stemlet-length
-                    fs'16
+                    fs''16
                     - \accent
                     ]
                     \override Staff.Stem.stemlet-length = 0.75
-                    ef'16
+                    ef''16
                     - \accent
                     [
-                    b'16
+                    b''16
                     - \accent
-                    fs'16
+                    fs''16
                     - \accent
                     \revert Staff.Stem.stemlet-length
-                    g'16
+                    g''16
                     - \accent
                     \)
                     ]
