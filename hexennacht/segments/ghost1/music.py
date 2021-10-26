@@ -197,16 +197,34 @@ trinton.rewrite_meter(score)
 
 trinton.beam_score(score)
 
-trinton.write_startmarkups(
-    score=score,
-    voices=hexennacht.all_staves,
-    markups=hexennacht.all_startmarkups
-)
-
 trinton.write_marginmarkups(
     score=score,
     voices=hexennacht.all_staves,
     markups=hexennacht.all_marginmarkups
+)
+
+# tempi
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[0],
+    attachment=hexennacht.tempo_1
+)
+
+trinton.tempo_ramp_span(
+    score=score,
+    voice="Global Context",
+    begin_text=r"\italic Accel.",
+    end_text=r".",
+    start_leaf=[4,],
+    stop_leaf=[5,],
+    padding=7.15
+)
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[5],
+    attachment=hexennacht.tempo_5
 )
 
 # strings attachments
@@ -332,6 +350,14 @@ trinton.attach(
 )
 
 # bass drum attachments
+
+tuplet = abjad.select(score["percussion 2 voice"]).tuplet(7)
+string = r"\italic 7:10"
+markup = abjad.Markup(
+    rf"\markup \scale #'(1 . 1) {string}",
+    literal=True,
+)
+abjad.override(tuplet).TupletNumber.text = markup
 
 hexennacht.percussion_clef(
     score_and_voice=score["percussion 2 voice"],

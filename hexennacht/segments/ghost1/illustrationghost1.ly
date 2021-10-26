@@ -15,6 +15,7 @@
     <<
         \context TimeSignatureContext = "Global Context"
         {
+            \tempo 4=47
             \time 4/4
             s1 * 1
             \time 6/4
@@ -25,8 +26,16 @@
             s1 * 3/2
             \time 6/4
             s1 * 3/2
+            - \abjad-dashed-line-with-arrow
+            - \tweak bound-details.left.text \markup \concat { \italic
+                Accel. \hspace #0.5 }
+            - \tweak bound-details.right.text \markup { . }
+            - \tweak padding 7.15
+            \startTextSpan
+            \tempo 4=130
             \time 6/4
             s1 * 3/2
+            \stopTextSpan
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -36,8 +45,6 @@
                 {
                     \context Voice = "flute voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Flute }
                         \set Staff.shortInstrumentName =
                         \markup { fl. }
                         r1
@@ -52,8 +59,6 @@
                 {
                     \context Voice = "oboe voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Oboe }
                         \set Staff.shortInstrumentName =
                         \markup { ob. }
                         r1
@@ -68,8 +73,6 @@
                 {
                     \context Voice = "bass clarinet voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Bass Clarinet }
                         \set Staff.shortInstrumentName =
                         \markup { bcl. }
                         r1
@@ -84,8 +87,6 @@
                 {
                     \context Voice = "bassoon voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Bassoon }
                         \set Staff.shortInstrumentName =
                         \markup { bsn. }
                         r1
@@ -101,8 +102,6 @@
             {
                 \context Voice = "horn voice"
                 {
-                    \set Staff.instrumentName =
-                    \markup { French Horn }
                     \set Staff.shortInstrumentName =
                     \markup { hrn. }
                     r1
@@ -119,8 +118,6 @@
                 {
                     \context Voice = "trumpet voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Trumpet in C }
                         \set Staff.shortInstrumentName =
                         \markup { tpt. }
                         r1
@@ -135,8 +132,6 @@
                 {
                     \context Voice = "tenor trombone voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Tenor Trombone }
                         \set Staff.shortInstrumentName =
                         \markup { tbn. }
                         r1
@@ -151,8 +146,6 @@
                 {
                     \context Voice = "tuba voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Tuba }
                         \set Staff.shortInstrumentName =
                         \markup { tb. }
                         r1
@@ -170,8 +163,6 @@
                 {
                     \context Voice = "piano 1 voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Piano }
                         \set Staff.shortInstrumentName =
                         \markup { pno. }
                         r1
@@ -199,8 +190,6 @@
             {
                 \context Voice = "harp voice"
                 {
-                    \set Staff.instrumentName =
-                    \markup { Harp }
                     \set Staff.shortInstrumentName =
                     \markup { harp }
                     r1
@@ -217,8 +206,6 @@
                 {
                     \context Voice = "marimba voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Marimba }
                         \set Staff.shortInstrumentName =
                         \markup { mar. }
                         r1
@@ -233,8 +220,6 @@
                 {
                     \context Voice = "percussion 1 voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Ratchets }
                         \set Staff.shortInstrumentName =
                         \markup { ratch. }
                         r1
@@ -253,8 +238,6 @@
                     \times 4/7
                     {
                         \staff-line-count 1
-                        \set Staff.instrumentName =
-                        \markup { Percussion 2 }
                         \set Staff.shortInstrumentName =
                         \markup { perc. 2 }
                         \clef "percussion"
@@ -679,27 +662,28 @@
                         ]
                     }
                     \revert TupletNumber.text
-                    \tweak text #tuplet-number::calc-fraction-text
-                    \times 20/21
+                    \override TupletNumber.text = \markup \scale #'(1 . 1) \italic 7:10
+                    \times 30/21
                     {
                         \tweak Accidental.transparent ##t
-                        c'8.
+                        c'8
                         \fff
                         - \accent
                         [
                         \tweak Accidental.transparent ##t
-                        c'16.
+                        c'16
                         \f
                         \tweak Accidental.transparent ##t
-                        c'16.
+                        c'16
                         \tweak Accidental.transparent ##t
-                        c'16.
+                        c'16
                         \tweak Accidental.transparent ##t
-                        c'16.
+                        c'16
                         \tweak Accidental.transparent ##t
-                        c'16.
+                        c'16
                         ]
                     }
+                    \revert TupletNumber.text
                     \tweak Accidental.transparent ##t
                     c'8
                     \mp
@@ -800,8 +784,6 @@
                 {
                     \context Voice = "violin 1 voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Violin 1 }
                         \set Staff.shortInstrumentName =
                         \markup { vln. 1 }
                         r1
@@ -916,8 +898,6 @@
                 {
                     \context Voice = "violin 2 voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Violin 2 }
                         \set Staff.shortInstrumentName =
                         \markup { vln. 2 }
                         r1
@@ -998,8 +978,6 @@
                 {
                     \context Voice = "viola voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Viola }
                         \set Staff.shortInstrumentName =
                         \markup { vla. }
                         \clef "alto"
@@ -1116,8 +1094,6 @@
                 {
                     \context Voice = "cello voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Violoncello }
                         \set Staff.shortInstrumentName =
                         \markup { vc. }
                         \clef "bass"
@@ -1230,8 +1206,6 @@
                 {
                     \context Voice = "contrabass voice"
                     {
-                        \set Staff.instrumentName =
-                        \markup { Contrabass }
                         \set Staff.shortInstrumentName =
                         \markup { cb. }
                         r1
