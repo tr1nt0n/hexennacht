@@ -13,6 +13,7 @@
         \include "05.ly"
         \include "06.ly"
         \include "ghost1.ly"
+        \include "08.ly"
     }
 % \midi{}
 }

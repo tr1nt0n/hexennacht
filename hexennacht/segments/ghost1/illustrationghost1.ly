@@ -246,7 +246,6 @@
                         \fff
                         - \accent
                         [
-                        \boxed-markup "Bass Drum" 1
                         \tweak Accidental.transparent ##t
                         c'32
                         \f

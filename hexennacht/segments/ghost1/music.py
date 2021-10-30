@@ -370,12 +370,6 @@ hexennacht.one_line(
     leaves=[0]
 )
 
-hexennacht.bass_drum(
-    score=score,
-    voice="percussion 2 voice",
-    leaves=[0],
-)
-
 trinton.transparent_accidentals(
     score=score,
     voice="percussion 2 voice",
