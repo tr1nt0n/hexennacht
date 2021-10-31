@@ -1613,23 +1613,31 @@
                         r2
                         r8
                         fs''8
+                        \ff
+                        - \tenuto
                         ~
+                        \(
+                        \boxed-markup "Crine, MSP, Slightly OP" 1
                         \override Staff.Stem.stemlet-length = 0.75
                         fs''8.
                         [
                         \revert Staff.Stem.stemlet-length
                         gqs''16
+                        \)
                         ]
                         \times 4/6
                         {
                             bf''2
+                            - \tenuto
                             ~
                             \override Staff.Stem.stemlet-length = 0.75
                             bf''8
                             [
                             \revert Staff.Stem.stemlet-length
                             bqf''8
+                            - \tenuto
                             ]
+                            \(
                         }
                         \times 4/5
                         {
@@ -1646,58 +1654,82 @@
                         \times 4/7
                         {
                             ef''8.
+                            \)
                             fqs''4
+                            - \tenuto
+                            \(
                         }
                         fs''2
                         cqs''4
+                        \)
                         \override Staff.Stem.stemlet-length = 0.75
                         ef''8.
+                        - \tenuto
                         [
+                        \(
                         \revert Staff.Stem.stemlet-length
                         dqs''16
+                        \)
                         ]
                         \times 2/3
                         {
                             \override Staff.Stem.stemlet-length = 0.75
                             f''8
+                            - \tenuto
                             [
+                            \(
                             gqf''8
                             \revert Staff.Stem.stemlet-length
                             fs''8
+                            \)
                             ]
                         }
                         \times 4/5
                         {
                             gqs''4
+                            - \tenuto
+                            \(
                             bf''16
+                            \)
                         }
                         \times 4/6
                         {
                             bqf''4
+                            - \tenuto
                             ~
+                            \(
                             \override Staff.Stem.stemlet-length = 0.75
                             bqf''16
                             [
                             \revert Staff.Stem.stemlet-length
                             af''16
+                            \)
                             ]
                         }
                         \times 4/6
                         {
                             fqs''4
+                            - \tenuto
                             ~
+                            \(
                             \override Staff.Stem.stemlet-length = 0.75
                             fqs''16
                             [
                             \revert Staff.Stem.stemlet-length
                             f''16
+                            \)
                             ]
                         }
                         eqf''4
+                        - \tenuto
                         cqs''4
+                        - \tenuto
                         ef''4
+                        - \tenuto
                         fqs''4
+                        - \tenuto
                         fs''4
+                        - \tenuto
                     }
                 }
                 \context Staff = "violin 2 staff"

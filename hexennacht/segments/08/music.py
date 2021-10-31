@@ -600,6 +600,32 @@ trinton.attach(
     attachment=abjad.Dynamic("mp")
 )
 
+# violin 1 attachments
+
+trinton.write_slur(
+    voice=score["violin 1 voice"],
+    start_slur=[5, 10, 17, 20, 22, 25, 27, 30,],
+    stop_slur=[7, 16, 19, 21, 24, 26, 29, 32,],
+)
+
+trinton.attach_multiple(
+    score=score,
+    voice="violin 1 voice",
+    leaves=[5],
+    attachments=[
+        abjad.Dynamic("ff"),
+        abjad.LilyPondLiteral(
+            r'\boxed-markup "Crine, MSP, Slightly OP" 1', format_slot="after"
+        ),
+    ]
+)
+
+trinton.attach(
+    voice=score["violin 1 voice"],
+    leaves=[5, 8, 10, 17, 20, 22, 25, 27, 30, 33, 34, 35, 36, 37],
+    attachment=abjad.Articulation("tenuto")
+)
+
 # violin 2 attachments
 
 for voice in ["violin 2 voice", "viola voice", "cello voice"]:
