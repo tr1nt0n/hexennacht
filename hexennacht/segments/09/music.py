@@ -425,6 +425,18 @@ trinton.attach(
     attachment=abjad.Dynamic("ff")
 )
 
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[4, 6, 9, 11, 13, 15, 20, 22, 26, 28, 33, 35, 37, 39, 43, 45, 47,],
+    attachment=abjad.Articulation("open")
+)
+
+trinton.attach(
+    voice=score["oboe voice"],
+    leaves=[5, 10, 12, 14, 16, 21, 23, 27, 34, 36, 38, 40, 44, 46,],
+    attachment=abjad.Articulation("stopped")
+)
+
 # horn attachments
 
 for voice in ["horn voice", "tenor trombone voice", "tuba voice", "bassoon voice", "percussion 2 voice"]:

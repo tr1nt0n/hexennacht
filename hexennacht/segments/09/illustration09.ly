@@ -541,14 +541,17 @@
                             r32 * 117/32
                             [
                             af''32 * 99/32
+                            - \open
                             - \tweak circled-tip ##t
                             \<
                             \(
                             \glissando
                             \boxed-markup "Norm." 1
                             aqf''32 * 69/32
+                            - \stopped
                             \glissando
                             gqs''32 * 13/8
+                            - \open
                             \)
                             \glissando
                             r32 * 47/32
@@ -598,23 +601,31 @@
                             [
                             af''32 * 51/32
                             \mf
+                            - \open
                             - \tweak circled-tip ##t
                             \>
                             \(
                             \glissando
                             a''32 * 27/16
+                            - \stopped
                             \glissando
                             aqs''32 * 29/16
+                            - \open
                             \glissando
                             aqf''32 * 65/32
+                            - \stopped
                             \glissando
                             af''32 * 73/32
+                            - \open
                             \glissando
                             aqf''32 * 21/8
+                            - \stopped
                             \glissando
                             gqs''32 * 97/32
+                            - \open
                             \glissando
                             af''32 * 111/32
+                            - \stopped
                             \)
                             r32 * 31/8
                             \!
@@ -665,15 +676,19 @@
                             [
                             a''32 * 43/32
                             \f
+                            - \open
                             - \tweak circled-tip ##t
                             \>
                             \(
                             \glissando
                             aqs''32 * 51/32
+                            - \stopped
                             \glissando
                             aqf''32 * 65/32
+                            - \open
                             \glissando
                             af''32 * 85/32
+                            - \stopped
                             \)
                             r32 * 25/8
                             \!
@@ -722,14 +737,17 @@
                             r32 * 117/32
                             [
                             aqf''32 * 99/32
+                            - \open
                             - \tweak circled-tip ##t
                             \<
                             \(
                             \glissando
                             gqs''32 * 69/32
+                            - \stopped
                             \glissando
                             af''32 * 13/8
                             \ff
+                            - \open
                             \)
                             r32 * 47/32
                             ]
@@ -779,24 +797,32 @@
                             r32 * 15/4
                             [
                             a''32 * 115/32
+                            - \open
                             - \tweak circled-tip ##t
                             \<
                             \(
                             \glissando
                             aqs''32 * 103/32
+                            - \stopped
                             \glissando
                             aqf''32 * 11/4
+                            - \open
                             \glissando
                             af''32 * 37/16
+                            - \stopped
                             \glissando
                             aqf''32 * 2
+                            - \open
                             \glissando
                             gqs''32 * 7/4
+                            - \stopped
                             \glissando
                             af''32 * 13/8
+                            - \open
                             \glissando
                             a''32 * 49/32
                             \p
+                            - \stopped
                             - \tweak circled-tip ##t
                             \>
                             \)
@@ -846,15 +872,20 @@
                             r32 * 3/2
                             [
                             aqs''32 * 25/16
+                            - \open
                             \(
                             \glissando
                             aqf''32 * 7/4
+                            - \stopped
                             \glissando
                             af''32 * 65/32
+                            - \open
                             \glissando
                             aqf''32 * 79/32
+                            - \stopped
                             \glissando
                             gqs''32 * 49/16
+                            - \open
                             \)
                             r32 * 29/8
                             \!
