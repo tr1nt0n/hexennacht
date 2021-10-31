@@ -14,6 +14,7 @@
         \include "06.ly"
         \include "ghost1.ly"
         \include "08.ly"
+        \include "09.ly"
     }
 % \midi{}
 }

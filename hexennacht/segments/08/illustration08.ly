@@ -41,6 +41,7 @@
             \bar ":|."
             \time 5/4
             s1 * 5/4
+            \bar ".|:"
         }
         \context ChoirStaff = "Staff Group"
         <<
@@ -1630,6 +1631,12 @@
                         fs''8
                         \ff
                         - \tenuto
+                        _ \markup {
+                            \italic
+                                {
+                                    Espressivo
+                                }
+                            }
                         ~
                         \(
                         \boxed-markup "Crine, MSP, Slightly OP" 1

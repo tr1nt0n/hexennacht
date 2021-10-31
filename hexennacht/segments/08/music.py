@@ -564,7 +564,7 @@ hexennacht.standard_cleffing(score)
 
 # global context
 
-for leaf, attachment in zip([5, 6,], [abjad.BarLine(".|:"), abjad.BarLine(":|.")]):
+for leaf, attachment in zip([5, 6, 7], [abjad.BarLine(".|:"), abjad.BarLine(":|."), abjad.BarLine(".|:")]):
     trinton.attach(
         voice=score["Global Context"],
         leaves=[leaf],
@@ -612,6 +612,7 @@ trinton.attach_multiple(
         abjad.LilyPondLiteral(
             r'\boxed-markup "Crine, MSP, Slightly OP" 1', format_slot="after"
         ),
+        abjad.Markup(r'\italic { "Espressivo" }', direction=abjad.Down)
     ]
 )
 
