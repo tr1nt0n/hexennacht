@@ -30,15 +30,17 @@
             \bar ".|:"
             \time 4/4
             s1 * 1
-            - \abjad-dashed-line-with-hook
-            - \tweak bound-details.left.text \markup \concat { 8X \hspace #0.5 }
-            - \tweak bound-details.right.text \markup { . }
-            - \tweak padding 7
-            \startTextSpan
+            - \tweak padding 7.15
+            ^ \markup {
+                \abs-fontsize
+                    #14
+                    {
+                        x8
+                    }
+                }
             \bar ":|."
             \time 5/4
             s1 * 5/4
-            \stopTextSpan
         }
         \context ChoirStaff = "Staff Group"
         <<

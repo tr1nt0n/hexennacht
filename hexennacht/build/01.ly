@@ -29,7 +29,12 @@
             \time 9/4
             s1 * 9/4
             - \abjad-dashed-line-with-arrow
-            - \tweak bound-details.left.text \markup \concat { Accel. \hspace #0.5 }
+            - \tweak bound-details.left.text \markup \concat { \italic
+                \abs-fontsize
+                    #12
+                    {
+                        Accel.
+                    } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { . }
             - \tweak padding 6.75
             \startTextSpan

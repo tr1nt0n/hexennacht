@@ -214,7 +214,7 @@ trinton.attach(
 trinton.tempo_ramp_span(
     score=score,
     voice="Global Context",
-    begin_text=r"\italic Accel.",
+    begin_text=r'\italic \abs-fontsize #12 { "Accel." }',
     end_text=r".",
     start_leaf=[4,],
     stop_leaf=[5,],

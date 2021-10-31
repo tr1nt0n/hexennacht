@@ -15,7 +15,11 @@
             s1 * 3/2
             - \abjad-dashed-line-with-arrow
             - \tweak bound-details.left.text \markup \concat { \italic
-                Accel. \hspace #0.5 }
+                \abs-fontsize
+                    #12
+                    {
+                        Accel.
+                    } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { . }
             - \tweak padding 7.15
             \startTextSpan

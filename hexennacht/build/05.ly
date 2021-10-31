@@ -22,8 +22,12 @@
             s1 * 1
             - \tweak padding 8
             ^ \markup {
-                \bold
-                    Rall.
+                \italic
+                    \abs-fontsize
+                        #14
+                        {
+                            Rall.
+                        }
                 }
         }
         \context ChoirStaff = "Staff Group"

@@ -670,7 +670,7 @@ trinton.attach(
 )
 
 start_text_span = abjad.StartTextSpan(
-    left_text=abjad.Markup(r"Accel."),
+    left_text=abjad.Markup(r'\italic \abs-fontsize #12 { "Accel." }'),
     right_text=abjad.Markup(r"."),
     style="dashed-line-with-arrow",
 )

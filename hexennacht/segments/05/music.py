@@ -741,7 +741,7 @@ trinton.beam_score(score)
 
 # tempi
 
-markup = abjad.Markup(r"\bold Rall.", direction=abjad.Up)
+markup = abjad.Markup(r'\italic \abs-fontsize #14 { "Rall." }', direction=abjad.Up)
 
 abjad.tweak(markup).padding=8
 

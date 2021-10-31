@@ -564,13 +564,6 @@ hexennacht.standard_cleffing(score)
 
 # global context
 
-start_text_span = abjad.StartTextSpan(
-    left_text=abjad.Markup(r"8X"),
-    right_text=abjad.Markup(r"."),
-    style="dashed-line-with-hook",
-)
-abjad.tweak(start_text_span).padding = 7
-
 for leaf, attachment in zip([5, 6,], [abjad.BarLine(".|:"), abjad.BarLine(":|.")]):
     trinton.attach(
         voice=score["Global Context"],
@@ -578,12 +571,14 @@ for leaf, attachment in zip([5, 6,], [abjad.BarLine(".|:"), abjad.BarLine(":|.")
         attachment=attachment,
     )
 
-for leaf, attachment in zip([6, 7,], [start_text_span, abjad.StopTextSpan()]):
-    trinton.attach(
-        voice=score["Global Context"],
-        leaves=[leaf],
-        attachment=attachment,
-    )
+markup = abjad.Markup(r'\abs-fontsize #14 { "x8" }', direction=abjad.Up)
+abjad.tweak(markup).padding = 7.15
+
+trinton.attach(
+    voice=score["Global Context"],
+    leaves=[6,],
+    attachment=markup,
+)
 
 # bass drum attachments
 
