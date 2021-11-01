@@ -628,6 +628,11 @@ trinton.attach(
 
 # harp and piano attachments
 
+hexennacht.treble_clef(
+    score["harp voice"],
+    [0],
+)
+
 for leaf in abjad.select(score["piano 2 voice"]).leaves(pitched=True):
     abjad.mutate.transpose(leaf, -6)
 

@@ -1388,6 +1388,7 @@
                 {
                     \set Staff.shortInstrumentName =
                     \markup { harp }
+                    \clef "treble"
                     r1..
                     \times 4/7
                     {
