@@ -24,5 +24,5 @@ if __name__ == "__main__":
         name="hexennacht",
         packages=["hexennacht"],
         platforms="Any",
-        url="https://github.com/trintonprater/hexennacht.git",
+        url="https://github.com/tr1nt0n/hexennacht.git",
     )
