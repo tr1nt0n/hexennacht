@@ -62,6 +62,7 @@
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
         \override Stem.stemlet-length = 0.75
+        \override Glissando.thickness = #2
     }
     \context {
         \name DynamicContext
@@ -91,6 +92,7 @@
 }
 %
 \paper {
+    system-separator-markup = \markup { \slashSeparator }
     system-system-spacing = #'((basic-distance . 16) (minimum-distance . 16) (padding . 2))
     indent = 20\mm
     short-indent = 15\mm
