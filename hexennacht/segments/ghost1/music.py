@@ -211,9 +211,8 @@ trinton.attach(
     attachment=hexennacht.tempo_1
 )
 
-trinton.tempo_ramp_span(
-    score=score,
-    voice="Global Context",
+trinton.write_text_span(
+    voice=score["Global Context"],
     begin_text=r'\italic \abs-fontsize #12 { "Accel." }',
     end_text=r".",
     start_leaf=[4,],
@@ -441,6 +440,10 @@ trinton.write_slur(
     start_slur=[24, 29, 48, 55,],
     stop_slur=[26, 33, 52, 62,],
 )
+
+# extract parts
+
+trinton.extract_parts(score)
 
 # show file
 

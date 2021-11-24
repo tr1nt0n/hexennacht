@@ -694,7 +694,7 @@ trinton.write_text_span(
     end_text=r"0˚",
     start_leaf=[14, 21, 33, 42, 51, 62, 73, 75, 78, 81, 91, 101, 109, 111,],
     stop_leaf=[15, 23, 35, 44, 54, 64, 74, 77, 80, 83, 93, 102, 110, 113,],
-    padding=3
+    padding=4
 )
 
 trinton.write_markup(
@@ -1042,6 +1042,9 @@ for voice in ["bass clarinet voice", "trumpet voice", "horn voice", "violin 1 vo
         attachment=abjad.Fermata()
     )
 
+# extract parts
+
+trinton.extract_parts(score)
 
 # show file
 

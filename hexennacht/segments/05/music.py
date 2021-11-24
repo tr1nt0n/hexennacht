@@ -1523,6 +1523,10 @@ trinton.attach(
     attachment=abjad.Dynamic("mf")
 )
 
+# extract parts
+
+trinton.extract_parts(score)
+
 # show file
 
 trinton.render_file(

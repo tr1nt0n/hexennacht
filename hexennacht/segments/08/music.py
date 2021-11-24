@@ -729,7 +729,7 @@ trinton.write_text_span(
     end_text=r"0˚",
     start_leaf=[6, 8, 20, 27, 30, 33, 35,],
     stop_leaf=[7, 10, 22, 28, 32, 34, 37,],
-    padding=3
+    padding=5
 )
 
 trinton.write_markup(
@@ -1157,6 +1157,10 @@ trinton.attach(
     leaves=[30, 32, 35, 37, 40, 42, 44,],
     attachment=abjad.Articulation("marcato")
 )
+
+# extract parts
+
+trinton.extract_parts(score)
 
 # show file
 

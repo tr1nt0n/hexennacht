@@ -898,6 +898,10 @@ trinton.attach(
     attachment=abjad.StopHairpin()
 )
 
+# extract parts
+
+trinton.extract_parts(score)
+
 # show file
 
 trinton.render_file(

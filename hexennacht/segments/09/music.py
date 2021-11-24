@@ -249,9 +249,8 @@ trinton.write_marginmarkups(
 
 # global context
 
-trinton.tempo_ramp_span(
-    score=score,
-    voice="Global Context",
+trinton.write_text_span(
+    voice=score["Global Context"],
     begin_text=r'\italic \abs-fontsize #12 { "Rit." }',
     end_text=r".",
     start_leaf=[0, 3, 6,],
@@ -340,7 +339,7 @@ trinton.write_text_span(
     end_text=r"0˚",
     start_leaf=[9, 12, 15, 24, 28, 35, 37, 40, 50, 53, 56, 59, 61, 64, 67,],
     stop_leaf=[11, 14, 16, 27, 30, 36, 39, 42, 52, 55, 58, 60, 63, 66, 69,],
-    padding=3
+    padding=5
 )
 
 trinton.write_markup(
@@ -756,6 +755,10 @@ trinton.attach_multiple(
         abjad.Dynamic("pp"),
     ]
 )
+
+# extract parts
+
+trinton.extract_parts(score)
 
 # show file
 

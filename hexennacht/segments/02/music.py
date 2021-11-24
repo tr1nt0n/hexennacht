@@ -364,7 +364,7 @@ trinton.write_text_span(
     end_text=r"0˚",
     start_leaf=[2, 5],
     stop_leaf=[3, 7],
-    padding=3
+    padding=5
 )
 
 # oboe attachments
@@ -946,6 +946,10 @@ trinton.attach(
     leaves=[2, 4, 5,],
     attachment=abjad.Articulation(">")
 )
+
+# extract parts
+
+trinton.extract_parts(score)
 
 # show file
 
