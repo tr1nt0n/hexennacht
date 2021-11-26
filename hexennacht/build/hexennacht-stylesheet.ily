@@ -26,19 +26,17 @@
 		\consists Metronome_mark_engraver
 		\consists Text_engraver
 		\consists Text_spanner_engraver
+
         \override BarNumber.font-size = 3
+        \override BarNumber.font-name = "Bodoni72"
+
         \override MetronomeMark.stencil = ##f
-		% \override BarNumber.padding = 1
-		\override BarNumber.font-name = "Bodoni72"
-		% \override TextScript.font-size = 6
-        % \override TextSpanner.font-size = 6
-        %
 		\override TimeSignature.X-extent = #'(0 . 0)
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 12) (stretchability . 0))
-        % \override TimeSignature.break-align-symbol = #'left-edge
-        \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.font-size = 8
-		\override TimeSignature.font-name = "Bodoni72"
+        \override TimeSignature.font-name = "Bodoni72"
+        \override TimeSignature.break-visibility = #end-of-line-invisible
+
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 12) (minimum-distance . 12) (padding . 12) (stretchability . 0))
     }
     \context {
         \Score
@@ -46,41 +44,28 @@
         \override StaffGrouper.staff-staff-spacing = #'((basic-distance . 11) (minimum distance . 11) (padding . 2))
         autoBeaming = ##f
         proportionalNotationDuration = #(ly:make-moment 1 30)
-        \remove Bar_number_engraver
         \accepts TimeSignatureContext
+        \remove Bar_number_engraver
+
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
+
         \override MetronomeMark.padding = 6
         \override MetronomeMark.font-size = 4
         \override MetronomeMark.extra-offset = #'(0.3 . 0)
-%         \override TupletBracket.breakable = ##t
-        % \override TupletBracket.springs-and-rods = #ly:spanner::set-spacing-rods
+
         tupletFullLength = ##t
         \override TupletBracket.full-length-to-extent = ##f
         \override TupletBracket.padding = 2
         \override TupletNumber.font-size = 1
         \override TupletBracket.bracket-visibility = ##t
         \override TupletNumber.text = #tuplet-number::calc-fraction-text
+
         \override Stem.stemlet-length = 0.75
         \override Glissando.thickness = #2
-    }
-    \context {
-        \name DynamicContext
-        \type Engraver_group
-        \consists Axis_group_engraver
-        \consists Dynamic_engraver
-        \consists Dynamic_align_engraver
-        \override Rest.transparent = ##t
-        \override NoteHead.transparent = ##t
-        \override Stem.transparent = ##t
-        \override Flag.transparent = ##t
-        \override Beam.transparent = ##t
-        \override Dots.transparent = ##t
-        \override TupletBracket.transparent = ##t
-        \override TupletNumber.transparent = ##t
-        \override Accidental.transparent = ##t
-        \override DynamicText.font-size = #-2
-        \override DynamicLineSpanner.staff-padding = 6
+        
+        \override Clef.whiteout-style = #'outline
+        \override Clef.whiteout = 1
     }
     \context {
         \Staff
