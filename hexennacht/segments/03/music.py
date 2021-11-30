@@ -653,6 +653,8 @@ for voice in ["tenor trombone voice", "contrabass voice"]:
             ),
         )
 
+hexennacht.octave_up([abjad.select(score["contrabass voice"]).leaf(4), abjad.select(score["contrabass voice"]).leaf(5)])
+
 # tuba attachments
 
 trinton.attach_multiple(

@@ -964,13 +964,13 @@
                                     r4.
                                     r2.
                                     r4.
-                                    cs,4
+                                    cs4
                                     \p
                                     \<
                                     ~
                                     \boxed-markup "Norm., ST" 1
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    cs,16
+                                    cs16
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     b,16

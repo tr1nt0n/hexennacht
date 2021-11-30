@@ -2341,11 +2341,11 @@
                                     b,16
                                     [
                                     \revert Staff.Stem.stemlet-length
-                                    cs,8.
+                                    cs8.
                                     ~
                                     ]
                                     \override Staff.Stem.stemlet-length = 0.75
-                                    cs,16
+                                    cs16
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     b,8.

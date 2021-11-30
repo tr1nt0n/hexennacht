@@ -1652,6 +1652,8 @@ trinton.write_text_span(
     padding=5
 )
 
+hexennacht.octave_up([trinton.make_leaf_selection(score=score, voice="contrabass voice", leaves=[9, 10,])])
+
 # extract parts
 
 trinton.extract_parts(score)
