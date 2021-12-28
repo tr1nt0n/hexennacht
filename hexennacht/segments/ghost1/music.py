@@ -9,7 +9,9 @@ from abjadext import microtones
 
 score = hexennacht.score
 
-trinton.write_time_signatures([(4, 4), (6, 4), (6, 4), (6, 4), (6, 4), (6, 4)], score["Global Context"])
+trinton.write_time_signatures(
+    [(4, 4), (6, 4), (6, 4), (6, 4), (6, 4), (6, 4)], score["Global Context"]
+)
 
 # bass drum
 
@@ -55,7 +57,7 @@ hexennacht.flute_solo(
     flourish_durations=[(1, 4)],
     talea=32,
     talea_index=2,
-    talea_durations=[(3, 8)]
+    talea_durations=[(3, 8)],
 )
 
 trinton.append_rests(
@@ -80,7 +82,7 @@ hexennacht.flute_solo(
     flourish_durations=[(5, 8)],
     talea=16,
     talea_index=2,
-    talea_durations=[(7, 8)]
+    talea_durations=[(7, 8)],
 )
 
 trinton.append_rests(
@@ -104,7 +106,12 @@ hexennacht.incantation(
 
 # violin 1
 
-for voice in ["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",]:
+for voice in [
+    "violin 1 voice",
+    "violin 2 voice",
+    "viola voice",
+    "cello voice",
+]:
     trinton.append_rests(
         score=score,
         voice=voice,
@@ -114,14 +121,38 @@ for voice in ["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",]
 trinton.handwrite(
     score=score,
     voice="violin 1 voice",
-    durations=[(1, 4), (1, 8), (1, 4), (1, 8), (3, 16), (1, 16), (1, 8), (10, 8), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (1, 8), (1, 8), (11, 8)],
+    durations=[
+        (1, 4),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (3, 16),
+        (1, 16),
+        (1, 8),
+        (10, 8),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (11, 8),
+    ],
     pitch_list=hexennacht.violin1_ghost_pitches,
 )
 
 trinton.append_rests(
     score=score,
     voice="violin 1 voice",
-    rests=[abjad.Rest("r4"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"),]
+    rests=[
+        abjad.Rest("r4"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+    ],
 )
 
 # violin 2
@@ -129,14 +160,40 @@ trinton.append_rests(
 trinton.handwrite(
     score=score,
     voice="violin 2 voice",
-    durations=[(1, 4), (1, 4), (1, 8), (1, 8), (1, 4), (1, 4), (1, 4), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (1, 4), (1, 4), (6, 4)],
+    durations=[
+        (1, 4),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 4),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 4),
+        (6, 4),
+    ],
     pitch_list=hexennacht.violin2_ghost_pitches,
 )
 
 trinton.append_rests(
     score=score,
     voice="violin 2 voice",
-    rests=[abjad.Rest("r4"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"),]
+    rests=[
+        abjad.Rest("r4"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+    ],
 )
 
 # # viola
@@ -144,14 +201,47 @@ trinton.append_rests(
 trinton.handwrite(
     score=score,
     voice="viola voice",
-    durations=[(1, 4), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 8), (5, 4),],
+    durations=[
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (5, 4),
+    ],
     pitch_list=hexennacht.viola_ghost_pitches,
 )
 
 trinton.append_rests(
     score=score,
     voice="viola voice",
-    rests=[abjad.Rest("r4"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"),]
+    rests=[
+        abjad.Rest("r4"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+    ],
 )
 
 # cello
@@ -159,14 +249,38 @@ trinton.append_rests(
 trinton.handwrite(
     score=score,
     voice="cello voice",
-    durations=[(11, 8), (1, 8), (1, 8), (1, 8), (1, 8), (1, 4), (1, 8), (1, 8), (10, 8), (1, 8), (1, 16), (3, 16), (1, 8), (1, 4), (1, 8), (1, 4),],
+    durations=[
+        (11, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 8),
+        (10, 8),
+        (1, 8),
+        (1, 16),
+        (3, 16),
+        (1, 8),
+        (1, 4),
+        (1, 8),
+        (1, 4),
+    ],
     pitch_list=hexennacht.cello_ghost_pitches,
 )
 
 trinton.append_rests(
     score=score,
     voice="cello voice",
-    rests=[abjad.Rest("r4"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"),]
+    rests=[
+        abjad.Rest("r4"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+        abjad.Rest("r2"),
+    ],
 )
 
 # all voices
@@ -185,12 +299,29 @@ for voice in [
     "harp voice",
     "marimba voice",
     "percussion 1 voice",
-    "contrabass voice"
+    "contrabass voice",
 ]:
     trinton.append_rests(
         score=score,
         voice=voice,
-        rests=[abjad.Rest("r1"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), abjad.Rest("r2"), ]
+        rests=[
+            abjad.Rest("r1"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+            abjad.Rest("r2"),
+        ],
     )
 
 trinton.rewrite_meter(score)
@@ -198,33 +329,27 @@ trinton.rewrite_meter(score)
 trinton.beam_score(score)
 
 trinton.write_marginmarkups(
-    score=score,
-    voices=hexennacht.all_staves,
-    markups=hexennacht.all_marginmarkups
+    score=score, voices=hexennacht.all_staves, markups=hexennacht.all_marginmarkups
 )
 
 # tempi
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[0],
-    attachment=hexennacht.tempo_1
-)
+trinton.attach(voice=score["Global Context"], leaves=[0], attachment=hexennacht.tempo_1)
 
 trinton.write_text_span(
     voice=score["Global Context"],
     begin_text=r'\italic \abs-fontsize #12 { "Accel." }',
     end_text=r".",
-    start_leaf=[4,],
-    stop_leaf=[5,],
-    padding=7.15
+    start_leaf=[
+        4,
+    ],
+    stop_leaf=[
+        5,
+    ],
+    padding=7.15,
 )
 
-trinton.attach(
-    voice=score["Global Context"],
-    leaves=[5],
-    attachment=hexennacht.tempo_5
-)
+trinton.attach(voice=score["Global Context"], leaves=[5], attachment=hexennacht.tempo_5)
 
 # strings attachments
 
@@ -238,7 +363,12 @@ hexennacht.alto_clef(
     [0],
 )
 
-for voice in ["violin 1 voice", "violin 2 voice", "viola voice", "cello voice",]:
+for voice in [
+    "violin 1 voice",
+    "violin 2 voice",
+    "viola voice",
+    "cello voice",
+]:
     trinton.attach(
         voice=score[voice],
         leaves=[1],
@@ -283,9 +413,7 @@ trinton.attach(
 )
 
 trinton.attach(
-    voice=score["violin 1 voice"],
-    leaves=[25],
-    attachment=abjad.StopHairpin()
+    voice=score["violin 1 voice"], leaves=[25], attachment=abjad.StopHairpin()
 )
 
 # violin 2 attachments
@@ -303,9 +431,7 @@ trinton.attach(
 )
 
 trinton.attach(
-    voice=score["violin 2 voice"],
-    leaves=[21],
-    attachment=abjad.StopHairpin()
+    voice=score["violin 2 voice"], leaves=[21], attachment=abjad.StopHairpin()
 )
 
 # viola attachments
@@ -322,11 +448,7 @@ trinton.attach(
     attachment=abjad.StartHairpin(">o"),
 )
 
-trinton.attach(
-    voice=score["viola voice"],
-    leaves=[27],
-    attachment=abjad.StopHairpin()
-)
+trinton.attach(voice=score["viola voice"], leaves=[27], attachment=abjad.StopHairpin())
 
 # cello attachments
 
@@ -342,11 +464,7 @@ trinton.attach(
     attachment=abjad.StartHairpin(">o"),
 )
 
-trinton.attach(
-    voice=score["cello voice"],
-    leaves=[24],
-    attachment=abjad.StopHairpin()
-)
+trinton.attach(voice=score["cello voice"], leaves=[24], attachment=abjad.StopHairpin())
 
 # bass drum attachments
 
@@ -363,11 +481,7 @@ hexennacht.percussion_clef(
     leaves=[0],
 )
 
-hexennacht.one_line(
-    score=score,
-    voice="percussion 2 voice",
-    leaves=[0]
-)
+hexennacht.one_line(score=score, voice="percussion 2 voice", leaves=[0])
 
 trinton.transparent_accidentals(
     score=score,
@@ -378,67 +492,140 @@ trinton.transparent_accidentals(
 hexennacht.with_hand(
     score=score,
     voice="percussion 2 voice",
-    leaves=[3, 14, 20, 39, 42, 70, 83,]
+    leaves=[
+        3,
+        14,
+        20,
+        39,
+        42,
+        70,
+        83,
+    ],
 )
 
 hexennacht.with_mallets(
     score=score,
     voice="percussion 2 voice",
-    leaves=[7, 16, 22, 41, 44, 72, 85,]
+    leaves=[
+        7,
+        16,
+        22,
+        41,
+        44,
+        72,
+        85,
+    ],
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
     leaves=[0, 7, 10, 12, 16, 18, 22, 38, 41, 44, 64, 72, 79, 80, 82, 85, 88, 90],
-    attachment=abjad.Articulation(">")
+    attachment=abjad.Articulation(">"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
     leaves=[0, 7, 10, 12, 16, 18, 22, 38, 41, 44, 64, 72, 79, 80, 82, 85, 88, 90],
-    attachment=abjad.Dynamic("fff")
+    attachment=abjad.Dynamic("fff"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
     leaves=[1, 9, 11, 13, 15, 17, 19, 35, 45, 52, 65, 73, 81, 86, 89],
-    attachment=abjad.Dynamic("f")
+    attachment=abjad.Dynamic("f"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
-    leaves=[14, 20, 24, 33, 39, 42, 48, 62, 70, 83,],
-    attachment=abjad.Dynamic("mp")
+    leaves=[
+        14,
+        20,
+        24,
+        33,
+        39,
+        42,
+        48,
+        62,
+        70,
+        83,
+    ],
+    attachment=abjad.Dynamic("mp"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
-    leaves=[29,],
-    attachment=abjad.Dynamic("mf")
+    leaves=[
+        29,
+    ],
+    attachment=abjad.Dynamic("mf"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
-    leaves=[14, 20, 24, 39, 42, 48, 70, 83,],
-    attachment=abjad.StartHairpin("<")
+    leaves=[
+        14,
+        20,
+        24,
+        39,
+        42,
+        48,
+        70,
+        83,
+    ],
+    attachment=abjad.StartHairpin("<"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
-    leaves=[29, 55,],
-    attachment=abjad.StartHairpin(">")
+    leaves=[
+        29,
+        55,
+    ],
+    attachment=abjad.StartHairpin(">"),
 )
 
 trinton.attach(
     voice=score["percussion 2 voice"],
-    leaves=[24, 25, 26, 29, 30, 31, 32, 33, 48, 49, 50, 51, 52, 55, 56, 57, 58, 59, 60, 61, 62,],
-    attachment=abjad.Articulation("staccato")
+    leaves=[
+        24,
+        25,
+        26,
+        29,
+        30,
+        31,
+        32,
+        33,
+        48,
+        49,
+        50,
+        51,
+        52,
+        55,
+        56,
+        57,
+        58,
+        59,
+        60,
+        61,
+        62,
+    ],
+    attachment=abjad.Articulation("staccato"),
 )
 
 trinton.write_slur(
     voice=score["percussion 2 voice"],
-    start_slur=[24, 29, 48, 55,],
-    stop_slur=[26, 33, 52, 62,],
+    start_slur=[
+        24,
+        29,
+        48,
+        55,
+    ],
+    stop_slur=[
+        26,
+        33,
+        52,
+        62,
+    ],
 )
 
 # extract parts
@@ -455,5 +642,5 @@ trinton.render_file(
     includes=[
         "/Users/trintonprater/scores/hexennacht/hexennacht/build/hexennacht-stylesheet.ily",
         "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily",
-    ]
+    ],
 )

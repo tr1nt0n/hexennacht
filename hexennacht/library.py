@@ -7,27 +7,143 @@ from abjadext import microtones
 
 # pitch collections and functions
 
-ritual_pitches = [0, 1, 3, 8, 3, 0, 7, 5, 3, 11, 6, 7, 2, 1, 3, 8, 3, 3, 2, 3, 3, 5, 0, 6]
+ritual_pitches = [
+    0,
+    1,
+    3,
+    8,
+    3,
+    0,
+    7,
+    5,
+    3,
+    11,
+    6,
+    7,
+    2,
+    1,
+    3,
+    8,
+    3,
+    3,
+    2,
+    3,
+    3,
+    5,
+    0,
+    6,
+]
 
 dance_pitches = [4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]
 
-violin1_ghost_pitches = [12, 12.5, 19, 18.5, 14, 15.5, 14, 11.5, 19, 22.5, 24, 21.5, 19, 21.5, 17, 18.5]
+violin1_ghost_pitches = [
+    12,
+    12.5,
+    19,
+    18.5,
+    14,
+    15.5,
+    14,
+    11.5,
+    19,
+    22.5,
+    24,
+    21.5,
+    19,
+    21.5,
+    17,
+    18.5,
+]
 
-violin2_ghost_pitches = [0.5, 3, 5.5, 6, 0.5, 3, 2.5, 5, 6.5, 6, 7.5, 10, 10.5, 8, 5.5, 5, 3.5]
+violin2_ghost_pitches = [
+    0.5,
+    3,
+    5.5,
+    6,
+    0.5,
+    3,
+    2.5,
+    5,
+    6.5,
+    6,
+    7.5,
+    10,
+    10.5,
+    8,
+    5.5,
+    5,
+    3.5,
+]
 
 viola_ghost_pitches = [-9, -3.5, -9, -1.5, -9, -3.5, -9, -8.5, -4, -7.5, -1, -8.5, -4]
 
-cello_ghost_pitches = [-23, -22.5, -16, -16.5, -21, -19.5, -21, -23.5, -16, -12.5, -11, -13.5, -16, -13.5, -18, -16.5]
+cello_ghost_pitches = [
+    -23,
+    -22.5,
+    -16,
+    -16.5,
+    -21,
+    -19.5,
+    -21,
+    -23.5,
+    -16,
+    -12.5,
+    -11,
+    -13.5,
+    -16,
+    -13.5,
+    -18,
+    -16.5,
+]
 
-ratchet_pitches = [4, -3, 4, 0, 4, -3, -3, 0, 0,]
+ratchet_pitches = [
+    4,
+    -3,
+    4,
+    0,
+    4,
+    -3,
+    -3,
+    0,
+    0,
+]
+
 
 def pitch_flute_flourishes(score, voice, start_index, leaves):
     pitches = trinton.rotated_sequence(
         pitch_list=trinton.transpose(
-            [9, 13, 15, 18, 19, 16, 5, 10, 15, 16, 6, 7, 10, 17, 18, 0, 8, 12, 14, 16, 11, 5, 4, 14, 17, 13, 7],
-            12
+            [
+                9,
+                13,
+                15,
+                18,
+                19,
+                16,
+                5,
+                10,
+                15,
+                16,
+                6,
+                7,
+                10,
+                17,
+                18,
+                0,
+                8,
+                12,
+                14,
+                16,
+                11,
+                5,
+                4,
+                14,
+                17,
+                13,
+                7,
+            ],
+            12,
         ),
-        start_index=start_index
+        start_index=start_index,
     )
 
     handler = evans.PitchHandler(
@@ -39,6 +155,7 @@ def pitch_flute_flourishes(score, voice, start_index, leaves):
         sel = abjad.select(score[voice]).leaf(leaf)
         handler(sel)
 
+
 def pitch_flute_pf(score, voice, leaves):
     handler = evans.PitchHandler(
         pitch_list=[0, 0, 2, 2],
@@ -49,12 +166,10 @@ def pitch_flute_pf(score, voice, leaves):
         sel = abjad.select(score[voice]).leaf(leaf)
         handler(sel)
 
+
 def flute_multiphonics(score, voice, leaves, multiphonic, markup):
     if multiphonic == 1:
-        handler = evans.PitchHandler(
-            pitch_list=[[9.5, 21, 23, 29]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[9.5, 21, 23, 29]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -63,23 +178,16 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four six)) (lh . (b)) (rh . (cis)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 2:
-        handler = evans.PitchHandler(
-            pitch_list=[[17, 25.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[17, 25.5]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -88,23 +196,16 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 3:
-        handler = evans.PitchHandler(
-            pitch_list=[[11.5, 25]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[11.5, 25]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -113,23 +214,16 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 4:
-        handler = evans.PitchHandler(
-            pitch_list=[[6, 17, 19, 24.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[6, 17, 19, 24.5]], forget=False)
 
         if markup == True:
             for leaf in leaves:
@@ -139,23 +233,16 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three five six)) (lh . (b)) (rh . (c cis)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     else:
-        handler = evans.PitchHandler(
-            pitch_list=[[10, 21.5, 29]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[10, 21.5, 29]], forget=False)
 
         if markup == True:
             for leaf in leaves:
@@ -165,70 +252,50 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
+
 def oboe_harmonies(score, voice, leaves, flute_multiphonic):
     if flute_multiphonic == 1:
-        handler = evans.PitchHandler(
-            pitch_list=[19.5],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[19.5], forget=False)
         for leaf in leaves:
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
     elif flute_multiphonic == 2:
-        handler = evans.PitchHandler(
-            pitch_list=[23],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[23], forget=False)
         for leaf in leaves:
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
     elif flute_multiphonic == 3:
-        handler = evans.PitchHandler(
-            pitch_list=[17],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[17], forget=False)
         for leaf in leaves:
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
     elif flute_multiphonic == 4:
-        handler = evans.PitchHandler(
-            pitch_list=[12.5],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[12.5], forget=False)
         for leaf in leaves:
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
     else:
-        handler = evans.PitchHandler(
-            pitch_list=[12],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[12], forget=False)
         for leaf in leaves:
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
+
 def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
     if multiphonic == 1:
-        handler = evans.PitchHandler(
-            pitch_list=[[4, 25]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[4, 25]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -237,23 +304,16 @@ def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three four five)) (lh . (thumb)) (rh . ()))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 2:
-        handler = evans.PitchHandler(
-            pitch_list=[[7.5, 29]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[7.5, 29]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -262,23 +322,16 @@ def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 3:
-        handler = evans.PitchHandler(
-            pitch_list=[[6, 22.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[6, 22.5]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -287,23 +340,16 @@ def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three four five six)) (lh . ()) (rh . (ees)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 4:
-        handler = evans.PitchHandler(
-            pitch_list=[[5.5, 32.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[5.5, 32.5]], forget=False)
 
         if markup == True:
             for leaf in leaves:
@@ -313,23 +359,16 @@ def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five six)) (lh . (thumb)) (rh . (three four e)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     else:
-        handler = evans.PitchHandler(
-            pitch_list=[[8, 27.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[8, 27.5]], forget=False)
 
         if markup == True:
             for leaf in leaves:
@@ -339,24 +378,18 @@ def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
+
 def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
     if multiphonic == 1:
-        handler = evans.PitchHandler(
-            pitch_list=[[-12, -10, -8]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[-12, -10, -8]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -365,23 +398,16 @@ def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (cis thumb-e fis)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 2:
-        handler = evans.PitchHandler(
-            pitch_list=[[-11.5, 0.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[-11.5, 0.5]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -390,23 +416,16 @@ def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 3:
-        handler = evans.PitchHandler(
-            pitch_list=[[-10, -8.5, -6.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[-10, -8.5, -6.5]], forget=False)
         if markup == True:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -415,23 +434,16 @@ def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     elif multiphonic == 4:
-        handler = evans.PitchHandler(
-            pitch_list=[[-11.5, -6, -4]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[-11.5, -6, -4]], forget=False)
 
         if markup == True:
             for leaf in leaves:
@@ -441,23 +453,16 @@ def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
                 handler(sel)
 
     else:
-        handler = evans.PitchHandler(
-            pitch_list=[[-23.5, -18, -12, -4.5]],
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=[[-23.5, -18, -12, -4.5]], forget=False)
 
         if markup == True:
             for leaf in leaves:
@@ -467,13 +472,9 @@ def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
                 markup = abjad.Markup(
                     r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}",
                     literal=True,
-                    direction=abjad.Up
+                    direction=abjad.Up,
                 )
-                trinton.attach(
-                    voice=score[voice],
-                    leaves=[leaf],
-                    attachment=markup
-                )
+                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
         else:
             for leaf in leaves:
                 sel = abjad.select(score[voice]).leaf(leaf)
@@ -507,14 +508,25 @@ score = trinton.make_score_template(
     [4, 1, 3, 2, 1, 2, 1, 5],
 )
 
+
 def standard_cleffing(score):
-    for voice in ["bassoon voice", "tenor trombone voice", "tuba voice", "piano 2 voice", "cello voice", "contrabass voice"]:
+    for voice in [
+        "bassoon voice",
+        "tenor trombone voice",
+        "tuba voice",
+        "piano 2 voice",
+        "cello voice",
+        "contrabass voice",
+    ]:
         hexennacht.bass_clef(
             score_and_voice=score[voice],
             leaves=[0],
         )
 
-    for voice in ["percussion 1 voice", "percussion 2 voice",]:
+    for voice in [
+        "percussion 1 voice",
+        "percussion 2 voice",
+    ]:
         hexennacht.percussion_clef(
             score_and_voice=score[voice],
             leaves=[0],
@@ -524,6 +536,7 @@ def standard_cleffing(score):
         score_and_voice=score["viola voice"],
         leaves=[0],
     )
+
 
 all_voices = [
     "flute voice",
@@ -544,7 +557,7 @@ all_voices = [
     "violin 2 voice",
     "viola voice",
     "cello voice",
-    "contrabass voice"
+    "contrabass voice",
 ]
 
 all_staves = [
@@ -607,10 +620,11 @@ all_marginmarkups = [
     abjad.Markup(r"vln. 2"),
     abjad.Markup(r"vla."),
     abjad.Markup(r"vc."),
-    abjad.Markup(r"cb.")
+    abjad.Markup(r"cb."),
 ]
 
 # material functions
+
 
 def woodwind_swells(score, voice, durations):
     stack = rmakers.stack(
@@ -732,8 +746,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
             )
 
         handler = evans.PitchHandler(
-            pitch_list=[20, 20.5, 19.5, 20, 21, 21.5, 20.5],
-            forget=False
+            pitch_list=[20, 20.5, 19.5, 20, 21, 21.5, 20.5], forget=False
         )
         handler(abjad.select(score[voice]).leaves(pitched=True))
 
@@ -785,7 +798,18 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
             )
 
 
-def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_durations, bunch_2_tuplet, bunch_2_durations, pitch_index, transpose):
+def incantation(
+    score,
+    voice,
+    bunch_1_tuplet,
+    bunch_1_durations,
+    talea,
+    smooth_durations,
+    bunch_2_tuplet,
+    bunch_2_durations,
+    pitch_index,
+    transpose,
+):
     pitches = trinton.rotated_sequence(ritual_pitches, pitch_index)
     bunch_1 = rmakers.stack(
         rmakers.tuplet(
@@ -923,10 +947,7 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
         )
         container3 = abjad.Container(sel3)
 
-        handler = evans.PitchHandler(
-            pitch_list=pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         all_containers = [container1, container2, container3]
 
@@ -934,21 +955,15 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
             handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container1[:]
+            score=score, voice=voice, selections=container1[:]
         )
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container2[:]
+            score=score, voice=voice, selections=container2[:]
         )
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container3[:]
+            score=score, voice=voice, selections=container3[:]
         )
 
     else:
@@ -974,31 +989,23 @@ def incantation(score, voice, bunch_1_tuplet, bunch_1_durations, talea, smooth_d
 
         transposed_ritual = trinton.transpose(pitches, transpose)
 
-        handler = evans.PitchHandler(
-            pitch_list=transposed_ritual,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=transposed_ritual, forget=False)
 
         for container in all_containers:
             handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container1[:]
+            score=score, voice=voice, selections=container1[:]
         )
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container2[:]
+            score=score, voice=voice, selections=container2[:]
         )
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container3[:]
+            score=score, voice=voice, selections=container3[:]
         )
+
 
 def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
     rhythms = trinton.rotated_sequence(
@@ -1045,17 +1052,12 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
 
         container = abjad.Container(sel)
 
-        handler = evans.PitchHandler(
-            pitch_list=pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
 
     else:
@@ -1068,18 +1070,14 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
 
         transposed_pitches = trinton.transpose(pitches, transpose)
 
-        handler = evans.PitchHandler(
-            pitch_list=transposed_pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=transposed_pitches, forget=False)
 
         handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
+
 
 def string_swells(score, voice, tuplet_index, durations, pitch_index):
     rhythms = trinton.rotated_sequence(
@@ -1132,22 +1130,40 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         )
 
         rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack,
-            durations=durations
+            stack=stack, durations=durations
         )
 
         container = abjad.Container(rhythm_selections)
 
-        handler = evans.PitchHandler(
-            pitch_list=pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         handler(abjad.select(container[:]).leaves())
 
         ratio_segment = trinton.rotated_sequence(
-            ["89/55", "89/55", "89/55", "7/4", "7/4", "7/4", "7/5", "7/5", "7/5", "13/5", "13/5", "13/5", "34/21", "34/21", "34/21", "13/8", "13/8", "13/8", "89/55", "89/55", "89/55",],
-            start_index=pitch_index
+            [
+                "89/55",
+                "89/55",
+                "89/55",
+                "7/4",
+                "7/4",
+                "7/4",
+                "7/5",
+                "7/5",
+                "7/5",
+                "13/5",
+                "13/5",
+                "13/5",
+                "34/21",
+                "34/21",
+                "34/21",
+                "13/8",
+                "13/8",
+                "13/8",
+                "89/55",
+                "89/55",
+                "89/55",
+            ],
+            start_index=pitch_index,
         )
 
         ratio_handler = evans.PitchHandler(
@@ -1159,9 +1175,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         ratio_handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
 
     elif voice == "violin 2 voice":
@@ -1193,22 +1207,40 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         )
 
         rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack,
-            durations=durations
+            stack=stack, durations=durations
         )
 
         container = abjad.Container(rhythm_selections)
 
-        handler = evans.PitchHandler(
-            pitch_list=pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         handler(abjad.select(container[:]).leaves())
 
         ratio_segment = trinton.rotated_sequence(
-            ["5/3", "5/3", "5/3", "8/5", "8/5", "8/5", "3/5", "3/5", "3/5", "89/55", "89/55", "89/55", "7/3", "7/3", "7/3", "3/2", "3/2", "3/2", "5/3", "5/3", "5/3",],
-            start_index=pitch_index
+            [
+                "5/3",
+                "5/3",
+                "5/3",
+                "8/5",
+                "8/5",
+                "8/5",
+                "3/5",
+                "3/5",
+                "3/5",
+                "89/55",
+                "89/55",
+                "89/55",
+                "7/3",
+                "7/3",
+                "7/3",
+                "3/2",
+                "3/2",
+                "3/2",
+                "5/3",
+                "5/3",
+                "5/3",
+            ],
+            start_index=pitch_index,
         )
 
         ratio_handler = evans.PitchHandler(
@@ -1220,9 +1252,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         ratio_handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
 
     elif voice == "cello voice":
@@ -1254,22 +1284,40 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         )
 
         rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack,
-            durations=durations
+            stack=stack, durations=durations
         )
 
         container = abjad.Container(rhythm_selections)
 
-        handler = evans.PitchHandler(
-            pitch_list=pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         handler(abjad.select(container[:]).leaves())
 
         ratio_segment = trinton.rotated_sequence(
-            ["8/5", "8/5", "8/5", "3/5", "3/5", "3/5", "89/55", "89/55", "89/55", "4/3", "4/3", "4/3", "5/3", "5/3", "5/3", "5/3", "5/3", "5/3", "8/5", "8/5", "8/5",],
-            start_index=pitch_index
+            [
+                "8/5",
+                "8/5",
+                "8/5",
+                "3/5",
+                "3/5",
+                "3/5",
+                "89/55",
+                "89/55",
+                "89/55",
+                "4/3",
+                "4/3",
+                "4/3",
+                "5/3",
+                "5/3",
+                "5/3",
+                "5/3",
+                "5/3",
+                "5/3",
+                "8/5",
+                "8/5",
+                "8/5",
+            ],
+            start_index=pitch_index,
         )
 
         ratio_handler = evans.PitchHandler(
@@ -1281,9 +1329,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         ratio_handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
 
     elif voice == "viola voice":
@@ -1315,22 +1361,40 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         )
 
         rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack,
-            durations=durations
+            stack=stack, durations=durations
         )
 
         container = abjad.Container(rhythm_selections)
 
-        handler = evans.PitchHandler(
-            pitch_list=pitches,
-            forget=False
-        )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
         handler(abjad.select(container[:]).leaves())
 
         ratio_segment = trinton.rotated_sequence(
-            ["89/55", "89/55", "89/55", "7/4", "7/4", "7/4", "7/5", "7/5", "7/5", "13/5", "13/5", "13/5", "34/21", "34/21", "34/21", "13/8", "13/8", "13/8", "89/55", "89/55", "89/55",],
-            start_index=pitch_index
+            [
+                "89/55",
+                "89/55",
+                "89/55",
+                "7/4",
+                "7/4",
+                "7/4",
+                "7/5",
+                "7/5",
+                "7/5",
+                "13/5",
+                "13/5",
+                "13/5",
+                "34/21",
+                "34/21",
+                "34/21",
+                "13/8",
+                "13/8",
+                "13/8",
+                "89/55",
+                "89/55",
+                "89/55",
+            ],
+            start_index=pitch_index,
         )
 
         ratio_handler = evans.PitchHandler(
@@ -1342,18 +1406,16 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         ratio_handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
+
 
 def drone(score, voice, talea, pitch_index, durations):
     if voice == "tuba voice":
         transposed = trinton.transpose(hexennacht.dance_pitches, -24)
 
         pitches = trinton.rotated_sequence(
-            pitch_list=transposed,
-            start_index=pitch_index
+            pitch_list=transposed, start_index=pitch_index
         )
 
         stack = rmakers.stack(
@@ -1380,17 +1442,14 @@ def drone(score, voice, talea, pitch_index, durations):
         handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
 
     else:
         transposed = trinton.transpose(hexennacht.dance_pitches, -35)
 
         pitches = trinton.rotated_sequence(
-            pitch_list=transposed,
-            start_index=pitch_index
+            pitch_list=transposed, start_index=pitch_index
         )
 
         stack = rmakers.stack(
@@ -1417,14 +1476,15 @@ def drone(score, voice, talea, pitch_index, durations):
         handler(abjad.select(container[:]).leaves())
 
         trinton.append_rhythm_selections(
-            score=score,
-            voice=voice,
-            selections=container[:]
+            score=score, voice=voice, selections=container[:]
         )
 
         hexennacht.transpose_contrabass(score=score, voice=voice)
 
-def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_index, talea_durations):
+
+def flute_solo(
+    score, voice, tuplet_index, flourish_durations, talea, talea_index, talea_durations
+):
     tuplets = trinton.rotated_sequence(
         pitch_list=[
             (1, 1, 1, 1, 1, 1),
@@ -1490,6 +1550,7 @@ def flute_solo(score, voice, tuplet_index, flourish_durations, talea, talea_inde
             stack=stack2,
             durations=talea_durations,
         )
+
 
 def drumming(score, voice, durations, pitched):
     if voice == "cello voice":
@@ -1618,6 +1679,7 @@ def drumming(score, voice, durations, pitched):
             stack=stack,
         )
 
+
 def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
     rhythms = trinton.rotated_sequence(
         [(2, 1), (3, 1), (1, 1, 1), (4, 1), (5, 1), (5, 1), (1, 1, 1, 1, 1), (3, 4)],
@@ -1666,17 +1728,13 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
             durations=durations,
         )
 
+
 def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_index):
-    rhythms = trinton.rotated_sequence(
-        [5, 3, -2, 7, 9, -4, 4, -2],
-        talea_index
-    )
+    rhythms = trinton.rotated_sequence([5, 3, -2, 7, 9, -4, 4, -2], talea_index)
 
     stack = rmakers.stack(
         rmakers.talea(rhythms, talea),
-        rmakers.force_rest(
-            lambda _: abjad.select(_).logical_ties().get([-1])
-        ),
+        rmakers.force_rest(lambda _: abjad.select(_).logical_ties().get([-1])),
         rmakers.extract_trivial(abjad.select().tuplets()),
         rmakers.rewrite_rest_filled(abjad.select().tuplets()),
         rmakers.rewrite_sustained(abjad.select().tuplets()),
@@ -1687,7 +1745,13 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
     if voice == "trumpet voice":
         if pitched == True:
             pitches = trinton.rotated_sequence(
-                [15.5, 21, 13.5, 18.5, 14,],
+                [
+                    15.5,
+                    21,
+                    13.5,
+                    18.5,
+                    14,
+                ],
                 pitch_index,
             )
             sel = trinton.make_rhythm_selections(
@@ -1697,10 +1761,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
 
             container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=pitches,
-                forget=False
-            )
+            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
             handler(abjad.select(container[:]).leaves(pitched=True))
 
             trinton.append_rhythm_selections(
@@ -1731,10 +1792,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
 
             container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=pitches,
-                forget=False
-            )
+            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
             handler(abjad.select(container[:]).leaves(pitched=True))
 
             trinton.append_rhythm_selections(
@@ -1764,10 +1822,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
 
             container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=pitches,
-                forget=False
-            )
+            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
             handler(abjad.select(container[:]).leaves(pitched=True))
 
             trinton.append_rhythm_selections(
@@ -1797,10 +1852,7 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
 
             container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=pitches,
-                forget=False
-            )
+            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
             handler(abjad.select(container[:]).leaves(pitched=True))
 
             trinton.append_rhythm_selections(
@@ -1817,11 +1869,11 @@ def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_in
                 durations=durations,
             )
 
+
 def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, high):
     pitches = trinton.rotated_sequence(
         pitch_list=trinton.countList(
-            hexennacht.ritual_pitches,
-            hexennacht.dance_pitches
+            hexennacht.ritual_pitches, hexennacht.dance_pitches
         ),
         start_index=pitch_index,
     )
@@ -1845,17 +1897,12 @@ def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, hi
 
             container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=hi,
-                forget=False
-            )
+            handler = evans.PitchHandler(pitch_list=hi, forget=False)
 
             handler(abjad.select(container[:]).leaves(pitched=True))
 
             trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=container[:]
+                score=score, voice=voice, selections=container[:]
             )
 
         else:
@@ -1868,17 +1915,12 @@ def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, hi
 
             container = abjad.Container(sel)
 
-            handler = evans.PitchHandler(
-                pitch_list=low,
-                forget=False
-            )
+            handler = evans.PitchHandler(pitch_list=low, forget=False)
 
             handler(abjad.select(container[:]).leaves(pitched=True))
 
             trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=container[:]
+                score=score, voice=voice, selections=container[:]
             )
 
     else:
@@ -1888,6 +1930,7 @@ def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, hi
             voice_name=voice,
             durations=durations,
         )
+
 
 # tempi
 
@@ -1899,37 +1942,46 @@ tempo_5 = abjad.MetronomeMark((1, 4), 130)
 
 # transposition functions
 
+
 def octave_up(sel):
     for pitch in sel:
         abjad.mutate.transpose(pitch, 12)
+
 
 def octave_down(sel):
     for pitch in sel:
         abjad.mutate.transpose(pitch, -12)
 
+
 def double_octave_up(sel):
     for pitch in sel:
         abjad.mutate.transpose(pitch, 24)
+
 
 def double_octave_down(sel):
     for pitch in sel:
         abjad.mutate.transpose(pitch, -24)
 
+
 def transpose_bass_clarinet(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 14)
+
 
 def transpose_french_horn(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 7)
 
+
 def transpose_trumpet(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 2)
 
+
 def transpose_contrabass(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
         abjad.mutate.transpose(leaf, 12)
+
 
 def transpose_harp(score, voice):
     for leaf in abjad.select(score[voice]).leaves(pitched=True):
@@ -1956,61 +2008,62 @@ def transpose_harp(score, voice):
         else:
             abjad.mutate.transpose(leaf, 0)
 
+
 def with_sharps(selections):
     abjad.iterpitches.respell_with_sharps(selections)
+
 
 def with_flats(selections):
     abjad.iterpitches.respell_with_flats(selections)
 
+
 # clef attachers
+
 
 def treble_clef(score_and_voice, leaves):
     trinton.attach(
-        voice=score_and_voice,
-        leaves=leaves,
-        attachment=abjad.Clef("treble")
+        voice=score_and_voice, leaves=leaves, attachment=abjad.Clef("treble")
     )
+
 
 def alto_clef(score_and_voice, leaves):
-    trinton.attach(
-        voice=score_and_voice,
-        leaves=leaves,
-        attachment=abjad.Clef("alto")
-    )
+    trinton.attach(voice=score_and_voice, leaves=leaves, attachment=abjad.Clef("alto"))
+
 
 def bass_clef(score_and_voice, leaves):
-    trinton.attach(
-        voice=score_and_voice,
-        leaves=leaves,
-        attachment=abjad.Clef("bass")
-    )
+    trinton.attach(voice=score_and_voice, leaves=leaves, attachment=abjad.Clef("bass"))
+
 
 def percussion_clef(score_and_voice, leaves):
     trinton.attach(
-        voice=score_and_voice,
-        leaves=leaves,
-        attachment=abjad.Clef("percussion")
+        voice=score_and_voice, leaves=leaves, attachment=abjad.Clef("percussion")
     )
 
+
 # percussion tools
+
 
 def three_lines(score, voice, leaves):
     trinton.attach(
         voice=score[voice],
         leaves=leaves,
         attachment=abjad.LilyPondLiteral(
-            r"\staff-line-count 3", format_slot="absolute_before",
-        )
+            r"\staff-line-count 3",
+            format_slot="absolute_before",
+        ),
     )
+
 
 def one_line(score, voice, leaves):
     trinton.attach(
         voice=score[voice],
         leaves=leaves,
         attachment=abjad.LilyPondLiteral(
-            r"\staff-line-count 1", format_slot="absolute_before",
-        )
+            r"\staff-line-count 1",
+            format_slot="absolute_before",
+        ),
     )
+
 
 def ride_cymbal(score, voice, leaves):
     trinton.attach(
@@ -2021,6 +2074,7 @@ def ride_cymbal(score, voice, leaves):
         ),
     )
 
+
 def gongs(score, voice, leaves):
     trinton.attach(
         voice=score[voice],
@@ -2029,6 +2083,7 @@ def gongs(score, voice, leaves):
             r'\boxed-markup "Gongs" 1', format_slot="after"
         ),
     )
+
 
 def bass_drum(score, voice, leaves):
     trinton.attach(
@@ -2039,6 +2094,7 @@ def bass_drum(score, voice, leaves):
         ),
     )
 
+
 def with_drumsticks(score, voice, leaves):
     trinton.attach(
         voice=score[voice],
@@ -2047,6 +2103,7 @@ def with_drumsticks(score, voice, leaves):
             r'\boxed-markup "w/ drumsticks" 1', format_slot="after"
         ),
     )
+
 
 def with_mallets(score, voice, leaves):
     trinton.attach(
@@ -2057,6 +2114,7 @@ def with_mallets(score, voice, leaves):
         ),
     )
 
+
 def with_bow(score, voice, leaves):
     trinton.attach(
         voice=score[voice],
@@ -2065,6 +2123,7 @@ def with_bow(score, voice, leaves):
             r'\boxed-markup "w/ bow" 1', format_slot="after"
         ),
     )
+
 
 def with_hand(score, voice, leaves):
     trinton.attach(

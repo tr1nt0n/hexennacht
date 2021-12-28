@@ -102,8 +102,7 @@ __all__ = [
     "woodwind_swells",
     "with_flats",
     "drumming",
-    "violin_solo"
-    "brass_shrieks",
+    "violin_solo" "brass_shrieks",
     "marimba_shakes",
     "cymbal_swells",
     "all_voices",
