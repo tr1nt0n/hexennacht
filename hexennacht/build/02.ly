@@ -27,10 +27,26 @@
                             {
                                 \context Voice = "flute voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { fl. }
-                                    r2
-                                    r4.
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     \override Staff.Stem.stemlet-length = 0.75
                                     c'8.
                                     - \tweak circled-tip ##t
@@ -73,7 +89,14 @@
                                     \stopTextSpan
                                     ]
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -83,10 +106,26 @@
                             {
                                 \context Voice = "oboe voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { ob. }
-                                    r2
-                                    r4.
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     b''4
                                     \fff
                                     - \marcato
@@ -96,7 +135,14 @@
                                     ~
                                     f''8
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -106,9 +152,18 @@
                             {
                                 \context Voice = "bass clarinet voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { bcl. }
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     r8.
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <e' cs'''>16
@@ -138,7 +193,14 @@
                                     ~
                                     <fs' bqf''>8
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -148,10 +210,20 @@
                             {
                                 \context Voice = "bassoon voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { bsn. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "bass"
-                                    r2
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     r8.
                                     \override Staff.Stem.stemlet-length = 0.75
                                     <c d e>16
@@ -203,7 +275,14 @@
                                     \!
                                     \)
                                     ]
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -215,10 +294,26 @@
                     {
                         \context Voice = "horn voice"
                         {
+                            %! applying indicators
                             \set Staff.shortInstrumentName =
+                            %! applying indicators
                             \markup { hrn. }
-                            r2
-                            r4.
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 1/4
+                            R1 * 1/4
+                            %! applying cutaway
+                            \stopStaff \startStaff
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 3/16
+                            R1 * 3/16
+                            %! applying cutaway
+                            \stopStaff \startStaff
                             \override Staff.Stem.stemlet-length = 0.75
                             a''8
                             :64
@@ -239,7 +334,14 @@
                             r8
                             \!
                             r4
-                            r2
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 1/4
+                            R1 * 1/4
+                            %! applying cutaway
+                            \stopStaff \startStaff
                         }
                     }
                 }
@@ -253,10 +355,26 @@
                             {
                                 \context Voice = "trumpet voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { tpt. }
-                                    r2
-                                    r4.
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     \override Staff.Stem.stemlet-length = 0.75
                                     \pitchedTrill
                                     eqf''8
@@ -280,7 +398,14 @@
                                     \!
                                     \stopTrillSpan
                                     r4
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -290,11 +415,28 @@
                             {
                                 \context Voice = "tenor trombone voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { tbn. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "bass"
-                                    r2
-                                    r4.
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     \clef "treble"
                                     \override Staff.Stem.stemlet-length = 0.75
                                     bf''8
@@ -315,7 +457,14 @@
                                     r8
                                     \!
                                     r4
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -325,11 +474,28 @@
                             {
                                 \context Voice = "tuba voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { tb. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "bass"
-                                    r2
-                                    r4.
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     \override Staff.Stem.stemlet-length = 0.75
                                     e,,8
                                     \p
@@ -346,7 +512,14 @@
                                     r8
                                     \!
                                     r4
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -409,9 +582,22 @@
                                     f'16
                                     \)
                                     ]
-                                    r4.
-                                    r4
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 5/16
+                                    R1 * 5/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -451,9 +637,22 @@
                                         \)
                                         ]
                                     }
-                                    r4.
-                                    r4
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 5/16
+                                    R1 * 5/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -505,9 +704,22 @@
                                 \)
                                 ]
                             }
-                            r4.
-                            r4
-                            r2
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 5/16
+                            R1 * 5/16
+                            %! applying cutaway
+                            \stopStaff \startStaff
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 1/4
+                            R1 * 1/4
+                            %! applying cutaway
+                            \stopStaff \startStaff
                         }
                     }
                 }
@@ -521,10 +733,26 @@
                             {
                                 \context Voice = "marimba voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { mar. }
-                                    r2
-                                    r4.
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     \override Staff.Stem.stemlet-length = 0.75
                                     f,64
                                     \fff
@@ -570,7 +798,14 @@
                                     \)
                                     ]
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -580,14 +815,44 @@
                             {
                                 \context Voice = "percussion 1 voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { ratch. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "percussion"
-                                    r2
-                                    r4.
-                                    r4.
-                                    r4
-                                    r2
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 5/16
+                                    R1 * 5/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -599,11 +864,28 @@
                     {
                         \context Voice = "percussion 2 voice"
                         {
+                            %! applying indicators
                             \set Staff.shortInstrumentName =
+                            %! applying indicators
                             \markup { perc. 2 }
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            %! applying indicators
                             \clef "percussion"
-                            r2
-                            r4.
+                            r1 * 1/4
+                            R1 * 1/4
+                            %! applying cutaway
+                            \stopStaff \startStaff
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 3/16
+                            R1 * 3/16
+                            %! applying cutaway
+                            \stopStaff \startStaff
                             \staff-line-count 1
                             \override Staff.Stem.stemlet-length = 0.75
                             \tweak Accidental.transparent ##t
@@ -635,7 +917,14 @@
                             \tweak Accidental.transparent ##t
                             a32
                             ]
-                            r2
+                            %! applying invisibility
+                            \once \override Rest.transparent = ##t
+                            %! applying cutaway
+                            \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                            r1 * 1/4
+                            R1 * 1/4
+                            %! applying cutaway
+                            \stopStaff \startStaff
                         }
                     }
                 }
@@ -649,9 +938,18 @@
                             {
                                 \context Voice = "violin 1 voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { vln. 1 }
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     r8.
                                     \override Staff.Stem.stemlet-length = 0.75
                                     g16
@@ -695,7 +993,14 @@
                                     \mp
                                     - \upbow
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -705,9 +1010,18 @@
                             {
                                 \context Voice = "violin 2 voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { vln. 2 }
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     r8.
                                     \override Staff.Stem.stemlet-length = 0.75
                                     \tweak Accidental.stencil #ly:text-interface::print
@@ -782,7 +1096,14 @@
                                         ]
                                     }
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -792,10 +1113,20 @@
                             {
                                 \context Voice = "viola voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { vla. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "alto"
-                                    r2
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     r8.
                                     \override Staff.Stem.stemlet-length = 0.75
                                     a'16
@@ -840,7 +1171,14 @@
                                         - \accent
                                     }
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -850,10 +1188,20 @@
                             {
                                 \context Voice = "cello voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { vc. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "bass"
-                                    r2
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     r8.
                                     \override Staff.Stem.stemlet-length = 0.75
                                     \tweak Accidental.stencil #ly:text-interface::print
@@ -933,7 +1281,14 @@
                                         ^ \markup \center-align { -16 }
                                         ]
                                     }
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }
@@ -943,11 +1298,28 @@
                             {
                                 \context Voice = "contrabass voice"
                                 {
+                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
+                                    %! applying indicators
                                     \markup { cb. }
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    %! applying indicators
                                     \clef "bass"
-                                    r2
-                                    r4.
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 3/16
+                                    R1 * 3/16
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                     \override Staff.Stem.stemlet-length = 0.75
                                     a,8
                                     \ff
@@ -963,7 +1335,14 @@
                                     b,8
                                     - \accent
                                     r8
-                                    r2
+                                    %! applying invisibility
+                                    \once \override Rest.transparent = ##t
+                                    %! applying cutaway
+                                    \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
+                                    r1 * 1/4
+                                    R1 * 1/4
+                                    %! applying cutaway
+                                    \stopStaff \startStaff
                                 }
                             }
                         }

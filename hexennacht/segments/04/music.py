@@ -2183,6 +2183,15 @@ hexennacht.octave_up(
 
 trinton.extract_parts(score)
 
+# whiteout empty staves
+
+for voice in hexennacht.all_voices:
+    trinton.whiteout_empty_staves(
+        score=score,
+        voice=voice,
+        cutaway=True
+    )
+
 # show file
 
 trinton.render_file(
