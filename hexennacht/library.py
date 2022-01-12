@@ -472,8 +472,8 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
         rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
     )
 
-    if pitched == True:
-        if accel_durations == None:
+    if pitched is True:
+        if accel_durations is None:
             trinton.make_and_append_rhythm_selections(
                 stack=ritardando,
                 durations=rit_durations,
@@ -481,7 +481,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
                 score=score,
             )
 
-        elif rit_durations == None:
+        elif rit_durations is None:
             trinton.make_and_append_rhythm_selections(
                 stack=accelerando,
                 durations=accel_durations,
@@ -489,7 +489,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
                 score=score,
             )
 
-        elif rit_first == True:
+        elif rit_first is True:
             trinton.make_and_append_rhythm_selections(
                 stack=ritardando,
                 durations=rit_durations,
@@ -525,7 +525,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
         handler(abjad.select(score[voice]).leaves(pitched=True))
 
     else:
-        if accel_durations == None:
+        if accel_durations is None:
             trinton.make_and_append_rhythm_selections(
                 stack=ritardando,
                 durations=rit_durations,
@@ -533,7 +533,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
                 score=score,
             )
 
-        elif rit_durations == None:
+        elif rit_durations is None:
             trinton.make_and_append_rhythm_selections(
                 stack=accelerando,
                 durations=accel_durations,
@@ -541,7 +541,7 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
                 score=score,
             )
 
-        elif rit_first == True:
+        elif rit_first is True:
             trinton.make_and_append_rhythm_selections(
                 stack=ritardando,
                 durations=rit_durations,
@@ -1212,7 +1212,7 @@ def flute_solo(
         rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
     )
 
-    if tuplet_index == None:
+    if tuplet_index is None:
         trinton.make_and_append_rhythm_selections(
             score=score,
             voice_name=voice,
@@ -1220,7 +1220,7 @@ def flute_solo(
             durations=talea_durations,
         )
 
-    elif talea_index == None:
+    elif talea_index is None:
         trinton.make_and_append_rhythm_selections(
             score=score,
             voice_name=voice,
@@ -1254,7 +1254,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
-        if pitched == True:
+        if pitched is True:
             sel = trinton.make_rhythm_selections(
                 stack=stack,
                 durations=durations,
@@ -1291,7 +1291,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
-        if pitched == True:
+        if pitched is True:
             sel = trinton.make_rhythm_selections(
                 stack=stack,
                 durations=durations,
@@ -1328,7 +1328,7 @@ def drumming(score, voice, durations, pitched):
             rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
-        if pitched == True:
+        if pitched is True:
             sel = trinton.make_rhythm_selections(
                 stack=stack,
                 durations=durations,
@@ -1391,7 +1391,7 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
         rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
-    if pitched == True:
+    if pitched is True:
         sel = trinton.make_rhythm_selections(
             stack=stack,
             durations=durations,
@@ -1496,8 +1496,8 @@ def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, hi
         rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
-    if pitched == True:
-        if high == True:
+    if pitched is True:
+        if high is True:
             hi = trinton.transpose(pitches, 24)
 
             sel = trinton.make_rhythm_selections(
