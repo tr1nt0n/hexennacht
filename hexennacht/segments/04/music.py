@@ -821,7 +821,7 @@ trinton.attach(voice=score["piano 1 voice"], leaves=[0], attachment=abjad.Dynami
 trinton.write_markup(
     voice=score["piano 2 voice"],
     leaf=[0],
-    string=r"\italic Con \italic fuoco",
+    string=r"\markup { \italic Con \italic fuoco }",
     down=False,
 )
 
@@ -849,7 +849,10 @@ trinton.attach(
 # harp attachments
 
 trinton.write_markup(
-    voice=score["harp voice"], leaf=[0], string=r"\italic Con \italic fuoco", down=True
+    voice=score["harp voice"],
+    leaf=[0],
+    string=r"\markup { \italic Con \italic fuoco }",
+    down=True,
 )
 
 for leaf in [
@@ -938,9 +941,10 @@ for leaf, multiphonic in zip(
         3,
     ],
 ):
-    hexennacht.flute_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="flute voice",
+        dict=hexennacht._flute_multiphonic_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -1118,17 +1122,19 @@ for leaf, multiphonic in zip(
         4,
     ],
 ):
-    hexennacht.clarinet_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bass clarinet voice",
+        dict=hexennacht._clarinet_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
     )
 
-hexennacht.clarinet_multiphonics(
+hexennacht.write_multiphonics(
     score=score,
     voice="bass clarinet voice",
+    dict=hexennacht._clarinet_multiphonics_to_pitches,
     leaves=[
         8,
         10,
@@ -1166,8 +1172,8 @@ trinton.attach(
     attachment=abjad.Tie(),
 )
 
-hexennacht.bassoon_multiphonics(
-    score=score, voice="bassoon voice", leaves=[2, 40], multiphonic=4, markup=True
+hexennacht.write_multiphonics(
+    score=score, voice="bassoon voice", dict=hexennacht._bassoon_multiphonics_to_pitches, leaves=[2, 40], multiphonic=4, markup=True
 )
 
 trinton.attach(
@@ -2155,8 +2161,8 @@ trinton.attach_multiple(
 
 trinton.write_text_span(
     voice=score["contrabass voice"],
-    begin_text=r"Norm",
-    end_text=r"Slight OP",
+    begin_text=r"\markup Norm",
+    end_text=r"\markup { Slight OP }",
     start_leaf=[
         11,
     ],

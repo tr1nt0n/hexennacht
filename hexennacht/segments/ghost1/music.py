@@ -338,8 +338,8 @@ trinton.attach(voice=score["Global Context"], leaves=[0], attachment=hexennacht.
 
 trinton.write_text_span(
     voice=score["Global Context"],
-    begin_text=r'\italic \abs-fontsize #12 { "Accel." }',
-    end_text=r".",
+    begin_text=r'\markup \italic \abs-fontsize #12 { "Accel." }',
+    end_text=r"\markup { . }",
     start_leaf=[
         4,
     ],

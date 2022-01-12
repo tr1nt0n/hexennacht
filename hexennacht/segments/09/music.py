@@ -560,7 +560,7 @@ trinton.write_markup(
     leaf=[
         43,
     ],
-    string=r"\italic 90˚",
+    string=r"\markup { \italic 90˚ }",
     down=False,
 )
 
@@ -569,7 +569,7 @@ trinton.write_markup(
     leaf=[
         49,
     ],
-    string=r"\italic 0˚",
+    string=r"\markup { \italic 0˚ }",
     down=False,
 )
 
@@ -581,7 +581,7 @@ trinton.write_markup(
         31,
         45,
     ],
-    string=r"\italic 45˚",
+    string=r"\markup { \italic 45˚ }",
     down=False,
 )
 
@@ -1059,7 +1059,10 @@ for voice in ["piano 1 voice", "piano 2 voice", "harp voice"]:
 
 for voice in ["piano 1 voice", "harp voice"]:
     trinton.write_markup(
-        voice=score[voice], leaf=[1], string=r"\italic Dolcissimo", down=True
+        voice=score[voice],
+        leaf=[1],
+        string=r"\markup { \italic Dolcissimo }",
+        down=True,
     )
 
     trinton.attach_multiple(

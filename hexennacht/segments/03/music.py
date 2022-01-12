@@ -466,10 +466,11 @@ for leaf, multiphonic in zip(
         5,
     ],
 ):
-    hexennacht.flute_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="flute voice",
         leaves=[leaf],
+        dict=hexennacht._flute_multiphonic_to_pitches,
         multiphonic=multiphonic,
         markup=True,
     )
@@ -497,7 +498,7 @@ trinton.write_markup(
     leaf=[
         1,
     ],
-    string=r"\italic 45˚",
+    string=r"\markup { \italic 45˚ }",
     down=False,
 )
 
@@ -542,12 +543,13 @@ abjad.attach(abjad.StemTremolo(32), abjad.select(score["oboe voice"]).leaf(8))
 
 # clarinet attachments
 
-hexennacht.clarinet_multiphonics(
+hexennacht.write_multiphonics(
     score=score,
     voice="bass clarinet voice",
     leaves=[
         2,
     ],
+    dict=hexennacht._clarinet_multiphonics_to_pitches,
     multiphonic=5,
     markup=True,
 )
@@ -678,9 +680,10 @@ trinton.attach(
     attachment=abjad.StopHairpin(),
 )
 
-hexennacht.bassoon_multiphonics(
+hexennacht.write_multiphonics(
     score=score,
     voice="bassoon voice",
+    dict=hexennacht._bassoon_multiphonics_to_pitches,
     leaves=[
         15,
     ],

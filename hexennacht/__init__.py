@@ -33,9 +33,6 @@ from .library import (
     flute_solo,
     with_sharps,
     with_flats,
-    clarinet_multiphonics,
-    bassoon_multiphonics,
-    flute_multiphonics,
     oboe_harmonies,
     woodwind_swells,
     drumming,
@@ -59,6 +56,10 @@ from .library import (
     with_hand,
     ratchet_pitches,
     standard_cleffing,
+    write_multiphonics,
+    _flute_multiphonic_to_pitches,
+    _clarinet_multiphonics_to_pitches,
+    _bassoon_multiphonics_to_pitches,
 )
 
 __all__ = [
@@ -95,9 +96,6 @@ __all__ = [
     "pitch_flute_pf",
     "flute_solo",
     "with_sharps",
-    "clarinet_multiphonics",
-    "bassoon_multiphonics",
-    "flute_multiphonics",
     "oboe_harmonies",
     "woodwind_swells",
     "with_flats",
@@ -121,4 +119,8 @@ __all__ = [
     "with_hand",
     "ratchet_pitches",
     "standard_cleffing",
+    "write_multiphonics"
+    "_flute_multiphonic_to_pitches",
+    "_clarinet_multiphonics_to_pitches",
+    "_bassoon_multiphonics_to_pitches",
 ]

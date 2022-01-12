@@ -1,15 +1,8 @@
-%! abjad.LilyPondFile._get_format_pieces()
 \version "2.20.0"
-%! abjad.LilyPondFile._get_format_pieces()
 \language "english"
-%! abjad.LilyPondFile._get_formatted_includes()
 \include "/Users/trintonprater/scores/hexennacht/hexennacht/build/hexennacht-stylesheet.ily"
-%! abjad.LilyPondFile._get_formatted_includes()
 \include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
-
-%! abjad.LilyPondFile._get_formatted_blocks()
 \score
-%! abjad.LilyPondFile._get_formatted_blocks()
 {
     \context Score = "Score"
     <<
@@ -42,12 +35,7 @@
             \time 9/4
             s1 * 9/4
             - \abjad-dashed-line-with-arrow
-            - \tweak bound-details.left.text \markup \concat { \italic
-                \abs-fontsize
-                    #12
-                    {
-                        Accel.
-                    } \hspace #0.5 }
+            - \tweak bound-details.left.text \markup \concat { \italic \abs-fontsize #12 { Accel. } \hspace #0.5 }
             - \tweak bound-details.right.text \markup { . }
             - \tweak padding 6.75
             \startTextSpan
@@ -70,63 +58,41 @@
                             {
                                 \context Voice = "flute voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Flute }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { fl. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r8
                                     \times 2/3
                                     {
                                         cs'''32
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         ef'''32
@@ -161,10 +127,7 @@
                                     {
                                         bf''8
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         ef'''16
@@ -195,10 +158,7 @@
                                     \revert Staff.Stem.stemlet-length
                                     c'8
                                     \pp
-                                    ^ \markup {
-                                        \italic
-                                            90˚
-                                        }
+                                    ^ \markup { \italic 90˚ }
                                     ]
                                     r2
                                     r1
@@ -206,10 +166,7 @@
                                     {
                                         g''16
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         bf''32
@@ -242,28 +199,19 @@
                                     \revert Staff.Stem.stemlet-length
                                     d'8
                                     \pp
-                                    ^ \markup {
-                                        \italic
-                                            90˚
-                                        }
+                                    ^ \markup { \italic 90˚ }
                                     ]
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     \tweak text #tuplet-number::calc-fraction-text
                                     \times 6/5
                                     {
                                         c'''16
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         d'''16
@@ -294,19 +242,13 @@
                                     \revert Staff.Stem.stemlet-length
                                     d'8
                                     \pp
-                                    ^ \markup {
-                                        \italic
-                                            90˚
-                                        }
+                                    ^ \markup { \italic 90˚ }
                                     ]
                                     r4
                                     \override Staff.Stem.stemlet-length = 0.75
                                     f''32
                                     \ff
-                                    ^ \markup {
-                                        \italic
-                                            45˚
-                                        }
+                                    ^ \markup { \italic 45˚ }
                                     [
                                     \(
                                     e''32
@@ -339,19 +281,13 @@
                                     \revert Staff.Stem.stemlet-length
                                     c'8
                                     \pp
-                                    ^ \markup {
-                                        \italic
-                                            90˚
-                                        }
+                                    ^ \markup { \italic 90˚ }
                                     ]
                                     \times 2/3
                                     {
                                         cs'''16
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         g''16
@@ -365,10 +301,7 @@
                                     d'16
                                     \ffff
                                     - \marcato
-                                    ^ \markup {
-                                        \italic
-                                            0˚
-                                        }
+                                    ^ \markup { \italic 0˚ }
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     d'8.
@@ -395,19 +328,13 @@
                                     c'16
                                     \ffff
                                     - \marcato
-                                    ^ \markup {
-                                        \italic
-                                            0˚
-                                        }
+                                    ^ \markup { \italic 0˚ }
                                     ]
                                     \times 2/3
                                     {
                                         fs'''16
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         g'''16
@@ -422,10 +349,7 @@
                                     d'16
                                     \ffff
                                     - \marcato
-                                    ^ \markup {
-                                        \italic
-                                            0˚
-                                        }
+                                    ^ \markup { \italic 0˚ }
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     d'8.
@@ -513,19 +437,13 @@
                                     d'16
                                     \ffff
                                     - \marcato
-                                    ^ \markup {
-                                        \italic
-                                            0˚
-                                        }
+                                    ^ \markup { \italic 0˚ }
                                     ]
                                     \times 2/3
                                     {
                                         e'''32
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         fs''32
@@ -560,17 +478,11 @@
                                     \override Staff.Stem.stemlet-length = 0.75
                                     d'8
                                     \pp
-                                    ^ \markup {
-                                        \italic
-                                            90˚
-                                        }
+                                    ^ \markup { \italic 90˚ }
                                     [
                                     c''16
                                     \ff
-                                    ^ \markup {
-                                        \italic
-                                            45˚
-                                        }
+                                    ^ \markup { \italic 45˚ }
                                     \(
                                     \revert Staff.Stem.stemlet-length
                                     af''16
@@ -607,10 +519,7 @@
                                     {
                                         f''16
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         e''16
@@ -665,10 +574,7 @@
                                     {
                                         a''32
                                         \ff
-                                        ^ \markup {
-                                            \italic
-                                                45˚
-                                            }
+                                        ^ \markup { \italic 45˚ }
                                         [
                                         \(
                                         cs'''32
@@ -681,18 +587,12 @@
                                     c'16
                                     \ffff
                                     - \marcato
-                                    ^ \markup {
-                                        \italic
-                                            0˚
-                                        }
+                                    ^ \markup { \italic 0˚ }
                                     [
                                     \revert Staff.Stem.stemlet-length
                                     d'8.
                                     \fermata
-                                    ^ \markup {
-                                        \italic
-                                            90˚
-                                        }
+                                    ^ \markup { \italic 90˚ }
                                     ]
                                 }
                             }
@@ -705,14 +605,14 @@
                                 {
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -766,14 +666,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -829,14 +729,14 @@
                                     r4
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -877,14 +777,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -931,24 +831,21 @@
                                         ]
                                     }
                                     \revert TupletNumber.text
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1009,14 +906,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1080,24 +977,21 @@
                                         ]
                                     }
                                     \revert TupletNumber.text
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1144,14 +1038,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1194,14 +1088,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1250,14 +1144,14 @@
                                     r4
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1307,14 +1201,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1356,14 +1250,14 @@
                                     r2
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1428,14 +1322,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1500,25 +1394,22 @@
                                         ]
                                     }
                                     \revert TupletNumber.text
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r8
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1568,14 +1459,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1626,14 +1517,14 @@
                                     r4
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1698,14 +1589,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1761,14 +1652,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1833,14 +1724,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1907,14 +1798,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -1964,14 +1855,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2026,14 +1917,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2086,14 +1977,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2145,14 +2036,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2199,14 +2090,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2261,14 +2152,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2321,14 +2212,14 @@
                                     \revert TupletNumber.text
                                     \override TupletNumber.text = \markup \scale #'(0.75 . 0.75) \score
                                         {
-                                            \new Score
+                                            \context Score = "Score"
                                             \with
                                             {
                                                 \override SpacingSpanner.spacing-increment = 0.5
                                                 proportionalNotationDuration = ##f
                                             }
                                             <<
-                                                \new RhythmicStaff
+                                                \context RhythmicStaff = "Rhythmic_Staff"
                                                 \with
                                                 {
                                                     \remove Time_signature_engraver
@@ -2382,109 +2273,69 @@
                             {
                                 \context Voice = "bass clarinet voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Bass Clarinet }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { bcl. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -2495,103 +2346,65 @@
                             {
                                 \context Voice = "bassoon voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Bassoon }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { bsn. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r1.
                                     \tweak text #tuplet-number::calc-fraction-text
@@ -2631,109 +2444,69 @@
                     {
                         \context Voice = "horn voice"
                         {
-                            %! applying indicators
                             \set Staff.instrumentName =
-                            %! applying indicators
                             \markup { French Horn }
-                            %! applying indicators
                             \set Staff.shortInstrumentName =
-                            %! applying indicators
                             \markup { hrn. }
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 1/2
                             R1 * 1/2
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 1/4
                             R1 * 1/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/32
                             R1 * 3/32
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 5/8
                             R1 * 5/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 5/8
                             R1 * 5/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/16
                             R1 * 3/16
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
                         }
                     }
@@ -2748,109 +2521,69 @@
                             {
                                 \context Voice = "trumpet voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Trumpet in C }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { tpt. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -2861,103 +2594,65 @@
                             {
                                 \context Voice = "tenor trombone voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Tenor Trombone }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { tbn. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r1..
                                     r8
@@ -2982,103 +2677,65 @@
                             {
                                 \context Voice = "tuba voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Tuba }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { tb. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r2.
                                     e,2
@@ -3113,109 +2770,69 @@
                             {
                                 \context Voice = "piano 1 voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Piano }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { pno. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -3226,103 +2843,66 @@
                             {
                                 \context Voice = "piano 2 voice"
                                 {
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -3335,109 +2915,69 @@
                     {
                         \context Voice = "harp voice"
                         {
-                            %! applying indicators
                             \set Staff.instrumentName =
-                            %! applying indicators
                             \markup { Harp }
-                            %! applying indicators
                             \set Staff.shortInstrumentName =
-                            %! applying indicators
                             \markup { harp }
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 1/2
                             R1 * 1/2
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 1/4
                             R1 * 1/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/32
                             R1 * 3/32
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 5/8
                             R1 * 5/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 5/8
                             R1 * 5/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/16
                             R1 * 3/16
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
                         }
                     }
@@ -3452,103 +2992,65 @@
                             {
                                 \context Voice = "marimba voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Marimba }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { mar. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r1.
                                     <d e>4
@@ -3572,113 +3074,71 @@
                             {
                                 \context Voice = "percussion 1 voice"
                                 {
-                                    %! applying indicators
                                     \staff-line-count 3
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Ratchets }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { ratch. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "percussion"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -3691,105 +3151,66 @@
                     {
                         \context Voice = "percussion 2 voice"
                         {
-                            %! applying indicators
                             \staff-line-count 3
-                            %! applying indicators
                             \set Staff.instrumentName =
-                            %! applying indicators
                             \markup { Percussion 2 }
-                            %! applying indicators
                             \set Staff.shortInstrumentName =
-                            %! applying indicators
                             \markup { perc. 2 }
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                            %! applying indicators
                             \clef "percussion"
                             r1 * 1/2
                             R1 * 1/2
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 1/4
                             R1 * 1/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/32
                             R1 * 3/32
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 5/8
                             R1 * 5/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 5/8
                             R1 * 5/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/16
                             R1 * 3/16
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 3/4
                             R1 * 3/4
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
-                            %! applying invisibility
                             \once \override Rest.transparent = ##t
-                            %! applying cutaway
                             \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                             r1 * 9/8
                             R1 * 9/8
-                            %! applying cutaway
                             \stopStaff \startStaff
                             r2.
                             r2
@@ -3819,109 +3240,69 @@
                             {
                                 \context Voice = "violin 1 voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Violin 1 }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { vln. 1 }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -3932,109 +3313,69 @@
                             {
                                 \context Voice = "violin 2 voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Violin 2 }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { vln. 2 }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -4045,111 +3386,70 @@
                             {
                                 \context Voice = "viola voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Viola }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { vla. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "alto"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -4160,111 +3460,70 @@
                             {
                                 \context Voice = "cello voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Violoncello }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { vc. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                 }
                             }
@@ -4275,103 +3534,65 @@
                             {
                                 \context Voice = "contrabass voice"
                                 {
-                                    %! applying indicators
                                     \set Staff.instrumentName =
-                                    %! applying indicators
                                     \markup { Contrabass }
-                                    %! applying indicators
                                     \set Staff.shortInstrumentName =
-                                    %! applying indicators
                                     \markup { cb. }
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
-                                    %! applying indicators
                                     \clef "bass"
                                     r1 * 1/2
                                     R1 * 1/2
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 1/4
                                     R1 * 1/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/32
                                     R1 * 3/32
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 5/8
                                     R1 * 5/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/16
                                     R1 * 3/16
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 3/4
                                     R1 * 3/4
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
-                                    %! applying invisibility
                                     \once \override Rest.transparent = ##t
-                                    %! applying cutaway
                                     \stopStaff \once \override Staff.StaffSymbol.line-count = #1 \startStaff
                                     r1 * 9/8
                                     R1 * 9/8
-                                    %! applying cutaway
                                     \stopStaff \startStaff
                                     r2.
                                     g,4
@@ -4411,5 +3632,4 @@
             >>
         }
     >>
-%! abjad.LilyPondFile._get_formatted_blocks()
 }

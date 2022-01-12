@@ -756,8 +756,8 @@ trinton.attach(
 )
 
 start_text_span = abjad.StartTextSpan(
-    left_text=abjad.Markup(r'\italic \abs-fontsize #12 { "Accel." }'),
-    right_text=abjad.Markup(r"."),
+    left_text=abjad.Markup(r"\markup \italic \abs-fontsize #12 { Accel. }"),
+    right_text=abjad.Markup(r"\markup { . }"),
     style="dashed-line-with-arrow",
 )
 abjad.tweak(start_text_span).padding = 6.75
@@ -768,8 +768,8 @@ trinton.attach(score["Global Context"], [11], abjad.StopTextSpan())
 
 trinton.write_text_span(
     voice=score["flute voice"],
-    begin_text=r"90˚",
-    end_text=r"0˚",
+    begin_text=r"\markup 90˚",
+    end_text=r"\markup { 0˚ }",
     start_leaf=[
         14,
         21,
@@ -820,7 +820,7 @@ trinton.write_markup(
         103,
         114,
     ],
-    string=r"\italic 45˚",
+    string=r"\markup { \italic 45˚ }",
     down=False,
 )
 
@@ -834,7 +834,7 @@ trinton.write_markup(
         94,
         119,
     ],
-    string=r"\italic 90˚",
+    string=r"\markup { \italic 90˚ }",
     down=False,
 )
 
@@ -847,7 +847,7 @@ trinton.write_markup(
         65,
         61,
     ],
-    string=r"\italic 0˚",
+    string=r"\markup { \italic 0˚ }",
     down=False,
 )
 
@@ -997,7 +997,6 @@ for tuplet in abjad.select(score["oboe voice"]).tuplets():
     string = abjad.illustrators.selection_to_score_markup_string(notes)
     markup = abjad.Markup(
         rf"\markup \scale #'(0.75 . 0.75) {string}",
-        literal=True,
     )
     abjad.override(tuplet).TupletNumber.text = markup
 

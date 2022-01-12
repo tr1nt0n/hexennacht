@@ -12,9 +12,11 @@ ritual_pitches = eval(
     ]"""
 )
 
-dance_pitches = [4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]
+dance_pitches = eval(
+    """[4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]"""
+)
 
-violin1_ghost_pitches = [
+violin1_ghost_pitches = eval("""[
     12,
     12.5,
     19,
@@ -31,9 +33,10 @@ violin1_ghost_pitches = [
     21.5,
     17,
     18.5,
-]
+]"""
+)
 
-violin2_ghost_pitches = [
+violin2_ghost_pitches = eval("""[
     0.5,
     3,
     5.5,
@@ -51,11 +54,12 @@ violin2_ghost_pitches = [
     5.5,
     5,
     3.5,
-]
+]"""
+)
 
-viola_ghost_pitches = [-9, -3.5, -9, -1.5, -9, -3.5, -9, -8.5, -4, -7.5, -1, -8.5, -4]
+viola_ghost_pitches = eval("""[-9, -3.5, -9, -1.5, -9, -3.5, -9, -8.5, -4, -7.5, -1, -8.5, -4]""")
 
-cello_ghost_pitches = [
+cello_ghost_pitches = eval("""[
     -23,
     -22.5,
     -16,
@@ -72,9 +76,10 @@ cello_ghost_pitches = [
     -13.5,
     -18,
     -16.5,
-]
+]"""
+)
 
-ratchet_pitches = [
+ratchet_pitches = eval("""[
     4,
     -3,
     4,
@@ -84,7 +89,8 @@ ratchet_pitches = [
     -3,
     0,
     0,
-]
+]"""
+)
 
 
 def pitch_flute_flourishes(score, voice, start_index, leaves):
@@ -144,16 +150,78 @@ def pitch_flute_pf(score, voice, leaves):
         sel = abjad.select(score[voice]).leaf(leaf)
         handler(sel)
 
-_multiphonic_to_pitches = {
-    1: ([[9.5, 21, 23, 29]], r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four six)) (lh . (b)) (rh . (cis)))}"),
-    2: ([[17, 25.5]], r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}"),
-    3: ([[11.5, 25]], r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}"),
-    4: ([[6, 17, 19, 24.5]], r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three five six)) (lh . (b)) (rh . (c cis)))}"),
-    5: ([[10, 21.5, 29]], r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}"),
+
+_flute_multiphonic_to_pitches = {
+    1: (
+        [[9.5, 21, 23, 29]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four six)) (lh . (b)) (rh . (cis)))}",
+    ),
+    2: (
+        [[17, 25.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three four)) (lh . (b)) (rh . (d ees)))}",
+    ),
+    3: (
+        [[11.5, 25]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three six)) (lh . ()) (rh . ()))}",
+    ),
+    4: (
+        [[6, 17, 19, 24.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one two three five six)) (lh . (b)) (rh . (c cis)))}",
+    ),
+    5: (
+        [[10, 21.5, 29]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'flute #'((cc . (one three four)) (lh . (b)) (rh . (ees)))}",
+    ),
 }
 
-def flute_multiphonics(score, voice, leaves, multiphonic, markup):
-    pair = _multiphonic_to_pitches[multiphonic]
+_clarinet_multiphonics_to_pitches = {
+    1: (
+        [[4, 25]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three four five)) (lh . (thumb)) (rh . ()))}",
+    ),
+    2: (
+        [[7.5, 29]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}"
+    ),
+    3: (
+        [[6, 22.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three four five six)) (lh . ()) (rh . (ees)))}",
+    ),
+    4: (
+        [[5.5, 32.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five six)) (lh . (thumb)) (rh . (three four e)))}",
+    ),
+    5: (
+        [[8, 27.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}",
+    )
+}
+
+_bassoon_multiphonics_to_pitches = {
+    1: (
+        [[-12, -10, -8]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (cis thumb-e fis)))}",
+    ),
+    2: (
+        [[-11.5, 0.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}",
+    ),
+    3: (
+        [[-10, -8.5, -6.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}",
+    ),
+    4: (
+        [[-11.5, -6, -4]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}",
+    ),
+    5: (
+        [[-23.5, -18, -12, -4.5]],
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}",
+    ),
+}
+
+def write_multiphonics(score, voice, dict, leaves, multiphonic, markup):
+    pair = dict[multiphonic]
     pitch_list, string = pair
     handler = evans.PitchHandler(pitch_list=pitch_list, forget=False)
     if markup is True:
@@ -162,7 +230,6 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
             handler(sel)
             markup = abjad.Markup(
                 string,
-                literal=True,
                 direction=abjad.Up,
             )
             trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
@@ -171,225 +238,20 @@ def flute_multiphonics(score, voice, leaves, multiphonic, markup):
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
+_oboe_harmonies = {
+    1: [19.5],
+    2: [23],
+    3: [17],
+    4: [12.5],
+    5: [12]
+}
+
 def oboe_harmonies(score, voice, leaves, flute_multiphonic):
-    if flute_multiphonic == 1:
-        handler = evans.PitchHandler(pitch_list=[19.5], forget=False)
-        for leaf in leaves:
-            sel = abjad.select(score[voice]).leaf(leaf)
-            handler(sel)
-
-    elif flute_multiphonic == 2:
-        handler = evans.PitchHandler(pitch_list=[23], forget=False)
-        for leaf in leaves:
-            sel = abjad.select(score[voice]).leaf(leaf)
-            handler(sel)
-
-    elif flute_multiphonic == 3:
-        handler = evans.PitchHandler(pitch_list=[17], forget=False)
-        for leaf in leaves:
-            sel = abjad.select(score[voice]).leaf(leaf)
-            handler(sel)
-
-    elif flute_multiphonic == 4:
-        handler = evans.PitchHandler(pitch_list=[12.5], forget=False)
-        for leaf in leaves:
-            sel = abjad.select(score[voice]).leaf(leaf)
-            handler(sel)
-
-    else:
-        handler = evans.PitchHandler(pitch_list=[12], forget=False)
-        for leaf in leaves:
-            sel = abjad.select(score[voice]).leaf(leaf)
-            handler(sel)
-
-
-def clarinet_multiphonics(score, voice, leaves, multiphonic, markup):
-    if multiphonic == 1:
-        handler = evans.PitchHandler(pitch_list=[[4, 25]], forget=False)
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three four five)) (lh . (thumb)) (rh . ()))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    elif multiphonic == 2:
-        handler = evans.PitchHandler(pitch_list=[[7.5, 29]], forget=False)
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    elif multiphonic == 3:
-        handler = evans.PitchHandler(pitch_list=[[6, 22.5]], forget=False)
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three four five six)) (lh . ()) (rh . (ees)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    elif multiphonic == 4:
-        handler = evans.PitchHandler(pitch_list=[[5.5, 32.5]], forget=False)
-
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five six)) (lh . (thumb)) (rh . (three four e)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    else:
-        handler = evans.PitchHandler(pitch_list=[[8, 27.5]], forget=False)
-
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-
-def bassoon_multiphonics(score, voice, leaves, multiphonic, markup):
-    if multiphonic == 1:
-        handler = evans.PitchHandler(pitch_list=[[-12, -10, -8]], forget=False)
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (cis thumb-e fis)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    elif multiphonic == 2:
-        handler = evans.PitchHandler(pitch_list=[[-11.5, 0.5]], forget=False)
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    elif multiphonic == 3:
-        handler = evans.PitchHandler(pitch_list=[[-10, -8.5, -6.5]], forget=False)
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    elif multiphonic == 4:
-        handler = evans.PitchHandler(pitch_list=[[-11.5, -6, -4]], forget=False)
-
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-    else:
-        handler = evans.PitchHandler(pitch_list=[[-23.5, -18, -12, -4.5]], forget=False)
-
-        if markup == True:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
-                markup = abjad.Markup(
-                    r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}",
-                    literal=True,
-                    direction=abjad.Up,
-                )
-                trinton.attach(voice=score[voice], leaves=[leaf], attachment=markup)
-        else:
-            for leaf in leaves:
-                sel = abjad.select(score[voice]).leaf(leaf)
-                handler(sel)
-
+    pitch_list = _oboe_harmonies[flute_multiphonic]
+    handler = evans.PitchHandler(pitch_list=pitch_list, forget=False)
+    for leaf in leaves:
+        sel = abjad.select(score[voice]).leaf(leaf)
+        handler(sel)
 
 # score
 
@@ -492,45 +354,45 @@ all_staves = [
 ]
 
 all_startmarkups = [
-    abjad.Markup(r"Flute"),
-    abjad.Markup(r"Oboe"),
-    abjad.Markup(r"Bass Clarinet"),
-    abjad.Markup(r"Bassoon"),
-    abjad.Markup(r"French Horn"),
-    abjad.Markup(r"Trumpet in C"),
-    abjad.Markup(r"Tenor Trombone"),
-    abjad.Markup(r"Tuba"),
-    abjad.Markup(r"Piano"),
-    abjad.Markup(r"Harp"),
-    abjad.Markup(r"Marimba"),
-    abjad.Markup(r"Ratchets"),
-    abjad.Markup(r"Percussion 2"),
-    abjad.Markup(r"Violin 1"),
-    abjad.Markup(r"Violin 2"),
-    abjad.Markup(r"Viola"),
-    abjad.Markup(r"Violoncello"),
-    abjad.Markup(r"Contrabass"),
+    abjad.Markup(r"\markup { Flute }"),
+    abjad.Markup(r"\markup { Oboe }"),
+    abjad.Markup(r"\markup { Bass Clarinet }"),
+    abjad.Markup(r"\markup { Bassoon }"),
+    abjad.Markup(r"\markup { French Horn }"),
+    abjad.Markup(r"\markup { Trumpet in C }"),
+    abjad.Markup(r"\markup { Tenor Trombone }"),
+    abjad.Markup(r"\markup { Tuba }"),
+    abjad.Markup(r"\markup { Piano }"),
+    abjad.Markup(r"\markup { Harp }"),
+    abjad.Markup(r"\markup { Marimba }"),
+    abjad.Markup(r"\markup { Ratchets }"),
+    abjad.Markup(r"\markup { Percussion 2 }"),
+    abjad.Markup(r"\markup { Violin 1 }"),
+    abjad.Markup(r"\markup { Violin 2 }"),
+    abjad.Markup(r"\markup { Viola }"),
+    abjad.Markup(r"\markup { Violoncello }"),
+    abjad.Markup(r"\markup { Contrabass }"),
 ]
 
 all_marginmarkups = [
-    abjad.Markup(r"fl."),
-    abjad.Markup(r"ob."),
-    abjad.Markup(r"bcl."),
-    abjad.Markup(r"bsn."),
-    abjad.Markup(r"hrn."),
-    abjad.Markup(r"tpt."),
-    abjad.Markup(r"tbn."),
-    abjad.Markup(r"tb."),
-    abjad.Markup(r"pno."),
-    abjad.Markup(r"harp"),
-    abjad.Markup(r"mar."),
-    abjad.Markup(r"ratch."),
-    abjad.Markup(r"perc. 2"),
-    abjad.Markup(r"vln. 1"),
-    abjad.Markup(r"vln. 2"),
-    abjad.Markup(r"vla."),
-    abjad.Markup(r"vc."),
-    abjad.Markup(r"cb."),
+    abjad.Markup(r"\markup { fl. }"),
+    abjad.Markup(r"\markup { ob. }"),
+    abjad.Markup(r"\markup { bcl. }"),
+    abjad.Markup(r"\markup { bsn. }"),
+    abjad.Markup(r"\markup { hrn. }"),
+    abjad.Markup(r"\markup { tpt. }"),
+    abjad.Markup(r"\markup { tbn. }"),
+    abjad.Markup(r"\markup { tb. }"),
+    abjad.Markup(r"\markup { pno. }"),
+    abjad.Markup(r"\markup { harp }"),
+    abjad.Markup(r"\markup { mar. }"),
+    abjad.Markup(r"\markup { ratch. }"),
+    abjad.Markup(r"\markup { perc. 2 }"),
+    abjad.Markup(r"\markup { vln. 1 }"),
+    abjad.Markup(r"\markup { vln. 2 }"),
+    abjad.Markup(r"\markup { vla. }"),
+    abjad.Markup(r"\markup { vc. }"),
+    abjad.Markup(r"\markup { cb. }"),
 ]
 
 # material functions
@@ -563,12 +425,12 @@ def cymbal_swells(score, voice, durations, tuplet_index):
 
     stack = rmakers.stack(
         rmakers.tuplet(rhythms),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
     trinton.make_and_append_rhythm_selections(
@@ -585,13 +447,12 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
         rmakers.force_rest(lambda _: abjad.select(_).leaves().get([0, -1])),
         rmakers.feather_beam(
             beam_rests=True,
-            selector=abjad.select().tuplets(),
         ),
         rmakers.duration_bracket(),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
     )
 
     ritardando = rmakers.stack(
@@ -599,13 +460,12 @@ def warble(score, voice, accel_durations, rit_durations, rit_first, pitched):
         rmakers.force_rest(lambda _: abjad.select(_).leaves().get([0, -1])),
         rmakers.feather_beam(
             beam_rests=True,
-            selector=abjad.select().tuplets(),
         ),
         rmakers.duration_bracket(),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
     )
 
     if pitched == True:
@@ -757,12 +617,12 @@ def incantation(
                 [(2, 1, 3, 1)],
             ][bunch_1_tuplet]
         ),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
     bunch_2 = rmakers.stack(
         rmakers.tuplet(
@@ -800,20 +660,20 @@ def incantation(
                 [(2, 1, 3, 1)],
             ][bunch_2_tuplet]
         ),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
     smooth = rmakers.stack(
         rmakers.talea([4, 5, 7, 5, 4, 7, 5, 7], talea),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
     if pitch_index is None:
@@ -938,12 +798,12 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
 
     stack = rmakers.stack(
         rmakers.tuplet(rhythms),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
     if pitch_index is None:
@@ -988,8 +848,204 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
             score=score, voice=voice, selections=container[:]
         )
 
+_string_to_JI = {
+    "violin 1 voice": (
+        [
+            9,
+            9,
+            9,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            4,
+            4,
+            4,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            8,
+            8,
+            8,
+        ],
+        [
+            "89/55",
+            "89/55",
+            "89/55",
+            "7/4",
+            "7/4",
+            "7/4",
+            "7/5",
+            "7/5",
+            "7/5",
+            "13/5",
+            "13/5",
+            "13/5",
+            "34/21",
+            "34/21",
+            "34/21",
+            "13/8",
+            "13/8",
+            "13/8",
+            "89/55",
+            "89/55",
+            "89/55",
+        ],
+    ),
+    "violin 2 voice": (
+        [
+            9,
+            9,
+            9,
+            7,
+            7,
+            7,
+            8,
+            8,
+            8,
+            4,
+            4,
+            4,
+            7,
+            7,
+            7,
+            6,
+            6,
+            6,
+            8,
+            8,
+            8,
+        ],
+        [
+            "5/3",
+            "5/3",
+            "5/3",
+            "8/5",
+            "8/5",
+            "8/5",
+            "3/5",
+            "3/5",
+            "3/5",
+            "89/55",
+            "89/55",
+            "89/55",
+            "7/3",
+            "7/3",
+            "7/3",
+            "3/2",
+            "3/2",
+            "3/2",
+            "5/3",
+            "5/3",
+            "5/3",
+        ],
+    ),
+    "viola voice": (
+        [
+            1,
+            1,
+            1,
+            4,
+            4,
+            4,
+            -12,
+            -12,
+            -12,
+            -10,
+            -10,
+            -10,
+            -7,
+            -7,
+            -7,
+            -5,
+            -5,
+            -5,
+            -9,
+            -9,
+            -9,
+        ],
+        [
+            "89/55",
+            "89/55",
+            "89/55",
+            "7/4",
+            "7/4",
+            "7/4",
+            "7/5",
+            "7/5",
+            "7/5",
+            "13/5",
+            "13/5",
+            "13/5",
+            "34/21",
+            "34/21",
+            "34/21",
+            "13/8",
+            "13/8",
+            "13/8",
+            "89/55",
+            "89/55",
+            "89/55",
+        ],
+    ),
+    "cello voice": (
+        [
+            1,
+            1,
+            1,
+            4,
+            4,
+            4,
+            -12,
+            -12,
+            -12,
+            -10,
+            -10,
+            -10,
+            -7,
+            -7,
+            -7,
+            -5,
+            -5,
+            -5,
+            -9,
+            -9,
+            -9,
+        ],
+        [
+            "8/5",
+            "8/5",
+            "8/5",
+            "3/5",
+            "3/5",
+            "3/5",
+            "89/55",
+            "89/55",
+            "89/55",
+            "4/3",
+            "4/3",
+            "4/3",
+            "5/3",
+            "5/3",
+            "5/3",
+            "5/3",
+            "5/3",
+            "5/3",
+            "8/5",
+            "8/5",
+            "8/5",
+        ],
+    ),
+}
 
 def string_swells(score, voice, tuplet_index, durations, pitch_index):
+    pair = _string_to_JI[voice]
+    pitch_list, ratio_list = pair
     rhythms = trinton.rotated_sequence(
         pitch_list=[
             (1, 1, 1),
@@ -1003,321 +1059,45 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
 
     stack = rmakers.stack(
         rmakers.tuplet(rhythms),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
-    if voice == "violin 1 voice":
-        pitches = trinton.rotated_sequence(
-            pitch_list=[
-                9,
-                9,
-                9,
-                7,
-                7,
-                7,
-                8,
-                8,
-                8,
-                4,
-                4,
-                4,
-                7,
-                7,
-                7,
-                6,
-                6,
-                6,
-                8,
-                8,
-                8,
-            ],
-            start_index=pitch_index,
-        )
+    pitches = trinton.rotated_sequence(
+        pitch_list=pitch_list,
+        start_index=pitch_index,
+    )
 
-        rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack, durations=durations
-        )
+    rhythm_selections = trinton.make_rhythm_selections(
+        stack=stack, durations=durations
+    )
 
-        container = abjad.Container(rhythm_selections)
+    container = abjad.Container(rhythm_selections)
 
-        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
+    handler = evans.PitchHandler(pitch_list=pitches, forget=False)
 
-        handler(abjad.select(container[:]).leaves())
+    handler(abjad.select(container[:]).leaves())
 
-        ratio_segment = trinton.rotated_sequence(
-            [
-                "89/55",
-                "89/55",
-                "89/55",
-                "7/4",
-                "7/4",
-                "7/4",
-                "7/5",
-                "7/5",
-                "7/5",
-                "13/5",
-                "13/5",
-                "13/5",
-                "34/21",
-                "34/21",
-                "34/21",
-                "13/8",
-                "13/8",
-                "13/8",
-                "89/55",
-                "89/55",
-                "89/55",
-            ],
-            start_index=pitch_index,
-        )
+    ratio_segment = trinton.rotated_sequence(
+        ratio_list,
+        start_index=pitch_index,
+    )
 
-        ratio_handler = evans.PitchHandler(
-            pitch_list=[_ for _ in ratio_segment],
-            forget=False,
-            as_ratios=True,
-        )
+    ratio_handler = evans.PitchHandler(
+        pitch_list=[_ for _ in ratio_segment],
+        forget=False,
+        as_ratios=True,
+    )
 
-        ratio_handler(abjad.select(container[:]).leaves())
+    ratio_handler(abjad.select(container[:]).leaves())
 
-        trinton.append_rhythm_selections(
-            score=score, voice=voice, selections=container[:]
-        )
-
-    elif voice == "violin 2 voice":
-        pitches = trinton.rotated_sequence(
-            pitch_list=[
-                9,
-                9,
-                9,
-                7,
-                7,
-                7,
-                8,
-                8,
-                8,
-                4,
-                4,
-                4,
-                7,
-                7,
-                7,
-                6,
-                6,
-                6,
-                8,
-                8,
-                8,
-            ],
-            start_index=pitch_index,
-        )
-
-        rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack, durations=durations
-        )
-
-        container = abjad.Container(rhythm_selections)
-
-        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-
-        handler(abjad.select(container[:]).leaves())
-
-        ratio_segment = trinton.rotated_sequence(
-            [
-                "5/3",
-                "5/3",
-                "5/3",
-                "8/5",
-                "8/5",
-                "8/5",
-                "3/5",
-                "3/5",
-                "3/5",
-                "89/55",
-                "89/55",
-                "89/55",
-                "7/3",
-                "7/3",
-                "7/3",
-                "3/2",
-                "3/2",
-                "3/2",
-                "5/3",
-                "5/3",
-                "5/3",
-            ],
-            start_index=pitch_index,
-        )
-
-        ratio_handler = evans.PitchHandler(
-            pitch_list=[_ for _ in ratio_segment],
-            forget=False,
-            as_ratios=True,
-        )
-
-        ratio_handler(abjad.select(container[:]).leaves())
-
-        trinton.append_rhythm_selections(
-            score=score, voice=voice, selections=container[:]
-        )
-
-    elif voice == "cello voice":
-        pitches = trinton.rotated_sequence(
-            pitch_list=[
-                1,
-                1,
-                1,
-                4,
-                4,
-                4,
-                -12,
-                -12,
-                -12,
-                -10,
-                -10,
-                -10,
-                -7,
-                -7,
-                -7,
-                -5,
-                -5,
-                -5,
-                -9,
-                -9,
-                -9,
-            ],
-            start_index=pitch_index,
-        )
-
-        rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack, durations=durations
-        )
-
-        container = abjad.Container(rhythm_selections)
-
-        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-
-        handler(abjad.select(container[:]).leaves())
-
-        ratio_segment = trinton.rotated_sequence(
-            [
-                "8/5",
-                "8/5",
-                "8/5",
-                "3/5",
-                "3/5",
-                "3/5",
-                "89/55",
-                "89/55",
-                "89/55",
-                "4/3",
-                "4/3",
-                "4/3",
-                "5/3",
-                "5/3",
-                "5/3",
-                "5/3",
-                "5/3",
-                "5/3",
-                "8/5",
-                "8/5",
-                "8/5",
-            ],
-            start_index=pitch_index,
-        )
-
-        ratio_handler = evans.PitchHandler(
-            pitch_list=[_ for _ in ratio_segment],
-            forget=False,
-            as_ratios=True,
-        )
-
-        ratio_handler(abjad.select(container[:]).leaves())
-
-        trinton.append_rhythm_selections(
-            score=score, voice=voice, selections=container[:]
-        )
-
-    elif voice == "viola voice":
-        pitches = trinton.rotated_sequence(
-            pitch_list=[
-                1,
-                1,
-                1,
-                4,
-                4,
-                4,
-                -12,
-                -12,
-                -12,
-                -10,
-                -10,
-                -10,
-                -7,
-                -7,
-                -7,
-                -5,
-                -5,
-                -5,
-                -9,
-                -9,
-                -9,
-            ],
-            start_index=pitch_index,
-        )
-
-        rhythm_selections = trinton.make_rhythm_selections(
-            stack=stack, durations=durations
-        )
-
-        container = abjad.Container(rhythm_selections)
-
-        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-
-        handler(abjad.select(container[:]).leaves())
-
-        ratio_segment = trinton.rotated_sequence(
-            [
-                "89/55",
-                "89/55",
-                "89/55",
-                "7/4",
-                "7/4",
-                "7/4",
-                "7/5",
-                "7/5",
-                "7/5",
-                "13/5",
-                "13/5",
-                "13/5",
-                "34/21",
-                "34/21",
-                "34/21",
-                "13/8",
-                "13/8",
-                "13/8",
-                "89/55",
-                "89/55",
-                "89/55",
-            ],
-            start_index=pitch_index,
-        )
-
-        ratio_handler = evans.PitchHandler(
-            pitch_list=[_ for _ in ratio_segment],
-            forget=False,
-            as_ratios=True,
-        )
-
-        ratio_handler(abjad.select(container[:]).leaves())
-
-        trinton.append_rhythm_selections(
-            score=score, voice=voice, selections=container[:]
-        )
+    trinton.append_rhythm_selections(
+        score=score, voice=voice, selections=container[:]
+    )
 
 
 def drone(score, voice, talea, pitch_index, durations):
@@ -1330,11 +1110,11 @@ def drone(score, voice, talea, pitch_index, durations):
 
         stack = rmakers.stack(
             rmakers.talea([4, 5, 7, 5, 4, 7, 5, 7], talea),
-            rmakers.trivialize(abjad.select().tuplets()),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.beam(abjad.select().tuplets()),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
         selections = trinton.make_rhythm_selections(
@@ -1364,11 +1144,11 @@ def drone(score, voice, talea, pitch_index, durations):
 
         stack = rmakers.stack(
             rmakers.talea([5, 7, 5, 4, 7, 5, 7, 4], talea),
-            rmakers.trivialize(abjad.select().tuplets()),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.beam(abjad.select().tuplets()),
+            rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
         selections = trinton.make_rhythm_selections(
@@ -1414,20 +1194,20 @@ def flute_solo(
 
     stack1 = rmakers.stack(
         rmakers.tuplet(tuplets),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
     stack2 = rmakers.stack(
         rmakers.talea(taleas, talea),
-        rmakers.trivialize(abjad.select().tuplets()),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.trivialize(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
     )
 
     if tuplet_index == None:
@@ -1466,10 +1246,10 @@ def drumming(score, voice, durations, pitched):
     if voice == "cello voice":
         stack = rmakers.stack(
             rmakers.even_division([8]),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.beam(abjad.select().tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
         if pitched == True:
@@ -1502,11 +1282,11 @@ def drumming(score, voice, durations, pitched):
     elif voice == "viola voice":
         stack = rmakers.stack(
             rmakers.tuplet([(2, 1), (1, 2)]),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
             rmakers.rewrite_dots(),
-            rmakers.beam(abjad.select().tuplets()),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
         if pitched == True:
@@ -1539,11 +1319,11 @@ def drumming(score, voice, durations, pitched):
     elif voice == "violin 2 voice":
         stack = rmakers.stack(
             rmakers.tuplet([(2, 2, 2, 1), (1, 2, 2, 2)]),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
             rmakers.rewrite_dots(),
-            rmakers.beam(abjad.select().tuplets()),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
         if pitched == True:
@@ -1576,10 +1356,10 @@ def drumming(score, voice, durations, pitched):
     else:
         stack = rmakers.stack(
             rmakers.even_division([8], extra_counts=[0, 4, 3, 1]),
-            rmakers.extract_trivial(abjad.select().tuplets()),
-            rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-            rmakers.rewrite_sustained(abjad.select().tuplets()),
-            rmakers.beam(abjad.select().tuplets()),
+            rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+            rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
         )
 
         trinton.make_and_append_rhythm_selections(
@@ -1602,11 +1382,11 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
 
     stack = rmakers.stack(
         rmakers.tuplet(rhythms),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
     if pitched == True:
@@ -1638,146 +1418,62 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
             durations=durations,
         )
 
+_brass_to_pitch = {
+    "trumpet voice": [
+        15.5,
+        21,
+        13.5,
+        18.5,
+        14,
+    ],
+    "horn voice": [21, 11, 22, 13, 24],
+    "tenor trombone voice": [22, -9, 22, -8, 22, -10, -4, 22, -25],
+    "tuba voice": [-32],
+}
 
 def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_index):
+    pitch_list = _brass_to_pitch[voice]
     rhythms = trinton.rotated_sequence([5, 3, -2, 7, 9, -4, 4, -2], talea_index)
 
     stack = rmakers.stack(
         rmakers.talea(rhythms, talea),
         rmakers.force_rest(lambda _: abjad.select(_).logical_ties().get([-1])),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
         rmakers.rewrite_dots(),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
-    if voice == "trumpet voice":
-        if pitched == True:
-            pitches = trinton.rotated_sequence(
-                [
-                    15.5,
-                    21,
-                    13.5,
-                    18.5,
-                    14,
-                ],
-                pitch_index,
-            )
-            sel = trinton.make_rhythm_selections(
-                stack=stack,
-                durations=durations,
-            )
+    if pitched is True:
+        pitches = trinton.rotated_sequence(
+            pitch_list=pitch_list,
+            start_index=pitch_index,
+        )
 
-            container = abjad.Container(sel)
+        sel = trinton.make_rhythm_selections(
+            stack=stack,
+            durations=durations,
+        )
 
-            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-            handler(abjad.select(container[:]).leaves(pitched=True))
+        container = abjad.Container(sel)
 
-            trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=container[:],
-            )
+        handler = evans.PitchHandler(pitch_list=pitches, forget=False)
+        handler(abjad.select(container[:]).leaves(pitched=True))
 
-        else:
-            trinton.make_and_append_rhythm_selections(
-                score=score,
-                voice_name=voice,
-                stack=stack,
-                durations=durations,
-            )
+        trinton.append_rhythm_selections(
+            score=score,
+            voice=voice,
+            selections=container[:],
+        )
 
-    elif voice == "horn voice":
-        if pitched == True:
-            pitches = trinton.rotated_sequence(
-                [21, 11, 22, 13, 24],
-                pitch_index,
-            )
-
-            sel = trinton.make_rhythm_selections(
-                stack=stack,
-                durations=durations,
-            )
-
-            container = abjad.Container(sel)
-
-            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-            handler(abjad.select(container[:]).leaves(pitched=True))
-
-            trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=container[:],
-            )
-
-        else:
-            trinton.make_and_append_rhythm_selections(
-                score=score,
-                voice_name=voice,
-                stack=stack,
-                durations=durations,
-            )
-
-    elif voice == "tenor trombone voice":
-        if pitched == True:
-            pitches = trinton.rotated_sequence(
-                [22, -9, 22, -8, 22, -10, -4, 22, -25],
-                pitch_index,
-            )
-            sel = trinton.make_rhythm_selections(
-                stack=stack,
-                durations=durations,
-            )
-
-            container = abjad.Container(sel)
-
-            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-            handler(abjad.select(container[:]).leaves(pitched=True))
-
-            trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=container[:],
-            )
-
-        else:
-            trinton.make_and_append_rhythm_selections(
-                score=score,
-                voice_name=voice,
-                stack=stack,
-                durations=durations,
-            )
-
-    elif voice == "tuba voice":
-        if pitched == True:
-            pitches = trinton.rotated_sequence(
-                [-32],
-                pitch_index,
-            )
-            sel = trinton.make_rhythm_selections(
-                stack=stack,
-                durations=durations,
-            )
-
-            container = abjad.Container(sel)
-
-            handler = evans.PitchHandler(pitch_list=pitches, forget=False)
-            handler(abjad.select(container[:]).leaves(pitched=True))
-
-            trinton.append_rhythm_selections(
-                score=score,
-                voice=voice,
-                selections=container[:],
-            )
-
-        else:
-            trinton.make_and_append_rhythm_selections(
-                score=score,
-                voice_name=voice,
-                stack=stack,
-                durations=durations,
-            )
+    else:
+        trinton.make_and_append_rhythm_selections(
+            score=score,
+            voice_name=voice,
+            stack=stack,
+            durations=durations,
+        )
 
 
 def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, high):
@@ -1790,10 +1486,10 @@ def marimba_shakes(score, voice, note_value, durations, pitched, pitch_index, hi
 
     stack = rmakers.stack(
         rmakers.even_division([note_value]),
-        rmakers.extract_trivial(abjad.select().tuplets()),
-        rmakers.rewrite_rest_filled(abjad.select().tuplets()),
-        rmakers.rewrite_sustained(abjad.select().tuplets()),
-        rmakers.beam(abjad.select().tuplets()),
+        rmakers.extract_trivial(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_rest_filled(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.rewrite_sustained(lambda _: abjad.Selection(_).tuplets()),
+        rmakers.beam(lambda _: abjad.Selection(_).tuplets()),
     )
 
     if pitched == True:

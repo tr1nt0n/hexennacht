@@ -703,7 +703,7 @@ for leaf, attachment in zip(
         attachment=attachment,
     )
 
-markup = abjad.Markup(r'\abs-fontsize #14 { "x8" }', direction=abjad.Up)
+markup = abjad.Markup(r'\markup \abs-fontsize #14 { "x8" }', direction=abjad.Up)
 abjad.tweak(markup).padding = 7.15
 
 trinton.attach(
@@ -829,7 +829,7 @@ trinton.attach_multiple(
         abjad.LilyPondLiteral(
             r'\boxed-markup "Crine, MSP, Slightly OP" 1', format_slot="after"
         ),
-        abjad.Markup(r'\italic { "Espressivo" }', direction=abjad.Down),
+        abjad.Markup(r'\markup \italic { "Espressivo" }', direction=abjad.Down),
     ],
 )
 
@@ -1148,8 +1148,8 @@ trinton.write_slur(
 
 trinton.write_text_span(
     voice=score["flute voice"],
-    begin_text=r"90˚",
-    end_text=r"0˚",
+    begin_text=r"\markup 90˚",
+    end_text=r"\markup { 0˚ }",
     start_leaf=[
         6,
         8,
@@ -1177,7 +1177,7 @@ trinton.write_markup(
         12,
         23,
     ],
-    string=r"\italic 45˚",
+    string=r"\markup { \italic 45˚ }",
     down=False,
 )
 
@@ -1338,9 +1338,10 @@ for leaf, multiphonic in zip(
     ],
     [5, 4, 3, 2, 1],
 ):
-    hexennacht.clarinet_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bass clarinet voice",
+        dict=hexennacht._clarinet_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -1370,9 +1371,10 @@ for leaf, multiphonic in zip(
     ],
     [5, 4, 3, 2, 1],
 ):
-    hexennacht.bassoon_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bassoon voice",
+        dict=hexennacht._bassoon_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -1763,8 +1765,8 @@ trinton.attach(
 
 trinton.write_text_span(
     voice=score["contrabass voice"],
-    begin_text=r"MST, Norm.",
-    end_text=r"MSP, OP",
+    begin_text=r"\markup MST, Norm.",
+    end_text=r"\markup { MSP, OP }",
     start_leaf=[16],
     stop_leaf=[29],
     padding=3,

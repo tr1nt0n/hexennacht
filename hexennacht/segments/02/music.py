@@ -308,13 +308,14 @@ for voice in ["bass clarinet voice", "bassoon voice"]:
         attachment=abjad.Tie(),
     )
 
-for leaf, multiphonic in zip(
+for leaf, multiphonic, in zip(
     [2, 6, 7],
     [1, 2, 3],
 ):
-    hexennacht.clarinet_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bass clarinet voice",
+        dict=hexennacht._clarinet_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -324,9 +325,10 @@ for leaf, multiphonic in zip(
     [2, 6, 7],
     [1, 2, 3],
 ):
-    hexennacht.bassoon_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bassoon voice",
+        dict=hexennacht._bassoon_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -378,8 +380,8 @@ trinton.attach_multiple(
 
 trinton.write_text_span(
     voice=score["flute voice"],
-    begin_text=r"90˚",
-    end_text=r"0˚",
+    begin_text=r"\markup 90˚",
+    end_text=r"\markup { 0˚ }",
     start_leaf=[2, 5],
     stop_leaf=[3, 7],
     padding=5,
@@ -695,13 +697,19 @@ trinton.attach_multiple(
 trinton.attach(voice=score["piano 1 voice"], leaves=[7], attachment=abjad.Dynamic("mp"))
 
 trinton.write_markup(
-    voice=score["piano 1 voice"], leaf=[0], string=r"\italic Dolcissimo", down=True
+    voice=score["piano 1 voice"],
+    leaf=[0],
+    string=r"\markup { \italic Dolcissimo }",
+    down=True,
 )
 
 # harp attachments
 
 trinton.write_markup(
-    voice=score["harp voice"], leaf=[2], string=r"\italic Dolcissimo", down=True
+    voice=score["harp voice"],
+    leaf=[2],
+    string=r"\markup { \italic Dolcissimo }",
+    down=True,
 )
 
 trinton.write_slur(

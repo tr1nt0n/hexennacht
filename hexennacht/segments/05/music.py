@@ -543,7 +543,6 @@ tuplet = abjad.select(score["violin 1 voice"]).tuplet(1)
 string = r"\italic 6:5"
 markup = abjad.Markup(
     rf"\markup \scale #'(1 . 1) {string}",
-    literal=True,
 )
 abjad.override(tuplet).TupletNumber.text = markup
 
@@ -551,7 +550,6 @@ tuplet = abjad.select(score["violin 2 voice"]).tuplet(0)
 string = r"\italic 7:10"
 markup = abjad.Markup(
     rf"\markup \scale #'(1 . 1) {string}",
-    literal=True,
 )
 abjad.override(tuplet).TupletNumber.text = markup
 
@@ -559,7 +557,6 @@ tuplet = abjad.select(score["viola voice"]).tuplet(1)
 string = r"\italic 4:5"
 markup = abjad.Markup(
     rf"\markup \scale #'(1 . 1) {string}",
-    literal=True,
 )
 abjad.override(tuplet).TupletNumber.text = markup
 
@@ -567,7 +564,6 @@ tuplet = abjad.select(score["cello voice"]).tuplet(1)
 string = r"\italic 6:5"
 markup = abjad.Markup(
     rf"\markup \scale #'(1 . 1) {string}",
-    literal=True,
 )
 abjad.override(tuplet).TupletNumber.text = markup
 
@@ -771,7 +767,9 @@ trinton.beam_score(score)
 
 # tempi
 
-markup = abjad.Markup(r'\italic \abs-fontsize #14 { "Rall." }', direction=abjad.Up)
+markup = abjad.Markup(
+    r'\markup \italic \abs-fontsize #14 { "Rall." }', direction=abjad.Up
+)
 
 abjad.tweak(markup).padding = 8
 
@@ -1121,9 +1119,10 @@ for leaf, multiphonic in zip(
         5,
     ],
 ):
-    hexennacht.flute_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="flute voice",
+        dict=hexennacht._flute_multiphonic_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -1216,9 +1215,10 @@ for leaf, multiphonic in zip(
         5,
     ],
 ):
-    hexennacht.clarinet_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bass clarinet voice",
+        dict=hexennacht._clarinet_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
@@ -1279,9 +1279,10 @@ for leaf, multiphonic in zip(
     ],
     [1, 2, 3, 4, 5, 1, 2],
 ):
-    hexennacht.bassoon_multiphonics(
+    hexennacht.write_multiphonics(
         score=score,
         voice="bassoon voice",
+        dict=hexennacht._bassoon_multiphonics_to_pitches,
         leaves=[leaf],
         multiphonic=multiphonic,
         markup=True,
