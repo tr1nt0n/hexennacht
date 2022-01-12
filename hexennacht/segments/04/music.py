@@ -1173,7 +1173,12 @@ trinton.attach(
 )
 
 hexennacht.write_multiphonics(
-    score=score, voice="bassoon voice", dict=hexennacht._bassoon_multiphonics_to_pitches, leaves=[2, 40], multiphonic=4, markup=True
+    score=score,
+    voice="bassoon voice",
+    dict=hexennacht._bassoon_multiphonics_to_pitches,
+    leaves=[2, 40],
+    multiphonic=4,
+    markup=True,
 )
 
 trinton.attach(

@@ -16,7 +16,8 @@ dance_pitches = eval(
     """[4, 6, 7, 10, 8, 8, 4, 10, 0, 10, 10, 11, 4, 8, 7, 9, 6, 8, 5, 5, 7, 3]"""
 )
 
-violin1_ghost_pitches = eval("""[
+violin1_ghost_pitches = eval(
+    """[
     12,
     12.5,
     19,
@@ -36,7 +37,8 @@ violin1_ghost_pitches = eval("""[
 ]"""
 )
 
-violin2_ghost_pitches = eval("""[
+violin2_ghost_pitches = eval(
+    """[
     0.5,
     3,
     5.5,
@@ -57,9 +59,12 @@ violin2_ghost_pitches = eval("""[
 ]"""
 )
 
-viola_ghost_pitches = eval("""[-9, -3.5, -9, -1.5, -9, -3.5, -9, -8.5, -4, -7.5, -1, -8.5, -4]""")
+viola_ghost_pitches = eval(
+    """[-9, -3.5, -9, -1.5, -9, -3.5, -9, -8.5, -4, -7.5, -1, -8.5, -4]"""
+)
 
-cello_ghost_pitches = eval("""[
+cello_ghost_pitches = eval(
+    """[
     -23,
     -22.5,
     -16,
@@ -79,7 +84,8 @@ cello_ghost_pitches = eval("""[
 ]"""
 )
 
-ratchet_pitches = eval("""[
+ratchet_pitches = eval(
+    """[
     4,
     -3,
     4,
@@ -181,7 +187,7 @@ _clarinet_multiphonics_to_pitches = {
     ),
     2: (
         [[7.5, 29]],
-        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}"
+        r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (two three six)) (lh . (thumb R)) (rh . ()))}",
     ),
     3: (
         [[6, 22.5]],
@@ -194,7 +200,7 @@ _clarinet_multiphonics_to_pitches = {
     5: (
         [[8, 27.5]],
         r"\markup \override #'(size . .4) { \woodwind-diagram #'bass-clarinet #'((cc . (one two three five)) (lh . (thumb gis)) (rh . ()))}",
-    )
+    ),
 }
 
 _bassoon_multiphonics_to_pitches = {
@@ -220,6 +226,7 @@ _bassoon_multiphonics_to_pitches = {
     ),
 }
 
+
 def write_multiphonics(score, voice, dict, leaves, multiphonic, markup):
     pair = dict[multiphonic]
     pitch_list, string = pair
@@ -238,13 +245,9 @@ def write_multiphonics(score, voice, dict, leaves, multiphonic, markup):
             sel = abjad.select(score[voice]).leaf(leaf)
             handler(sel)
 
-_oboe_harmonies = {
-    1: [19.5],
-    2: [23],
-    3: [17],
-    4: [12.5],
-    5: [12]
-}
+
+_oboe_harmonies = {1: [19.5], 2: [23], 3: [17], 4: [12.5], 5: [12]}
+
 
 def oboe_harmonies(score, voice, leaves, flute_multiphonic):
     pitch_list = _oboe_harmonies[flute_multiphonic]
@@ -252,6 +255,7 @@ def oboe_harmonies(score, voice, leaves, flute_multiphonic):
     for leaf in leaves:
         sel = abjad.select(score[voice]).leaf(leaf)
         handler(sel)
+
 
 # score
 
@@ -848,6 +852,7 @@ def dance(score, voice, tuplet_index, durations, pitch_index, transpose):
             score=score, voice=voice, selections=container[:]
         )
 
+
 _string_to_JI = {
     "violin 1 voice": (
         [
@@ -1043,6 +1048,7 @@ _string_to_JI = {
     ),
 }
 
+
 def string_swells(score, voice, tuplet_index, durations, pitch_index):
     pair = _string_to_JI[voice]
     pitch_list, ratio_list = pair
@@ -1072,9 +1078,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
         start_index=pitch_index,
     )
 
-    rhythm_selections = trinton.make_rhythm_selections(
-        stack=stack, durations=durations
-    )
+    rhythm_selections = trinton.make_rhythm_selections(stack=stack, durations=durations)
 
     container = abjad.Container(rhythm_selections)
 
@@ -1095,9 +1099,7 @@ def string_swells(score, voice, tuplet_index, durations, pitch_index):
 
     ratio_handler(abjad.select(container[:]).leaves())
 
-    trinton.append_rhythm_selections(
-        score=score, voice=voice, selections=container[:]
-    )
+    trinton.append_rhythm_selections(score=score, voice=voice, selections=container[:])
 
 
 def drone(score, voice, talea, pitch_index, durations):
@@ -1418,6 +1420,7 @@ def violin_solo(score, voice, tuplet_index, durations, pitched, pitch_index):
             durations=durations,
         )
 
+
 _brass_to_pitch = {
     "trumpet voice": [
         15.5,
@@ -1430,6 +1433,7 @@ _brass_to_pitch = {
     "tenor trombone voice": [22, -9, 22, -8, 22, -10, -4, 22, -25],
     "tuba voice": [-32],
 }
+
 
 def brass_shrieks(score, voice, talea_index, talea, durations, pitched, pitch_index):
     pitch_list = _brass_to_pitch[voice]

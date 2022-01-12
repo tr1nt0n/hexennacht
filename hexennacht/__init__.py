@@ -119,8 +119,7 @@ __all__ = [
     "with_hand",
     "ratchet_pitches",
     "standard_cleffing",
-    "write_multiphonics"
-    "_flute_multiphonic_to_pitches",
+    "write_multiphonics" "_flute_multiphonic_to_pitches",
     "_clarinet_multiphonics_to_pitches",
     "_bassoon_multiphonics_to_pitches",
 ]
