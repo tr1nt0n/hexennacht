@@ -1,8 +1,8 @@
 \version "2.20.0"
 \language "english"
 
-\include "/Users/trintonprater/scores/hexennacht/hexennacht/build/parts-stylesheet.ily"
-\include "/Users/trintonprater/abjad/docs/source/_stylesheets/abjad.ily"
+\include "parts-stylesheet.ily"
+\include "/Users/trintonprater/abjad/abjad/_stylesheets/abjad.ily"
 
 \score {
     \removeWithTag #'voice2

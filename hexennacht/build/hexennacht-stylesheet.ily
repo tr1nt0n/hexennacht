@@ -3,11 +3,11 @@
 #(set-default-paper-size "11x17portrait")
 #(set-global-staff-size 11)
 
-\include "/Users/trintonprater/abjad/docs/source/_stylesheets/ekmelos-ji-accidental-markups.ily"
-\include "/Users/trintonprater/scores/hexennacht/hexennacht/library.ily"
+\include "/Users/trintonprater/abjad/abjad/_stylesheets/ekmelos-ji-accidental-markups.ily"
+\include "../library.ily"
 
 \header {
-    title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"H E X E N N A C H T" \fontsize #3.4 \with-color #white "."}
+    title = \markup \override #'(font-name . "Bodoni72") \fontsize #12 \center-column {"H E X E N N A C H T" \fontsize #3.4 \with-color #white "."}
     subtitle = \markup \override #'(font-name . "Bodoni72") \fontsize #3 \center-column {"for Sinfonietta" \fontsize #3.4 \with-color #white "."}
     composer = \markup \override #'(font-name . "Bodoni72") \fontsize #3 {"Trinton (*2000)"}
 }
@@ -20,15 +20,11 @@
         \numericTimeSignature
         \type Engraver_group
         \consists Axis_group_engraver
-		\consists Bar_number_engraver
         \consists Time_signature_engraver
 		\consists Mark_engraver
 		\consists Metronome_mark_engraver
 		\consists Text_engraver
 		\consists Text_spanner_engraver
-
-        \override BarNumber.font-size = 3
-        \override BarNumber.font-name = "Bodoni72"
 
         \override MetronomeMark.stencil = ##f
 		\override TimeSignature.X-extent = #'(0 . 0)
@@ -45,7 +41,16 @@
         autoBeaming = ##f
         proportionalNotationDuration = #(ly:make-moment 1 30)
         \accepts TimeSignatureContext
-        \remove Bar_number_engraver
+
+        \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
+        \override BarNumber.Y-extent = ##f
+		\override BarNumber.Y-offset = 0
+		\override BarNumber.extra-offset = #'(-4 . -4)
+        \override BarNumber.font-size = 2
+        \override BarNumber.font-name = "Bodoni72"
+		\override BarNumber.padding = 1
+
+        \override BarLine.bar-extent = #'(-2 . 2)
 
         \override DynamicText.font-size = #-2
         \override DynamicLineSpanner.staff-padding = 4
@@ -63,9 +68,13 @@
 
         \override Stem.stemlet-length = 0.75
         \override Glissando.thickness = #2
-        
+
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
+
+        \override Tie.stencil = #flare-tie
+        \override Tie.height-limit = 6
+        \override Tie.thickness = 1.5
     }
     \context {
         \Staff

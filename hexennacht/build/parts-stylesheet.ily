@@ -1,10 +1,10 @@
 \version "2.20.0"
 \language english
-#(set-default-paper-size "letterlandscape")
-#(set-global-staff-size 10)
+#(set-default-paper-size "arch a")
+#(set-global-staff-size 11.5)
 
-\include "/Users/trintonprater/abjad/docs/source/_stylesheets/ekmelos-ji-accidental-markups.ily"
-\include "/Users/trintonprater/scores/hexennacht/hexennacht/library.ily"
+\include "/Users/trintonprater/abjad/abjad/_stylesheets/ekmelos-ji-accidental-markups.ily"
+\include "../library.ily"
 
 \header {
     title = \markup \override #'(font-name . "Bodoni72") \fontsize #5.4 \center-column {"H E X E N N A C H T" \fontsize #3.4 \with-color #white "."}
@@ -20,22 +20,17 @@
         \numericTimeSignature
         \type Engraver_group
         \consists Axis_group_engraver
-		\consists Bar_number_engraver
         \consists Time_signature_engraver
 		\consists Mark_engraver
 		\consists Metronome_mark_engraver
 		\consists Text_engraver
 		\consists Text_spanner_engraver
-        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 2) (minimum-distance . 2) (padding . 0) (stretchability . 0))
+        \override VerticalAxisGroup.default-staff-staff-spacing = #'((basic-distance . 1) (minimum-distance . 1) (padding . 0) (stretchability . 0))
 
         \override BarNumber.font-size = 3
         \override BarNumber.font-name = "Bodoni72"
         \override MetronomeMark.stencil = ##f
 
-		\override TimeSignature.X-extent = #'(0 . 0)
-        \override TimeSignature.break-visibility = #end-of-line-invisible
-        \override TimeSignature.font-size = 8
-		\override TimeSignature.font-name = "Bodoni72"
         \override TimeSignature.transparent = ##t
     }
 
@@ -44,8 +39,14 @@
         \numericTimeSignature
         autoBeaming = ##f
         proportionalNotationDuration = #(ly:make-moment 1 35)
-        \remove Bar_number_engraver
         \accepts TimeSignatureContext
+
+        \override BarLine.bar-extent = #'(-2 . 2)
+
+        \override BarNumber.stencil = #(make-stencil-circler 0.1 0.75 ly:text-interface::print)
+        \override BarNumber.font-size = 1
+        \override BarNumber.font-name = "Bodoni72"
+		\override BarNumber.padding = 2
 
         \override DynamicText.font-size = #-2
         \override MetronomeMark.font-size = 3
@@ -63,6 +64,10 @@
 
         \override Clef.whiteout-style = #'outline
         \override Clef.whiteout = 1
+
+        \override Tie.stencil = #flare-tie
+        \override Tie.height-limit = 6
+        \override Tie.thickness = 1.5
     }
 
 	\context {
@@ -70,11 +75,12 @@
 		\remove Forbid_line_break_engraver
 		\override Accidental.font-size = 1
 	}
-    
+
 	\context {
 		\Staff
 		\numericTimeSignature
 		fontSize = #-1
+        \override TimeSignature.break-visibility = #end-of-line-invisible
         \override TimeSignature.whiteout-style = #'outline
         \override TimeSignature.whiteout = 1
         \override TimeSignature.padding = 3
