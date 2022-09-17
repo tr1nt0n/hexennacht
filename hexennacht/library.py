@@ -208,22 +208,6 @@ _bassoon_multiphonics_to_pitches = {
         [[-12, -10, -8]],
         r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (cis thumb-e fis)))}",
     ),
-    2: (
-        [[-11.5, 0.5]],
-        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five six)) (lh . (low-d)) (rh . (fis f thumb-bes)))}",
-    ),
-    3: (
-        [[-10, -8.5, -6.5]],
-        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one three four five)) (lh . (w eesT cisT)) (rh . (thumb-bes)))}",
-    ),
-    4: (
-        [[-11.5, -6, -4]],
-        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (two three five)) (lh . (w)) (rh . (thumb-bes)))}",
-    ),
-    5: (
-        [[-23.5, -18, -12, -4.5]],
-        r"\markup \override #'(size . .4) { \woodwind-diagram #'bassoon #'((cc . (one two three five)) (lh . (a cisT thumb-cis)) (rh . (thumb-e)))}",
-    ),
 }
 
 
